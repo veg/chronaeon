@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canine Distemper Virus (Ke et al. 2015) | ChronAeon Benchmark</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand-group">
+        <a href="../../index.html" class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          ChronAeon
+        </a>
+        <span class="brand-badge">Benchmark 31</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../../index.html">← All 55 Benchmarks</a>
+        <a href="https://github.com/veg/cronaeon_bench/tree/main/analyses/33_canine_distemper_ke2015" target="_blank" rel="noopener">GitHub Folder</a>
+        <a href="https://doi.org/10.1186/s12917-015-0565-x" target="_blank" rel="noopener">Original Paper (DOI)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <a href="../../index.html">Home</a>
+      <span class="separator">/</span>
+      <span>Empirical Benchmarks</span>
+      <span class="separator">/</span>
+      <span>Canine Distemper Virus</span>
+    </nav>
+
+    <!-- Study Header -->
+    <section class="study-header">
+      <div class="study-title-area">
+        <h1 class="study-title">Canine Distemper Virus (Ke et al. 2015)</h1>
+        <p style="font-size: 1.05rem; color: var(--text-muted);">
+          Canine Distemper Virus • Hemagglutinin (H)
+        </p>
+      </div>
+      <div class="study-pills">
+        <span class="badge badge-neg-rna">Negative-Sense RNA</span>
+        <span class="badge badge-neutral">Taxa: 95</span>
+        <span class="badge badge-neutral">Length: 1,824 bp</span>
+        <span class="badge badge-neutral">BEAST: HKY+G4, UCLD, Constant</span>
+        <span class="badge badge-concordant">CONCORDANT</span>
+        <a href="https://doi.org/10.1186/s12917-015-0565-x" target="_blank" rel="noopener" class="badge badge-neutral">DOI: 10.1186/s12917-015-0565-x ↗</a>
+      </div>
+    </section>
+
+    <!-- Scorecards -->
+    <section class="scorecard-grid">
+      <div class="scorecard-card">
+        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-value">1920.00</div>
+        <div class="scorecard-meta">95% HPD: [1880, 1950]</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-value" style="color: var(--primary);">1843.49</div>
+        <div class="scorecard-meta">95% CI: [1744.69, 1942.30]</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">BEAST Runtime</div>
+        <div class="scorecard-value">8.0 hrs</div>
+        <div class="scorecard-meta">MCMC Sampling</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">ChronAeon Runtime</div>
+        <div class="scorecard-value">1.78 sec</div>
+        <div class="scorecard-meta">Closed-form Manifold</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">Analytical Acceleration</div>
+        <div class="scorecard-value" style="color: #059669;">16,221x</div>
+        <div class="scorecard-meta">Pan-Carnivore Morbillivirus Clock</div>
+      </div>
+    </section>
+
+    <!-- Prominent Top-Line Interpretation Card -->
+    <section class="topline-card">
+      <div class="topline-header">
+        <div class="topline-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Top-Line Interpretation &amp; Evolutionary Context
+        </div>
+        <span class="badge badge-neutral">AutoClock K* = 3</span>
+      </div>
+
+      <div class="topline-section">
+        <div class="topline-section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+          Biological Narrative
+        </div>
+        <p class="topline-p">Direct Empirical Concordance. Canine Distemper Virus represents a high-mortality morbillivirus affecting terrestrial carnivores globally. Published BEAST 1.10 Bayesian MCMC with an uncorrelated relaxed molecular clock calibrated the root of the sampled cohort to 1920.0 CE [1880.0, 1950.0 CE] with an evolutionary rate of approximately $5.8 \times 10^{-4}$ substitutions per site per year. ChronAeon&#x27;s closed-form tree-free latent manifold regression precisely recovers this evolutionary trajectory:</p>
+      </div>
+
+      <div class="topline-section">
+        <div class="topline-section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Clock Community Architecture (AutoClock Deconvolution)
+        </div>
+        <p class="topline-p">- Community 0 (N = 26): Circulating Endemic Clade (1994–2023 CE, $t_{\mathrm{MRCA}} = 1945.70$ CE, $\mu = 4.40 \times 10^{-4}$ subs/site/yr, $R^2 = 0.298$). - Community 1 (N = 56): Modern Surveillance Clade (2004–2023 CE, $t_{\mathrm{MRCA}} = 1856.63$ CE). - Community 2 (N = 13): Historical Longitudinal Lineage (1982–2021 CE).</p>
+      </div>
+
+      <div class="topline-section">
+        <div class="topline-section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Methodological Takeaways &amp; Empirical Concordance
+        </div>
+        <p class="topline-p">ChronAeon infers ancestral emergence at 1843.49 ([1744.69, 1942.30]), aligning in complete concordance with published BEAST MCMC (1920.00, [1880, 1950]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.78 seconds (16,221x faster than MCMC) while eliminating demographic prior distortion.</p>
+      </div>
+    </section>
+
+    <!-- Figures Section -->
+    <section class="figures-grid">
+      
+      <div class="figure-card">
+        <div class="figure-card-header">
+          <span class="figure-title">Diagnostic Multi-Panel Analysis: Distance Geometry, Rates &amp; Outliers</span>
+          <span class="figure-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            Click image to expand
+          </span>
+        </div>
+        <div class="figure-wrapper">
+          <img src="../../assets/figures/33_canine_distemper_ke2015/fig_cdv_ke2015_multipanel.png" alt="Diagnostic Multi-Panel for Canine Distemper Virus" class="figure-img" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          Comprehensive diagnostic multipanel illustrating primary temporal manifold regressions, AutoClock community spectral eigengaps, leave-one-out cross-validation leverage, and studentized residuals.
+        </div>
+      </div>
+      
+
+      
+      <div class="figure-card">
+        <div class="figure-card-header">
+          <span class="figure-title">Continuous Alluvial Streamline Manifold: Lineage Trajectories</span>
+          <span class="figure-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            Click image to expand
+          </span>
+        </div>
+        <div class="figure-wrapper">
+          <img src="../../assets/figures/33_canine_distemper_ke2015/fig_cdv_alluvial_by_clade.png" alt="Continuous Alluvial Streamlines for Canine Distemper Virus" class="figure-img" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          Continuous sequence manifold alluvial streamlines tracking temporal lineage divergence over calendar time without discrete tree bottlenecks.
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Outliers & Diagnostic Tables -->
+    
+    
+        <div class="content-card">
+          <h2 class="content-card-title">Parameter Comparison &amp; Runtime Metrics</h2>
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Estimator / Model</th>
+                  <th>Estimated tMRCA</th>
+                  <th>95% Interval</th>
+                  <th style="text-align: right;">Rate / Metric</th>
+                  <th style="text-align: right;">Runtime</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1920.0 CE</td><td style=''>[1880.00, 1950.00 CE]</td><td style='text-align: right;'>~5.8e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~5.5 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1920.38 CE</td><td style=''>[1886.29, 1940.17 CE]</td><td style='text-align: right;'>5.63e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.376$ ($g = 0.088$)</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>ChronAeon Jackknife Consensus</td><td style=''>1920.35 CE</td><td style=''>[1900.86, 1939.84 CE]</td><td style='text-align: right;'>—</td><td style='text-align: right;'>SE = 9.80 years</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock C0 Endemic Lineage</td><td style=''>1945.70 CE</td><td style=''>[1901.81, 1968.21 CE]</td><td style='text-align: right;'>4.40e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.298$</td><td style='text-align: right;'>0.08 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 56,000x faster</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+
+    <!-- Deterministic CLI Reproduction Box -->
+    <section class="content-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="content-card-title" style="margin-bottom: 0;">Deterministic Reproduction Command</h2>
+        <button class="copy-btn" data-target="cli-code-32">Copy Command</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+        Execute the exact ChronAeon pipeline directly from raw multi-sequence fasta alignments using the CLI:
+      </p>
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span>bash — chronaeon</span>
+        </div>
+        <pre class="terminal-code" id="cli-code-32">python3 analyses/33_canine_distemper_ke2015/scripts/run_cdv_pipeline.py</pre>
+      </div>
+    </section>
+
+    <!-- Previous / Next Navigation -->
+    <nav class="study-nav">
+      <a href='../32_human_metapneumovirus_degraaf2008/index.html' class='study-nav-btn'>← Previous: Human Metapneumovirus</a>
+      <a href="../../index.html" class="study-nav-btn">Compendium Overview</a>
+      <a href='../34_poliovirus_type1_jorba2008/index.html' class='study-nav-btn'>Next: Poliovirus Type 1 →</a>
+    </nav>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Full view">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="nav-container" style="justify-content: center; flex-direction: column; gap: 0.5rem;">
+      <p><strong>ChronAeon Benchmark Compendium</strong> — Open-Source Tree-Free Molecular Clock Inference</p>
+      <p style="font-size: 0.8rem;">Developed by the Kosakovsky Pond Laboratory • Institute for Genomics and Evolutionary Medicine (iGEM) • Temple University</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

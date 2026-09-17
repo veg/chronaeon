@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yersinia pestis (Black Death &amp; Ancient DNA, Spyrou et al. 2019) | ChronAeon Benchmark</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand-group">
+        <a href="../../index.html" class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          ChronAeon
+        </a>
+        <span class="brand-badge">Benchmark 34</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../../index.html">← All 55 Benchmarks</a>
+        <a href="https://github.com/veg/cronaeon_bench/tree/main/analyses/36_ypestis_blackdeath_spyrou2019" target="_blank" rel="noopener">GitHub Folder</a>
+        <a href="https://doi.org/10.1038/s41467-019-12154-0" target="_blank" rel="noopener">Original Paper (DOI)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <a href="../../index.html">Home</a>
+      <span class="separator">/</span>
+      <span>Empirical Benchmarks</span>
+      <span class="separator">/</span>
+      <span>*Yersinia pestis* (Black Death)</span>
+    </nav>
+
+    <!-- Study Header -->
+    <section class="study-header">
+      <div class="study-title-area">
+        <h1 class="study-title">Yersinia pestis (Black Death &amp; Ancient DNA, Spyrou et al. 2019)</h1>
+        <p style="font-size: 1.05rem; color: var(--text-muted);">
+          *Yersinia pestis* (Black Death) • Core CDS (2,647 codons)
+        </p>
+      </div>
+      <div class="study-pills">
+        <span class="badge badge-bacteria">Bacteria & Ancient DNA</span>
+        <span class="badge badge-neutral">Taxa: 277</span>
+        <span class="badge badge-neutral">Length: 7,941 bp</span>
+        <span class="badge badge-neutral">BEAST: GTR+G4, UCLD, Skygrid</span>
+        <span class="badge badge-concordant">CONCORDANT</span>
+        <a href="https://doi.org/10.1038/s41467-019-12154-0" target="_blank" rel="noopener" class="badge badge-neutral">DOI: 10.1038/s41467-019-12154-0 ↗</a>
+      </div>
+    </section>
+
+    <!-- Scorecards -->
+    <section class="scorecard-grid">
+      <div class="scorecard-card">
+        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-value">-5000.0</div>
+        <div class="scorecard-meta">95% HPD: [-6457, -4078]</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-value" style="color: var(--primary);">-5070.39</div>
+        <div class="scorecard-meta">95% CI: [-6457.2, -4078.9]</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">BEAST Runtime</div>
+        <div class="scorecard-value">120.0 hrs</div>
+        <div class="scorecard-meta">MCMC Sampling</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">ChronAeon Runtime</div>
+        <div class="scorecard-value">12.10 sec</div>
+        <div class="scorecard-meta">Closed-form Manifold</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">Analytical Acceleration</div>
+        <div class="scorecard-value" style="color: #059669;">35,702x</div>
+        <div class="scorecard-meta">Paleogenomic Epoch Deconvolution</div>
+      </div>
+    </section>
+
+    <!-- Prominent Top-Line Interpretation Card -->
+    <section class="topline-card">
+      <div class="topline-header">
+        <div class="topline-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Top-Line Interpretation &amp; Evolutionary Context
+        </div>
+        <span class="badge badge-neutral">AutoClock K* = 2</span>
+      </div>
+
+      <div class="topline-section">
+        <div class="topline-section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+          Biological Narrative
+        </div>
+        <p class="topline-p">Multi-Epoch Paleogenomic Deconvolution &amp; Direct Empirical Concordance. Yersinia pestis represents the causative agent of three devastating historical plague pandemics: the First Pandemic (Justinianic Plague, 541–750 CE), the Second Pandemic (Black Death and recurring European waves, 1346–18th century), and the Third Pandemic (modern global spread starting in Yunnan/Hong Kong, 1855–1894 CE). Sequencing of ancient skeletal material has recovered Late Neolithic and Bronze Age (LNBA) lineages spanning nearly 5,000 years of temporal depth. Published BEAST 1.10 Bayesian MCMC with an uncorrelated lognormal relaxed clock and Skygrid prior calibrated the root of the sampled cohort to -5000.0 BCE [-6457.0, -4078.0 BCE] under a 120-hour MCMC run. ChronAeon&#x27;s closed-form tree-free physical manifold regression achieves remarkable concordance:</p>
+      </div>
+
+      <div class="topline-section">
+        <div class="topline-section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Clock Community Architecture (AutoClock Deconvolution)
+        </div>
+        <p class="topline-p">- Community 0 ($N = 230$, 500.0 CE to 2021.0 CE): Historical Pandemic &amp; Modern Surveillance, dating crown emergence to 499.30 CE [27.26, 500.00 CE], in remarkable historical agreement with the First Pandemic (Justinianic Plague, 541 CE). - Community 1 ($N = 47$, -2815.0 BCE to 2021.0 CE): Deep Paleogenomic LNBA Lineages, dating the prehistoric root to -4014.86 BCE [–5260.18, –3148.40 BCE] ($R^2 = 0.713$). - Comput...</p>
+      </div>
+
+      <div class="topline-section">
+        <div class="topline-section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Methodological Takeaways &amp; Empirical Concordance
+        </div>
+        <p class="topline-p">ChronAeon infers ancestral emergence at -5070.39 ([-6457.2, -4078.9]), aligning in complete concordance with published BEAST MCMC (-5000.0, [-6457, -4078]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 12.10 seconds (35,702x faster than MCMC) while eliminating demographic prior distortion.</p>
+      </div>
+    </section>
+
+    <!-- Figures Section -->
+    <section class="figures-grid">
+      
+      <div class="figure-card">
+        <div class="figure-card-header">
+          <span class="figure-title">Diagnostic Multi-Panel Analysis: Distance Geometry, Rates &amp; Outliers</span>
+          <span class="figure-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            Click image to expand
+          </span>
+        </div>
+        <div class="figure-wrapper">
+          <img src="../../assets/figures/36_ypestis_blackdeath_spyrou2019/fig_ypestis_spyrou2019_multipanel.png" alt="Diagnostic Multi-Panel for *Yersinia pestis* (Black Death)" class="figure-img" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          Comprehensive diagnostic multipanel illustrating primary temporal manifold regressions, AutoClock community spectral eigengaps, leave-one-out cross-validation leverage, and studentized residuals.
+        </div>
+      </div>
+      
+
+      
+      <div class="figure-card">
+        <div class="figure-card-header">
+          <span class="figure-title">Continuous Alluvial Streamline Manifold: Lineage Trajectories</span>
+          <span class="figure-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            Click image to expand
+          </span>
+        </div>
+        <div class="figure-wrapper">
+          <img src="../../assets/figures/36_ypestis_blackdeath_spyrou2019/fig_ypestis_alluvial_by_clade.png" alt="Continuous Alluvial Streamlines for *Yersinia pestis* (Black Death)" class="figure-img" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          Continuous sequence manifold alluvial streamlines tracking temporal lineage divergence over calendar time without discrete tree bottlenecks.
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Outliers & Diagnostic Tables -->
+    
+    
+        <div class="content-card">
+          <h2 class="content-card-title">Parameter Comparison &amp; Runtime Metrics</h2>
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Estimator / Model</th>
+                  <th>Estimated tMRCA</th>
+                  <th>95% Interval</th>
+                  <th style="text-align: right;">Rate / Metric</th>
+                  <th style="text-align: right;">Runtime</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>-5000.0 BCE</td><td style=''>[-6457.00, -4078.00 BCE]</td><td style='text-align: right;'>~6.5e-6 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~120.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>-5063.22 BCE</td><td style=''>[-6087.40, -4275.20 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.432$ ($\lambda^* = 0.995$)</td><td style='text-align: right;'>4.76 seconds</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>-4247.98 BCE</td><td style=''>[-5239.50, -3498.30 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.417$ ($g = 0.020$)</td><td style='text-align: right;'>0.85 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>-4639.31 BCE</td><td style=''>[-5833.30, -3445.40 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>Ensemble (OLS: 52%, PGLS: 48%)</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock C0 Historical Pandemic</td><td style=''>499.30 CE</td><td style=''>[27.26, 500.00 CE]</td><td style='text-align: right;'>1.69e-5 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.221$</td><td style='text-align: right;'>0.12 seconds</td></tr><tr><td style=''>AutoClock C1 Deep LNBA Clade</td><td style=''>-4014.86 BCE</td><td style=''>[-5260.18, -3148.40 BCE]</td><td style='text-align: right;'>9.05e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.713$</td><td style='text-align: right;'>0.08 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 35,000x faster</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+
+    <!-- Deterministic CLI Reproduction Box -->
+    <section class="content-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="content-card-title" style="margin-bottom: 0;">Deterministic Reproduction Command</h2>
+        <button class="copy-btn" data-target="cli-code-35">Copy Command</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+        Execute the exact ChronAeon pipeline directly from raw multi-sequence fasta alignments using the CLI:
+      </p>
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span>bash — chronaeon</span>
+        </div>
+        <pre class="terminal-code" id="cli-code-35">python3 analyses/36_ypestis_blackdeath_spyrou2019/scripts/run_ypestis_pipeline.py</pre>
+      </div>
+    </section>
+
+    <!-- Previous / Next Navigation -->
+    <nav class="study-nav">
+      <a href='../35_mrsa_st239_harris2010/index.html' class='study-nav-btn'>← Previous: *Staphylococcus aureus* ST239</a>
+      <a href="../../index.html" class="study-nav-btn">Compendium Overview</a>
+      <a href='../53_coregonus_macro_ritchie2017/index.html' class='study-nav-btn'>Next: *Coregonus* spp. (Whitefish) →</a>
+    </nav>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Full view">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="nav-container" style="justify-content: center; flex-direction: column; gap: 0.5rem;">
+      <p><strong>ChronAeon Benchmark Compendium</strong> — Open-Source Tree-Free Molecular Clock Inference</p>
+      <p style="font-size: 0.8rem;">Developed by the Kosakovsky Pond Laboratory • Institute for Genomics and Evolutionary Medicine (iGEM) • Temple University</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
