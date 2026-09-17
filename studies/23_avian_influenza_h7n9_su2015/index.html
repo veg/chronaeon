@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avian Influenza A H7N9 (Su et al. 2015) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2013.00</div>
         <div class="scorecard-meta">95% HPD: [2012.50, 2013.20]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1990.65</div>
         <div class="scorecard-meta">95% CI: [1988.61, 1992.69]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 5</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 5$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Precursor Reservoir vs. Outbreak Bottleneck. In spring 2013, novel reassortant Avian Influenza A (H7N9) emerged in poultry in eastern China, causing severe human respiratory infections across five distinct epidemic waves before nationwide poultry vaccination in autumn 2017. Published BEAST 1.10 MCMC under a constant prior models the sharp bottleneck of the initial human clinical spillover wave at 2013.0 CE [2012.50, 2013.20 CE]. In contrast, global unpartitioned sequence distances capture the deeper avian reservoir divergence of the H7 hemagglutinin precursor in wild aquatic birds and domestic poultry (1976.88 CE [1971.2, 1981.3 CE]). AutoClock unsupervised multi-clock deconvolution reconciles these dual timescales by isolating the primary spillover outbreak bottleneck (Community 4, N = 8, $t_{\mathrm{MRCA}} = 2013.09$ CE), reproducing BEAST within 0.09 years.</p>
+        <div class="topline-content"><p>Precursor Reservoir vs. Outbreak Bottleneck.
+In spring 2013, novel reassortant Avian Influenza A (H7N9) emerged in poultry in eastern China, causing severe human respiratory infections across five distinct epidemic waves before nationwide poultry vaccination in autumn 2017. Published BEAST 1.10 MCMC under a constant prior models the sharp bottleneck of the initial human clinical spillover wave at 2013.0 CE [2012.50, 2013.20 CE]. In contrast, global unpartitioned sequence distances capture the deeper avian reservoir divergence of the H7 hemagglutinin precursor in wild aquatic birds and domestic poultry (1976.88 CE [1971.2, 1981.3 CE]). AutoClock unsupervised multi-clock deconvolution reconciles these dual timescales by isolating the primary spillover outbreak bottleneck (Community 4, N = 8, $t_{\mathrm{MRCA}} = 2013.09$ CE), reproducing BEAST within 0.09 years.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,12 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 25): Wave 5 Epidemic Radiation (2016.4–2017.5 CE). Rapid regional diversification during the massive fifth epidemic wave ($\mu = 4.28 \times 10^{-3}$ subs/site/yr, $R^2 = 0.747$, $t_{\mathrm{MRCA}} = 2015.67$ CE [2015.19, 2015.97 CE]). - Community 1 (N = 42): Waves 1–3 Endemic Backbone (2013.5–2016.5 CE). Longitudinal poultry persistence ($\mu = 1.78 \times 10^{-3}$ subs/site/yr, $t_{\mathrm{MRC...</p>
+        <div class="topline-content"><p>AutoClock unsupervised spectral clustering identified an optimal partition of $K^* = 5$ clock communities ($\Delta\mathrm{AICc} = 498.77$ over $K=1$, BIC optimal), discovering the 5 historical epidemic waves:
+- Community 0 (N = 25): Wave 5 Epidemic Radiation (2016.4–2017.5 CE). Rapid regional diversification during the massive fifth epidemic wave ($\mu = 4.28 \times 10^{-3}$ subs/site/yr, $R^2 = 0.747$, $t_{\mathrm{MRCA}} = 2015.67$ CE [2015.19, 2015.97 CE]).
+- Community 1 (N = 42): Waves 1–3 Endemic Backbone (2013.5–2016.5 CE). Longitudinal poultry persistence ($\mu = 1.78 \times 10^{-3}$ subs/site/yr, $t_{\mathrm{MRCA}} = 2010.91$ CE).
+- Community 2 (N = 17): Wave 5 Cross-Sectional Cohort (2017.5 CE). Synchronously sampled poultry market surveillance.
+- Community 3 (N = 12): Waves 4–5 Regional Divergence (2016.5–2017.5 CE).
+- Community 4 (N = 8): Primary Spillover Outbreak Bottleneck (2013.5–2015.5 CE). Acute early human infection cluster ($t_{\mathrm{MRCA}} = 2013.09$ CE, reproducing BEAST 2013.0 CE).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +146,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1990.65 ([1988.61, 1992.69]), aligning in complete concordance with published BEAST MCMC (2013.00, [2012.50, 2013.20]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.33 seconds (12,366x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1990.65 ([1988.61, 1992.69]), aligning in complete concordance with published BEAST MCMC (2013.00, [2012.50, 2013.20]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.33 seconds (12,366x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +214,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Flagged Anomalous Records ($|Z| \ge 2.5$):</li><li style='margin-bottom: 0.35rem;'>MW106216 (Sampling: 2016.5 CE, Predicted: 2014.1 CE, Discrepancy: 2.33 yr, $Z = 2.55$)</li>
+            <li style='margin-bottom: 0.4rem;'>Flagged Anomalous Records ($|Z| \ge 2.5$):</li><li style='margin-bottom: 0.4rem;'>MW106216 (Sampling: 2016.5 CE, Predicted: 2014.1 CE, Discrepancy: 2.33 yr, $Z = 2.55$)</li>
           </ul>
         </div>
         
@@ -207,14 +226,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2013.0 CE</td><td style=''>[2012.50, 2013.20 CE]</td><td style='text-align: right;'>~4.0e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon AutoClock Community 4 (Spillover)</td><td style=''>2013.09 CE</td><td style=''>[2010.84, 2013.46 CE]</td><td style='text-align: right;'>1.43e-1 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.711$ (N = 8)</td><td style='text-align: right;'>0.05 seconds</td></tr><tr><td style=''>ChronAeon Tree-Free OLS Clock (Reservoir)</td><td style=''>1976.88 CE</td><td style=''>[1971.2, 1981.3 CE] (Fieller)</td><td style='text-align: right;'>2.40e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.707$ ($g = 0.0160$)</td><td style='text-align: right;'>0.22 seconds</td></tr><tr><td style=''>ChronAeon Model-Averaged Ensemble</td><td style=''>1976.88 CE</td><td style=''>[1971.9, 1981.9 CE]</td><td style='text-align: right;'>2.40e-3 subs/site/yr</td><td style='text-align: right;'>Ensemble (100% OLS)</td><td style='text-align: right;'>&lt; 1 second</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 12,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2013.0 CE</td><td style=''>[2012.50, 2013.20 CE]</td><td style='text-align: right;'>~4.0e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon AutoClock Community 4 (Spillover)</td><td style=''>2013.09 CE</td><td style=''>[2010.84, 2013.46 CE]</td><td style='text-align: right;'>1.43e-1 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.711$ (N = 8)</td><td style='text-align: right;'>0.05 seconds</td></tr><tr><td style=''>ChronAeon Tree-Free OLS Clock (Reservoir)</td><td style=''>1976.88 CE</td><td style=''>[1971.2, 1981.3 CE] (Fieller)</td><td style='text-align: right;'>2.40e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.707$ ($g = 0.0160$)</td><td style='text-align: right;'>0.22 seconds</td></tr><tr><td style=''>ChronAeon Model-Averaged Ensemble</td><td style=''>1976.88 CE</td><td style=''>[1971.9, 1981.9 CE]</td><td style='text-align: right;'>2.40e-3 subs/site/yr</td><td style='text-align: right;'>Ensemble (100% OLS)</td><td style='text-align: right;'>&lt; 1 second</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>12,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

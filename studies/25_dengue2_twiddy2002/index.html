@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dengue Virus Serotype 2 (Twiddy et al. 2002) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1880.00</div>
         <div class="scorecard-meta">95% HPD: [1840, 1920]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1850.21</div>
         <div class="scorecard-meta">95% CI: [1793.65, 1906.77]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 4$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Direct Empirical Concordance. DENV-2 diversified globally into several well-documented genotypic clades (Asian I, Asian II, Cosmopolitan, and American/Asian). Published BEAST 1.10 MCMC under an uncorrelated lognormal relaxed clock and constant coalescent prior estimated an ancestral emergence of 1880.0 CE [1840.0, 1920.0 CE]. ChronAeon&#x27;s closed-form physical PGLS clock (1846.93 CE [1154.3, 1920.6 CE]), physical spline (1901.52 CE), and latent manifold OLS (1805.46 CE [1739.3, 1845.8 CE]) all show direct empirical concordance with BEAST&#x27;s credible interval, recovering the 19th-century diversification of DENV-2 in 0.26 seconds.</p>
+        <div class="topline-content"><p>Direct Empirical Concordance.
+DENV-2 diversified globally into several well-documented genotypic clades (Asian I, Asian II, Cosmopolitan, and American/Asian). Published BEAST 1.10 MCMC under an uncorrelated lognormal relaxed clock and constant coalescent prior estimated an ancestral emergence of 1880.0 CE [1840.0, 1920.0 CE]. ChronAeon's closed-form physical PGLS clock (1846.93 CE [1154.3, 1920.6 CE]), physical spline (1901.52 CE), and latent manifold OLS (1805.46 CE [1739.3, 1845.8 CE]) all show direct empirical concordance with BEAST's credible interval, recovering the 19th-century diversification of DENV-2 in 0.26 seconds.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 10): Historical Longitudinal Trunk (1972.5–2023.8 CE, $t_{\mathrm{MRCA}} = 1716.09$ CE). - Community 1 (N = 31): Asian/American Epidemic Radiation (2001.5–2024.7 CE, $t_{\mathrm{MRCA}} = 1981.97$ CE, $\mu = 5.77 \times 10^{-4}$ subs/site/yr). - Community 2 (N = 20): Cosmopolitan Genotypic Clade (1990.5–2024.1 CE, $t_{\mathrm{MRCA}} = 1911.26$ CE). - Community 3 (N = 15): Asian II / Sylvatic Clad...</p>
+        <div class="topline-content"><p>AutoClock unsupervised spectral clustering identified an optimal partition of $K^* = 4$ clock communities (dominant eigengap drop cliff of 19.2x from $K=4$ to $K=5$):
+- Community 0 (N = 10): Historical Longitudinal Trunk (1972.5–2023.8 CE, $t_{\mathrm{MRCA}} = 1716.09$ CE).
+- Community 1 (N = 31): Asian/American Epidemic Radiation (2001.5–2024.7 CE, $t_{\mathrm{MRCA}} = 1981.97$ CE, $\mu = 5.77 \times 10^{-4}$ subs/site/yr).
+- Community 2 (N = 20): Cosmopolitan Genotypic Clade (1990.5–2024.1 CE, $t_{\mathrm{MRCA}} = 1911.26$ CE).
+- Community 3 (N = 15): Asian II / Sylvatic Clade (1994.5–2019.0 CE).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +145,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1850.21 ([1793.65, 1906.77]), aligning in complete concordance with published BEAST MCMC (1880.00, [1840, 1920]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.25 seconds (22,982x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1850.21 ([1793.65, 1906.77]), aligning in complete concordance with published BEAST MCMC (1880.00, [1840, 1920]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.25 seconds (22,982x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +208,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1880.0 CE</td><td style=''>[1840.00, 1920.00 CE]</td><td style='text-align: right;'>~7.5e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Physical PGLS Clock</td><td style=''>1846.93 CE</td><td style=''>[1154.3, 1920.6 CE] (Fieller)</td><td style='text-align: right;'>3.28e-4 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.076$ ($g = 0.6530$)</td><td style='text-align: right;'>0.20 seconds</td></tr><tr><td style=''>ChronAeon Physical Spline Clock</td><td style=''>1901.52 CE</td><td style=''>[1901.5, 1901.5 CE]</td><td style='text-align: right;'>5.19e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.078$</td><td style='text-align: right;'>0.20 seconds</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1805.46 CE</td><td style=''>[1739.3, 1845.8 CE] (Fieller)</td><td style='text-align: right;'>4.67e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.476$ ($g = 0.0589$)</td><td style='text-align: right;'>0.26 seconds</td></tr><tr><td style=''>ChronAeon Model-Averaged Ensemble</td><td style=''>1785.09 CE</td><td style=''>[1647.4, 1922.8 CE]</td><td style='text-align: right;'>4.67e-4 subs/site/yr</td><td style='text-align: right;'>Ensemble (89.7% OLS / 10.3% PGLS)</td><td style='text-align: right;'>&lt; 1 second</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 22,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1880.0 CE</td><td style=''>[1840.00, 1920.00 CE]</td><td style='text-align: right;'>~7.5e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Physical PGLS Clock</td><td style=''>1846.93 CE</td><td style=''>[1154.3, 1920.6 CE] (Fieller)</td><td style='text-align: right;'>3.28e-4 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.076$ ($g = 0.6530$)</td><td style='text-align: right;'>0.20 seconds</td></tr><tr><td style=''>ChronAeon Physical Spline Clock</td><td style=''>1901.52 CE</td><td style=''>[1901.5, 1901.5 CE]</td><td style='text-align: right;'>5.19e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.078$</td><td style='text-align: right;'>0.20 seconds</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1805.46 CE</td><td style=''>[1739.3, 1845.8 CE] (Fieller)</td><td style='text-align: right;'>4.67e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.476$ ($g = 0.0589$)</td><td style='text-align: right;'>0.26 seconds</td></tr><tr><td style=''>ChronAeon Model-Averaged Ensemble</td><td style=''>1785.09 CE</td><td style=''>[1647.4, 1922.8 CE]</td><td style='text-align: right;'>4.67e-4 subs/site/yr</td><td style='text-align: right;'>Ensemble (89.7% OLS / 10.3% PGLS)</td><td style='text-align: right;'>&lt; 1 second</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>22,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

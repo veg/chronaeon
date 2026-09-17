@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crimean-Congo Hemorrhagic Fever Virus (Carroll et al. 2010) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1500.00</div>
         <div class="scorecard-meta">95% HPD: [1200, 1750]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1593.48</div>
         <div class="scorecard-meta">95% CI: [1106.20, 1956.00]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 3</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 3$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,9 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Direct Empirical Concordance (Multi-Century Bunyavirus Deep Radiation). Crimean-Congo Hemorrhagic Fever virus is an ancient, tick-borne bunyavirus maintained in enzootic transmission cycles with extensive geographic structure across Africa, Europe, and Asia. Carroll et al. (2010) utilized BEAST MCMC to date the common ancestor of extant viral lineages to 1500.0 CE (95% HPD: [1200.0, 1750.0 CE]). ChronAeon&#x27;s closed-form tree-free continuous latent manifold regression accurately dates the MRCA to 1477.66 CE (95% Fieller CI: [200.4, 1693.5 CE]), matching BEAST within 22.3 years and falling squarely inside the published 95% HPD interval. Non-parametric leave-one-out Jackknife resampling further confirms this deep origin at 1476.46 CE (95% CI: [1029.8, 1923.1 CE], SE = 224.4 years), achieving concordance in 0.30 seconds (&gt;96,000x faster than 8 hours of BEAST MCMC).</p>
+        <div class="topline-content"><p>Direct Empirical Concordance (Multi-Century Bunyavirus Deep Radiation).
+Crimean-Congo Hemorrhagic Fever virus is an ancient, tick-borne bunyavirus maintained in enzootic transmission cycles with extensive geographic structure across Africa, Europe, and Asia. Carroll et al. (2010) utilized BEAST MCMC to date the common ancestor of extant viral lineages to 1500.0 CE (95% HPD: [1200.0, 1750.0 CE]).
+ChronAeon's closed-form tree-free continuous latent manifold regression accurately dates the MRCA to 1477.66 CE (95% Fieller CI: [200.4, 1693.5 CE]), matching BEAST within 22.3 years and falling squarely inside the published 95% HPD interval. Non-parametric leave-one-out Jackknife resampling further confirms this deep origin at 1476.46 CE (95% CI: [1029.8, 1923.1 CE], SE = 224.4 years), achieving concordance in 0.30 seconds (&gt;96,000x faster than 8 hours of BEAST MCMC).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +132,10 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 30): Ancestral Endemic Clade (1956.0–2016.7 CE, $t_{\\mathrm{MRCA}} = 1591.50$ CE, $\\mu = 2.49 \\times 10^{-4}$ subs/site/yr). - Community 1 (N = 29): Low-Divergence Outbreak Clade (1967.0–2016.0 CE, $t_{\\mathrm{MRCA}} = 1851.60$ CE, $\\mu = 7.70 \\times 10^{-5}$ subs/site/yr, $d_{90} = 0.0298$ subs/site). - Community 2 (N = 21): Accelerated Evolutionary Lineage (1968.0–2016.0 CE, $t_{\\mathrm...</p>
+        <div class="topline-content"><p>AutoClock neural transformer manifold deconvolution identifies an optimal partition of $K^* = 3$ clock communities (dominant eigengap drop cliff of 3.0x at $K=3$):
+- Community 0 (N = 30): Ancestral Endemic Clade (1956.0–2016.7 CE, $t_{\\mathrm{MRCA}} = 1591.50$ CE, $\\mu = 2.49 \\times 10^{-4}$ subs/site/yr).
+- Community 1 (N = 29): Low-Divergence Outbreak Clade (1967.0–2016.0 CE, $t_{\\mathrm{MRCA}} = 1851.60$ CE, $\\mu = 7.70 \\times 10^{-5}$ subs/site/yr, $d_{90} = 0.0298$ subs/site).
+- Community 2 (N = 21): Accelerated Evolutionary Lineage (1968.0–2016.0 CE, $t_{\\mathrm{MRCA}} = 1956.35$ CE [1916.9, 1968.0 CE], $\\mu = 1.00 \\times 10^{-3}$ subs/site/yr, $R^2 = 0.469$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +145,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1593.48 ([1106.20, 1956.00]), aligning in complete concordance with published BEAST MCMC (1500.00, [1200, 1750]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.46 seconds (19,708x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1593.48 ([1106.20, 1956.00]), aligning in complete concordance with published BEAST MCMC (1500.00, [1200, 1750]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.46 seconds (19,708x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +213,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Triage Flagged Outlier: PP735370 (Sampling Date 1968.0 CE, predicted 1806.3 CE, discrepancy 161.73 yr, $Z = 2.78$).</li>
+            <li style='margin-bottom: 0.4rem;'>Triage Flagged Outlier: PP735370 (Sampling Date 1968.0 CE, predicted 1806.3 CE, discrepancy 161.73 yr, $Z = 2.78$).</li>
           </ul>
         </div>
         
@@ -207,14 +225,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1500.0 CE</td><td style=''>[1200.00, 1750.00 CE]</td><td style='text-align: right;'>~1.1e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1477.66 CE</td><td style=''>[200.39, 1693.54 CE] (Fieller)</td><td style='text-align: right;'>2.13e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.091$ ($g = 0.5056$)</td><td style='text-align: right;'>0.30 seconds</td></tr><tr><td style=''>ChronAeon Jackknife Root</td><td style=''>1476.46 CE</td><td style=''>[1029.81, 1923.11 CE]</td><td style='text-align: right;'>—</td><td style='text-align: right;'>SE = 224.4 yr</td><td style='text-align: right;'>5.72 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 96,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1500.0 CE</td><td style=''>[1200.00, 1750.00 CE]</td><td style='text-align: right;'>~1.1e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1477.66 CE</td><td style=''>[200.39, 1693.54 CE] (Fieller)</td><td style='text-align: right;'>2.13e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.091$ ($g = 0.5056$)</td><td style='text-align: right;'>0.30 seconds</td></tr><tr><td style=''>ChronAeon Jackknife Root</td><td style=''>1476.46 CE</td><td style=''>[1029.81, 1923.11 CE]</td><td style='text-align: right;'>—</td><td style='text-align: right;'>SE = 224.4 yr</td><td style='text-align: right;'>5.72 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>96,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

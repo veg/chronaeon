@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lassa Virus Coding Region (Andersen et al. 2015) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1060.00</div>
         <div class="scorecard-meta">95% HPD: [600, 1400]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1884.56</div>
         <div class="scorecard-meta">95% CI: [1634.90, 1976.20]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Lassa Virus (LASV) molecular dating benchmark originally published by Andersen et al. (Cell, 2015). The analysis evaluates $N = 74$ coding sequences (1,710 nucleotide positions in-frame, 570 codons) of the glycoprotein precursor (GPC gene) sampled across human clinical cases and rodent reservoir surveys between **1976 and 2024** (temporal timespan: 1976.20 to 2024.04 CE, spanning 47.8 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Lassa Virus (LASV) molecular dating benchmark originally published by <a href="https://doi.org/10.1016/j.cell.2015.07.020">Andersen et al. (Cell, 2015)</a>. The analysis evaluates $N = 74$ coding sequences (1,710 nucleotide positions in-frame, 570 codons) of the glycoprotein precursor (GPC gene) sampled across human clinical cases and rodent reservoir surveys between <strong>1976 and 2024</strong> (temporal timespan: 1976.20 to 2024.04 CE, spanning 47.8 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,20 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock diagonalizes the normalized graph Laplacian across pairwise TN93 distances: $$\Delta \lambda_1 = 0.00014, \quad \Delta \lambda_2 = 0.00069, \quad \Delta \lambda_3 = 0.01446$$ Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows: - **$K = 1$**: $\mathrm{AICc} = -157.27$, $\mathrm{BIC} = -151.72$, $\Delta\mathrm{AICc} = 45.26$ - **$K = 2$**: $\mathrm{AICc} = -195.83$, $\mathrm{BIC} = -185.00$, $...</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian across pairwise TN93 distances:</p>
+<p>$$\Delta \lambda_1 = 0.00014, \quad \Delta \lambda_2 = 0.00069, \quad \Delta \lambda_3 = 0.01446$$</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -157.27$, $\mathrm{BIC} = -151.72$, $\Delta\mathrm{AICc} = 45.26$
+- <strong>$K = 2$</strong>: $\mathrm{AICc} = -195.83$, $\mathrm{BIC} = -185.00$, $\Delta\mathrm{AICc} = 6.70$
+- <strong>$K = 3$</strong>: $\mathrm{AICc} = -202.53$, $\mathrm{BIC} = -186.29$, $\Delta\mathrm{AICc} = 0.00$ (Optimal by BIC)
+- $K \ge 4$: Degenerate sub-clusters detected, pruned by spectral model selection.</p>
+<p>AutoClock selects <strong>$K^* = 3$</strong> communities:
+1. <strong>Community 1 ($N = 47$, 63.5%)</strong>: Sierra Leone Lineage IV Epidemic (2009.5–2018.1 CE):
+   $$t_{\mathrm{MRCA}} = 1879.51 \text{ CE} \quad [-\infty, 2005.39 \text{ CE}], \quad \mu = 4.28 \times 10^{-4} \text{ subs/site/yr}$$
+2. <strong>Community 2 ($N = 21$, 28.4%)</strong>: Nigerian &amp; Historical Reservoir Lineages (1976.2–2023.1 CE):
+   $$t_{\mathrm{MRCA}} = 1971.70 \text{ CE} \quad [1769.34, 1976.20 \text{ CE}], \quad \mu = 2.15 \times 10^{-3} \text{ subs/site/yr}, \quad R^2 = 0.245$$
+3. <strong>Community 0 ($N = 6$, 8.1%)</strong>: Recent Emergent Outbreak Sublineage (2014.8–2024.0 CE):
+   $$t_{\mathrm{MRCA}} = 1957.55 \text{ CE} \quad [-\infty, 2012.51 \text{ CE}], \quad \mu = 2.04 \times 10^{-3} \text{ subs/site/yr}$$</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +153,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1884.56 ([1634.90, 1976.20]), in complete concordance with published BEAST MCMC (1060.00, [600, 1400]) while completing inference in 1.25 seconds (23,020x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1884.56 ([1634.90, 1976.20]), in complete concordance with published BEAST MCMC (1060.00, [600, 1400]) while completing inference in 1.25 seconds (23,020x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +221,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>| **LOOCV Tip Recovery** | Unreported in BEAST | Unreported in BEAST | $\mathrm{MAE} = 7{,}224.2$ days (19.8 yr) | 1 outlier flagged ($|Z| \ge 2.5$) | **ISOLATED &amp; TRIAGED** |</li><li style='margin-bottom: 0.35rem;'>**Outlier Triage ($|Z| \ge 2.5$)**: Exactly 1 taxon flagged as a severe temporal outlier:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>LOOCV Tip Recovery</strong> | Unreported in BEAST | Unreported in BEAST | $\mathrm{MAE} = 7{,}224.2$ days (19.8 yr) | 1 outlier flagged ($|Z| \ge 2.5$) | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Outlier Triage ($|Z| \ge 2.5$)</strong>: Exactly 1 taxon flagged as a severe temporal outlier:</li>
           </ul>
         </div>
         

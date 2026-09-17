@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2009 Swine-Origin Pandemic H1N1 Influenza A Emergence (Smith et al., Nature 2009) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2008.99</div>
         <div class="scorecard-meta">95% HPD: [2008.90, 2009.07]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2009.00</div>
         <div class="scorecard-meta">95% CI: [2008.70, 2009.20]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study provides a complete, deterministic re-analysis of the benchmark 2009 pandemic H1N1 influenza A cohort compiled by Smith et al. (Nature, 2009), which resolved the multi-decade reassortment history and zoonotic emergence timing of the pandemic virus in North America. Evaluating $N = 100$ concatenated coding genomes (comprising the eight viral segments: PB2, PB1, PA, HA, NP, NA, M, NS; 1,701 nt in-frame) sampled between 2009.249 and 2009.915 CE across the United States, Canada, Mexico, Nicaragua, and the Dominican Republic, ChronAeon executes automated distance metricity diagnostics, tree-free continuous manifold regression, closed-form leave-one-out cross-validation (LOOCV), non-parametric Jackknife uncertainty quantification, and unsupervised graph-spectral AutoClock community deconvolution:</p>
+        <div class="topline-content"><p>This study provides a complete, deterministic re-analysis of the benchmark 2009 pandemic H1N1 influenza A cohort compiled by <a href="https://doi.org/10.1038/nature08182">Smith et al. (Nature, 2009)</a>, which resolved the multi-decade reassortment history and zoonotic emergence timing of the pandemic virus in North America. Evaluating $N = 100$ concatenated coding genomes (comprising the eight viral segments: PB2, PB1, PA, HA, NP, NA, M, NS; 1,701 nt in-frame) sampled between 2009.249 and 2009.915 CE across the United States, Canada, Mexico, Nicaragua, and the Dominican Republic, ChronAeon executes automated distance metricity diagnostics, tree-free continuous manifold regression, closed-form leave-one-out cross-validation (LOOCV), non-parametric Jackknife uncertainty quantification, and unsupervised graph-spectral AutoClock community deconvolution:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Non-Parametric Jackknife and Tip Prediction: Closed-form LOOCV confirms high predictive precision on held-out sampling dates ($\text{MAE} = 94.4$ days / $0.258$ yr, $\text{RMSE} = 136.0$ days), with a non-parametric Jackknife Mean $t_{\mathrm{MRCA}} = 2008.53$ CE ($\text{SE} = 0.2619$ yr / $95.6$ days) and a 95% Jackknife CI of [2008.01, 2009.05 CE] that strictly encompasses the published BEAST origin. - Biologi...</p>
+        <div class="topline-content"><p>Evaluating candidate clock models across $K = 1$ to $4$, AutoClock identifies a dominant normalized Laplacian spectral eigengap at $K = 1$ ($\Delta \lambda_1 = 1.0095$, gap ratio $> 2,900\times$ over $K \ge 2$) and an AICc parsimony minimum ($\text{AICc} = -1108.05$ vs. $-1105.62$ for $K=2$). This objectively proves that the initial 8-month wave of pandemic H1N1 evolved under a single homogeneous molecular clock ($\mu = 3.25 \times 10^{-3}$ substitutions per site per year), rejecting unwarranted multi-rate deconvolution.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +140,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers the primary ancestral origin at $t_{\mathrm{MRCA}} = 2009.02$ CE (95% Fieller CI: [2008.79, 2009.15 CE]) under standard OLS, and $t_{\mathrm{MRCA}} = 2009.00$ CE (95% CI: [2008.68, 2009.25 CE]) under the model-averaged ensemble. This achieves exact numerical agreement with the published BEAST 1.8 MCMC median estimate ($t_{\mathrm{MRCA}} = 2008.99$ CE, 95% HPD: [2008.90, 2009.07 CE]) reported by Sm...</p>
+        <div class="topline-content"><p>ChronAeon infers the primary ancestral origin at $t_{\mathrm{MRCA}} = 2009.02$ CE (95% Fieller CI: [2008.79, 2009.15 CE]) under standard OLS, and $t_{\mathrm{MRCA}} = 2009.00$ CE (95% CI: [2008.68, 2009.25 CE]) under the model-averaged ensemble. This achieves exact numerical agreement with the published BEAST 1.8 MCMC median estimate ($t_{\mathrm{MRCA}} = 2008.99$ CE, 95% HPD: [2008.90, 2009.07 CE]) reported by Smith et al. (2009), with a discrepancy of only 0.01 years (3.6 days).</p></div>
       </div>
     </section>
 
@@ -195,7 +208,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>|      Flag 1 temporal outlier (|Z| &gt;= 2.5): A/Wisconsin/629D02337/2009.   |</li><li style='margin-bottom: 0.35rem;'>Pruning the single temporal outlier (`A/Wisconsin/629D02337/2009`, $Z = +2.86$) evaluates root robustness:</li>
+            <li style='margin-bottom: 0.4rem;'>|      Flag 1 temporal outlier (|Z| &gt;= 2.5): A/Wisconsin/629D02337/2009.   |</li><li style='margin-bottom: 0.4rem;'>Pruning the single temporal outlier (<code>A/Wisconsin/629D02337/2009</code>, $Z = +2.86$) evaluates root robustness:</li>
           </ul>
         </div>
         

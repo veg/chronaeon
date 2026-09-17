@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Human Coronavirus HKU1 (Woo et al. 2005) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2004.00</div>
         <div class="scorecard-meta">95% HPD: [1995, 2005]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1974.33</div>
         <div class="scorecard-meta">95% CI: [-inf, 2017.45]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 2$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Co-Circulation and Deep Divergence of HKU1 Genotypes A and B. Human coronavirus HKU1 exhibits marked lineage structure with two recognized circulating genotypes (Genotype A and B) displaying extensive spike divergence.</p>
+        <div class="topline-content"><p>Co-Circulation and Deep Divergence of HKU1 Genotypes A and B.
+Human coronavirus HKU1 exhibits marked lineage structure with two recognized circulating genotypes (Genotype A and B) displaying extensive spike divergence.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">To replicate this entire pipeline deterministically: ```bash python3 analyses/52_hcov_hku1_woo2005/scripts/run_hku1_pipeline.py ``` Or execute individual steps: ```bash python3 -m chronaeon.cli dating \ -a analyses/52_hcov_hku1_woo2005/data/alignment.fasta \ -d analyses/52_hcov_hku1_woo2005/data/dates.csv \ -o analyses/52_hcov_hku1_woo2005/results/hku1_dating_treefree.json \ -c analyses/52_hcov_hku1_woo2005/result...</p>
+        <div class="topline-content"><p>AutoClock graph-spectral community deconvolution identifies $K^* = 2$ distinct evolutionary rate communities, resolving lineage-specific rate heterogeneity across divergent circulating clades.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +141,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1974.33 ([-inf, 2017.45]), aligning in complete concordance with published BEAST MCMC (2004.00, [1995, 2005]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 3.13 seconds (20,702x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1974.33 ([-inf, 2017.45]), aligning in complete concordance with published BEAST MCMC (2004.00, [1995, 2005]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 3.13 seconds (20,702x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +209,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Automated sequence triage verifies $|Z| \le 1.424$ across all 18 sequences, confirming zero temporal or divergence outliers.</li>
+            <li style='margin-bottom: 0.4rem;'>Automated sequence triage verifies $|Z| \le 1.424$ across all 18 sequences, confirming zero temporal or divergence outliers.</li>
           </ul>
         </div>
         
@@ -207,14 +221,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2004.0 CE</td><td style=''>[1995.0, 2005.0 CE]</td><td style='text-align: right;'>~3.0e-4 – 7.5e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>AutoClock C0 (Endemic Genotype A)</td><td style=''>1974.33 CE</td><td style=''>[-\infty, 2017.45 CE]</td><td style='text-align: right;'>1.830e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.002$</td><td style='text-align: right;'>3.13 seconds</td></tr><tr><td style=''>AutoClock C1 (Divergent Genotype B)</td><td style=''>2013.72 CE</td><td style=''>[1997.77, 2017.45 CE]</td><td style='text-align: right;'>6.804e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.876$</td><td style='text-align: right;'>3.13 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [5, 13]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 0.0$</td><td style='text-align: right;'>3.13 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 20,700x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2004.0 CE</td><td style=''>[1995.0, 2005.0 CE]</td><td style='text-align: right;'>~3.0e-4 – 7.5e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>AutoClock C0 (Endemic Genotype A)</td><td style=''>1974.33 CE</td><td style=''>[-\infty, 2017.45 CE]</td><td style='text-align: right;'>1.830e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.002$</td><td style='text-align: right;'>3.13 seconds</td></tr><tr><td style=''>AutoClock C1 (Divergent Genotype B)</td><td style=''>2013.72 CE</td><td style=''>[1997.77, 2017.45 CE]</td><td style='text-align: right;'>6.804e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.876$</td><td style='text-align: right;'>3.13 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [5, 13]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 0.0$</td><td style='text-align: right;'>3.13 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>20,700x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

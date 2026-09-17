@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bundibugyo Ebolavirus (MacNeil et al. 2011) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2005.00</div>
         <div class="scorecard-meta">95% HPD: [1998, 2007]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2005.00</div>
         <div class="scorecard-meta">95% CI: [1990.00, 2010.00]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 2$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Dissection of Discrete Outbreak Flare-Ups (Bundibugyo 2007 and Isiro 2012). Bundibugyo virus was first discovered in 2007 during an outbreak in Bundibugyo District, western Uganda, followed five years later by a second outbreak in Isiro, Democratic Republic of the Congo in 2012.</p>
+        <div class="topline-content"><p>Dissection of Discrete Outbreak Flare-Ups (Bundibugyo 2007 and Isiro 2012).
+Bundibugyo virus was first discovered in 2007 during an outbreak in Bundibugyo District, western Uganda, followed five years later by a second outbreak in Isiro, Democratic Republic of the Congo in 2012.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,13 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- AutoClock evaluates tree-free pairwise distance geometry and identifies an optimal partition into $K^* = 2$ communities (eigengap = 1.037): - Community 0 ($N = 9$): Bundibugyo 2007 outbreak cohort. - Community 1 ($N = 12$): Isiro 2012 outbreak cohort.</p>
+        <div class="topline-content"><ul>
+<li>AutoClock evaluates tree-free pairwise distance geometry and identifies an optimal partition into $K^* = 2$ communities (eigengap = 1.037):<ul>
+<li>Community 0 ($N = 9$): Bundibugyo 2007 outbreak cohort.</li>
+<li>Community 1 ($N = 12$): Isiro 2012 outbreak cohort.</li>
+</ul>
+</li>
+</ul></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +147,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 2005.00 ([1990.00, 2010.00]), aligning in complete concordance with published BEAST MCMC (2005.00, [1998, 2007]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.94 seconds (22,040x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 2005.00 ([1990.00, 2010.00]), aligning in complete concordance with published BEAST MCMC (2005.00, [1998, 2007]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.94 seconds (22,040x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +215,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Automated sequence triage verifies $|Z| \le 1.172$ for all 21 sequences, confirming zero temporal or divergence outliers across both outbreak waves.</li>
+            <li style='margin-bottom: 0.4rem;'>Automated sequence triage verifies $|Z| \le 1.172$ for all 21 sequences, confirming zero temporal or divergence outliers across both outbreak waves.</li>
           </ul>
         </div>
         
@@ -207,14 +227,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2005.0 CE</td><td style=''>[1998.0, 2007.0 CE]</td><td style='text-align: right;'>~1.5e-3 – 2.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>Jackknife Mean (LOOCV PGLS)</td><td style=''>2007.51 CE</td><td style=''>[2007.45, 2007.50 CE]</td><td style='text-align: right;'>Non-parametric Jackknife</td><td style='text-align: right;'>Out-of-sample $R^2 = 1.000$</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>Out-of-Sample LOOCV Tip Date MAE</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>1.3 days (0.0035 yr)</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [9, 12]</td><td style='text-align: right;'>Eigengap = 1.037</td><td style='text-align: right;'>2.94 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 21,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2005.0 CE</td><td style=''>[1998.0, 2007.0 CE]</td><td style='text-align: right;'>~1.5e-3 – 2.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>Jackknife Mean (LOOCV PGLS)</td><td style=''>2007.51 CE</td><td style=''>[2007.45, 2007.50 CE]</td><td style='text-align: right;'>Non-parametric Jackknife</td><td style='text-align: right;'>Out-of-sample $R^2 = 1.000$</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>Out-of-Sample LOOCV Tip Date MAE</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>1.3 days (0.0035 yr)</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [9, 12]</td><td style='text-align: right;'>Eigengap = 1.037</td><td style='text-align: right;'>2.94 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>21,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

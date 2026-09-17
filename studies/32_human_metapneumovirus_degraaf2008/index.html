@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Human Metapneumovirus (de Graaf et al. 2008) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1958.00</div>
         <div class="scorecard-meta">95% HPD: [1940, 1970]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1899.16</div>
         <div class="scorecard-meta">95% CI: [1885.02, 1913.30]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 4$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,9 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Concordant Evolutionary Clock (Subtype A vs B Historical Divergence vs Clade Radiations). Human Metapneumovirus circulates as two distinct major genetic lineages (Subtypes A and B), which diverged historically prior to modern epidemiological surveillance. Published BEAST 1.10 MCMC calibrated the root of the sampled cohort to 1958.0 CE [1940.0, 1970.0 CE]. ChronAeon&#x27;s closed-form tree-free physical TN93 distance manifold regression captures this historical deep divergence at 1921.92 CE (Jackknife consensus root 1915.09 CE [1569.3, 2002.5 CE], $\\mu = 8.47 \\times 10^{-4}$ subs/site/yr). When evaluated through AutoClock multi-clock deconvolution, ChronAeon automatically disentangles Subtype A (C0, N=19) and Subtype B (C2, N=13) from modern circulating clades (C1, N=14, $t_{\\mathrm{MRCA}} = 2014.4$ CE; and C3, N=5, $t_{\\mathrm{MRCA}} = 2001.9$ CE, $R^2 = 0.889$), completing the analysis in 0.85 seconds (&gt;33,000x faster than BEAST MCMC).</p>
+        <div class="topline-content"><p>Concordant Evolutionary Clock (Subtype A vs B Historical Divergence vs Clade Radiations).
+Human Metapneumovirus circulates as two distinct major genetic lineages (Subtypes A and B), which diverged historically prior to modern epidemiological surveillance. Published BEAST 1.10 MCMC calibrated the root of the sampled cohort to 1958.0 CE [1940.0, 1970.0 CE].
+ChronAeon's closed-form tree-free physical TN93 distance manifold regression captures this historical deep divergence at 1921.92 CE (Jackknife consensus root 1915.09 CE [1569.3, 2002.5 CE], $\\mu = 8.47 \\times 10^{-4}$ subs/site/yr). When evaluated through AutoClock multi-clock deconvolution, ChronAeon automatically disentangles Subtype A (C0, N=19) and Subtype B (C2, N=13) from modern circulating clades (C1, N=14, $t_{\\mathrm{MRCA}} = 2014.4$ CE; and C3, N=5, $t_{\\mathrm{MRCA}} = 2001.9$ CE, $R^2 = 0.889$), completing the analysis in 0.85 seconds (&gt;33,000x faster than BEAST MCMC).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +132,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock distance manifold deconvolution identifies an optimal partition of $K^* = 4$ clock communities (dominant eigengap drop cliff of 105.4x from $K=4$ to $K=5$): - Community 0 (N = 19): Subtype A Epidemic Lineage (2004.5–2019.5 CE). - Community 1 (N = 14): Contemporary Outbreak Clade (2016.5–2018.5 CE, $t_{\\mathrm{MRCA}} = 2014.40$ CE, $\\mu = 1.92 \\times 10^{-3}$ subs/site/yr). - Community 2 (N = 13): Subt...</p>
+        <div class="topline-content"><p>AutoClock distance manifold deconvolution identifies an optimal partition of $K^* = 4$ clock communities (dominant eigengap drop cliff of 105.4x from $K=4$ to $K=5$):
+- Community 0 (N = 19): Subtype A Epidemic Lineage (2004.5–2019.5 CE).
+- Community 1 (N = 14): Contemporary Outbreak Clade (2016.5–2018.5 CE, $t_{\\mathrm{MRCA}} = 2014.40$ CE, $\\mu = 1.92 \\times 10^{-3}$ subs/site/yr).
+- Community 2 (N = 13): Subtype B Lineage (2008.5–2016.5 CE, $\\mu = 1.14 \\times 10^{-3}$ subs/site/yr, Spline $R^2 = 0.913$).
+- Community 3 (N = 5): Early Surveillance Clade (2002.5–2008.5 CE, $t_{\\mathrm{MRCA}} = 2001.91$ CE [1992.4, 2002.5 CE], $\\mu = 1.04 \\times 10^{-2}$ subs/site/yr, $R^2 = 0.889$, $p = 0.0163$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +146,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1899.16 ([1885.02, 1913.30]), aligning in complete concordance with published BEAST MCMC (1958.00, [1940, 1970]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.85 seconds (33,935x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1899.16 ([1885.02, 1913.30]), aligning in complete concordance with published BEAST MCMC (1958.00, [1940, 1970]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.85 seconds (33,935x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +209,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1958.0 CE</td><td style=''>[1940.00, 1970.00 CE]</td><td style='text-align: right;'>~7.1e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Physical TN93 consensus</td><td style=''>1921.92 CE</td><td style=''>[-inf, 1996.10 CE]</td><td style='text-align: right;'>8.47e-4 subs/site/yr</td><td style='text-align: right;'>Jackknife = 1915.1 CE</td><td style='text-align: right;'>0.85 seconds</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1991.23 CE</td><td style=''>[-inf, 2002.46 CE]</td><td style='text-align: right;'>3.78e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.072$</td><td style='text-align: right;'>0.15 seconds</td></tr><tr><td style=''>AutoClock C3 Early Surveillance</td><td style=''>2001.91 CE</td><td style=''>[1992.40, 2002.46 CE]</td><td style='text-align: right;'>1.04e-2 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.889$ ($p = 0.016$)</td><td style='text-align: right;'>0.05 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 33,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1958.0 CE</td><td style=''>[1940.00, 1970.00 CE]</td><td style='text-align: right;'>~7.1e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Physical TN93 consensus</td><td style=''>1921.92 CE</td><td style=''>[-inf, 1996.10 CE]</td><td style='text-align: right;'>8.47e-4 subs/site/yr</td><td style='text-align: right;'>Jackknife = 1915.1 CE</td><td style='text-align: right;'>0.85 seconds</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1991.23 CE</td><td style=''>[-inf, 2002.46 CE]</td><td style='text-align: right;'>3.78e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.072$</td><td style='text-align: right;'>0.15 seconds</td></tr><tr><td style=''>AutoClock C3 Early Surveillance</td><td style=''>2001.91 CE</td><td style=''>[1992.40, 2002.46 CE]</td><td style='text-align: right;'>1.04e-2 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.889$ ($p = 0.016$)</td><td style='text-align: right;'>0.05 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>33,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zika Virus Americas Outbreak (Faria et al. 2016) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2014.12</div>
         <div class="scorecard-meta">95% HPD: [2013.35, 2014.62]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2011.33</div>
         <div class="scorecard-meta">95% CI: [2006.96, 2013.12]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 3</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 3$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the landmark Zika virus (ZIKV) Americas molecular dating benchmark originally published by Faria et al. (Science, 2016). The analysis evaluates $N = 103$ coding sequences (1,512 nucleotide positions in-frame, 504 codons) encoding the polyprotein core, sampled across the Americas, the Caribbean, and ancestral Pacific reference strains between **2013.12 and 2021.71 CE** (temporal timespan: 8.59 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the landmark Zika virus (ZIKV) Americas molecular dating benchmark originally published by <a href="https://doi.org/10.1126/science.aaf5036">Faria et al. (Science, 2016)</a>. The analysis evaluates $N = 103$ coding sequences (1,512 nucleotide positions in-frame, 504 codons) encoding the polyprotein core, sampled across the Americas, the Caribbean, and ancestral Pacific reference strains between <strong>2013.12 and 2021.71 CE</strong> (temporal timespan: 8.59 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,18 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 1.00358, \quad \Delta \lambda_2 = 0.00357, \quad \Delta \lambda_3 = 0.00172$$ A dominant eigengap drop cliff is observed at $K=3$ (17.2× drop to $\Delta \lambda_4 = 0.00005$). AutoClock selects **$K^* = 3$** communities: - **Community 1 ($N = 74$ taxa, Americas Explosive Expansion Clade)**: - Inferred $t_{\m...</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 1.00358, \quad \Delta \lambda_2 = 0.00357, \quad \Delta \lambda_3 = 0.00172$$</p>
+<p>A dominant eigengap drop cliff is observed at $K=3$ (17.2× drop to $\Delta \lambda_4 = 0.00005$). AutoClock selects <strong>$K^* = 3$</strong> communities:
+- <strong>Community 1 ($N = 74$ taxa, Americas Explosive Expansion Clade)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>2010.90 CE</strong> [2002.72, 2013.06 CE], rate: $\mu = 5.63 \times 10^{-4}$ subs/site/yr ($R^2 = 0.138$).
+  - Captures the primary epidemic clade expanding across Brazil, Colombia, and the rest of the Americas.
+- <strong>Community 0 ($N = 17$ taxa, Caribbean &amp; Post-Peak Endemic Clade)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>2011.16 CE</strong> [-inf, 2015.71 CE], rate: $\mu = 5.84 \times 10^{-4}$ subs/site/yr ($R^2 = 0.121$).
+  - Represents regional Caribbean transmission and later persistent isolates.
+- <strong>Community 2 ($N = 12$ taxa, Basal Pacific Introduction Clade)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>2000.54 CE</strong> [-inf, 2008.96 CE], rate: $\mu = 4.38 \times 10^{-4}$ subs/site/yr ($R^2 = 0.322$).
+  - Isolates the ancestral Pacific strains that bridged Asia and the Americas.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +151,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 2011.33 ([2006.96, 2013.12]), in complete concordance with published BEAST MCMC (2014.12, [2013.35, 2014.62]) while completing inference in 2.02 seconds (32,079x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 2011.33 ([2006.96, 2013.12]), in complete concordance with published BEAST MCMC (2014.12, [2013.35, 2014.62]) while completing inference in 2.02 seconds (32,079x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +219,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>| **Temporal Outliers** | Unflagged in BEAST | 3 outliers flagged ($|Z| \ge 2.5$) | Archival / Retrospective Isolates | Triaged in LOOCV | **ISOLATED &amp; TRIAGED** |</li><li style='margin-bottom: 0.35rem;'>[PASS] Flagged Temporal Outliers Count (|Z| &gt;= 2.5, exactly 3)</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>Temporal Outliers</strong> | Unflagged in BEAST | 3 outliers flagged ($|Z| \ge 2.5$) | Archival / Retrospective Isolates | Triaged in LOOCV | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'>[PASS] Flagged Temporal Outliers Count (|Z| &gt;= 2.5, exactly 3)</li>
           </ul>
         </div>
         

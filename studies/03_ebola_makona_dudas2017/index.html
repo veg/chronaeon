@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>West African Ebola Epidemic and the Makona Radiation (Dudas et al., Nature 2017) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2014.06</div>
         <div class="scorecard-meta">95% HPD: [2013.96, 2014.14]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2014.06</div>
         <div class="scorecard-meta">95% CI: [2013.89, 2014.19]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study provides a complete, deterministic re-analysis of the landmark West African Ebola virus (*Zaire ebolavirus*, Makona variant) epidemic cohort compiled by Dudas et al. (Nature, 2017), which tracked the geographical spread, cross-border transmission dynamics, and persistence of the 2013–2016 epidemic across Guinea, Sierra Leone, and Liberia. Evaluating $N = 1,600$ full-genome sequences sampled between 2014.2055 and 2015.8110 CE, ChronAeon executes automated distance metricity diagnostics, tree-free continuous manifold regression, closed-form leave-one-out cross-validation (LOOCV), non-parametric Jackknife uncertainty quantification, and recursive graph-spectral AutoClock community deconvolution:</p>
+        <div class="topline-content"><p>This study provides a complete, deterministic re-analysis of the landmark West African Ebola virus (<em>Zaire ebolavirus</em>, Makona variant) epidemic cohort compiled by <a href="https://doi.org/10.1038/nature22040">Dudas et al. (Nature, 2017)</a>, which tracked the geographical spread, cross-border transmission dynamics, and persistence of the 2013–2016 epidemic across Guinea, Sierra Leone, and Liberia. Evaluating $N = 1,600$ full-genome sequences sampled between 2014.2055 and 2015.8110 CE, ChronAeon executes automated distance metricity diagnostics, tree-free continuous manifold regression, closed-form leave-one-out cross-validation (LOOCV), non-parametric Jackknife uncertainty quantification, and recursive graph-spectral AutoClock community deconvolution:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">Unsupervised graph-spectral deconvolution decomposes the 1,600 genomes into 6 distinct evolutionary leaf communities, capturing fine-grained epidemiological dynamics:</p>
+        <div class="topline-content"><p>Unsupervised AutoClock partitions the 1,600 genomes into 6 distinct evolutionary leaf communities in 5.0 seconds, resolving the empirical rate heterogeneity across lineages: from static clonal transmission bursts with zero divergence ($\mu \approx 0.0$, $N=28$) to the primary expanding epidemic trunk ($\mu = 3.95 \times 10^{-4}$ subs/site/yr, $R^2 = 0.638$, $N=59$) and rapid late-stage lineages ($\mu = 6.54 \times 10^{-4}$ subs/site/yr, $N=33$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +140,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers the root origin at $t_{\mathrm{MRCA}} = 2014.06$ CE (95% Fieller CI: [2013.89, 2014.19 CE]), achieving an exact numerical match to the published BEAST 1.8 MCMC median estimate ($t_{\mathrm{MRCA}} = 2014.06$ CE, 95% HPD: [2013.96, 2014.14 CE]) reported in Dudas et al. (2017).</p>
+        <div class="topline-content"><p>ChronAeon infers the root origin at $t_{\mathrm{MRCA}} = 2014.06$ CE (95% Fieller CI: [2013.89, 2014.19 CE]), achieving an exact numerical match to the published BEAST 1.8 MCMC median estimate ($t_{\mathrm{MRCA}} = 2014.06$ CE, 95% HPD: [2013.96, 2014.14 CE]) reported in Dudas et al. (2017).</p></div>
       </div>
     </section>
 
@@ -195,7 +208,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>|      Flag 33 temporal outliers (|Z| &gt;= 2.5) including CON8559.            |</li>
+            <li style='margin-bottom: 0.4rem;'>|      Flag 33 temporal outliers (|Z| &gt;= 2.5) including CON8559.            |</li>
           </ul>
         </div>
         

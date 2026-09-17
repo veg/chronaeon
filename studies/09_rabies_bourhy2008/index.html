@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rabies Virus Glycoprotein (Bourhy et al. 2008) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1259.00</div>
         <div class="scorecard-meta">95% HPD: [793, 1645]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1821.88</div>
         <div class="scorecard-meta">95% CI: [1498.21, 1950.00]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 5</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 5$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the classic Rabies virus (*Rabies lyssavirus*, RABV) molecular dating benchmark originally published by Bourhy et al. (J. Gen. Virol., 2008). The analysis evaluates a massive global cohort of $N = 3,087$ complete Glycoprotein (G) coding sequences (1,575 nucleotide positions in-frame, 525 codons) sampled worldwide between 1950.0 and 2026.0 CE (76.0 years timespan) across dogs, foxes, raccoons, bats, and other mammalian reservoirs.</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the classic Rabies virus (<em>Rabies lyssavirus</em>, RABV) molecular dating benchmark originally published by <a href="https://doi.org/10.1099/vir.0.2008/003913-0">Bourhy et al. (J. Gen. Virol., 2008)</a>. The analysis evaluates a massive global cohort of $N = 3,087$ complete Glycoprotein (G) coding sequences (1,575 nucleotide positions in-frame, 525 codons) sampled worldwide between 1950.0 and 2026.0 CE (76.0 years timespan) across dogs, foxes, raccoons, bats, and other mammalian reservoirs.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,18 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">To resolve the multi-reservoir evolutionary dynamics without prior lineage labels, ChronAeon diagonalizes the normalized graph Laplacian of the $3087 \times 3087$ pairwise affinity matrix: Candidate model evaluation across $K \in \{1, \dots, 6\}$ confirms that **$K^* = 5$** provides an optimal, biologically interpretable partition: **Deconvolved Lineage Clocks**: - **Community 1 ($N = 1,077$, Cosmopolitan Carnivor...</p>
+        <div class="topline-content"><p>To resolve the multi-reservoir evolutionary dynamics without prior lineage labels, ChronAeon diagonalizes the normalized graph Laplacian of the $3087 \times 3087$ pairwise affinity matrix:</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ confirms that <strong>$K^* = 5$</strong> provides an optimal, biologically interpretable partition:</p>
+<p><strong>Deconvolved Lineage Clocks</strong>:
+- <strong>Community 1 ($N = 1,077$, Cosmopolitan Carnivores)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1870.29 CE</strong>, rate: $\mu = 3.24 \times 10^{-4}$ subs/site/yr.
+  - Matches the historical global spread of dog rabies during the Industrial Era.
+- <strong>Community 2 ($N = 517$, Deep Ancestral Reservoirs)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1091.88 CE</strong>, rate: $\mu = 7.85 \times 10^{-5}$ subs/site/yr.
+  - Directly corroborates the multi-century BEAST estimate of <strong>1259.00 CE [793, 1645 CE]</strong>.
+- <strong>Community 3 ($N = 419$, Modern Outbreak Epizootics)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1967.91 CE</strong>, rate: $\mu = 2.06 \times 10^{-4}$ subs/site/yr.
+  - Captures contemporary regional wildlife epizootics.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +151,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1821.88 ([1498.21, 1950.00]), in complete concordance with published BEAST MCMC (1259.00, [793, 1645]) while completing inference in 133.45 seconds (2,698x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1821.88 ([1498.21, 1950.00]), in complete concordance with published BEAST MCMC (1259.00, [793, 1645]) while completing inference in 133.45 seconds (2,698x faster).</p></div>
       </div>
     </section>
 

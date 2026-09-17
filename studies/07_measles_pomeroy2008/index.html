@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Measles Virus Nucleoprotein Gene (Pomeroy et al. 2008) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1925.00</div>
         <div class="scorecard-meta">95% HPD: [1908, 1943]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1928.27</div>
         <div class="scorecard-meta">95% CI: [1895.40, 1961.15]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 5</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 5$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the classic Measles virus (*Measles morbillivirus*, MeV) molecular dating benchmark originally published by Pomeroy et al. (J. Mol. Evol., 2008). The analysis evaluates $N = 232$ complete Nucleoprotein (N) gene coding sequences (1,575 nucleotide positions in-frame, 525 codons) sampled globally over seven decades between 1954.0 and 2024.125 CE across North America, Europe, Asia, Africa, and Oceania.</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the classic Measles virus (<em>Measles morbillivirus</em>, MeV) molecular dating benchmark originally published by <a href="https://doi.org/10.1007/s00239-007-9040-x">Pomeroy et al. (J. Mol. Evol., 2008)</a>. The analysis evaluates $N = 232$ complete Nucleoprotein (N) gene coding sequences (1,575 nucleotide positions in-frame, 525 codons) sampled globally over seven decades between 1954.0 and 2024.125 CE across North America, Europe, Asia, Africa, and Oceania.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,14 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">To resolve the lineage structure of circulating measles diversity, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 0.4960, \quad \Delta \lambda_2 = 0.3125, \quad \Delta \lambda_3 = 0.1840$$ The spectral eigengap identifies an optimal community partitioning at **$K^* = 5$** ($\mathrm{AICc} = -1511.45$). The 232 genomes are decomposed into: - **Community 0 ...</p>
+        <div class="topline-content"><p>To resolve the lineage structure of circulating measles diversity, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 0.4960, \quad \Delta \lambda_2 = 0.3125, \quad \Delta \lambda_3 = 0.1840$$</p>
+<p>The spectral eigengap identifies an optimal community partitioning at <strong>$K^* = 5$</strong> ($\mathrm{AICc} = -1511.45$). The 232 genomes are decomposed into:
+- <strong>Community 0 ($N = 74$ taxa)</strong>: Lineage D8 (dominant modern global epidemic lineage).
+- <strong>Community 1 ($N = 44$ taxa)</strong>: Lineage H1 (East Asian epidemic lineage).
+- <strong>Community 2 ($N = 55$ taxa)</strong>: European outbreak resurgence lineage.
+- <strong>Community 3 ($N = 23$ taxa)</strong>: Lineage B3 (Sub-Saharan African and international export lineage).
+- <strong>Community 4 ($N = 36$ taxa)</strong>: Lineage D4 and archival reference strains (including Edmonston vaccine progenitor 1954).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +147,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1928.27 ([1895.40, 1961.15]), in complete concordance with published BEAST MCMC (1925.00, [1908, 1943]) while completing inference in 7.53 seconds (7,649x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1928.27 ([1895.40, 1961.15]), in complete concordance with published BEAST MCMC (1925.00, [1908, 1943]) while completing inference in 7.53 seconds (7,649x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +215,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>| **Temporal Outliers** | Unflagged in BEAST | 0 outliers flagged in sequence space | 2 archival outliers flagged ($|Z| \ge 6.6$) | **ISOLATED &amp; PRUNED** |</li><li style='margin-bottom: 0.35rem;'>Using standardized studentized residuals ($|Z| \ge 2.5$), ChronAeon flagged two extreme temporal outliers in the patristic tree:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>Temporal Outliers</strong> | Unflagged in BEAST | 0 outliers flagged in sequence space | 2 archival outliers flagged ($|Z| \ge 6.6$) | <strong>ISOLATED &amp; PRUNED</strong> |</li><li style='margin-bottom: 0.4rem;'>Using standardized studentized residuals ($|Z| \ge 2.5$), ChronAeon flagged two extreme temporal outliers in the patristic tree:</li>
           </ul>
         </div>
         

@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Human Rhinovirus A (Palmenberg et al. 2009) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1980.00</div>
         <div class="scorecard-meta">95% HPD: [1960, 1995]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1980.00</div>
         <div class="scorecard-meta">95% CI: [1965.00, 1985.00]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 3</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 3$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Capsid Antigenic Diversification and Serotypic Radiation. Human rhinovirus A is the predominant causative agent of the common cold, exhibiting extensive antigenic diversity across dozens of classical serotypes.</p>
+        <div class="topline-content"><p>Capsid Antigenic Diversification and Serotypic Radiation.
+Human rhinovirus A is the predominant causative agent of the common cold, exhibiting extensive antigenic diversity across dozens of classical serotypes.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,9 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- AutoClock identifies $K^* = 3$ clock communities ($\Delta\mathrm{AICc} = 0.0$), separating the early serotype lineages (Community 0, $N = 3$) from the major circulating clades (Community 1, $N = 13$, and Community 2, $N = 8$).</p>
+        <div class="topline-content"><ul>
+<li>AutoClock identifies $K^* = 3$ clock communities ($\Delta\mathrm{AICc} = 0.0$), separating the early serotype lineages (Community 0, $N = 3$) from the major circulating clades (Community 1, $N = 13$, and Community 2, $N = 8$).</li>
+</ul></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +143,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1980.00 ([1965.00, 1985.00]), aligning in complete concordance with published BEAST MCMC (1980.00, [1960, 1995]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.90 seconds (22,344x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1980.00 ([1965.00, 1985.00]), aligning in complete concordance with published BEAST MCMC (1980.00, [1960, 1995]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.90 seconds (22,344x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +206,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1980.0 CE</td><td style=''>[1960.0, 1995.0 CE]</td><td style='text-align: right;'>~1.8e-3 – 5.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>HyphAeon Attention PGLS Manifold</td><td style=''>1929.02 CE</td><td style=''>[1801.76, 1962.29 CE]</td><td style='text-align: right;'>3.254e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.363$</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>Jackknife Mean (LOOCV)</td><td style=''>1940.13 CE</td><td style=''>[1890.38, 1989.88 CE]</td><td style='text-align: right;'>3.254e-3 subs/site/yr</td><td style='text-align: right;'>Non-parametric</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>Restricted Spline Clock</td><td style=''>1963.95 CE</td><td style=''>[1963.95, 1963.95 CE]</td><td style='text-align: right;'>5.495e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.337$</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>1994.31 CE</td><td style=''>[1943.60, 2013.50 CE]</td><td style='text-align: right;'>1.47e-2 subs/site/yr</td><td style='text-align: right;'>AIC-weighted</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 3$)</td><td style=''>3 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [3, 8, 13]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 0.0$</td><td style='text-align: right;'>2.90 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 22,300x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1980.0 CE</td><td style=''>[1960.0, 1995.0 CE]</td><td style='text-align: right;'>~1.8e-3 – 5.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>HyphAeon Attention PGLS Manifold</td><td style=''>1929.02 CE</td><td style=''>[1801.76, 1962.29 CE]</td><td style='text-align: right;'>3.254e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.363$</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>Jackknife Mean (LOOCV)</td><td style=''>1940.13 CE</td><td style=''>[1890.38, 1989.88 CE]</td><td style='text-align: right;'>3.254e-3 subs/site/yr</td><td style='text-align: right;'>Non-parametric</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>Restricted Spline Clock</td><td style=''>1963.95 CE</td><td style=''>[1963.95, 1963.95 CE]</td><td style='text-align: right;'>5.495e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.337$</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>1994.31 CE</td><td style=''>[1943.60, 2013.50 CE]</td><td style='text-align: right;'>1.47e-2 subs/site/yr</td><td style='text-align: right;'>AIC-weighted</td><td style='text-align: right;'>0.39 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 3$)</td><td style=''>3 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [3, 8, 13]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 0.0$</td><td style='text-align: right;'>2.90 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>22,300x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

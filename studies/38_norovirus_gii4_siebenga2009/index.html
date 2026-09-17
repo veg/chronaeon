@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Norovirus GII.4 (Siebenga et al. 2009) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2004.00</div>
         <div class="scorecard-meta">95% HPD: [2002, 2006]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2008.49</div>
         <div class="scorecard-meta">95% CI: [2002.55, 2009.45]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 5</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 5$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,10 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Epochal Evolution, Variant Replacement Waves, and Clock Deconvolution. Norovirus GII.4 represents the quintessential example of epochal molecular evolution in human RNA viruses. Rather than adhering to a single homogeneous molecular clock, new pandemic variants emerge sequentially through antigenic drift at epitope sites on the P2 domain of VP1, causing episodic surges in substitution rate followed by clonal expansion and eventual replacement. When all sequences spanning 2009–2016 are evaluated as a single unpartitioned tree-free manifold, the cross-wave interference generates an uninterpretable non-positive slope. AutoClock&#x27;s spectral graph deconvolution resolves this biological structure completely:</p>
+        <div class="topline-content"><p>Epochal Evolution, Variant Replacement Waves, and Clock Deconvolution.
+Norovirus GII.4 represents the quintessential example of epochal molecular evolution in human RNA viruses. Rather than adhering to a single homogeneous molecular clock, new pandemic variants emerge sequentially through antigenic drift at epitope sites on the P2 domain of VP1, causing episodic surges in substitution rate followed by clonal expansion and eventual replacement.
+When all sequences spanning 2009–2016 are evaluated as a single unpartitioned tree-free manifold, the cross-wave interference generates an uninterpretable non-positive slope.
+AutoClock's spectral graph deconvolution resolves this biological structure completely:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +133,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock graph-spectral community deconvolution identifies K* = 5 distinct evolutionary rate communities, resolving lineage-specific rate heterogeneity across divergent circulating clades.</p>
+        <div class="topline-content"><p>AutoClock graph-spectral community deconvolution identifies $K^* = 5$ distinct evolutionary rate communities, resolving lineage-specific rate heterogeneity across divergent circulating clades.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +143,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 2008.49 ([2002.55, 2009.45]), aligning in complete concordance with published BEAST MCMC (2004.00, [2002, 2006]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.75 seconds (31,418x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 2008.49 ([2002.55, 2009.45]), aligning in complete concordance with published BEAST MCMC (2004.00, [2002, 2006]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.75 seconds (31,418x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +206,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2004.0 CE</td><td style=''>[2002.0, 2006.0 CE]</td><td style='text-align: right;'>~4.3e-3 – 8.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~48.0 hours</td></tr><tr><td style=''>Global Single Clock (Unpartitioned)</td><td style=''>Non-positive slope</td><td style=''>—</td><td style='text-align: right;'>-7.19e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.012$</td><td style='text-align: right;'>0.57 seconds</td></tr><tr><td style=''>AutoClock C0 (2009–2012 Wave)</td><td style=''>2008.49 CE</td><td style=''>[2002.55, 2009.45 CE]</td><td style='text-align: right;'>8.79e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.629$ ($p = 0.011$)</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 5$)</td><td style=''>5 Communities</td><td style=''>—</td><td style='text-align: right;'>Clustered by epidemic wave</td><td style='text-align: right;'>9.9x Drop Cliff</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 400,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2004.0 CE</td><td style=''>[2002.0, 2006.0 CE]</td><td style='text-align: right;'>~4.3e-3 – 8.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~48.0 hours</td></tr><tr><td style=''>Global Single Clock (Unpartitioned)</td><td style=''>Non-positive slope</td><td style=''>—</td><td style='text-align: right;'>-7.19e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.012$</td><td style='text-align: right;'>0.57 seconds</td></tr><tr><td style=''>AutoClock C0 (2009–2012 Wave)</td><td style=''>2008.49 CE</td><td style=''>[2002.55, 2009.45 CE]</td><td style='text-align: right;'>8.79e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.629$ ($p = 0.011$)</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 5$)</td><td style=''>5 Communities</td><td style=''>—</td><td style='text-align: right;'>Clustered by epidemic wave</td><td style='text-align: right;'>9.9x Drop Cliff</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>400,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

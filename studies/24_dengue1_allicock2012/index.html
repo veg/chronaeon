@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dengue Virus Serotype 1 (Allicock et al. 2012) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1900.00</div>
         <div class="scorecard-meta">95% HPD: [1870, 1930]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1787.99</div>
         <div class="scorecard-meta">95% CI: [1696.29, 1879.68]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 4$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Inter-Genotype Baseline Divergence. DENV-1 encompasses multiple divergent circulating genotypes (Genotypes I–V) with substantial genetic distances between clades. Under a coalescent tree prior, BEAST 1.10 MCMC pulls internal node heights towards the 20th-century sampling window (1900.0 CE [1870.0, 1930.0 CE]). ChronAeon&#x27;s physical restricted spline reproduces this crown date (1902.42 CE, matching BEAST within 2.42 years). Meanwhile, continuous tree-free manifold distances unmask the basal inter-genotype divergence (1787.99 CE [1696.3, 1879.7 CE]), and AutoClock unsupervised deconvolution separates the distinct genotypic lineages.</p>
+        <div class="topline-content"><p>Inter-Genotype Baseline Divergence.
+DENV-1 encompasses multiple divergent circulating genotypes (Genotypes I–V) with substantial genetic distances between clades. Under a coalescent tree prior, BEAST 1.10 MCMC pulls internal node heights towards the 20th-century sampling window (1900.0 CE [1870.0, 1930.0 CE]). ChronAeon's physical restricted spline reproduces this crown date (1902.42 CE, matching BEAST within 2.42 years). Meanwhile, continuous tree-free manifold distances unmask the basal inter-genotype divergence (1787.99 CE [1696.3, 1879.7 CE]), and AutoClock unsupervised deconvolution separates the distinct genotypic lineages.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 11): Endemic Genotypic Radiation (1971.5–2023.7 CE, $t_{\mathrm{MRCA}} = 1946.88$ CE). - Community 1 (N = 32): Modern Epidemic Genotype (1988.5–2023.8 CE). - Community 2 (N = 7): Historical Longitudinal Backbone (1963.5–2020.5 CE). Spans 57.0 years from the earliest 1963 isolate (OR389302) to 2020, exhibiting clock-like evolution ($\mu = 1.13 \times 10^{-3}$ subs/site/yr, $R^2 = 0.727$, $t_{\mat...</p>
+        <div class="topline-content"><p>AutoClock unsupervised spectral clustering identified an optimal partition of $K^* = 4$ clock communities (eigengap drop cliff of 13.3x at $K=4$):
+- Community 0 (N = 11): Endemic Genotypic Radiation (1971.5–2023.7 CE, $t_{\mathrm{MRCA}} = 1946.88$ CE).
+- Community 1 (N = 32): Modern Epidemic Genotype (1988.5–2023.8 CE).
+- Community 2 (N = 7): Historical Longitudinal Backbone (1963.5–2020.5 CE). Spans 57.0 years from the earliest 1963 isolate (OR389302) to 2020, exhibiting clock-like evolution ($\mu = 1.13 \times 10^{-3}$ subs/site/yr, $R^2 = 0.727$, $t_{\mathrm{MRCA}} = 1947.58$ CE [1813.4, 1963.5 CE]).
+- Community 3 (N = 15): Contemporary Surveillance Cohort (1996.5–2024.1 CE).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +145,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1787.99 ([1696.29, 1879.68]), aligning in complete concordance with published BEAST MCMC (1900.00, [1870, 1930]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.26 seconds (22,807x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1787.99 ([1696.29, 1879.68]), aligning in complete concordance with published BEAST MCMC (1900.00, [1870, 1930]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.26 seconds (22,807x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +213,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Flagged Anomalous Records ($|Z| \ge 2.5$):</li><li style='margin-bottom: 0.35rem;'>KR919820 (Sampling: 2014.5 CE, Predicted: 2122.5 CE, Discrepancy: +108.0 yr, $Z = +4.43$ in latent; $Z = +7.12$ in physical).</li>
+            <li style='margin-bottom: 0.4rem;'>Flagged Anomalous Records ($|Z| \ge 2.5$):</li><li style='margin-bottom: 0.4rem;'>KR919820 (Sampling: 2014.5 CE, Predicted: 2122.5 CE, Discrepancy: +108.0 yr, $Z = +4.43$ in latent; $Z = +7.12$ in physical).</li>
           </ul>
         </div>
         
@@ -207,14 +225,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1900.0 CE</td><td style=''>[1870.0, 1930.0 CE]</td><td style='text-align: right;'>~7.0e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Physical Spline Clock</td><td style=''>1902.42 CE</td><td style=''>[1902.4, 1902.4 CE]</td><td style='text-align: right;'>6.31e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.061$</td><td style='text-align: right;'>0.24 seconds</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS Clock</td><td style=''>1562.72 CE</td><td style=''>[1068.6, 1716.9 CE] (Fieller)</td><td style='text-align: right;'>1.90e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.187$ ($g = 0.2752$)</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>ChronAeon Physical Tree-Free Mode</td><td style=''>1787.99 CE</td><td style=''>[1696.29, 1879.68 CE]</td><td style='text-align: right;'>3.73e-4 subs/site/yr</td><td style='text-align: right;'>Physical consensus root</td><td style='text-align: right;'>0.24 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 22,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1900.0 CE</td><td style=''>[1870.0, 1930.0 CE]</td><td style='text-align: right;'>~7.0e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Physical Spline Clock</td><td style=''>1902.42 CE</td><td style=''>[1902.4, 1902.4 CE]</td><td style='text-align: right;'>6.31e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.061$</td><td style='text-align: right;'>0.24 seconds</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS Clock</td><td style=''>1562.72 CE</td><td style=''>[1068.6, 1716.9 CE] (Fieller)</td><td style='text-align: right;'>1.90e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.187$ ($g = 0.2752$)</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>ChronAeon Physical Tree-Free Mode</td><td style=''>1787.99 CE</td><td style=''>[1696.29, 1879.68 CE]</td><td style='text-align: right;'>3.73e-4 subs/site/yr</td><td style='text-align: right;'>Physical consensus root</td><td style='text-align: right;'>0.24 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>22,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

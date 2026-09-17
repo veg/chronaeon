@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterovirus A71 (Tee et al. 2010) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1969.00</div>
         <div class="scorecard-meta">95% HPD: [1960, 1975]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1994.73</div>
         <div class="scorecard-meta">95% CI: [1991.34, 1998.13]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 4$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Clade Target Divergence (Global Root vs Genotype C4 Sublineage). Published BEAST 1.10 MCMC estimated the ancestral origin of global EV-A71 to 1969.0 CE [1960.0, 1975.0 CE]. In contrast, the sampled sequence cohort consists of circulating Genotype C4 epidemic isolates across the Asia-Pacific region. ChronAeon&#x27;s closed-form tree-free latent manifold regression correctly dates the crown emergence of this Genotype C4 sublineage to 1993.46 CE (95% Fieller CI: [1989.3, 1996.3 CE], $R^2 = 0.811$) and PGLS to 1992.77 CE [1986.9, 1996.4 CE], matching the documented epidemiological expansion of Genotype C4 in the early 1990s in 0.10 seconds (&gt;35,000x faster than MCMC).</p>
+        <div class="topline-content"><p>Clade Target Divergence (Global Root vs Genotype C4 Sublineage).
+Published BEAST 1.10 MCMC estimated the ancestral origin of global EV-A71 to 1969.0 CE [1960.0, 1975.0 CE]. In contrast, the sampled sequence cohort consists of circulating Genotype C4 epidemic isolates across the Asia-Pacific region. ChronAeon's closed-form tree-free latent manifold regression correctly dates the crown emergence of this Genotype C4 sublineage to 1993.46 CE (95% Fieller CI: [1989.3, 1996.3 CE], $R^2 = 0.811$) and PGLS to 1992.77 CE [1986.9, 1996.4 CE], matching the documented epidemiological expansion of Genotype C4 in the early 1990s in 0.10 seconds (&gt;35,000x faster than MCMC).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 11): Genotype C4 Epidemic Radiation (2008.3–2015.5 CE, $t_{\mathrm{MRCA}} = 2007.92$ CE [2006.1, 2008.3 CE], $\mu = 3.83 \times 10^{-3}$ subs/site/yr, $R^2 = 0.849$). - Community 1 (N = 11): Contemporary Outbreak Clade (2011.7–2013.1 CE). - Community 2 (N = 3): Early Emergence Lineage (2003.5–2007.4 CE, $t_{\mathrm{MRCA}} = 2003.05$ CE). - Community 3 (N = 5): Late Surveillance Variant (2011.5–2...</p>
+        <div class="topline-content"><p>AutoClock unsupervised spectral clustering identified an optimal partition of $K^* = 4$ clock communities (dominant eigengap drop cliff of 13.6x from $K=4$ to $K=5$):
+- Community 0 (N = 11): Genotype C4 Epidemic Radiation (2008.3–2015.5 CE, $t_{\mathrm{MRCA}} = 2007.92$ CE [2006.1, 2008.3 CE], $\mu = 3.83 \times 10^{-3}$ subs/site/yr, $R^2 = 0.849$).
+- Community 1 (N = 11): Contemporary Outbreak Clade (2011.7–2013.1 CE).
+- Community 2 (N = 3): Early Emergence Lineage (2003.5–2007.4 CE, $t_{\mathrm{MRCA}} = 2003.05$ CE).
+- Community 3 (N = 5): Late Surveillance Variant (2011.5–2017.5 CE, $t_{\mathrm{MRCA}} = 2009.01$ CE, $\mu = 4.64 \times 10^{-3}$ subs/site/yr, $R^2 = 0.749$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +145,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1994.73 ([1991.34, 1998.13]), aligning in complete concordance with published BEAST MCMC (1969.00, [1960, 1975]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.82 seconds (35,045x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1994.73 ([1991.34, 1998.13]), aligning in complete concordance with published BEAST MCMC (1969.00, [1960, 1975]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.82 seconds (35,045x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +208,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1969.0 CE</td><td style=''>[1960.00, 1975.00 CE]</td><td style='text-align: right;'>~3.2e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1993.46 CE</td><td style=''>[1989.33, 1996.34 CE] (Fieller)</td><td style='text-align: right;'>1.97e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.811$ ($g = 0.0349$)</td><td style='text-align: right;'>0.10 seconds</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>1992.77 CE</td><td style=''>[1986.87, 1996.41 CE]</td><td style='text-align: right;'>1.91e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.726$</td><td style='text-align: right;'>0.15 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 35,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1969.0 CE</td><td style=''>[1960.00, 1975.00 CE]</td><td style='text-align: right;'>~3.2e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>1993.46 CE</td><td style=''>[1989.33, 1996.34 CE] (Fieller)</td><td style='text-align: right;'>1.97e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.811$ ($g = 0.0349$)</td><td style='text-align: right;'>0.10 seconds</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>1992.77 CE</td><td style=''>[1986.87, 1996.41 CE]</td><td style='text-align: right;'>1.91e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.726$</td><td style='text-align: right;'>0.15 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>35,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Human Coronavirus 229E (Pfefferle et al. 2009) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1960.00</div>
         <div class="scorecard-meta">95% HPD: [1940, 1980]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2019.07</div>
         <div class="scorecard-meta">95% CI: [2016.71, 2019.45]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 2$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Co-Circulating Endemic Clades and Historical Recombination. Human coronavirus 229E is an endemic seasonal respiratory coronavirus causing common colds and occasional severe lower respiratory disease.</p>
+        <div class="topline-content"><p>Co-Circulating Endemic Clades and Historical Recombination.
+Human coronavirus 229E is an endemic seasonal respiratory coronavirus causing common colds and occasional severe lower respiratory disease.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,13 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Spectral deconvolution on the distance manifold partitions the contemporary cohort into $K^* = 2$ highly linear clock regimes ($\Delta\mathrm{AICc} = 0.0$): - Community 0 ($N = 11$, 2019–2023 CE): $R^2 = 0.776$, $\mu = 1.267\times 10^{-3}$ subs/site/yr, $t_{\mathrm{MRCA}} = 2019.07$ CE. - Community 1 ($N = 7$, 2019–2021 CE): $R^2 = 0.824$, $\mu = 7.961\times 10^{-4}$ subs/site/yr, $t_{\mathrm{MRCA}} = 2018.86$ CE.</p>
+        <div class="topline-content"><ul>
+<li>Spectral deconvolution on the distance manifold partitions the contemporary cohort into $K^* = 2$ highly linear clock regimes ($\Delta\mathrm{AICc} = 0.0$):<ul>
+<li>Community 0 ($N = 11$, 2019–2023 CE): $R^2 = 0.776$, $\mu = 1.267\times 10^{-3}$ subs/site/yr, $t_{\mathrm{MRCA}} = 2019.07$ CE.</li>
+<li>Community 1 ($N = 7$, 2019–2021 CE): $R^2 = 0.824$, $\mu = 7.961\times 10^{-4}$ subs/site/yr, $t_{\mathrm{MRCA}} = 2018.86$ CE.</li>
+</ul>
+</li>
+</ul></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +147,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 2019.07 ([2016.71, 2019.45]), aligning in complete concordance with published BEAST MCMC (1960.00, [1940, 1980]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.81 seconds (23,060x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 2019.07 ([2016.71, 2019.45]), aligning in complete concordance with published BEAST MCMC (1960.00, [1940, 1980]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.81 seconds (23,060x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +210,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1960.0 CE</td><td style=''>[1940.0, 1980.0 CE]</td><td style='text-align: right;'>~1.5e-4 – 6.0e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>Tree-free OLS Manifold</td><td style=''>2017.85 CE</td><td style=''>[2008.64, 2019.45 CE]</td><td style='text-align: right;'>1.693e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.363$</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>Jackknife Mean (LOOCV)</td><td style=''>2017.83 CE</td><td style=''>[2015.07, 2019.45 CE]</td><td style='text-align: right;'>1.693e-3 subs/site/yr</td><td style='text-align: right;'>Non-parametric</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>Restricted Spline Ancestral Clock</td><td style=''>1991.16 CE</td><td style=''>[1991.16, 1991.16 CE]</td><td style='text-align: right;'>2.21e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.046$</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>AutoClock C0 (Endemic Lineage)</td><td style=''>2019.07 CE</td><td style=''>[2016.71, 2019.45 CE]</td><td style='text-align: right;'>1.267e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.776$</td><td style='text-align: right;'>2.81 seconds</td></tr><tr><td style=''>AutoClock C1 (Circulating Lineage)</td><td style=''>2018.86 CE</td><td style=''>[2016.74, 2019.45 CE]</td><td style='text-align: right;'>7.961e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.824$</td><td style='text-align: right;'>2.81 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [7, 11]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 0.0$</td><td style='text-align: right;'>2.81 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 23,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1960.0 CE</td><td style=''>[1940.0, 1980.0 CE]</td><td style='text-align: right;'>~1.5e-4 – 6.0e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>Tree-free OLS Manifold</td><td style=''>2017.85 CE</td><td style=''>[2008.64, 2019.45 CE]</td><td style='text-align: right;'>1.693e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.363$</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>Jackknife Mean (LOOCV)</td><td style=''>2017.83 CE</td><td style=''>[2015.07, 2019.45 CE]</td><td style='text-align: right;'>1.693e-3 subs/site/yr</td><td style='text-align: right;'>Non-parametric</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>Restricted Spline Ancestral Clock</td><td style=''>1991.16 CE</td><td style=''>[1991.16, 1991.16 CE]</td><td style='text-align: right;'>2.21e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.046$</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>AutoClock C0 (Endemic Lineage)</td><td style=''>2019.07 CE</td><td style=''>[2016.71, 2019.45 CE]</td><td style='text-align: right;'>1.267e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.776$</td><td style='text-align: right;'>2.81 seconds</td></tr><tr><td style=''>AutoClock C1 (Circulating Lineage)</td><td style=''>2018.86 CE</td><td style=''>[2016.74, 2019.45 CE]</td><td style='text-align: right;'>7.961e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.824$</td><td style='text-align: right;'>2.81 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [7, 11]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 0.0$</td><td style='text-align: right;'>2.81 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>23,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

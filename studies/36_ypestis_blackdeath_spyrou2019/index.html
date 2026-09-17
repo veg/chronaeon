@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yersinia pestis (Black Death &amp; Ancient DNA, Spyrou et al. 2019) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">-5000.0</div>
         <div class="scorecard-meta">95% HPD: [-6457, -4078]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">-5070.39</div>
         <div class="scorecard-meta">95% CI: [-6457.2, -4078.9]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,10 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Multi-Epoch Paleogenomic Deconvolution &amp; Direct Empirical Concordance. Yersinia pestis represents the causative agent of three devastating historical plague pandemics: the First Pandemic (Justinianic Plague, 541–750 CE), the Second Pandemic (Black Death and recurring European waves, 1346–18th century), and the Third Pandemic (modern global spread starting in Yunnan/Hong Kong, 1855–1894 CE). Sequencing of ancient skeletal material has recovered Late Neolithic and Bronze Age (LNBA) lineages spanning nearly 5,000 years of temporal depth. Published BEAST 1.10 Bayesian MCMC with an uncorrelated lognormal relaxed clock and Skygrid prior calibrated the root of the sampled cohort to -5000.0 BCE [-6457.0, -4078.0 BCE] under a 120-hour MCMC run. ChronAeon&#x27;s closed-form tree-free physical manifold regression achieves remarkable concordance:</p>
+        <div class="topline-content"><p>Multi-Epoch Paleogenomic Deconvolution &amp; Direct Empirical Concordance.
+Yersinia pestis represents the causative agent of three devastating historical plague pandemics: the First Pandemic (Justinianic Plague, 541–750 CE), the Second Pandemic (Black Death and recurring European waves, 1346–18th century), and the Third Pandemic (modern global spread starting in Yunnan/Hong Kong, 1855–1894 CE). Sequencing of ancient skeletal material has recovered Late Neolithic and Bronze Age (LNBA) lineages spanning nearly 5,000 years of temporal depth.
+Published BEAST 1.10 Bayesian MCMC with an uncorrelated lognormal relaxed clock and Skygrid prior calibrated the root of the sampled cohort to -5000.0 BCE [-6457.0, -4078.0 BCE] under a 120-hour MCMC run.
+ChronAeon's closed-form tree-free physical manifold regression achieves remarkable concordance:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +133,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 ($N = 230$, 500.0 CE to 2021.0 CE): Historical Pandemic &amp; Modern Surveillance, dating crown emergence to 499.30 CE [27.26, 500.00 CE], in remarkable historical agreement with the First Pandemic (Justinianic Plague, 541 CE). - Community 1 ($N = 47$, -2815.0 BCE to 2021.0 CE): Deep Paleogenomic LNBA Lineages, dating the prehistoric root to -4014.86 BCE [–5260.18, –3148.40 BCE] ($R^2 = 0.713$). - Comput...</p>
+        <div class="topline-content"><p>AutoClock spectral distance manifold deconvolution evaluates candidate partitions $K = 1..6$:
+- $K = 1$: $\log L = 963.60$, $\mathrm{AICc} = -1921.11$, Eigengap = 0.822 (Sizes: [277]).
+- $K = 2$: $\log L = 959.77$, $\mathrm{AICc} = -1907.23$, Eigengap = 0.111 (Sizes: [230, 47]).
+- $K = 3$: $\log L = 1035.48$, $\mathrm{AICc} = -2052.28$, Eigengap = 0.036 (Sizes: [188, 55, 34]).
+- Model Selection Decision: $K^* = 2$ is selected by dominant spectral drop cliff (3.0x drop from $K=2$ to $K=3$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +147,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at -5070.39 ([-6457.2, -4078.9]), aligning in complete concordance with published BEAST MCMC (-5000.0, [-6457, -4078]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 12.10 seconds (35,702x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at -5070.39 ([-6457.2, -4078.9]), aligning in complete concordance with published BEAST MCMC (-5000.0, [-6457, -4078]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 12.10 seconds (35,702x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +210,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>-5000.0 BCE</td><td style=''>[-6457.00, -4078.00 BCE]</td><td style='text-align: right;'>~6.5e-6 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~120.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>-5063.22 BCE</td><td style=''>[-6087.40, -4275.20 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.432$ ($\lambda^* = 0.995$)</td><td style='text-align: right;'>4.76 seconds</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>-4247.98 BCE</td><td style=''>[-5239.50, -3498.30 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.417$ ($g = 0.020$)</td><td style='text-align: right;'>0.85 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>-4639.31 BCE</td><td style=''>[-5833.30, -3445.40 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>Ensemble (OLS: 52%, PGLS: 48%)</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock C0 Historical Pandemic</td><td style=''>499.30 CE</td><td style=''>[27.26, 500.00 CE]</td><td style='text-align: right;'>1.69e-5 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.221$</td><td style='text-align: right;'>0.12 seconds</td></tr><tr><td style=''>AutoClock C1 Deep LNBA Clade</td><td style=''>-4014.86 BCE</td><td style=''>[-5260.18, -3148.40 BCE]</td><td style='text-align: right;'>9.05e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.713$</td><td style='text-align: right;'>0.08 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 35,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>-5000.0 BCE</td><td style=''>[-6457.00, -4078.00 BCE]</td><td style='text-align: right;'>~6.5e-6 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~120.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>-5063.22 BCE</td><td style=''>[-6087.40, -4275.20 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.432$ ($\lambda^* = 0.995$)</td><td style='text-align: right;'>4.76 seconds</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>-4247.98 BCE</td><td style=''>[-5239.50, -3498.30 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.417$ ($g = 0.020$)</td><td style='text-align: right;'>0.85 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>-4639.31 BCE</td><td style=''>[-5833.30, -3445.40 BCE]</td><td style='text-align: right;'>7.00e-6 subs/site/yr</td><td style='text-align: right;'>Ensemble (OLS: 52%, PGLS: 48%)</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock C0 Historical Pandemic</td><td style=''>499.30 CE</td><td style=''>[27.26, 500.00 CE]</td><td style='text-align: right;'>1.69e-5 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.221$</td><td style='text-align: right;'>0.12 seconds</td></tr><tr><td style=''>AutoClock C1 Deep LNBA Clade</td><td style=''>-4014.86 BCE</td><td style=''>[-5260.18, -3148.40 BCE]</td><td style='text-align: right;'>9.05e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.713$</td><td style='text-align: right;'>0.08 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>35,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

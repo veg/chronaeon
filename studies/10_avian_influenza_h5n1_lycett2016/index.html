@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avian Influenza A H5N1 Hemagglutinin (Lycett et al. 2016) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1995.80</div>
         <div class="scorecard-meta">95% HPD: [1995.00, 1996.40]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1993.68</div>
         <div class="scorecard-meta">95% CI: [1991.50, 1995.87]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 3</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 3$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the classic Avian influenza A (H5N1 HA) molecular dating benchmark originally published by Lycett et al. (Science, 2016). The analysis evaluates $N = 98$ complete Hemagglutinin (HA) coding sequences (1,698 nucleotide positions in-frame, 566 codons) sampled across East and Southeast Asia between 1996.00 and 2005.00 CE across domestic poultry (chickens, ducks, geese), wild migratory birds, and human spillover cases.</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the classic Avian influenza A (H5N1 HA) molecular dating benchmark originally published by <a href="https://doi.org/10.1126/science.aaf8852">Lycett et al. (Science, 2016)</a>. The analysis evaluates $N = 98$ complete Hemagglutinin (HA) coding sequences (1,698 nucleotide positions in-frame, 566 codons) sampled across East and Southeast Asia between 1996.00 and 2005.00 CE across domestic poultry (chickens, ducks, geese), wild migratory birds, and human spillover cases.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,17 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">To resolve the lineage structure of H5N1 diversification, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 0.90041, \quad \Delta \lambda_2 = 0.03169, \quad \Delta \lambda_3 = 0.05504$$ A distinct spectral eigengap cliff is observed at $K=3$ (4.1× drop to $\Delta \lambda_4 = 0.01331$). Model selection identifies **$K^* = 3$** as the optimal multi-clock deco...</p>
+        <div class="topline-content"><p>To resolve the lineage structure of H5N1 diversification, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 0.90041, \quad \Delta \lambda_2 = 0.03169, \quad \Delta \lambda_3 = 0.05504$$</p>
+<p>A distinct spectral eigengap cliff is observed at $K=3$ (4.1× drop to $\Delta \lambda_4 = 0.01331$). Model selection identifies <strong>$K^* = 3$</strong> as the optimal multi-clock decomposition:
+- <strong>Community 0 ($N = 32$ taxa, Gs/GD/96 &amp; HK/97 Clade)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1994.44 CE</strong> [1993.44, 1995.15 CE], rate: $\mu = 3.11 \times 10^{-3}$ subs/site/yr ($R^2 = 0.787$).
+  - Accurately captures the primary ancestral emergence of the Gs/GD/96 lineage in Guangdong poultry prior to the 1997 Hong Kong outbreak.
+- <strong>Community 1 ($N = 35$ taxa, Clade 1 &amp; 2 Regional Radiation)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1998.98 CE</strong> [1996.74, 2000.14 CE], rate: $\mu = 4.07 \times 10^{-3}$ subs/site/yr ($R^2 = 0.531$).
+  - Captures the subsequent radiation of early Clade 1 and Clade 2 viruses in the late 1990s.
+- <strong>Community 2 ($N = 31$ taxa, Clade 2.3 / Fujian Sub-lineage)</strong>:
+  - Represents the emerging Clade 2.3 variants sampled between 2002 and 2005.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +150,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1993.68 ([1991.50, 1995.87]), in complete concordance with published BEAST MCMC (1995.80, [1995.00, 1996.40]) while completing inference in 2.05 seconds (15,805x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1993.68 ([1991.50, 1995.87]), in complete concordance with published BEAST MCMC (1995.80, [1995.00, 1996.40]) while completing inference in 2.05 seconds (15,805x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +218,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>| **Temporal Outliers** | Unflagged in BEAST | 1 outlier flagged ($|Z| \ge 2.5$) | `A_duck_Guangdong_40_2000` ($Z = 2.61$) | Outlier Triaged | **ISOLATED &amp; TRIAGED** |</li><li style='margin-bottom: 0.35rem;'>**Flagged Temporal Outlier ($|Z| \ge 2.5$)**:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>Temporal Outliers</strong> | Unflagged in BEAST | 1 outlier flagged ($|Z| \ge 2.5$) | <code>A_duck_Guangdong_40_2000</code> ($Z = 2.61$) | Outlier Triaged | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Flagged Temporal Outlier ($|Z| \ge 2.5$)</strong>:</li>
           </ul>
         </div>
         

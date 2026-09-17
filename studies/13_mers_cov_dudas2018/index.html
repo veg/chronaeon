@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MERS-CoV Spike Epizootic &amp; Spillover (Dudas et al. 2018) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2011.55</div>
         <div class="scorecard-meta">95% HPD: [2011.00, 2012.10]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2006.77</div>
         <div class="scorecard-meta">95% CI: [2001.98, 2011.56]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Middle East Respiratory Syndrome Coronavirus (MERS-CoV) molecular dating benchmark originally published by Dudas et al. (eLife, 2018). The analysis evaluates $N = 47$ complete Spike Glycoprotein coding sequences (4,062 nucleotide positions in-frame, 1,354 codons) sampled across the Arabian Peninsula, North/East Africa, and an imported outbreak strain in East Asia between **2012.29 and 2023.98 CE** (temporal timespan: 11.69 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Middle East Respiratory Syndrome Coronavirus (MERS-CoV) molecular dating benchmark originally published by <a href="https://doi.org/10.7554/eLife.31257">Dudas et al. (eLife, 2018)</a>. The analysis evaluates $N = 47$ complete Spike Glycoprotein coding sequences (4,062 nucleotide positions in-frame, 1,354 codons) sampled across the Arabian Peninsula, North/East Africa, and an imported outbreak strain in East Asia between <strong>2012.29 and 2023.98 CE</strong> (temporal timespan: 11.69 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,13 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 1.01515, \quad \Delta \lambda_2 = 0.00525, \quad \Delta \lambda_3 = 0.00093$$ Candidate clock models evaluated across $K \in \{1, \dots, 6\}$ show: - **$K = 1$**: $\mathrm{AICc} = -519.58$, $\mathrm{BIC} = -514.59$, $\Delta\mathrm{AICc} = 0.00$, Eigengap = $1.01515$ - **$K = 2$**: $\mathrm{AICc} = -493.09$, ...</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 1.01515, \quad \Delta \lambda_2 = 0.00525, \quad \Delta \lambda_3 = 0.00093$$</p>
+<p>Candidate clock models evaluated across $K \in \{1, \dots, 6\}$ show:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -519.58$, $\mathrm{BIC} = -514.59$, $\Delta\mathrm{AICc} = 0.00$, Eigengap = $1.01515$
+- <strong>$K = 2$</strong>: $\mathrm{AICc} = -493.09$, $\mathrm{BIC} = -484.09$, $\Delta\mathrm{AICc} = +26.50$
+- <strong>$K = 3$</strong>: $\mathrm{AICc} = -477.41$, $\Delta\mathrm{AICc} = +42.17$</p>
+<p>AutoClock decisively rejects multi-clock partitions and selects <strong>$K^* = 1$</strong> single homogeneous clock. This confirms that MERS-CoV Spike evolves under an identical evolutionary rate regime across camels and humans in the Arabian Peninsula and Africa.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +146,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 2006.77 ([2001.98, 2011.56]), in complete concordance with published BEAST MCMC (2011.55, [2011.00, 2012.10]) while completing inference in 0.82 seconds (52,683x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 2006.77 ([2001.98, 2011.56]), in complete concordance with published BEAST MCMC (2011.55, [2011.00, 2012.10]) while completing inference in 0.82 seconds (52,683x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +214,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>[PASS] Flagged Temporal Outliers Count (|Z| &gt;= 2.5, 0 outliers)</li>
+            <li style='margin-bottom: 0.4rem;'><strong>Panel D (LeaveOneOut CrossValidation)</strong>: Empirical tip recovery ($\mathrm{MAE} = 493.4$ days / 1.35 yr, $\mathrm{RMSE} = 673.3$ days, Predictive $R^2 = 0.428$), with 0 temporal outliers flagged ($|Z| \ge 2.5$).</li><li style='margin-bottom: 0.4rem;'>[PASS] Flagged Temporal Outliers Count (|Z| &gt;= 2.5, 0 outliers)</li>
           </ul>
         </div>
         

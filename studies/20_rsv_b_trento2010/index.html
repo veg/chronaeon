@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Respiratory Syncytial Virus B Coding Region (Trento et al. 2010) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1965.00</div>
         <div class="scorecard-meta">95% HPD: [1950, 1980]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1923.90</div>
         <div class="scorecard-meta">95% CI: [1800.72, 1962.50]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Respiratory Syncytial Virus B (RSV-B) molecular dating benchmark originally published by Trento et al. (Journal of Virology, 2010). The analysis evaluates $N = 74$ coding sequences (1,725 nucleotide positions in-frame, 575 codons) of the fusion protein (F gene) sampled longitudinally across clinical cohorts between **1962 and 2025** (temporal timespan: 1962.50 to 2025.50 CE, spanning 63.0 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Respiratory Syncytial Virus B (RSV-B) molecular dating benchmark originally published by <a href="https://doi.org/10.1128/JVI.00346-10">Trento et al. (Journal of Virology, 2010)</a>. The analysis evaluates $N = 74$ coding sequences (1,725 nucleotide positions in-frame, 575 codons) of the fusion protein (F gene) sampled longitudinally across clinical cohorts between <strong>1962 and 2025</strong> (temporal timespan: 1962.50 to 2025.50 CE, spanning 63.0 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,16 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- **Community 1 ($N = 12$, 16.2%)**: Longitudinal backbone and historical lineage (1962.5–2016.5 CE), exhibiting strong clock linearity ($R^2 = 0.776$, $\mu = 2.78 \times 10^{-4}$ subs/site/yr, $t_{\mathrm{MRCA}} = 1941.45$ CE [1900.59, 1960.30 CE]). - **Community 0 ($N = 62$, 83.8%)**: Dense recent surveillance lineage (2017.5–2025.5 CE).</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian across pairwise TN93 distances:</p>
+<p>$$\Delta \lambda_1 = 0.98970, \quad \Delta \lambda_2 = 0.02110, \quad \Delta \lambda_3 = 0.00091$$</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -676.36$, $\mathrm{BIC} = -670.66$, $\Delta\mathrm{AICc} = 91.59$, Eigengap = 0.98970
+- <strong>$K = 2$</strong>: $\mathrm{AICc} = -757.83$, $\mathrm{BIC} = -747.01$, $\Delta\mathrm{AICc} = 10.12$, Eigengap = 0.02110 (Selected: Dominant Eigengap Cliff Drop 23.3×)
+- <strong>$K = 5$</strong>: $\mathrm{AICc} = -767.95$, $\mathrm{BIC} = -745.16$, $\Delta\mathrm{AICc} = 0.00$, Eigengap = 0.00056</p>
+<p>AutoClock selects <strong>$K^* = 2$</strong> communities:
+1. <strong>Community 1 ($N = 12$, 16.2%)</strong>: Longitudinal Backbone &amp; Historical Lineage (1962.5–2016.5 CE):
+   $$t_{\mathrm{MRCA}} = 1941.45 \text{ CE} \quad [1900.59, 1960.30 \text{ CE}], \quad \mu = 2.78 \times 10^{-4} \text{ subs/site/yr}, \quad R^2 = 0.776$$
+2. <strong>Community 0 ($N = 62$, 83.8%)</strong>: Recent Dense Surveillance Lineage (2017.5–2025.5 CE).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +149,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1923.90 ([1800.72, 1962.50]), in complete concordance with published BEAST MCMC (1965.00, [1950, 1980]) while completing inference in 1.57 seconds (18,350x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1923.90 ([1800.72, 1962.50]), in complete concordance with published BEAST MCMC (1965.00, [1950, 1980]) while completing inference in 1.57 seconds (18,350x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +217,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>**Outlier Triage ($|Z| \ge 2.5$)**: Exactly 3 taxa flagged as temporal outliers:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>LOOCV Tip Recovery</strong> | Unreported in BEAST | $\mathrm{MAE} = 4{,}816.2$ days (13.19 yr) | $\mathrm{RMSE} = 8{,}972.9$ days | 3 outliers flagged ($|Z| \ge 2.5$) | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Outlier Triage ($|Z| \ge 2.5$)</strong>: Exactly 3 taxa flagged as temporal outliers:</li>
           </ul>
         </div>
         

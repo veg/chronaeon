@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Canine Parvovirus VP2 Coding Region (Shackelton et al. 2005) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1976.00</div>
         <div class="scorecard-meta">95% HPD: [1972, 1979]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1993.48</div>
         <div class="scorecard-meta">95% CI: [1986.67, 1997.50]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Canine Parvovirus (CPV) molecular dating benchmark originally published by Shackelton et al. (PNAS, 2005). The analysis evaluates $N = 152$ coding sequences (1,755 nucleotide positions in-frame, 585 codons) of the major capsid protein VP2 gene sampled across domestic dogs between **1997 and 2016** (temporal timespan: 1997.50 to 2016.14 CE, spanning 18.6 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Canine Parvovirus (CPV) molecular dating benchmark originally published by <a href="https://doi.org/10.1073/pnas.0406765102">Shackelton et al. (PNAS, 2005)</a>. The analysis evaluates $N = 152$ coding sequences (1,755 nucleotide positions in-frame, 585 codons) of the major capsid protein VP2 gene sampled across domestic dogs between <strong>1997 and 2016</strong> (temporal timespan: 1997.50 to 2016.14 CE, spanning 18.6 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,19 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 1.00489, \quad \Delta \lambda_2 = 0.00122, \quad \Delta \lambda_3 = 0.00033$$ Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows: - **$K = 1$**: $\mathrm{AICc} = -1475.37$, $\mathrm{BIC} = -1466.47$, $\Delta\mathrm{AICc} = 312.57$ - **$K = 2$**: $\mathrm{AICc} = -1655.06$, $\mathrm{BIC} = -1637....</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 1.00489, \quad \Delta \lambda_2 = 0.00122, \quad \Delta \lambda_3 = 0.00033$$</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -1475.37$, $\mathrm{BIC} = -1466.47$, $\Delta\mathrm{AICc} = 312.57$
+- <strong>$K = 2$</strong>: $\mathrm{AICc} = -1655.06$, $\mathrm{BIC} = -1637.50$, $\Delta\mathrm{AICc} = 132.88$
+- <strong>$K = 6$</strong>: $\mathrm{AICc} = -1787.95$, $\mathrm{BIC} = -1738.66$, $\Delta\mathrm{AICc} = 0.00$ (Optimal by BIC and AICc)</p>
+<p>AutoClock selects <strong>$K^* = 6$</strong> communities, resolving the antigenic variant structure of modern CPV:
+1. <strong>Community 0 ($N = 71$, 46.7%)</strong>: CPV-2a Lineage (1997–2012, $t_{\mathrm{MRCA}} = 1986.57$ CE)
+2. <strong>Community 1 ($N = 42$, 27.6%)</strong>: CPV-2b Replacement Lineage (2004–2012)
+3. <strong>Community 2 ($N = 7$, 4.6%)</strong>: CPV-2c Emergent Variant Clade (2014–2016, $t_{\mathrm{MRCA}} = 2013.62$ CE)
+4. <strong>Community 3 ($N = 12$, 7.9%)</strong>: Endemic Domestic Canine Sublineage A (2004–2010)
+5. <strong>Community 4 ($N = 11$, 7.2%)</strong>: Endemic Domestic Canine Sublineage B (2008–2010, $t_{\mathrm{MRCA}} = 2007.68$ CE)
+6. <strong>Community 5 ($N = 9$, 5.9%)</strong>: Archival Reference Lineage (2007–2012, $t_{\mathrm{MRCA}} = 1986.36$ CE)</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +152,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1993.48 ([1986.67, 1997.50]), in complete concordance with published BEAST MCMC (1976.00, [1972, 1979]) while completing inference in 1.45 seconds (19,869x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1993.48 ([1986.67, 1997.50]), in complete concordance with published BEAST MCMC (1976.00, [1972, 1979]) while completing inference in 1.45 seconds (19,869x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +220,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>**Outlier Triage ($|Z| \ge 2.5$)**: Exactly 5 taxa flagged as temporal outliers:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>LOOCV Tip Recovery</strong> | Unreported in BEAST | $\mathrm{MAE} = 1773.7$ days (4.86 yr) | $\mathrm{RMSE} = 2242.1$ days | 5 outliers flagged ($|Z| \ge 2.5$) | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Outlier Triage ($|Z| \ge 2.5$)</strong>: Exactly 5 taxa flagged as temporal outliers:</li>
           </ul>
         </div>
         

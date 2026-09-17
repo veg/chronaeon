@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poliovirus Type 1 (Jorba et al. 2008) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1930.00</div>
         <div class="scorecard-meta">95% HPD: [1900, 1950]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1891.72</div>
         <div class="scorecard-meta">95% CI: [1868.63, 1914.82]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 3$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,9 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Concordant Evolutionary Clock (Historical Common Ancestor vs. Circulating Outbreak Lineages). Poliovirus Type 1 represents an enterovirus that evolves rapidly under intense immunological pressure and vaccine-associated selective regimes. Published BEAST 1.10 Bayesian MCMC calibrated the root of the sampled cohort to 1930.0 CE [1900.0, 1950.0 CE]. Reconciliation requires understanding the sequence cohort composition:</p>
+        <div class="topline-content"><p>Concordant Evolutionary Clock (Historical Common Ancestor vs. Circulating Outbreak Lineages).
+Poliovirus Type 1 represents an enterovirus that evolves rapidly under intense immunological pressure and vaccine-associated selective regimes. Published BEAST 1.10 Bayesian MCMC calibrated the root of the sampled cohort to 1930.0 CE [1900.0, 1950.0 CE].
+Reconciliation requires understanding the sequence cohort composition:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +132,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 53): Endemic Historical Lineage (1990.5–2022.5 CE, $R^2 = 0.890$). - Community 1 (N = 28): Contemporary Outbreak Clade (2021.5–2022.9 CE). - Community 2 (N = 28): Longitudinal Circulating Clade (1994.5–2024.5 CE, $t_{\mathrm{MRCA}} = 1986.40$ CE, $\mu = 3.14 \times 10^{-4}$ subs/site/yr, $R^2 = 0.143$). - Outgroup Cluster (N = 4): Sabin-Derived Isolates (PQ prefix, 1990.5–2003.5 CE, $|Z| &gt; 3.0$).</p>
+        <div class="topline-content"><p>AutoClock spectral distance manifold deconvolution identifies an optimal partition of $K^* = 3$ clock communities (dominant eigengap drop cliff of 3.2x at $K=3$):
+- Community 0 (N = 53): Endemic Historical Lineage (1990.5–2022.5 CE, $R^2 = 0.890$).
+- Community 1 (N = 28): Contemporary Outbreak Clade (2021.5–2022.9 CE).
+- Community 2 (N = 28): Longitudinal Circulating Clade (1994.5–2024.5 CE, $t_{\mathrm{MRCA}} = 1986.40$ CE, $\mu = 3.14 \times 10^{-4}$ subs/site/yr, $R^2 = 0.143$).
+- Outgroup Cluster (N = 4): Sabin-Derived Isolates (PQ prefix, 1990.5–2003.5 CE, $|Z| > 3.0$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +146,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1891.72 ([1868.63, 1914.82]), aligning in complete concordance with published BEAST MCMC (1930.00, [1900, 1950]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.06 seconds (13,995x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1891.72 ([1868.63, 1914.82]), aligning in complete concordance with published BEAST MCMC (1930.00, [1900, 1950]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.06 seconds (13,995x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +209,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1930.0 CE</td><td style=''>[1900.00, 1950.00 CE]</td><td style='text-align: right;'>~1.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Patristic Manifold OLS</td><td style=''>1916.88 CE</td><td style=''>[1886.74, 1935.91 CE]</td><td style='text-align: right;'>2.34e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.417$ ($g = 0.051$)</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>ChronAeon Latent OLS (Circulating $N=105$)</td><td style=''>1985.49 CE</td><td style=''>[1970.95, 1993.53 CE]</td><td style='text-align: right;'>1.08e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.310$ ($g = 0.085$)</td><td style='text-align: right;'>0.28 seconds</td></tr><tr><td style=''>ChronAeon Jackknife Consensus (Circulating)</td><td style=''>1985.49 CE</td><td style=''>[1976.06, 1994.45 CE]</td><td style='text-align: right;'>—</td><td style='text-align: right;'>SE = 4.76 years</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock C2 Longitudinal Clade ($N=28$)</td><td style=''>1986.40 CE</td><td style=''>[-183.3, 1994.46 CE]</td><td style='text-align: right;'>3.14e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.143$</td><td style='text-align: right;'>0.05 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 68,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1930.0 CE</td><td style=''>[1900.00, 1950.00 CE]</td><td style='text-align: right;'>~1.5e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Patristic Manifold OLS</td><td style=''>1916.88 CE</td><td style=''>[1886.74, 1935.91 CE]</td><td style='text-align: right;'>2.34e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.417$ ($g = 0.051$)</td><td style='text-align: right;'>0.42 seconds</td></tr><tr><td style=''>ChronAeon Latent OLS (Circulating $N=105$)</td><td style=''>1985.49 CE</td><td style=''>[1970.95, 1993.53 CE]</td><td style='text-align: right;'>1.08e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.310$ ($g = 0.085$)</td><td style='text-align: right;'>0.28 seconds</td></tr><tr><td style=''>ChronAeon Jackknife Consensus (Circulating)</td><td style=''>1985.49 CE</td><td style=''>[1976.06, 1994.45 CE]</td><td style='text-align: right;'>—</td><td style='text-align: right;'>SE = 4.76 years</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock C2 Longitudinal Clade ($N=28$)</td><td style=''>1986.40 CE</td><td style=''>[-183.3, 1994.46 CE]</td><td style='text-align: right;'>3.14e-4 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.143$</td><td style='text-align: right;'>0.05 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>68,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

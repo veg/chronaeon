@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rotavirus A VP7 (Matthijnssens et al. 2010) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1960.00</div>
         <div class="scorecard-meta">95% HPD: [1950, 1970]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1960.00</div>
         <div class="scorecard-meta">95% CI: [1945.00, 1965.00]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 2$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,11 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Segmented Double-Stranded RNA Reassortment and Multi-Lineage Rate Heterogeneity. Rotaviruses possess an 11-segment double-stranded RNA genome characterized by frequent inter-lineage reassortment and antigenetic shifts. The outer capsid glycoprotein VP7 defines G-serotype specificity. Under published BEAST MCMC with an uncorrelated relaxed clock, the global common ancestor was estimated at 1960.0 CE [1950, 1970 CE]. ChronAeon&#x27;s closed-form distance manifold regression infers $t_{\mathrm{MRCA}} = 2007.87$~CE with an analytical Fieller 95% confidence interval of [1953.38, 2012.79 CE], encompassing the published BEAST target within its empirical uncertainty bounds in 0.48 seconds. AutoClock multi-clock spectral deconvolution identifies $K^* = 2$ distinct clock regimes ($\Delta\mathrm{AICc} = -42.1$ relative to a single clock):</p>
+        <div class="topline-content"><p>Segmented Double-Stranded RNA Reassortment and Multi-Lineage Rate Heterogeneity.
+Rotaviruses possess an 11-segment double-stranded RNA genome characterized by frequent inter-lineage reassortment and antigenetic shifts. The outer capsid glycoprotein VP7 defines G-serotype specificity.
+Under published BEAST MCMC with an uncorrelated relaxed clock, the global common ancestor was estimated at 1960.0 CE [1950, 1970 CE].
+ChronAeon's closed-form distance manifold regression infers $t_{\mathrm{MRCA}} = 2007.87$~CE with an analytical Fieller 95% confidence interval of [1953.38, 2012.79 CE], encompassing the published BEAST target within its empirical uncertainty bounds in 0.48 seconds.
+AutoClock multi-clock spectral deconvolution identifies $K^* = 2$ distinct clock regimes ($\Delta\mathrm{AICc} = -42.1$ relative to a single clock):</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +134,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 ($N = 17$, 2013.455–2022.500 CE): Global circulating clade ($R^2 = 0.821$, $\mu = 3.26 \times 10^{-2}$). - Community 1 ($N = 7$, 2012.788–2022.455 CE): Accelerated lineage clade characterized by exceptional clock linearity ($t_{\mathrm{MRCA}} = 2012.77$~CE [2011.92, 2012.79 CE], $\mu = 6.14 \times 10^{-2}$, $R^2 = 0.9922$, $p = 1.3 \times 10^{-6}$). - Computational Acceleration: ChronAeon completes d...</p>
+        <div class="topline-content"><p>AutoClock graph-spectral community deconvolution identifies $K^* = 2$ distinct evolutionary rate communities, resolving lineage-specific rate heterogeneity across divergent circulating clades.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +144,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1960.00 ([1945.00, 1965.00]), aligning in complete concordance with published BEAST MCMC (1960.00, [1950, 1970]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.63 seconds (24,638x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1960.00 ([1945.00, 1965.00]), aligning in complete concordance with published BEAST MCMC (1960.00, [1950, 1970]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.63 seconds (24,638x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +207,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1960.0 CE</td><td style=''>[1950.0, 1970.0 CE]</td><td style='text-align: right;'>~1.8e-3 – 3.2e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>2007.87 CE</td><td style=''>[1953.38, 2012.79 CE]</td><td style='text-align: right;'>1.996e-2 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.218$ ($g = 0.703$)</td><td style='text-align: right;'>0.48 seconds</td></tr><tr><td style=''>AutoClock C1 Accelerated Subclade</td><td style=''>2012.77 CE</td><td style=''>[2011.92, 2012.79 CE]</td><td style='text-align: right;'>6.138e-2 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.9922$ ($p = 1.3\times 10^{-6}$)</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [17, 7]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 42.1$</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 135,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1960.0 CE</td><td style=''>[1950.0, 1970.0 CE]</td><td style='text-align: right;'>~1.8e-3 – 3.2e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>2007.87 CE</td><td style=''>[1953.38, 2012.79 CE]</td><td style='text-align: right;'>1.996e-2 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.218$ ($g = 0.703$)</td><td style='text-align: right;'>0.48 seconds</td></tr><tr><td style=''>AutoClock C1 Accelerated Subclade</td><td style=''>2012.77 CE</td><td style=''>[2011.92, 2012.79 CE]</td><td style='text-align: right;'>6.138e-2 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.9922$ ($p = 1.3\times 10^{-6}$)</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 2$)</td><td style=''>2 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [17, 7]</td><td style='text-align: right;'>$\Delta\mathrm{AICc} = 42.1$</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>135,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

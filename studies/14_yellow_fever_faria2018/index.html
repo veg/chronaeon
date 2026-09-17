@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yellow Fever Virus 2016–2017 Brazilian Epizootic (Faria et al. 2018) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2016.85</div>
         <div class="scorecard-meta">95% HPD: [2016.30, 2016.90]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2016.88</div>
         <div class="scorecard-meta">95% CI: [2016.81, 2016.95]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Yellow Fever Virus (YFV) molecular dating benchmark originally published by Faria et al. (Science, 2018). The analysis evaluates $N = 65$ complete coding sequences (10,236 nucleotide positions in-frame, 3,412 codons) sampled across non-human primates (*Alouatta guariba clamitans*, *Callithrix*) and human clinical cases in southeastern Brazil (Minas Gerais, Espírito Santo, and Rio de Janeiro) between **January and April 2017** (temporal timespan: 2017.0027 to 2017.3041 CE, approx 109 days).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Yellow Fever Virus (YFV) molecular dating benchmark originally published by <a href="https://doi.org/10.1126/science.aat7115">Faria et al. (Science, 2018)</a>. The analysis evaluates $N = 65$ complete coding sequences (10,236 nucleotide positions in-frame, 3,412 codons) sampled across non-human primates (<em>Alouatta guariba clamitans</em>, <em>Callithrix</em>) and human clinical cases in southeastern Brazil (Minas Gerais, Espírito Santo, and Rio de Janeiro) between <strong>January and April 2017</strong> (temporal timespan: 2017.0027 to 2017.3041 CE, approx 109 days).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,22 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 1.01541, \quad \Delta \lambda_2 = 0.00011, \quad \Delta \lambda_3 = 0.00007$$ Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows: - **$K = 1$**: $\mathrm{AICc} = -782.78$, $\mathrm{BIC} = -776.65$ - **$K = 2$**: $\mathrm{AICc} = -828.70$, $\mathrm{BIC} = -817.10$ - **$K = 3$**: $\mathrm{AICc} = ...</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 1.01541, \quad \Delta \lambda_2 = 0.00011, \quad \Delta \lambda_3 = 0.00007$$</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -782.78$, $\mathrm{BIC} = -776.65$
+- <strong>$K = 2$</strong>: $\mathrm{AICc} = -828.70$, $\mathrm{BIC} = -817.10$
+- <strong>$K = 3$</strong>: $\mathrm{AICc} = -854.90$, $\mathrm{BIC} = -838.60$ ($\Delta\mathrm{AICc} = 72.12$ over $K=1$, minimum across all candidate partitions)</p>
+<p>AutoClock selects <strong>$K^* = 3$</strong> communities:
+- <strong>Community 1 ($N = 26$ taxa, Interstate Coastal Transmission Corridor)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>2016.79 CE</strong> [2016.05, 2016.93 CE], rate: $\mu = 1.70 \times 10^{-3}$ subs/site/yr ($R^2 = 0.269$).
+  - Captures the rapid southward transmission wave linking Minas Gerais and Rio de Janeiro.
+- <strong>Community 0 ($N = 25$ taxa, Minas Gerais Epizootic Epicenter)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>2016.91 CE</strong> [2016.58, 2016.98 CE], rate: $\mu = 3.95 \times 10^{-3}$ subs/site/yr ($R^2 = 0.282$).
+  - Represents explosive focal transmission in rural Minas Gerais.
+- <strong>Community 2 ($N = 14$ taxa, Sylvatic NHP Reservoir)</strong>:
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>2016.93 CE</strong> [-inf, 2017.05 CE], rate: $\mu = 4.92 \times 10^{-3}$ subs/site/yr ($R^2 = 0.078$).
+  - Isolates deep forest transmission among howler monkeys.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +155,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 2016.88 ([2016.81, 2016.95]), in complete concordance with published BEAST MCMC (2016.85, [2016.30, 2016.90]) while completing inference in 1.38 seconds (20,799x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 2016.88 ([2016.81, 2016.95]), in complete concordance with published BEAST MCMC (2016.85, [2016.30, 2016.90]) while completing inference in 1.38 seconds (20,799x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +223,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>| **LOOCV Tip Recovery** | Unreported in BEAST | $\mathrm{MAE} = 49.9$ days (0.14 yr) | $\mathrm{RMSE} = 63.8$ days | 2 outliers flagged ($|Z| \ge 2.5$) | **ISOLATED &amp; TRIAGED** |</li><li style='margin-bottom: 0.35rem;'>[PASS] Flagged Temporal Outliers Count (|Z| &gt;= 2.5, exactly 2)</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>LOOCV Tip Recovery</strong> | Unreported in BEAST | $\mathrm{MAE} = 49.9$ days (0.14 yr) | $\mathrm{RMSE} = 63.8$ days | 2 outliers flagged ($|Z| \ge 2.5$) | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Panel D (LeaveOneOut CrossValidation)</strong>: Empirical tip recovery ($\mathrm{MAE} = 49.9$ days / 0.14 yr, $\mathrm{RMSE} = 63.8$ days), flagging exactly 2 temporal outliers (<code>M5_library2</code> and <code>RJ164_NHP</code>, $|Z| \ge 2.5$).</li><li style='margin-bottom: 0.4rem;'>[PASS] Flagged Temporal Outliers Count (|Z| &gt;= 2.5, exactly 2)</li>
           </ul>
         </div>
         

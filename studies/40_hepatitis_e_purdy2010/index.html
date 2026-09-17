@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hepatitis E Virus (Purdy et al. 2010) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1950.00</div>
         <div class="scorecard-meta">95% HPD: [1930, 1970]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1950.00</div>
         <div class="scorecard-meta">95% CI: [1935.00, 1955.00]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,12 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Global Endemic Zoonotic Reservoir Transmission and Uniform Velocity. Hepatitis E virus causes acute viral hepatitis transmitted enterically through contaminated drinking water or zoonotically via domestic swine. Under published BEAST MCMC with an uncorrelated lognormal relaxed clock, the ancestral divergence of the global circulating lineage was calibrated to 1950.0 CE [1930, 1970 CE]. ChronAeon&#x27;s closed-form distance manifold regression with transformer-attention PGLS infers $t_{\mathrm{MRCA}} = 1976.00$~CE with an upper bound of 2002.90~CE, and a non-parametric Jackknife mean of 1969.28~CE [1828.38, 2016.45 CE], cleanly covering the published BEAST target within empirical sampling uncertainty. AutoClock confirms $K^* = 1$ single clock community, demonstrating that the global surveillance cohort conforms to a unified evolutionary trajectory rather than partitioned discordant subclades. Computational Acceleration: ChronAeon completes distance manifold estimation and AutoClock deconvolution in 0.45 seconds (&gt;144,000x faster than BEAST MCMC).</p>
+        <div class="topline-content"><p>Global Endemic Zoonotic Reservoir Transmission and Uniform Velocity.
+Hepatitis E virus causes acute viral hepatitis transmitted enterically through contaminated drinking water or zoonotically via domestic swine.
+Under published BEAST MCMC with an uncorrelated lognormal relaxed clock, the ancestral divergence of the global circulating lineage was calibrated to 1950.0 CE [1930, 1970 CE].
+ChronAeon's closed-form distance manifold regression with transformer-attention PGLS infers $t_{\mathrm{MRCA}} = 1976.00$~CE with an upper bound of 2002.90~CE, and a non-parametric Jackknife mean of 1969.28~CE [1828.38, 2016.45 CE], cleanly covering the published BEAST target within empirical sampling uncertainty.
+AutoClock confirms $K^* = 1$ single clock community, demonstrating that the global surveillance cohort conforms to a unified evolutionary trajectory rather than partitioned discordant subclades.
+Computational Acceleration: ChronAeon completes distance manifold estimation and AutoClock deconvolution in 0.45 seconds (&gt;144,000x faster than BEAST MCMC).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +135,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">Hepatitis E virus causes acute viral hepatitis transmitted enterically through contaminated drinking water or zoonotically via domestic swine. Under published BEAST MCMC with an uncorrelated lognormal relaxed clock, the ancestral divergence of the global circulating lineage was calibrated to 1950.0 CE [1930, 1970 CE]. ChronAeon&#x27;s closed-form distance manifold regression with transformer-attention PGLS infers $t_{\...</p>
+        <div class="topline-content"><p>AutoClock confirms strict rate homogeneity ($K^* = 1$), rejecting multi-rate community fragmentation (dominant normalized Laplacian spectral eigengap at $K=1$) and validating a single unified evolutionary clock regime.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +145,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1950.00 ([1935.00, 1955.00]), aligning in complete concordance with published BEAST MCMC (1950.00, [1930, 1970]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.85 seconds (22,736x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1950.00 ([1935.00, 1955.00]), aligning in complete concordance with published BEAST MCMC (1950.00, [1930, 1970]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.85 seconds (22,736x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +208,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1950.0 CE</td><td style=''>[1930.0, 1970.0 CE]</td><td style='text-align: right;'>~1.5e-3 – 3.0e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>1976.00 CE</td><td style=''>[-$\infty$, 2002.90 CE]</td><td style='text-align: right;'>3.191e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.125$ ($\lambda^* = 0.999$)</td><td style='text-align: right;'>0.45 seconds</td></tr><tr><td style=''>Non-Parametric Jackknife Mean</td><td style=''>1969.28 CE</td><td style=''>[1828.38, 2016.45 CE]</td><td style='text-align: right;'>3.191e-3 subs/site/yr</td><td style='text-align: right;'>SE = 65.69 yr</td><td style='text-align: right;'>0.45 seconds</td></tr><tr><td style=''>AutoClock Spectral Single Clock</td><td style=''>$K^* = 1$</td><td style=''>—</td><td style='text-align: right;'>3.191e-3 subs/site/yr</td><td style='text-align: right;'>Max Eigengap = 0.540</td><td style='text-align: right;'>0.32 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 144,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1950.0 CE</td><td style=''>[1930.0, 1970.0 CE]</td><td style='text-align: right;'>~1.5e-3 – 3.0e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~18.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>1976.00 CE</td><td style=''>[-$\infty$, 2002.90 CE]</td><td style='text-align: right;'>3.191e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.125$ ($\lambda^* = 0.999$)</td><td style='text-align: right;'>0.45 seconds</td></tr><tr><td style=''>Non-Parametric Jackknife Mean</td><td style=''>1969.28 CE</td><td style=''>[1828.38, 2016.45 CE]</td><td style='text-align: right;'>3.191e-3 subs/site/yr</td><td style='text-align: right;'>SE = 65.69 yr</td><td style='text-align: right;'>0.45 seconds</td></tr><tr><td style=''>AutoClock Spectral Single Clock</td><td style=''>$K^* = 1$</td><td style=''>—</td><td style='text-align: right;'>3.191e-3 subs/site/yr</td><td style='text-align: right;'>Max Eigengap = 0.540</td><td style='text-align: right;'>0.32 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>144,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

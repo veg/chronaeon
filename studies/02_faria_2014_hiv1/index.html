@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Central African HIV-1 and the Origin of Pandemic Group M (Faria et al., 2014) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1920.0</div>
         <div class="scorecard-meta">95% HPD: [1908, 1930]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1913.40</div>
         <div class="scorecard-meta">95% CI: [1899.8, 1927.0]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 4$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study provides a complete, deterministic re-analysis of the landmark Central African HIV-1 envelope cohort compiled by Faria et al. (Science, 2014), which reconstructed the geographical origin, spatiotemporal radiation, and demographic ignition of pandemic HIV-1 Group M. Evaluating $N = 466$ sequences sampled between 1959.5 and 2011.8 across eight urban centers in the Democratic Republic of Congo (DRC) and Republic of Congo, ChronAeon executes automated distance metricity diagnostics, continuous latent manifold promotion, leave-one-out cross-validation (LOOCV) outlier triage, and hierarchical multi-community rate deconvolution:</p>
+        <div class="topline-content"><p>This study provides a complete, deterministic re-analysis of the landmark Central African HIV-1 envelope cohort compiled by <a href="https://doi.org/10.1126/science.1256739">Faria et al. (Science, 2014)</a>, which reconstructed the geographical origin, spatiotemporal radiation, and demographic ignition of pandemic HIV-1 Group M. Evaluating $N = 466$ sequences sampled between 1959.5 and 2011.8 across eight urban centers in the Democratic Republic of Congo (DRC) and Republic of Congo, ChronAeon executes automated distance metricity diagnostics, continuous latent manifold promotion, leave-one-out cross-validation (LOOCV) outlier triage, and hierarchical multi-community rate deconvolution:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">AutoClock&#x27;s graph-spectral community deconvolution partitioned the 466 Central African sequences into distinct evolutionary communities that accurately mirror the established biological rate hierarchy of HIV-1 subtypes (Patiño-Galindo &amp; González-Candelas, 2017): 1. Community `c1` ($N = 168$, $\mu = 9.41 \times 10^{-4}$ subs/site/yr): Captures the dominant pandemic Subtype A lineage that drove explosive urban trans...</p>
+        <div class="topline-content"><p>AutoClock identifies four distinct evolutionary communities reflecting the established biological rate hierarchy across HIV-1 subtypes (Subtype A Kinshasa core vs. Subtypes G, D, and localized recombinants).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +140,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">Continuous manifold regression yields $t_{\mathrm{MRCA}} = 1921.04$ CE (95% Fieller CI: [1904.20, 1933.80 CE]), directly matching published BEAST MCMC estimates (1920.00 CE, 95% HPD: [1908.00, 1930.00 CE]) and historical archival fossils (1959 ZR59). When non-linear rate variation is evaluated via restricted splines, an inflection at the 1980s epidemic takeoff yields $t_{\mathrm{MRCA}} = 1946.20$ CE with contempor...</p>
+        <div class="topline-content"><p>Continuous manifold regression yields $t_{\mathrm{MRCA}} = 1921.04$ CE (95% Fieller CI: [1904.20, 1933.80 CE]), directly matching published BEAST MCMC estimates (1920.00 CE, 95% HPD: [1908.00, 1930.00 CE]) and historical archival fossils (1959 ZR59). When non-linear rate variation is evaluated via restricted splines, an inflection at the 1980s epidemic takeoff yields $t_{\mathrm{MRCA}} = 1946.20$ CE with contemporary rate $2.14 \times 10^{-3}$.</p></div>
       </div>
     </section>
 
@@ -195,7 +208,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>|      Outlier identification (|Z| &gt;= 2.5) and sensitivity pruning (N=459).  |</li><li style='margin-bottom: 0.35rem;'>[*] Flagged Temporal Outliers (|Z| &gt;= 2.5, possible latent proviruses, archival isolates, or lab artifacts):</li><li style='margin-bottom: 0.35rem;'>97CG305: Sampling Date=1997.0, Predicted Date=2031.7 (Discrepancy: +34.66 yr, Z=+2.85)</li><li style='margin-bottom: 0.35rem;'>KS7tAs97: Sampling Date=1997.0, Predicted Date=1954.8 (Discrepancy: 42.17 yr, Z=2.97)</li>
+            <li style='margin-bottom: 0.4rem;'>|      Outlier identification (|Z| &gt;= 2.5) and sensitivity pruning (N=459).  |</li><li style='margin-bottom: 0.4rem;'>[*] Flagged Temporal Outliers (|Z| &gt;= 2.5, possible latent proviruses, archival isolates, or lab artifacts):</li><li style='margin-bottom: 0.4rem;'>97CG305: Sampling Date=1997.0, Predicted Date=2031.7 (Discrepancy: +34.66 yr, Z=+2.85)</li><li style='margin-bottom: 0.4rem;'>KS7tAs97: Sampling Date=1997.0, Predicted Date=1954.8 (Discrepancy: 42.17 yr, Z=2.97)</li>
           </ul>
         </div>
         

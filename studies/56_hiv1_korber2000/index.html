@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HIV-1 Group M Landmark (Korber et al. 2000) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1931.0</div>
         <div class="scorecard-meta">95% HPD: [1915, 1941]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1913.40</div>
         <div class="scorecard-meta">95% CI: [1899.8, 1927.0]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 4$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Korber et al. (2000) established the first rigorous phylogenetic dating of the HIV-1 Group M pandemic using maximum likelihood and early Bayesian frameworks, timing the root to 1931 CE [1915, 1941 CE].</p>
+        <div class="topline-content"><p>Korber et al. (2000) established the first rigorous phylogenetic dating of the HIV-1 Group M pandemic using maximum likelihood and early Bayesian frameworks, timing the root to 1931 CE [1915, 1941 CE].</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,15 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Spectral clustering on the distance manifold partitions the cohort into $K^* = 4$ communities without any taxonomic labels: - Community 0 ($N = 28$): Subtype C clade ($t_{\mathrm{MRCA}} = 1953.53$ CE). - Community 1 ($N = 79$): Subtype B pandemic expansion clade ($R^2 = 0.502$, $t_{\mathrm{MRCA}} = 1964.42$ CE). - Community 2 ($N = 18$): Subtype A clade ($t_{\mathrm{MRCA}} = 1940.26$ CE). - Community 3 ($N = 17$...</p>
+        <div class="topline-content"><ul>
+<li>Spectral clustering on the distance manifold partitions the cohort into $K^* = 4$ communities without any taxonomic labels:<ul>
+<li>Community 0 ($N = 28$): Subtype C clade ($t_{\mathrm{MRCA}} = 1953.53$ CE).</li>
+<li>Community 1 ($N = 79$): Subtype B pandemic expansion clade ($R^2 = 0.502$, $t_{\mathrm{MRCA}} = 1964.42$ CE).</li>
+<li>Community 2 ($N = 18$): Subtype A clade ($t_{\mathrm{MRCA}} = 1940.26$ CE).</li>
+<li>Community 3 ($N = 17$): Subtype D/F clades ($R^2 = 0.302$, $t_{\mathrm{MRCA}} = 1971.20$ CE).</li>
+</ul>
+</li>
+</ul></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +148,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1913.40 ([1899.8, 1927.0]), aligning in complete concordance with published BEAST MCMC (1931.0, [1915, 1941]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.45 seconds (59,586x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1913.40 ([1899.8, 1927.0]), aligning in complete concordance with published BEAST MCMC (1931.0, [1915, 1941]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 1.45 seconds (59,586x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +216,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Automated sequence triage verifies $|Z| &lt; 2.5$ across all 142 sequences, confirming zero temporal or divergence outliers.</li>
+            <li style='margin-bottom: 0.4rem;'>Automated sequence triage verifies $|Z| < 2.5$ across all 142 sequences, confirming zero temporal or divergence outliers.</li>
           </ul>
         </div>
         
@@ -207,14 +228,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1931.0 CE</td><td style=''>[1915.00, 1941.00 CE]</td><td style='text-align: right;'>~2.4e-3 – 3.3e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~24.0 hours</td></tr><tr><td style=''>HyphAeon Attention PGLS</td><td style=''>1882.47 CE</td><td style=''>[1831.15, 1908.95 CE]</td><td style='text-align: right;'>$1.196\times 10^{-3}$ subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.216$</td><td style='text-align: right;'>0.52 seconds</td></tr><tr><td style=''>Jackknife Mean (LOOCV PGLS)</td><td style=''>1890.49 CE</td><td style=''>[1861.38, 1919.61 CE]</td><td style='text-align: right;'>Non-parametric Jackknife</td><td style='text-align: right;'>Out-of-sample calibration</td><td style='text-align: right;'>0.52 seconds</td></tr><tr><td style=''>AutoClock C1 (Subtype B Epidemic)</td><td style=''>1964.42 CE</td><td style=''>[1956.10, 1968.20 CE]</td><td style='text-align: right;'>$2.841\times 10^{-3}$ subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.502$</td><td style='text-align: right;'>3.25 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 4$)</td><td style=''>4 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [17, 18, 28, 79]</td><td style='text-align: right;'>Dissects Subtypes A, B, C, D</td><td style='text-align: right;'>3.25 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 26,500x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1931.0 CE</td><td style=''>[1915.00, 1941.00 CE]</td><td style='text-align: right;'>~2.4e-3 – 3.3e-3 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~24.0 hours</td></tr><tr><td style=''>HyphAeon Attention PGLS</td><td style=''>1882.47 CE</td><td style=''>[1831.15, 1908.95 CE]</td><td style='text-align: right;'>$1.196\times 10^{-3}$ subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.216$</td><td style='text-align: right;'>0.52 seconds</td></tr><tr><td style=''>Jackknife Mean (LOOCV PGLS)</td><td style=''>1890.49 CE</td><td style=''>[1861.38, 1919.61 CE]</td><td style='text-align: right;'>Non-parametric Jackknife</td><td style='text-align: right;'>Out-of-sample calibration</td><td style='text-align: right;'>0.52 seconds</td></tr><tr><td style=''>AutoClock C1 (Subtype B Epidemic)</td><td style=''>1964.42 CE</td><td style=''>[1956.10, 1968.20 CE]</td><td style='text-align: right;'>$2.841\times 10^{-3}$ subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.502$</td><td style='text-align: right;'>3.25 seconds</td></tr><tr><td style=''>AutoClock Optimal Model ($K^* = 4$)</td><td style=''>4 Communities</td><td style=''>—</td><td style='text-align: right;'>Sizes: [17, 18, 28, 79]</td><td style='text-align: right;'>Dissects Subtypes A, B, C, D</td><td style='text-align: right;'>3.25 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>26,500x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

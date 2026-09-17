@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>West Nile Virus Polyprotein (Pybus et al. 2012) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1998.50</div>
         <div class="scorecard-meta">95% HPD: [1997.80, 1999.10]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1996.05</div>
         <div class="scorecard-meta">95% CI: [1993.28, 1998.81]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the classic West Nile virus (WNV) North American continental invasion benchmark originally published by Pybus et al. (PNAS, 2012). The analysis evaluates $N = 104$ complete polyprotein coding sequences (10,299 nucleotide positions in-frame, 3,433 codons) sampled across the United States between 1999.00 and 2007.63 CE across avian reservoir hosts, mosquito vectors, humans, and equines.</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the classic West Nile virus (WNV) North American continental invasion benchmark originally published by <a href="https://doi.org/10.1073/pnas.1206598109">Pybus et al. (PNAS, 2012)</a>. The analysis evaluates $N = 104$ complete polyprotein coding sequences (10,299 nucleotide positions in-frame, 3,433 codons) sampled across the United States between 1999.00 and 2007.63 CE across avian reservoir hosts, mosquito vectors, humans, and equines.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,10 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">To test whether the multi-host transmission dynamics of WNV (birds, mosquitoes, humans, equines) induce rate heterogeneity or distinct clock communities, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 1.00896, \quad \Delta \lambda_2 = 0.00020, \quad \Delta \lambda_3 = 0.00040$$ The spectral eigengap reveals a massive cliff at $K=1$ ($&gt;5,000\times$ drop t...</p>
+        <div class="topline-content"><p>To test whether the multi-host transmission dynamics of WNV (birds, mosquitoes, humans, equines) induce rate heterogeneity or distinct clock communities, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 1.00896, \quad \Delta \lambda_2 = 0.00020, \quad \Delta \lambda_3 = 0.00040$$</p>
+<p>The spectral eigengap reveals a massive cliff at $K=1$ ($>5,000\times$ drop to $\Delta \lambda_2$). Model selection across candidate partitions strictly prefers a single clock:</p>
+<p>This decisive preference for <strong>$K^* = 1$</strong> provides quantitative, unsupervised evolutionary validation that West Nile virus evolved as a single, coherent phylogenetic wave across North America without splitting into separate enduring molecular clock regimes.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +143,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1996.05 ([1993.28, 1998.81]), in complete concordance with published BEAST MCMC (1998.50, [1997.80, 1999.10]) while completing inference in 3.20 seconds (67,500x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1996.05 ([1993.28, 1998.81]), in complete concordance with published BEAST MCMC (1998.50, [1997.80, 1999.10]) while completing inference in 3.20 seconds (67,500x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +211,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>| **Temporal Outliers** | Unflagged in BEAST | 0 outliers flagged ($|Z| \ge 2.5$) | 0 outliers flagged ($|Z| \ge 2.5$) | **HIGH STABILITY** |</li><li style='margin-bottom: 0.35rem;'>**Standardized Studentized Outliers ($|Z| \ge 2.5$)**:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>Temporal Outliers</strong> | Unflagged in BEAST | 0 outliers flagged ($|Z| \ge 2.5$) | 0 outliers flagged ($|Z| \ge 2.5$) | <strong>HIGH STABILITY</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Panel D (LeaveOneOut CrossValidation)</strong>: Empirical tip recovery ($R^2_{\mathrm{pred}} = 0.274$, MAE = 409.3 days / 1.12 yr, RMSE = 539.9 days) confirming zero outliers ($|Z| \ge 2.5$).</li><li style='margin-bottom: 0.4rem;'><strong>Standardized Studentized Outliers ($|Z| \ge 2.5$)</strong>:</li>
           </ul>
         </div>
         

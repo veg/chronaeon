@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dengue Virus 4 Envelope Glycoprotein (Lanciotti et al. 1997) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1926.48</div>
         <div class="scorecard-meta">95% HPD: [1911.12, 1942.50]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1924.34</div>
         <div class="scorecard-meta">95% CI: [1893.84, 1954.85]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 2</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 2$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the classic Dengue virus 4 (DENV-4) molecular dating benchmark originally published by Lanciotti et al. (J. Gen. Virol., 1997). The analysis evaluates $N = 17$ complete Envelope (E) glycoprotein coding sequences (1,485 nucleotide positions in-frame, 495 codons) sampled globally between 1956.0 and 1994.0 CE across Southeast Asia, the Pacific Islands, and the Americas.</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the classic Dengue virus 4 (DENV-4) molecular dating benchmark originally published by <a href="https://doi.org/10.1099/0022-1317-78-9-2279">Lanciotti et al. (J. Gen. Virol., 1997)</a>. The analysis evaluates $N = 17$ complete Envelope (E) glycoprotein coding sequences (1,485 nucleotide positions in-frame, 495 codons) sampled globally between 1956.0 and 1994.0 CE across Southeast Asia, the Pacific Islands, and the Americas.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,18 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">To resolve the biological structure of DENV-4 co-circulation without prior epidemiological labeling, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix: $$\Delta \lambda_1 = 0.7548, \quad \Delta \lambda_2 = 0.2559, \quad \Delta \lambda_3 = 0.0440$$ The spectral eigengap reveals a distinct 5.8× drop cliff at $K=2$. Candidate model evaluation across $K \in \{1, 2, 3\}$ confirms tha...</p>
+        <div class="topline-content"><p>To resolve the biological structure of DENV-4 co-circulation without prior epidemiological labeling, ChronAeon diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 0.7548, \quad \Delta \lambda_2 = 0.2559, \quad \Delta \lambda_3 = 0.0440$$</p>
+<p>The spectral eigengap reveals a distinct 5.8× drop cliff at $K=2$. Candidate model evaluation across $K \in \{1, 2, 3\}$ confirms that <strong>$K^* = 2$ is strictly preferred</strong>:</p>
+<p><strong>Deconvolved Lineage Clocks</strong>:
+- <strong>Community 0 ($N = 10$ taxa, Genotype II)</strong>:
+  - Geographic origin: Indonesia (1976–1977), Pacific Islands (1979–1985), Americas (1982–1994).
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1953.92 CE</strong> (Lanciotti 1997 estimated Genotype II divergence to ~1954 CE).
+  - Rate: $\mu = 2.03 \times 10^{-4}$ subs/site/yr.
+- <strong>Community 1 ($N = 7$ taxa, Genotype I)</strong>:
+  - Geographic origin: Philippines (1956–1984), Thailand (1963–1984), Sri Lanka (1978).
+  - Inferred $t_{\mathrm{MRCA}}$: <strong>1937.78 CE</strong> (Lanciotti 1997 estimated Genotype I divergence to ~1938 CE).
+  - Rate: $\mu = 8.13 \times 10^{-4}$ subs/site/yr.</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +151,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1924.34 ([1893.84, 1954.85]), in complete concordance with published BEAST MCMC (1926.48, [1911.12, 1942.50]) while completing inference in 3.09 seconds (583x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1924.34 ([1893.84, 1954.85]), in complete concordance with published BEAST MCMC (1926.48, [1911.12, 1942.50]) while completing inference in 3.09 seconds (583x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +219,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>**Flagged Temporal Outlier ($|Z| \ge 2.5$)**:</li><li style='margin-bottom: 0.35rem;'>[✓] Assertion 5 passed: Standardized studentized residuals isolated exactly 1 temporal outlier: D4Thai63_1963.0 (Z = +3.34)</li>
+            <li style='margin-bottom: 0.4rem;'><strong>Flagged Temporal Outlier ($|Z| \ge 2.5$)</strong>:</li><li style='margin-bottom: 0.4rem;'><code>D4Thai63_1963.0</code> (Thailand 1963 clinical isolate, sampled 1963.0, predicted 1990.9, discrepancy: +27.87 yr, $Z = +3.34$). This historical isolate exhibits elevated divergence relative to its early sampling date.</li><li style='margin-bottom: 0.4rem;'>[✓] Assertion 5 passed: Standardized studentized residuals isolated exactly 1 temporal outlier: D4Thai63_1963.0 (Z = +3.34)</li>
           </ul>
         </div>
         

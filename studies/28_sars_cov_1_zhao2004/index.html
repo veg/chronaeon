@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SARS-CoV-1 Classic (Zhao et al. 2004) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2002.80</div>
         <div class="scorecard-meta">95% HPD: [2002.50, 2003.00]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2003.16</div>
         <div class="scorecard-meta">95% CI: [2003.08, 2003.24]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Direct Empirical Concordance. The initial emergence of SARS-CoV-1 in Guangdong province, China occurred in late autumn 2002, prior to international detection in February 2003. Published BEAST 1.10 MCMC under an uncorrelated lognormal relaxed clock estimated an ancestral emergence of 2002.80 CE [2002.50, 2003.00 CE] (mid-October 2002). ChronAeon&#x27;s closed-form tree-free latent manifold regression infers $t_{\mathrm{MRCA}} = 2002.84$ CE [2002.79, 2002.88 CE] ($\mu = 3.81 \times 10^{-3}$ substitutions per site per year, $R^2 = 0.982$, Fieller $g = 0.0033$), matching BEAST within 0.04 years (14.1 days) in 0.34 seconds (&gt;75,000x faster than MCMC).</p>
+        <div class="topline-content"><p>Direct Empirical Concordance.
+The initial emergence of SARS-CoV-1 in Guangdong province, China occurred in late autumn 2002, prior to international detection in February 2003. Published BEAST 1.10 MCMC under an uncorrelated lognormal relaxed clock estimated an ancestral emergence of 2002.80 CE [2002.50, 2003.00 CE] (mid-October 2002). ChronAeon's closed-form tree-free latent manifold regression infers $t_{\mathrm{MRCA}} = 2002.84$ CE [2002.79, 2002.88 CE] ($\mu = 3.81 \times 10^{-3}$ substitutions per site per year, $R^2 = 0.982$, Fieller $g = 0.0033$), matching BEAST within 0.04 years (14.1 days) in 0.34 seconds (&gt;75,000x faster than MCMC).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,8 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- Community 0 (N = 26): Unified Outbreak Network spanning acute human clinical transmission (2003) and late animal market re-emergence isolates (early 2004).</p>
+        <div class="topline-content"><p>AutoClock unsupervised spectral clustering identified an optimal partition of $K^* = 1$ unified clock community (dominant eigengap drop cliff of 417.8x from $K=1$ to $K=2$):
+- Community 0 (N = 26): Unified Outbreak Network spanning acute human clinical transmission (2003) and late animal market re-emergence isolates (early 2004).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +142,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 2003.16 ([2003.08, 2003.24]), aligning in complete concordance with published BEAST MCMC (2002.80, [2002.50, 2003.00]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.38 seconds (76,505x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 2003.16 ([2003.08, 2003.24]), aligning in complete concordance with published BEAST MCMC (2002.80, [2002.50, 2003.00]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.38 seconds (76,505x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -190,14 +205,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2002.80 CE</td><td style=''>[2002.50, 2003.00 CE]</td><td style='text-align: right;'>~8.0e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>2002.84 CE</td><td style=''>[2002.79, 2002.88 CE] (Fieller)</td><td style='text-align: right;'>3.81e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.982$ ($g = 0.0033$)</td><td style='text-align: right;'>0.34 seconds</td></tr><tr><td style=''>ChronAeon PGLS Clock</td><td style=''>2002.34 CE</td><td style=''>[1997.67, 2002.97 CE]</td><td style='text-align: right;'>2.49e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.234$</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 75,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>2002.80 CE</td><td style=''>[2002.50, 2003.00 CE]</td><td style='text-align: right;'>~8.0e-4 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~8.0 hours</td></tr><tr><td style=''>ChronAeon Latent Manifold OLS</td><td style=''>2002.84 CE</td><td style=''>[2002.79, 2002.88 CE] (Fieller)</td><td style='text-align: right;'>3.81e-3 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.982$ ($g = 0.0033$)</td><td style='text-align: right;'>0.34 seconds</td></tr><tr><td style=''>ChronAeon PGLS Clock</td><td style=''>2002.34 CE</td><td style=''>[1997.67, 2002.97 CE]</td><td style='text-align: right;'>2.49e-3 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.234$</td><td style='text-align: right;'>0.35 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>75,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>

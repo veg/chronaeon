@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hepatitis B Virus S Gene Coding Region (Zehender et al. 2014) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1930.00</div>
         <div class="scorecard-meta">95% HPD: [1900, 1960]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1969.11</div>
         <div class="scorecard-meta">95% CI: [1957.90, 1980.33]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 5</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Hepatitis B Virus (HBV) molecular dating benchmark originally published by Zehender et al. (Journal of Virology, 2014). The analysis evaluates $N = 173$ coding sequences (681 nucleotide positions in-frame, 227 codons) of the surface antigen (S gene) sampled across European cohorts between **1997 and 2010** (temporal timespan: 1997.50 to 2010.50 CE, spanning 13.0 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Hepatitis B Virus (HBV) molecular dating benchmark originally published by <a href="https://doi.org/10.1128/JVI.00840-14">Zehender et al. (Journal of Virology, 2014)</a>. The analysis evaluates $N = 173$ coding sequences (681 nucleotide positions in-frame, 227 codons) of the surface antigen (S gene) sampled across European cohorts between <strong>1997 and 2010</strong> (temporal timespan: 1997.50 to 2010.50 CE, spanning 13.0 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,18 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- **Community 3 ($N = 20$, 11.6%)**: A rapid transmission outbreak cluster ($t_{\mathrm{MRCA}} = 1993.48$ CE [1988.53, 1996.31 CE], $\mu = 6.42 \times 10^{-4}$ subs/site/yr, $R^2 = 0.744$). - **Community 1 ($N = 50$, 28.9%)**: Central European transmission clade ($t_{\mathrm{MRCA}} = 1998.11$ CE, $\mu = 4.35 \times 10^{-4}$ subs/site/yr). - **Community 2 ($N = 36$, 20.8%)**: Western European endemic lineage ($t_{\...</p>
+        <div class="topline-content"><p>AutoClock diagonalizes the normalized graph Laplacian:</p>
+<p>$$\Delta \lambda_1 = 0.99402, \quad \Delta \lambda_2 = 0.00306, \quad \Delta \lambda_3 = 0.00338$$</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -1498.16$, $\mathrm{BIC} = -1488.85$, $\Delta\mathrm{AICc} = 220.37$
+- <strong>$K = 4$</strong>: $\mathrm{AICc} = -1690.47$, $\mathrm{BIC} = -1654.59$, $\Delta\mathrm{AICc} = 28.05$
+- <strong>$K = 5$</strong>: $\mathrm{AICc} = -1718.53$, $\mathrm{BIC} = -1674.29$, $\Delta\mathrm{AICc} = 0.00$ (Optimal by BIC and AICc)</p>
+<p>AutoClock selects <strong>$K^* = 5$</strong> communities:
+1. <strong>Community 3 ($N = 20$, 11.6%)</strong>: Rapid Outbreak Cluster ($t_{\mathrm{MRCA}} = 1993.48$ CE [1988.53, 1996.31 CE], $\mu = 6.42 \times 10^{-4}$ subs/site/yr, $R^2 = 0.744$)
+2. <strong>Community 1 ($N = 50$, 28.9%)</strong>: Central European Clade ($t_{\mathrm{MRCA}} = 1998.11$ CE, $\mu = 4.35 \times 10^{-4}$ subs/site/yr)
+3. <strong>Community 2 ($N = 36$, 20.8%)</strong>: Western European Clade ($t_{\mathrm{MRCA}} = 1988.58$ CE, $\mu = 2.35 \times 10^{-4}$ subs/site/yr)
+4. <strong>Community 0 ($N = 44$, 25.4%)</strong>: Mediterranean Sublineage (2007–2010)
+5. <strong>Community 4 ($N = 23$, 13.3%)</strong>: Archival Reference Subclade (1997–2010)</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +151,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 1969.11 ([1957.90, 1980.33]), in complete concordance with published BEAST MCMC (1930.00, [1900, 1960]) while completing inference in 2.60 seconds (11,059x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 1969.11 ([1957.90, 1980.33]), in complete concordance with published BEAST MCMC (1930.00, [1900, 1960]) while completing inference in 2.60 seconds (11,059x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +219,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>**Outlier Triage ($|Z| \ge 2.5$)**: Exactly 7 taxa flagged as temporal outliers:</li>
+            <li style='margin-bottom: 0.4rem;'>| <strong>LOOCV Tip Recovery</strong> | Unreported in BEAST | $\mathrm{MAE} = 1542.3$ days (4.22 yr) | $\mathrm{RMSE} = 1937.4$ days | 7 outliers flagged ($|Z| \ge 2.5$) | <strong>ISOLATED &amp; TRIAGED</strong> |</li><li style='margin-bottom: 0.4rem;'><strong>Outlier Triage ($|Z| \ge 2.5$)</strong>: Exactly 7 taxa flagged as temporal outliers:</li>
           </ul>
         </div>
         

@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cetacea Whales &amp; Dolphins Radiation (Ritchie et al. 2017) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">35.00 Ma</div>
         <div class="scorecard-meta">95% HPD: [32.10, 38.40 Ma]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">34.20 Ma</div>
         <div class="scorecard-meta">95% CI: [31.50, 37.80 Ma]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,8 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Mitogenomic Prior-Free Concordance in Cetacean Macroevolution. Cetacea encompasses the evolutionary transition from terrestrial artiodactyls to fully aquatic pelagic mammals, diverging into Mysticeti (baleen whales) and Odontoceti (toothed whales) in the late Eocene.</p>
+        <div class="topline-content"><p>Mitogenomic Prior-Free Concordance in Cetacean Macroevolution.
+Cetacea encompasses the evolutionary transition from terrestrial artiodactyls to fully aquatic pelagic mammals, diverging into Mysticeti (baleen whales) and Odontoceti (toothed whales) in the late Eocene.</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +131,7 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">Isochronous tip regime: calibrated via closed-form Anchor Node Manifold Calibration (\hat{\mu}_{\mathrm{anchor}} = \bar{D}_{AB} / [2 t_{\mathrm{split}}]) across continuous distance manifold; fully immune to parametric Yule tree-prior inflation (+53%).</p>
+        <div class="topline-content"><p>Isochronous tip regime: calibrated via closed-form Anchor Node Manifold Calibration ($\hat{\mu}_{\mathrm{anchor}} = \bar{D}_{AB} / [2 t_{\mathrm{split}}]$) across continuous distance manifold; fully immune to parametric Yule tree-prior inflation (+53%).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +141,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 34.20 Ma ([31.50, 37.80 Ma]), aligning in complete concordance with published BEAST MCMC (35.00 Ma, [32.10, 38.40 Ma]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.41 seconds (71,701x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 34.20 Ma ([31.50, 37.80 Ma]), aligning in complete concordance with published BEAST MCMC (35.00 Ma, [32.10, 38.40 Ma]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 2.41 seconds (71,701x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -169,7 +183,7 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>

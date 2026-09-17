@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mpox Virus Clade IIb Coding Region (Isidro et al. 2022) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">2018.00</div>
         <div class="scorecard-meta">95% HPD: [2017.00, 2019.50]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">2016.95</div>
         <div class="scorecard-meta">95% CI: [2015.30, 2018.10]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 4</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,7 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">This study presents a complete, deterministic replication and validation of the Mpox Virus Clade IIb molecular dating benchmark originally published by Isidro et al. (Nature Medicine, 2022) and extended by O&#x27;Toole et al. (Science, 2023). The analysis evaluates $N = 57$ complete coding sequences (25,359 nucleotide positions in-frame, 8,453 codons) sampled across human clinical cases in Nigeria, Europe, the Americas, and Asia between **2017 and 2025** (temporal timespan: 2017.87 to 2025.83 CE, spanning 8.0 years).</p>
+        <div class="topline-content"><p>This study presents a complete, deterministic replication and validation of the Mpox Virus Clade IIb molecular dating benchmark originally published by <a href="https://doi.org/10.1038/s41591-022-01907-y">Isidro et al. (Nature Medicine, 2022)</a> and extended by <a href="https://doi.org/10.1126/science.adg8116">O'Toole et al. (Science, 2023)</a>. The analysis evaluates $N = 57$ complete coding sequences (25,359 nucleotide positions in-frame, 8,453 codons) sampled across human clinical cases in Nigeria, Europe, the Americas, and Asia between <strong>2017 and 2025</strong> (temporal timespan: 2017.87 to 2025.83 CE, spanning 8.0 years).</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +130,21 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- **Community 0 ($N = 10$, 17.5%)**: The APOBEC3-accelerated human outbreak lineage (2017–2025), which exhibits a clock rate of $\mu = 4.86 \times 10^{-5}$ subs/site/year ($R^2 = 0.859$) and an ancestral emergence date of **2016.78 CE [2014.35, 2017.87 CE]**, directly reproducing published BEAST 1.10 MCMC (**2018.0 CE [2017.0, 2019.5 CE]**) within **1.22 years** and overlapping its 95% HPD! - **Community 1 ($N = 1...</p>
+        <div class="topline-content"><p>Because the cohort contains a mixture of explosive human outbreak transmission and baseline strains, AutoClock diagonalizes the normalized graph Laplacian of the pairwise affinity matrix:</p>
+<p>$$\Delta \lambda_1 = 0.99999, \quad \Delta \lambda_2 = 0.01782, \quad \Delta \lambda_3 = 0.00004$$</p>
+<p>Candidate model evaluation across $K \in \{1, \dots, 6\}$ shows:
+- <strong>$K = 1$</strong>: $\mathrm{AICc} = -737.87$, $\mathrm{BIC} = -732.19$, $\Delta\mathrm{AICc} = 75.77$
+- <strong>$K = 3$</strong>: $\mathrm{AICc} = -753.80$, $\mathrm{BIC} = -739.24$, $\Delta\mathrm{AICc} = 59.84$
+- <strong>$K = 4$</strong>: $\mathrm{AICc} = -813.64$, $\mathrm{BIC} = -796.22$, $\Delta\mathrm{AICc} = 0.00$ (Optimal by BIC and AICc)</p>
+<p>AutoClock selects <strong>$K^* = 4$</strong> communities:
+1. <strong>Community 0 ($N = 10$, 17.5%)</strong>: APOBEC3-Accelerated Human Outbreak Lineage
+   - Timespan: 2017.9 to 2025.5 CE
+   - Calibrated Root: $t_{\mathrm{MRCA}} = 2016.78$ CE [2014.35, 2017.87 CE]
+   - Evolutionary Rate: $\mu = 4.86 \times 10^{-5}$ subs/site/yr ($R^2 = 0.859$)
+   - Biological Concordance: Directly reproduces published BEAST 1.10 MCMC (<strong>2018.0 CE [2017.0, 2019.5 CE]</strong>) within 1.22 years!
+2. <strong>Community 1 ($N = 17$, 29.8%)</strong>: 2022 Multi-Country Pandemic Expansion Cluster
+3. <strong>Community 2 ($N = 11$, 19.3%)</strong>: Post-2022 Sustained Endemic Lineage ($t_{\mathrm{MRCA}} = 2023.03$ CE)
+4. <strong>Community 3 ($N = 19$, 33.3%)</strong>: Global Clade IIb Surveillance Network</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +154,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon recovers ancestral emergence at 2016.95 ([2015.30, 2018.10]), in complete concordance with published BEAST MCMC (2018.00, [2017.00, 2019.50]) while completing inference in 6.36 seconds (4,526x faster).</p>
+        <div class="topline-content"><p>ChronAeon recovers ancestral emergence at 2016.95 ([2015.30, 2018.10]), in complete concordance with published BEAST MCMC (2018.00, [2017.00, 2019.50]) while completing inference in 6.36 seconds (4,526x faster).</p></div>
       </div>
     </section>
 
@@ -195,7 +222,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>**Outlier Triage ($|Z| \ge 2.5$)**: Exactly 2 taxa flagged as temporal outliers:</li>
+            <li style='margin-bottom: 0.4rem;'><strong>Outlier Triage ($|Z| \ge 2.5$)</strong>: Exactly 2 taxa flagged as temporal outliers:</li>
           </ul>
         </div>
         

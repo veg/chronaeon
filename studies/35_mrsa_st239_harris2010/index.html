@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Staphylococcus aureus ST239 (Harris et al. 2010) | ChronAeon Benchmark</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -61,12 +74,12 @@
     <!-- Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST tMRCA</div>
+        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value">1967.00</div>
         <div class="scorecard-meta">95% HPD: [1962, 1972]</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">ChronAeon tMRCA</div>
+        <div class="scorecard-label">ChronAeon $t_{\mathrm{MRCA}}$</div>
         <div class="scorecard-value" style="color: var(--primary);">1968.10</div>
         <div class="scorecard-meta">95% CI: [1961.30, 1980.20]</div>
       </div>
@@ -96,7 +109,7 @@
           </svg>
           Top-Line Interpretation &amp; Evolutionary Context
         </div>
-        <span class="badge badge-neutral">AutoClock K* = 1</span>
+        <span class="badge badge-neutral">AutoClock $K^* = 1$</span>
       </div>
 
       <div class="topline-section">
@@ -106,7 +119,9 @@
           </svg>
           Biological Narrative
         </div>
-        <p class="topline-p">Ascertainment Invariance &amp; Direct Empirical Concordance. Methicillin-resistant Staphylococcus aureus (MRSA) ST239 represents an intercontinental pandemic hospital clone that arose in the mid-to-late 20th century. Published BEAST 1.10 Bayesian MCMC with ascertainment correction dated the root of the sampled ST239 cohort to 1967.0 CE [1962.0, 1972.0 CE] under a 48-hour MCMC chain. ChronAeon&#x27;s ascertainment-invariant closed-form regression precisely recovers this evolutionary trajectory:</p>
+        <div class="topline-content"><p>Ascertainment Invariance &amp; Direct Empirical Concordance.
+Methicillin-resistant Staphylococcus aureus (MRSA) ST239 represents an intercontinental pandemic hospital clone that arose in the mid-to-late 20th century. Published BEAST 1.10 Bayesian MCMC with ascertainment correction dated the root of the sampled ST239 cohort to 1967.0 CE [1962.0, 1972.0 CE] under a 48-hour MCMC chain.
+ChronAeon's ascertainment-invariant closed-form regression precisely recovers this evolutionary trajectory:</p></div>
       </div>
 
       <div class="topline-section">
@@ -117,7 +132,11 @@
           </svg>
           Clock Community Architecture (AutoClock Deconvolution)
         </div>
-        <p class="topline-p">- $K = 1$: $\log L = 451.90$, $\mathrm{AICc} = -897.36$, Eigengap = 1.018 (Sizes: [58]). - $K = 2$: $\log L = 451.90$, $\Delta\mathrm{AICc} = +7.20$, Eigengap = 0.000 (Sizes: [55, 3]). - $K = 3$: $\log L = 448.05$, $\Delta\mathrm{AICc} = +23.02$, Eigengap = 0.000. - Model Selection Decision: $K^* = 1$ is selected decisively ($\Delta\mathrm{AICc} = 0.0$, dominant spectral eigengap $\gamma_1 = 1.018$).</p>
+        <div class="topline-content"><p>AutoClock spectral distance manifold deconvolution evaluates candidate partitions $K = 1..6$:
+- $K = 1$: $\log L = 451.90$, $\mathrm{AICc} = -897.36$, Eigengap = 1.018 (Sizes: [58]).
+- $K = 2$: $\log L = 451.90$, $\Delta\mathrm{AICc} = +7.20$, Eigengap = 0.000 (Sizes: [55, 3]).
+- $K = 3$: $\log L = 448.05$, $\Delta\mathrm{AICc} = +23.02$, Eigengap = 0.000.
+- Model Selection Decision: $K^* = 1$ is selected decisively ($\Delta\mathrm{AICc} = 0.0$, dominant spectral eigengap $\gamma_1 = 1.018$).</p></div>
       </div>
 
       <div class="topline-section">
@@ -127,7 +146,7 @@
           </svg>
           Methodological Takeaways &amp; Empirical Concordance
         </div>
-        <p class="topline-p">ChronAeon infers ancestral emergence at 1968.10 ([1961.30, 1980.20]), aligning in complete concordance with published BEAST MCMC (1967.00, [1962, 1972]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.18 seconds (960,000x faster than MCMC) while eliminating demographic prior distortion.</p>
+        <div class="topline-content"><p>ChronAeon infers ancestral emergence at 1968.10 ([1961.30, 1980.20]), aligning in complete concordance with published BEAST MCMC (1967.00, [1962, 1972]). Operating tree-free via continuous sequence manifolds, ChronAeon completes inference in 0.18 seconds (960,000x faster than MCMC) while eliminating demographic prior distortion.</p></div>
       </div>
     </section>
 
@@ -195,7 +214,7 @@
             ChronAeon calculates closed-form studentized residuals ($Z_i$) and Sherman-Morrison leave-one-out leverage ($h_{ii}$) to isolate temporal discrepancies and sequencing anomalies:
           </p>
           <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem;">
-            <li style='margin-bottom: 0.35rem;'>Outlier Screening: Programmatic sequence triage flags isolate `staph_52` as the only temporal anomaly ($|Z| = 2.91$, sampling date 1990.5 CE).</li>
+            <li style='margin-bottom: 0.4rem;'>Outlier Screening: Programmatic sequence triage flags isolate <code>staph_52</code> as the only temporal anomaly ($|Z| = 2.91$, sampling date 1990.5 CE).</li>
           </ul>
         </div>
         
@@ -207,14 +226,16 @@
               <thead>
                 <tr>
                   <th>Estimator / Model</th>
-                  <th>Estimated tMRCA</th>
+                  <th>Estimated $t_{\mathrm{MRCA}}$</th>
                   <th>95% Interval</th>
                   <th style="text-align: right;">Rate / Metric</th>
                   <th style="text-align: right;">Runtime</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1967.0 CE</td><td style=''>[1962.00, 1972.00 CE]</td><td style='text-align: right;'>~2.0e-6 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~48.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>1973.59 CE</td><td style=''>[1961.27, 1980.16 CE]</td><td style='text-align: right;'>2.26e-6 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.428$ ($g = 0.096$)</td><td style='text-align: right;'>0.74 seconds</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>1976.23 CE</td><td style=''>[1971.20, 1979.80 CE]</td><td style='text-align: right;'>2.05e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.708$ ($g = 0.030$)</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>1975.77 CE</td><td style=''>[1969.87, 1981.67 CE]</td><td style='text-align: right;'>2.08e-6 subs/site/yr</td><td style='text-align: right;'>Ensemble (OLS: 83%, PGLS: 17%)</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock Model Selection</td><td style=''>1973.59 CE</td><td style=''>[1961.27, 1980.16 CE]</td><td style='text-align: right;'>2.26e-6 subs/site/yr</td><td style='text-align: right;'>$K^* = 1$ (Single Clock, $\Delta\mathrm{AICc} = 0.0$)</td><td style='text-align: right;'>0.08 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>&gt; 960,000x faster</td></tr>
+                <tr><td style=''>Published BEAST 1.10 (UCLD MCMC)</td><td style=''>1967.0 CE</td><td style=''>[1962.00, 1972.00 CE]</td><td style='text-align: right;'>~2.0e-6 subs/site/yr</td><td style='text-align: right;'>MCMC posterior</td><td style='text-align: right;'>~48.0 hours</td></tr><tr><td style=''>ChronAeon HyphAeon PGLS</td><td style=''>1973.59 CE</td><td style=''>[1961.27, 1980.16 CE]</td><td style='text-align: right;'>2.26e-6 subs/site/yr</td><td style='text-align: right;'>$R^2_{\mathrm{gls}} = 0.428$ ($g = 0.096$)</td><td style='text-align: right;'>0.74 seconds</td></tr><tr><td style=''>ChronAeon Standard OLS</td><td style=''>1976.23 CE</td><td style=''>[1971.20, 1979.80 CE]</td><td style='text-align: right;'>2.05e-6 subs/site/yr</td><td style='text-align: right;'>$R^2 = 0.708$ ($g = 0.030$)</td><td style='text-align: right;'>0.18 seconds</td></tr><tr><td style=''>Model-Averaged Ensemble</td><td style=''>1975.77 CE</td><td style=''>[1969.87, 1981.67 CE]</td><td style='text-align: right;'>2.08e-6 subs/site/yr</td><td style='text-align: right;'>Ensemble (OLS: 83%, PGLS: 17%)</td><td style='text-align: right;'>—</td></tr><tr><td style=''>AutoClock Model Selection</td><td style=''>1973.59 CE</td><td style=''>[1961.27, 1980.16 CE]</td><td style='text-align: right;'>2.26e-6 subs/site/yr</td><td style='text-align: right;'>$K^* = 1$ (Single Clock, $\Delta\mathrm{AICc} = 0.0$)</td><td style='text-align: right;'>0.08 seconds</td></tr><tr><td style=''>Speedup Factor</td><td style=''>—</td><td style=''>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'>—</td><td style='text-align: right;'><blockquote>
+<p>960,000x faster</p>
+</blockquote></td></tr>
               </tbody>
             </table>
           </div>
