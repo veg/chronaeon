@@ -7,7 +7,7 @@ This repository hosts the static, publication-grade web application documenting 
 
 ## Live Portal
 The interactive web portal is deployed on GitHub Pages:  
-**https://veg.github.io/cronaeon_bench/**
+**https://veg.github.io/chronaeon/** (and https://veg.github.io/cronaeon_bench/)
 
 ## Key Compendium Metrics
 - **55 Empirical Cohorts**: Covering Positive-Sense RNA, Negative-Sense RNA, Retroviruses, DNA Viruses, Bacteria & Ancient DNA, and Macroevolution.
