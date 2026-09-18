@@ -195,7 +195,7 @@
           <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">BEAST: 1951.60 CE &bull; ChronAeon: 1949.80 CE</span>
         </div>
         <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55;">
-          <p>Remarkable direct concordance: ChronAeon root (1949.80 CE) matches BEAST (1951.60 CE) with near-identical substitution rates.</p>
+          <p>Direct concordance: ChronAeon root (1949.80 CE) matches BEAST (1951.60 CE) with near-identical substitution rates.</p>
         </div>
       </div>
     </section>
@@ -410,6 +410,15 @@
       <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
         Diagonalizing the normalized graph Laplacian $L_{\mathrm{sym}} = I - D^{-1/2} W D^{-1/2}$ partitions the cohort into $K^* = 2$ distinct evolutionary communities based on spectral eigengaps and $\mathrm{AIC}_c$ parsimony:
       </p>
+      <div class="autoclock-explorer">
+        <div class="autoclock-controls"></div>
+        <div class="autoclock-chart-wrapper">
+          <svg class="autoclock-svg"></svg>
+          <div class="autoclock-tooltip"></div>
+        </div>
+        <div class="autoclock-detail-card"></div>
+        <script type="application/json" class="autoclock-data">{"k_star": 2, "g_mu": 0.00024861583451032607, "g_tmrca": 1949.804006602828, "interpretation": "AutoClock resolved K* = 2 communities separating historical West African sylvatic strains from the acute 2024 human outbreak clade in Abidjan.", "comms": [{"id": 0, "color": "#2563eb", "n": 12, "mu": 0.006242388811036257, "se_mu": 0.00017667325766971065, "t_mrca": 2022.5815873725003, "ci": [2022.51, 2022.65], "r2": 0.992, "lambda": 0.943, "ratio": 25.11, "timespan": [2023.0, 2024.51], "pts": [{"t": 2023.0, "d": 0.018361, "o": 0}, {"t": 2023.0, "d": 0.018461, "o": 0}, {"t": 2023.0, "d": 0.018152, "o": 0}, {"t": 2023.0, "d": 0.017891, "o": 0}, {"t": 2023.0, "d": 0.01801, "o": 0}, {"t": 2023.0, "d": 0.018465, "o": 0}, {"t": 2023.0, "d": 0.017958, "o": 0}, {"t": 2023.0, "d": 0.018335, "o": 0}, {"t": 2023.0, "d": 0.018072, "o": 0}, {"t": 2023.0, "d": 0.018057, "o": 0}, {"t": 2024.0, "d": 0.017134, "o": 0}, {"t": 2024.5137, "d": 0.020541, "o": 1}]}, {"id": 1, "color": "#059669", "n": 22, "mu": 0.00025055638680384165, "se_mu": 1.3596109215165335e-05, "t_mrca": 1946.8516490329264, "ci": [1940.1, 1952.23], "r2": 0.944, "lambda": 0.99, "ratio": 1.01, "timespan": [1964.51, 2024.55], "pts": [{"t": 1964.5137, "d": 0.004194, "o": 0}, {"t": 1965.2795, "d": 0.004379, "o": 0}, {"t": 1966.8329, "d": 0.004986, "o": 0}, {"t": 1966.8329, "d": 0.004848, "o": 0}, {"t": 1966.8932, "d": 0.005456, "o": 0}, {"t": 1979.0849, "d": 0.008225, "o": 0}, {"t": 1981.0, "d": 0.008822, "o": 0}, {"t": 1983.0, "d": 0.009408, "o": 0}, {"t": 1983.0, "d": 0.009318, "o": 0}, {"t": 1983.5205, "d": 0.009318, "o": 0}, {"t": 1993.0, "d": 0.011663, "o": 0}, {"t": 1993.0849, "d": 0.011488, "o": 0}, {"t": 2005.8329, "d": 0.015478, "o": 0}, {"t": 2023.0, "d": 0.018286, "o": 0}, {"t": 2023.0, "d": 0.01832, "o": 0}, {"t": 2023.0, "d": 0.018151, "o": 0}, {"t": 2023.0, "d": 0.018332, "o": 0}, {"t": 2023.4685, "d": 0.019604, "o": 0}, {"t": 2023.6055, "d": 0.019805, "o": 0}, {"t": 2024.0, "d": 0.01958, "o": 0}, {"t": 2024.0, "d": 0.020051, "o": 0}, {"t": 2024.5464, "d": 0.020022, "o": 0}]}]}</script>
+      </div>
         <div style="margin-top: 1rem;">
           <table class="data-table" style="font-size: 0.85rem;">
             <thead>

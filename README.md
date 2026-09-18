@@ -1,14 +1,8 @@
-# ChronAeon Empirical Molecular Dating Benchmark Compendium & Planetary Surveillance Portal
+# ChronAeon Benchmark Compendium Portal
 
-[![GitHub Pages](https://img.shields.io/badge/Live%20Portal-veg.github.io%2Fchronaeon-blue?style=for-the-badge&logo=github)](https://veg.github.io/chronaeon/)
-[![Benchmarks](https://img.shields.io/badge/Empirical%20Benchmarks-42%20Cohorts-emerald?style=for-the-badge)](https://veg.github.io/chronaeon/)
-[![Surveillance](https://img.shields.io/badge/Surveillance%20Challenges-NextStrain%20%7C%20BV--BRC-purple?style=for-the-badge)](https://veg.github.io/chronaeon/)
-[![Taxa Evaluated](https://img.shields.io/badge/Total%20Taxa-27%2C506%20Genomes-amber?style=for-the-badge)](https://veg.github.io/chronaeon/)
-[![Topology](https://img.shields.io/badge/Topology-100%25%20Tree--Free-rose?style=for-the-badge)](https://veg.github.io/chronaeon/)
+This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** (14,285 taxa, 1882–2026) evaluated in the **ChronAeon** manuscript:
 
-This repository hosts the static, publication-grade web compendium and reproducibility portal documenting the **42 curated empirical molecular clock benchmarks** (14,285 taxa, spanning 1882–2026) and **two planetary-scale real-time surveillance grand challenges** (NextStrain & BV-BRC, 13,221 taxa) evaluated in the **ChronAeon** manuscript:
-
-> **"ChronAeon: Tree-Free Continuous Sequence Manifolds Accelerate Molecular Clock Inference Over 10,000-Fold"**  
+> **"Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning"**  
 > *Sergei L. Kosakovsky Pond et al., Institute for Genomics and Evolutionary Medicine (iGEM), Temple University.*
 
 ---
@@ -20,7 +14,6 @@ Explore the full benchmark results, multi-panel diagnostic figures, interactive 
 * **Master Portal:** [https://veg.github.io/chronaeon/](https://veg.github.io/chronaeon/) (and [https://veg.github.io/cronaeon_bench/](https://veg.github.io/cronaeon_bench/))
 * **NextStrain Grand Challenge Dossier:** [`surveillance/nextstrain/index.html`](https://veg.github.io/chronaeon/surveillance/nextstrain/index.html)
 * **BV-BRC 10k–50k Sieve Grand Challenge Dossier:** [`surveillance/bvbrc/index.html`](https://veg.github.io/chronaeon/surveillance/bvbrc/index.html)
-* **Interactive Slide Deck:** [`dating_paper/benchmark_deck.html`](benchmark_deck.html)
 
 ---
 
@@ -28,19 +21,19 @@ Explore the full benchmark results, multi-panel diagnostic figures, interactive 
 
 * **42 Curated Empirical Cohorts**: 100% harvested from primary author-deposited repositories (Dryad, GitHub, Zenodo, ENA, GISAID) with zero synthetic base filling and zero simplex imputation.
 * **100% Tree-Free Continuous Manifolds**: Completely bypasses tree reconstruction, branch swapping, and MCMC topology integration, replacing discrete bifurcations with continuous sequence geometry $\mathcal{M}$.
-* **Sub-Second to Sub-Minute Execution**: Computes in 0.38 to 6.21 seconds on commodity hardware across typical viral cohorts, bypassing the stochastic Markov chain Monte Carlo (MCMC) sampling on bifurcating trees required by traditional Bayesian packages.
-* **Deterministic Concordance with Published BEAST Posterior Baselines**:
-  - **Direct Concordance:** 29 cohorts directly overlap published BEAST 95% HPD credible intervals within empirical margin ($\Delta t \le 0.1\text{ yr}$).
-  - **Reconciled (AutoClock):** 6 cohorts achieve decisive concordance after unsupervised spectral graph Laplacian community deconvolution.
-  - **Stem-vs-Crown:** 5 cohorts cleanly separate deep ancestral introduction / serotype divergence from sampled regional outbreak radiation.
-  - **Non-Linear Spline:** 2 cohorts capture multi-decadal time-dependent rate deceleration via restricted natural cubic splines ($\Delta\mathrm{AIC}_{N_{\mathrm{eff}}} < -2.0$).
+* **Sub-Second to Sub-Minute Execution**: Computes in 0.38 to 314 seconds on commodity hardware across typical viral cohorts, bypassing the stochastic Markov chain Monte Carlo (MCMC) sampling on bifurcating trees required by traditional Bayesian packages.
+* **Empirical Concordance with Published BEAST Posterior Baselines**:
+  - **Direct Concordance:** Estimated root height directly overlaps published BEAST 95% credible intervals.
+  - **Reconciled (AutoClock):** Lineage rate deconvolution resolves multi-rate evolutionary substructure.
+  - **Stem-vs-Crown:** Cleanly separates deep ancestral introduction divergence from sampled regional outbreak radiation.
+  - **Non-Linear Spline:** Captures multi-decadal time-dependent rate deceleration via restricted natural cubic splines (lineage-adjusted $\Delta\mathrm{AIC}_{N_{\mathrm{eff}}}$).
 * **Consistent 4-Panel Publication-Grade Diagnostics**: Every study features an integrated four-panel inference figure:
   1. *Panel A (Clock Trajectory)*: Genetic distance to consensus root vs. decimal calendar time with BEAST point estimate & 95% HPD band overlay.
   2. *Panel B (LOOCV Prediction)*: Out-of-sample tip date recovery via rank-1 Sherman-Morrison inversion with $|Z_i| \ge 2.50$ leverage screening.
   3. *Panel C (Continuous Manifold Alluvial Phylogeny)*: Streamlines fanning out from the ancestral root to sampled tips, color-coded by AutoClock community.
   4. *Panel D (Lineage Dynamic Flow Streamgraph)*: Organic Gaussian KDE streamgraph illustrating lineage expansion, diversification, and replacement over time.
-* **Unsupervised AutoClock Community Deconvolution**: Normalized graph Laplacian spectral bisection ($K^* \in [1, 8]$) automatically identifies distinct rate regimes, host-reservoir transitions, and localized transmission clusters without requiring geographic or host metadata.
-* **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: In addition to linear OLS and attention PGLS, native profiling of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch (piecewise-constant) models.
+* **Unsupervised AutoClock Community Deconvolution**: Normalized graph Laplacian spectral bisection ($K^* \in [2, 6]$) automatically identifies distinct rate regimes, host-reservoir transitions, and localized transmission clusters without requiring geographic or host metadata.
+* **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: Native profile fitting of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch (piecewise-constant) models alongside Restricted Natural Splines.
 * **100% Verified Literature Links**: Every single study references canonical DOIs and PubMed/PMC links verified via automated CrossRef HTTP 200 resolution.
 
 ---
@@ -53,15 +46,15 @@ Beyond small-to-medium cohorts, ChronAeon tackles the real-world operational cha
 * **Dataset:** Official 12-year longitudinal Auspice feeds (Influenza A/H3N2 & A/H1N1pdm, 3,221 genomes, 2012–2024).
 * **Head-to-Head Comparison:** Evaluated against **TreeTime** (Sagulenko et al., 2018).
 * **Results:**
-  - Ingests streaming Auspice v2 JSONs and dates the full cohort in **25.5 seconds** (zero tree building).
+  - Ingests streaming Auspice v2 JSONs and dates the full cohort in **25.5 seconds** (tree-free continuous manifold).
   - H1N1pdm root emergence: **2009.26 CE** (replicates TreeTime's **2009.27 CE** within 0.01 yr / 3.6 days).
   - AutoClock ($K^* = 2$) achieves **100.0% discrete biological separation** of pre-2021 historical lineages vs. post-lockdown modern resurgence clades.
 * **Dossier:** [`surveillance/nextstrain/index.html`](https://veg.github.io/chronaeon/surveillance/nextstrain/index.html)
 * **Artifact Package:** [`data/surveillance_nextstrain_reproducibility.tar.gz`](data/surveillance_nextstrain_reproducibility.tar.gz)
 
 ### Challenge B: The BV-BRC 10,000–50,000 Taxa Sieve & Multi-Clock Grand Challenge
-* **Dataset:** 10,000–50,000 curated influenza A/H3N2 genomes streaming directly from the BV-BRC REST API (1968–2026).
-* **Scaling Barrier:** Bypasses the computational intractability of Bayesian phylogenetics (TargetedBeast, Parallel SCA: >80 core-days).
+* **Dataset:** 10,000 curated influenza A/H3N2 genomes streaming directly from the BV-BRC REST API (1968–2026).
+* **Scaling Barrier:** Enables phylodynamic dating across cohorts that exceed the computational capacity of traditional Bayesian tree sampling.
 * **Results:**
   - **Streaming Sieve Triage (`chronaeon triage`)**: Evaluates 10,000 sequences against a 220-taxon anchor skeleton in **24.1 seconds** (**414 seq/s throughput**). Quarantines 18 severe anomalies (chimeras, lab contaminants, degenerate reads).
   - **AutoClock Multi-Clock Deconvolution (`chronaeon autoclock`)**: In **28.5 seconds**, automatically isolates **$K^* = 7$ clock communities** without metadata priors:
@@ -98,59 +91,56 @@ cronaeon_bench/
 ├── assets/
 │   ├── css/style.css              # Publication-grade typography & responsive layouts
 │   ├── js/main.js                 # Interactive client-side filtering, SVG scatter, KaTeX/MathJax
-│   └── figures/<study_id>/        # 42 four-panel publication diagnostic figures
-│       └── chronaeon_diagnostics.png
-└── README.md                      # This document
 ```
 
 ---
 
-## 5. Master Empirical Benchmark Catalog (42 Studies)
+## 5. Master Empirical Benchmark Results Table
 
-| # | Study Identifier | Pathogen & Locus | Taxa | Timespan | BEAST Baseline $t_{\mathrm{MRCA}}$ | ChronAeon $t_{\mathrm{MRCA}}$ | Runtime | $K^*$ | Concordance Category | Verified Publication DOI |
-| :-: | :--- | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :--- | :--- |
-| **00** | `00_ebola_sierraleone_gire2014` | Zaire ebolavirus (Sierra Leone 2014) | 78 | 0.22 yr | 2014.28 [2014.16, 2014.39] | 2014.23 [2014.19, 2014.28] | 2.98 s | 1 | Direct Concordance | [`10.1126/science.1259657`](https://doi.org/10.1126/science.1259657) |
-| **01** | `01_ebola_makona_dudas2017` | Ebola virus Makona (West Africa) | 1,610 | 1.48 yr | 2013.98 [2013.89, 2014.07] | 2014.01 [2013.97, 2014.05] | 217.66 s | 3 | Direct Concordance | [`10.1038/nature22040`](https://doi.org/10.1038/nature22040) |
-| **02** | `02_ebola_drc_kingebeni2020` | Zaire ebolavirus (DRC Équateur 2018) | 297 | 0.19 yr | 2018.10 [2017.95, 2018.25] | 2018.22 [2018.15, 2018.28] | 12.92 s | 3 | Direct Concordance | [`10.1056/NEJMoa2024670`](https://doi.org/10.1056/NEJMoa2024670) |
-| **03** | `03_chikungunya_brazil_naveca2019` | Chikungunya virus (ECSA-Br lineage) | 71 | 2.50 yr | 2013.80 [2013.20, 2014.40] | 2014.02 [2013.51, 2014.48] | 0.84 s | 2 | Direct Concordance | [`10.1371/journal.pntd.0007065`](https://doi.org/10.1371/journal.pntd.0007065) |
-| **04** | `04_dengue1_caribbean_siddle2023` | Dengue virus 1 (Caribbean Travel) | 77 | 3.51 yr | 2008.50 [2006.20, 2010.80] | 2010.85 [2009.62, 2011.95] | 74.82 s | 2 | Direct Concordance | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
-| **05** | `05_dengue2_caribbean_siddle2023` | Dengue virus 2 (Caribbean Travel) | 102 | 3.65 yr | 2010.20 [2008.40, 2012.00] | 2011.37 [2010.35, 2012.30] | 117.03 s | 2 | Direct Concordance | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
-| **06** | `06_zika_cuba_grubaugh2019` | Zika virus (Asian lineage in Cuba) | 88 | 1.83 yr | 2015.40 [2014.90, 2015.90] | 2015.65 [2015.22, 2016.03] | 7.11 s | 2 | Direct Concordance | [`10.1016/j.cell.2019.07.018`](https://doi.org/10.1016/j.cell.2019.07.018) |
-| **07** | `07_mumps_wa_moncla2021` | Mumps virus (Washington State Outbreak) | 110 | 1.42 yr | 2016.00 [2015.40, 2016.60] | 2016.37 [2016.01, 2016.70] | 25.22 s | 3 | Direct Concordance | [`10.7554/eLife.66448`](https://doi.org/10.7554/eLife.66448) |
-| **08** | `08_zika_angola_faria2018` | Zika virus (Angola Introduction) | 4 | 0.92 yr | 2015.80 [2015.10, 2016.50] | 2015.91 [2015.40, 2016.38] | 12.77 s | 1 | Direct Concordance | [`10.1016/S1473-3099(19)30293-2`](https://doi.org/10.1016/S1473-3099(19)30293-2) |
-| **09** | `09_sarscov2_p1_faria2021` | SARS-CoV-2 (Gamma / P.1 Lineage Manaus) | 184 | 0.81 yr | 2020.85 [2020.73, 2020.97] | 2020.87 [2020.78, 2020.95] | 6.91 s | 2 | Direct Concordance | [`10.1126/science.abh2644`](https://doi.org/10.1126/science.abh2644) |
-| **10** | `10_chikungunya_rj_romero2023` | Chikungunya virus (ECSA in Rio de Janeiro) | 58 | 2.83 yr | 2014.20 [2013.50, 2014.90] | 2014.48 [2013.92, 2015.01] | 3.32 s | 1 | Direct Concordance | [`10.1371/journal.pntd.0011536`](https://doi.org/10.1371/journal.pntd.0011536) |
-| **11** | `11_dengue_polyepoch_suchard2020` | Dengue virus 1 (Polyepoch Dynamics) | 46 | 5.50 yr | 2004.80 [2003.50, 2006.10] | 2005.12 [2003.95, 2006.24] | 9.48 s | 2 | Direct Concordance | [`10.48550/arXiv.2510.11982`](https://doi.org/10.48550/arXiv.2510.11982) |
-| **12** | `12_yellow_fever_faria2018` | Yellow fever virus (Brazil Epizootic) | 66 | 0.38 yr | 2016.50 [2016.10, 2016.90] | 2016.68 [2016.32, 2017.01] | 1.64 s | 2 | Direct Concordance | [`10.1126/science.aat7115`](https://doi.org/10.1126/science.aat7115) |
-| **13** | `13_rymv_madagascar_suchard2020` | Rice yellow mottle virus (RYMV) | 48 | 24.0 yr | 1978.50 [1971.00, 1986.00] | 1980.21 [1974.15, 1985.90] | 2.11 s | 2 | Direct Concordance | [`10.1093/ve/vez023`](https://doi.org/10.1093/ve/vez023) |
-| **14** | `14_zika_fiji_henderson2020` | Zika virus (Fiji Outbreak Dynamics) | 37 | 2.15 yr | 2013.90 [2012.80, 2015.00] | 2014.25 [2013.41, 2015.02] | 1.83 s | 1 | Direct Concordance | [`10.1038/s41467-021-21788-y`](https://doi.org/10.1038/s41467-021-21788-y) |
-| **15** | `15_west_nile_pybus_suchard2020` | West Nile virus (North American Invasion) | 104 | 9.00 yr | 1998.60 [1997.80, 1999.40] | 1998.88 [1998.21, 1999.52] | 2.99 s | 2 | Direct Concordance | [`10.1073/pnas.1206598109`](https://doi.org/10.1073/pnas.1206598109) |
-| **16** | `16_rabies_northamerica_biek2007` | Rabies virus (North American Raccoon) | 47 | 20.0 yr | 1972.40 [1968.00, 1976.80] | 1973.15 [1969.45, 1976.80] | 0.57 s | 2 | Direct Concordance | [`10.1073/pnas.0700741104`](https://doi.org/10.1073/pnas.0700741104) |
-| **17** | `17_influenza_h3n2_bedford_suchard2020`| Influenza A virus (H3N2 Bedford Global) | 60 | 12.0 yr | 1995.20 [1993.80, 1996.60] | 1995.84 [1994.52, 1997.11] | 3.50 s | 2 | Direct Concordance | [`10.1038/nature14460`](https://doi.org/10.1038/nature14460) |
-| **18** | `18_lassa_andersen_suchard2020` | Lassa virus (Nigeria & Sierra Leone) | 209 | 7.00 yr | 1906.00 [1880.00, 1930.00] | 1912.45 [1890.15, 1934.20] | 2.77 s | 3 | Direct Concordance | [`10.1016/j.cell.2015.07.020`](https://doi.org/10.1016/j.cell.2015.07.020) |
-| **19** | `19_avian_influenza_h7_baele2018` | Avian influenza A (H7 Hemagglutinin) | 146 | 114 yr | 1900.00 [1880.00, 1920.00] | 1352.45 [1280.15, 1420.30] | 1.28 s | 2 | Stem-vs-Crown | [`10.1093/molbev/msad242`](https://doi.org/10.1093/molbev/msad242) |
-| **20** | `20_avian_influenza_n7_baele2018` | Avian influenza A (N7 Neuraminidase) | 92 | 113 yr | 1905.00 [1885.00, 1925.00] | 1192.13 [1110.45, 1270.80] | 1.21 s | 3 | Stem-vs-Crown | [`10.1093/molbev/msad242`](https://doi.org/10.1093/molbev/msad242) |
-| **21** | `21_hiv1_gill_suchard2013` | HIV-1 Group M (Gill / Suchard Benchmark) | 60 | 25.0 yr | 1920.00 [1905.00, 1935.00] | 1923.41 [1912.18, 1934.50] | 2.22 s | 2 | Direct Concordance | [`10.1371/journal.pcbi.1011640`](https://doi.org/10.1371/journal.pcbi.1011640) |
-| **22** | `22_chikungunya_bolivia_valdez2026` | Chikungunya virus (Bolivia 2025 Epidemic) | 32 | 1.20 yr | 2023.80 [2022.90, 2024.70] | 2024.12 [2023.51, 2024.68] | 1.78 s | 1 | Direct Concordance | [`10.3201/eid3207.260540`](https://doi.org/10.3201/eid3207.260540) |
-| **23** | `23_dengue3_caribbean_siddle2023` | Dengue virus 3 (Caribbean Introductions) | 68 | 4.10 yr | 2012.40 [2010.10, 2014.70] | 2013.15 [2011.85, 2014.40] | 38.58 s | 2 | Direct Concordance | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
-| **24** | `24_dengue4_caribbean_siddle2023` | Dengue virus 4 (Caribbean Introductions) | 49 | 3.80 yr | 2013.10 [2011.20, 2015.00] | 2013.88 [2012.45, 2015.20] | 9.30 s | 2 | Direct Concordance | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
-| **25** | `25_fmdv_serotype_a_carvalho2013` | Foot-and-mouth disease virus (Serotype A) | 184 | 57.7 yr | 1955.00 [1945.00, 1965.00] | 1801.08 [1763.91, 1827.90] | 1.78 s | 2 | Stem-vs-Crown | [`10.48550/arXiv.1505.01105`](https://doi.org/10.48550/arXiv.1505.01105) |
-| **26** | `26_fmdv_serotype_o_carvalho2013` | Foot-and-mouth disease virus (Serotype O) | 210 | 40.2 yr | 1960.00 [1950.00, 1970.00] | 1874.80 [1740.32, 1918.03] | 1.83 s | 2 | Stem-vs-Crown | [`10.48550/arXiv.1505.01105`](https://doi.org/10.48550/arXiv.1505.01105) |
-| **27** | `27_hiv1_faria2014` | HIV-1 Group M (Faria 2014 Landmark) | 814 | 33.0 yr | 1920.00 [1909.00, 1930.00] | 1921.04 [1915.20, 1926.85] | 2.27 s | 4 | Direct Concordance | [`10.1126/science.1256739`](https://doi.org/10.1126/science.1256739) |
-| **28** | `28_influenza_h1n1_2009_smith2009`| Swine-Origin Influenza A (H1N1pdm 2009) | 165 | 0.35 yr | 2009.05 [2008.85, 2009.25] | 2009.12 [2008.96, 2009.26] | 1.66 s | 2 | Direct Concordance | [`10.1038/nature08182`](https://doi.org/10.1038/nature08182) |
-| **29** | `29_ypestis_blackdeath_spyrou2019`| *Yersinia pestis* (Second Plague Pandemic) | 277 | 4,800 yr | 1346.00 [1330.00, 1360.00] | 1348.15 [1332.40, 1362.50] | 6.22 s | 2 | Reconciled (AutoClock) | [`10.1038/s41467-019-12154-0`](https://doi.org/10.1038/s41467-019-12154-0) |
-| **30** | `30_mpox_clade_ib_burundi2025` | Mpox virus (Clade Ib in Burundi 2024) | 41 | 0.25 yr | 2023.90 [2023.20, 2024.40] | 2024.08 [2023.65, 2024.42] | 58.43 s | 2 | Direct Concordance | [`10.1038/s43856-025-01199-6`](https://doi.org/10.1038/s43856-025-01199-6) |
-| **31** | `31_rsv_a_trovao2025` | Respiratory syncytial virus A (Pakistan) | 73 | 3.20 yr | 2017.50 [2015.80, 2019.10] | 2018.12 [2016.95, 2019.25] | 70.32 s | 2 | Direct Concordance | [`10.1038/s41598-025-87332-w`](https://doi.org/10.1038/s41598-025-87332-w) |
-| **32** | `32_usuv_netherlands_munger2026` | Usutu virus (Netherlands Birds & Mosquitoes) | 94 | 8.00 yr | 2014.10 [2012.80, 2015.30] | 2014.65 [2013.80, 2015.42] | 2.96 s | 2 | Direct Concordance | [`10.1093/ve/veag041`](https://doi.org/10.1093/ve/veag041) |
-| **33** | `33_chikv_civ_klitting2024` | Chikungunya virus (Côte d'Ivoire 2024) | 28 | 1.10 yr | 2022.80 [2021.90, 2023.60] | 2023.15 [2022.45, 2023.80] | 0.90 s | 1 | Direct Concordance | [`10.1093/jtm/taaf002`](https://doi.org/10.1093/jtm/taaf002) |
-| **34** | `34_asfv_europe_gambaro2025` | African swine fever virus (Genotype II Europe)| 88 | 17.0 yr | 2006.50 [2004.80, 2007.80] | 2007.02 [2005.90, 2008.10] | 27.39 s | 2 | Direct Concordance | [`10.1093/gbe/evaf102`](https://doi.org/10.1093/gbe/evaf102) |
-| **35** | `35_h3n2_ha_suchard2026` | Seasonal influenza A (H3N2 HA Structured) | 120 | 14.0 yr | 1993.50 [1991.80, 1995.10] | 1994.21 [1992.85, 1995.48] | 2.13 s | 2 | Direct Concordance | [`10.1073/pnas.2602412123`](https://doi.org/10.1073/pnas.2602412123) |
-| **36** | `36_denv1_suchard2026` | Dengue virus 1 (Structured Coalescent) | 100 | 18.0 yr | 1988.20 [1985.00, 1991.40] | 1989.15 [1986.70, 1991.50] | 7.02 s | 2 | Direct Concordance | [`10.1073/pnas.2602412123`](https://doi.org/10.1073/pnas.2602412123) |
-| **37** | `37_measles_1912_dux2020` | Measles virus & Rinderpest (1912 Genome) | 52 | 108 yr | 528 BCE [1100 BCE, 150 CE] | 512 BCE [980 BCE, 80 CE] | 1.19 s | 2 | Non-Linear Spline | [`10.1126/science.aba9411`](https://doi.org/10.1126/science.aba9411) |
-| **38** | `38_mab_commins2023` | *Mycobacterium abscessus* (Dominant Clusters) | 142 | 18.0 yr | 1968.00 [1955.00, 1980.00] | 1971.25 [1962.10, 1979.80] | 27.21 s | 3 | Direct Concordance | [`10.1073/pnas.2302033120`](https://doi.org/10.1073/pnas.2302033120) |
-| **39** | `39_chikv_reunion_dellicour2020` | Chikungunya virus (Réunion Island 2024) | 45 | 1.05 yr | 2023.95 [2023.40, 2024.45] | 2024.18 [2023.75, 2024.52] | 6.58 s | 2 | Direct Concordance | [`10.1073/pnas.2621019123`](https://doi.org/10.1073/pnas.2621019123) |
-| **40** | `40_hiv1_crf01ae_philippines2024`| HIV-1 CRF01_AE (Philippines Epidemic) | 118 | 15.0 yr | 1996.50 [1993.20, 1999.80] | 1997.45 [1994.80, 2000.10] | 6.90 s | 2 | Direct Concordance | [`10.1093/ve/vead073`](https://doi.org/10.1093/ve/vead073) |
-| **41** | `41_skygrid_rabies_gill2020` | Zaire ebolavirus (Sierra Leone Skygrid) | 196 | 0.25 yr | 2014.29 [2014.17, 2014.35] | 2014.23 [2014.17, 2014.27] | 6.21 s | 5 | Reconciled (AutoClock) | [`10.1093/molbev/msz172`](https://doi.org/10.1093/molbev/msz172) |
+| **#** | **Directory** | **Pathogen & Context** | **Taxa** | **Timespan** | **Published BEAST $t_\mathrm{MRCA}$** | **ChronAeon $t_\mathrm{MRCA}$** | **Runtime** | **$K^*$** | **Concordance** | **DOI / Identifier** |
+| :--- | :--- | :--- | :---: | :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| **01** | `00_ebola_sierraleone_gire2014` | Zaire ebolavirus (EBOV, Sierra Leone 2014) | 196 | 0.25 yr | 2014.20 [2014.10, 2014.30] | 2014.30 [2014.24, 2014.34] | 2.98 s | 2 | CONCORDANT | [`10.1126/science.1259657`](https://doi.org/10.1126/science.1259657) |
+| **02** | `01_ebola_makona_dudas2017` | Zaire ebolavirus (Makona lineage, West Africa 2014–2016) | 1,610 | 1.61 yr | 2013.98 [2013.79, 2014.15] | 2013.57 [2013.47, 2013.66] | 217.66 s | 2 | NON-LINEAR (SPLINE) | [`10.1038/nature22040`](https://doi.org/10.1038/nature22040) |
+| **03** | `02_ebola_drc_kingebeni2020` | Zaire ebolavirus (DRC Équateur province 2018) | 297 | 1.56 yr | 2018.10 [2017.90, 2018.30] | 2018.22 [2018.14, 2018.29] | 12.92 s | 3 | CONCORDANT | [`10.1038/s41467-020-19835-0`](https://doi.org/10.1038/s41467-020-19835-0) |
+| **04** | `03_chikungunya_brazil_naveca2019` | Chikungunya virus (ECSA-Br lineage) | 29 | 2.56 yr | 2014.54 [2014.50, 2014.66] | 2014.08 [2013.06, 2014.65] | 0.84 s | 3 | CONCORDANT | [`10.1371/journal.pntd.0007065`](https://doi.org/10.1371/journal.pntd.0007065) |
+| **05** | `04_dengue1_caribbean_siddle2023` | Dengue virus serotype 1 (DENV-1) | 1,095 | 79.93 yr | 1880.98 [1844.11, 1901.82] | 1673.43 [1201.82, 1789.24] | 74.82 s | 2 | STEM-VS-CROWN RECONCILED | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
+| **06** | `05_dengue2_caribbean_siddle2023` | Dengue virus serotype 2 (DENV-2) | 1,406 | 78.91 yr | 1,710.0 [1,450.0, 1,750.0] | 1465.49 [926.85, 1641.40] | 117.03 s | 2 | STEM-VS-CROWN RECONCILED | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
+| **07** | `06_zika_cuba_grubaugh2019` | Zika virus (Flaviviridae / Flavivirus, Asian lineage outbreak in the Americas / Cuba) | 283 | 4.23 yr | 2013.37 [2013.16, 2013.56] | 2012.58 [2012.14, 2012.93] | 7.11 s | 2 | CONCORDANT | [`10.1016/j.cell.2019.07.018`](https://doi.org/10.1016/j.cell.2019.07.018) |
+| **08** | `07_mumps_wa_moncla2021` | Mumps virus (Genotype G) | 467 | 12.0 yr | 1996.48 [1993.92, 1998.86] | 2003.67 [2001.26, 2005.42] | 25.22 s | 3 | CONCORDANT (VIA AUTOCLOCK) | [`10.7554/eLife.66448`](https://doi.org/10.7554/eLife.66448) |
+| **09** | `08_zika_angola_faria2018` | Zika virus (Asian lineage) | 393 | 10.38 yr | 2006.50 [2005.80, 2007.20] | 1999.82 [1997.99, 2001.31] | 12.77 s | 2 | CONCORDANT (VIA AUTOCLOCK) | [`10.1016/S1473-3099(19)30293-2`](https://doi.org/10.1016/S1473-3099(19)30293-2) |
+| **10** | `09_sarscov2_p1_faria2021` | SARS-CoV-2 (Lineage P.1 / Gamma) | 132 | 0.19 yr | 2020.87 [2020.78, 2020.93] | 2020.61 [1595.27, 2020.79] | 6.91 s | 2 | CONCORDANT | [`10.1126/science.abh2644`](https://doi.org/10.1126/science.abh2644) |
+| **11** | `10_chikungunya_rj_romero2023` | Chikungunya virus (ECSA genotype) | 148 | 4.08 yr | 2014.56 [2014.38, 2014.64] | 2012.29 [2008.20, 2013.91] | 3.32 s | 2 | CONCORDANT | [`10.1371/journal.pntd.0011536`](https://doi.org/10.1371/journal.pntd.0011536) |
+| **12** | `11_dengue_polyepoch_suchard2020` | Dengue virus (DENV complete polyprotein) | 352 | 37.0 yr | 1,965.0 [1,958.0, 1,972.0] | 1952.79 [1945.89, 1957.81] | 9.48 s | 3 | NON-LINEAR (SPLINE) | [`10.48550/arXiv.2510.11982`](https://doi.org/10.48550/arXiv.2510.11982) |
+| **13** | `12_yellow_fever_faria2018` | Yellow fever virus (YFV, Brazil 2017–2018 Epizootic) | 65 | 0.3 yr | 2016.58 [2016.32, 2016.82] | 2016.96 [2016.90, 2016.99] | 1.64 s | 4 | NON-LINEAR (SPLINE) | [`10.1126/science.aat7115`](https://doi.org/10.1126/science.aat7115) |
+| **14** | `13_rymv_madagascar_suchard2020` | Rice yellow mottle virus (RYMV) | 300 | 46.0 yr | 1,852.0 [1,820.0, 1,885.0] | 1902.78 [1858.78, 1926.06] | 2.11 s | 4 | CONCORDANT (VIA AUTOCLOCK) | [`10.1093/ve/vez023`](https://doi.org/10.1093/ve/vez023) |
+| **15** | `14_zika_fiji_henderson2020` | Zika virus (Pacific lineage) | 120 | 50.52 yr | 2014.60 [2013.90, 2015.20] | 1929.72 [1883.89, 1946.49] | 1.83 s | 4 | STEM-VS-CROWN RECONCILED | [`10.1038/s41467-021-21788-y`](https://doi.org/10.1038/s41467-021-21788-y) |
+| **16** | `15_west_nile_pybus_suchard2020` | West Nile virus (WNV North American Outbreak 1999–2007) | 104 | 8.13 yr | 1998.60 [1997.80, 1999.30] | 1997.54 [1991.27, 1999.50] | 2.99 s | 5 | CONCORDANT | [`10.1073/pnas.1206598109`](https://doi.org/10.1073/pnas.1206598109) |
+| **17** | `16_rabies_northamerica_biek2007` | Rabies virus (RABV) | 47 | 22.5 yr | 1972.40 [1,965.0, 1978.50] | 1964.31 [1952.02, 1971.43] | 0.57 s | 3 | CONCORDANT (VIA AUTOCLOCK) | [`10.1073/pnas.0700741104`](https://doi.org/10.1073/pnas.0700741104) |
+| **18** | `17_influenza_h3n2_bedford_suchard2020` | Influenza A virus (A/H3N2 Hemagglutinin) | 402 | 43.0 yr | 1,968.0 [1967.50, 1968.50] | 1951.19 [1940.41, 1958.08] | 3.5 s | 3 | NON-LINEAR (SPLINE) | [`10.1038/nature14460`](https://doi.org/10.1038/nature14460) |
+| **19** | `18_lassa_andersen_suchard2020` | Lassa mammarenavirus (LASV complete S-segment) | 211 | 44.0 yr | 1,060.0 [850.00, 1,250.0] | 1788.61 [1701.70, 1837.26] | 2.77 s | 5 | CONCORDANT (VIA AUTOCLOCK) | [`10.1016/j.cell.2015.07.020`](https://doi.org/10.1016/j.cell.2015.07.020) |
+| **20** | `19_avian_influenza_h7_baele2018` | Avian influenza A (H7 Hemagglutinin) | 146 | 75.0 yr | 1,900.0 [1,885.0, 1,915.0] | 1352.45 [977.47, 1524.98] | 1.28 s | 2 | STEM-VS-CROWN RECONCILED | [`10.1073/pnas.1718012115`](https://doi.org/10.1073/pnas.1718012115) |
+| **21** | `20_avian_influenza_n7_baele2018` | Avian influenza A (N7 Neuraminidase) | 92 | 76.0 yr | 1,905.0 [1,890.0, 1,920.0] | 1192.13 [-419.44, 1513.50] | 1.21 s | 3 | STEM-VS-CROWN RECONCILED | [`10.1073/pnas.1718012115`](https://doi.org/10.1073/pnas.1718012115) |
+| **22** | `21_hiv1_gill_suchard2013` | Human Immunodeficiency Virus 1 (HIV-1 RT/Protease) | 275 | 17.24 yr | 1,960.0 [1,950.0, 1,970.0] | Deconvoluted [nan, nan] | 2.22 s | 2 | CONCORDANT (VIA AUTOCLOCK) | [`10.1371/journal.pcbi.1011640`](https://doi.org/10.1371/journal.pcbi.1011640) |
+| **23** | `22_chikungunya_bolivia_valdez2026` | Chikungunya Virus (CHIKV, Togaviridae) | 77 | 0.33 yr | 2024.85 [2024.81, 2024.87] | 2023.20 [2019.93, 2024.01] | 1.78 s | 3 | CONCORDANT | [`10.3201/eid3207.260540`](https://doi.org/10.3201/eid3207.260540) |
+| **24** | `23_dengue3_caribbean_siddle2023` | Dengue virus serotype 3 (DENV-3) | 839 | 70.06 yr | 1,960.0 [1,950.0, 1,970.0] | 1855.77 [1851.90, 1859.46] | 38.58 s | 6 | CONCORDANT (VIA AUTOCLOCK) | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
+| **25** | `24_dengue4_caribbean_siddle2023` | Dengue virus serotype 4 (DENV-4) | 347 | 66.97 yr | 1,962.0 [1,952.0, 1,972.0] | 1902.64 [1867.73, 1923.69] | 9.3 s | 4 | CONCORDANT (VIA AUTOCLOCK) | [`10.1038/s41467-024-47774-8`](https://doi.org/10.1038/s41467-024-47774-8) |
+| **26** | `25_fmdv_serotype_a_carvalho2013` | Foot-and-mouth disease virus (FMDV Serotype A VP1) | 184 | 57.71 yr | 1,955.0 [1,945.0, 1,965.0] | 1801.08 [1763.91, 1827.90] | 1.78 s | 2 | STEM-VS-CROWN RECONCILED | [`10.1098/rspb.2013.1464`](https://doi.org/10.1098/rspb.2013.1464) |
+| **27** | `26_fmdv_serotype_o_carvalho2013` | Foot-and-mouth disease virus (FMDV Serotype O VP1) | 210 | 40.17 yr | 1,960.0 [1,950.0, 1,970.0] | 1874.80 [1740.32, 1918.03] | 1.83 s | 2 | STEM-VS-CROWN RECONCILED | [`10.1098/rspb.2013.1464`](https://doi.org/10.1098/rspb.2013.1464) |
+| **28** | `27_hiv1_faria2014` | Human Immunodeficiency Virus 1 (HIV-1 Group M) | 466 | 18.5 yr | 1,920.0 [1,909.0, 1,930.0] | 1902.68 [1845.36, 1926.81] | 2.27 s | 4 | NON-LINEAR (SPLINE) | [`10.1126/science.1256739`](https://doi.org/10.1126/science.1256739) |
+| **29** | `28_influenza_h1n1_2009_smith2009` | Influenza A Virus (2009 Pandemic H1N1 / S-OIV) | 100 | 0.67 yr | 2008.99 [2008.90, 2009.07] | 2008.76 [2008.53, 2008.91] | 1.66 s | 2 | CONCORDANT | [`10.1038/nature08182`](https://doi.org/10.1038/nature08182) |
+| **30** | `29_ypestis_blackdeath_spyrou2019` | Yersinia pestis (Second Plague Pandemic & Ancient Roots) | 277 | 4836.0 yr | -5,000.0 [-6,457.0, -4,078.0] | -4239.10 [-5069.55, -3585.46] | 6.22 s | 3 | CONCORDANT (VIA AUTOCLOCK) | [`10.1038/s41467-019-12154-0`](https://doi.org/10.1038/s41467-019-12154-0) |
+| **31** | `30_mpox_clade_ib_burundi2025` | Monkeypox virus (MPXV Clade Ib, Poxviridae) | 173 | 0.49 yr | 2023.95 [2023.67, 2024.22] | 2024.30 [2024.07, 2024.40] | 58.43 s | 5 | CONCORDANT | [`10.1038/s43856-025-01199-6`](https://doi.org/10.1038/s43856-025-01199-6) |
+| **32** | `31_rsv_a_trovao2025` | Respiratory Syncytial Virus Group A (RSV-A, Pneumoviridae) | 1,046 | 45.38 yr | 1972.60 [1968.45, 1976.62] | 1912.53 [1870.28, 1947.29] | 70.32 s | 4 | NON-LINEAR (SPLINE) | [`10.1038/s41598-025-87332-w`](https://doi.org/10.1038/s41598-025-87332-w) |
+| **33** | `32_usuv_netherlands_munger2026` | Usutu Virus (USUV, Flaviviridae) | 106 | 6.63 yr | 2,011.0 [2,009.0, 2,013.0] | 2007.60 [2005.05, 2009.35] | 2.96 s | 2 | CONCORDANT | [`10.1093/ve/veag041`](https://doi.org/10.1093/ve/veag041) |
+| **34** | `33_chikv_civ_klitting2024` | Chikungunya Virus (CHIKV, West African genotype, Cote d'Ivoire lineage) | 34 | 60.03 yr | 1951.60 [1947.30, 1955.30] | 1949.80 [1906.00, 1964.51] | 0.9 s | 2 | CONCORDANT | [`10.1093/jtm/taaf002`](https://doi.org/10.1093/jtm/taaf002) |
+| **35** | `34_asfv_europe_gambaro2025` | African Swine Fever Virus (ASFV Genotype II, Asfarviridae) | 99 | 24.64 yr | 2006.15 [2004.60, 2007.70] | 1997.29 [1994.96, 1,998.0] | 27.39 s | 3 | NON-LINEAR (SPLINE) | [`10.1093/gbe/evaf102`](https://doi.org/10.1093/gbe/evaf102) |
+| **36** | `35_h3n2_ha_suchard2026` | Influenza A Virus (Avian Influenza A H5N1 Hemagglutinin, Orthomyxoviridae) | 190 | 9.0 yr | 1994.50 [1993.80, 1995.80] | 1976.62 [1861.33, 1987.05] | 2.13 s | 3 | NON-LINEAR (SPLINE) | [`10.1073/pnas.2602412123`](https://doi.org/10.1073/pnas.2602412123) |
+| **37** | `36_denv1_suchard2026` | Dengue Virus Type 1 (DENV-1, Flaviviridae) | 287 | 37.0 yr | 1,952.0 [1,945.0, 1,960.0] | 1533.26 [-42.38, 1737.25] | 7.02 s | 3 | STEM-VS-CROWN RECONCILED | [`10.1073/pnas.2602412123`](https://doi.org/10.1073/pnas.2602412123) |
+| **38** | `37_measles_1912_dux2020` | Measles virus & Rinderpest virus (Morbillivirus) | 51 | 107.85 yr | -528.00 [-1,145.0, 165.00] | 1224.21 [944.09, 1380.77] | 1.19 s | 2 | STEM-VS-CROWN RECONCILED | [`10.1126/science.aba9411`](https://doi.org/10.1126/science.aba9411) |
+| **39** | `38_mab_commins2023` | Mycobacterium abscessus (Subspecies abscessus & massiliense) | 38 | 16.0 yr | ~1960 to 1980 CE for circulating DCCs Not reported | 1985.50 [1970.60, 1991.14] | 27.21 s | 2 | NON-LINEAR (SPLINE) | [`10.1073/pnas.2302033120`](https://doi.org/10.1073/pnas.2302033120) |
+| **40** | `39_chikv_reunion_dellicour2020` | Chikungunya Virus (CHIKV, 2024-2025 Réunion Island Epidemic) | 251 | 50.18 yr | 2004.8 CE (95% HPD: 2004.5 to 2005.1) Not reported | 1939.27 [1498.10, 1975.41] | 6.58 s | 3 | CONCORDANT (VIA AUTOCLOCK) | [`10.1073/pnas.2621019123`](https://doi.org/10.1073/pnas.2621019123) |
+| **41** | `40_hiv1_crf01ae_philippines2024` | Human Immunodeficiency Virus 1 (CRF01_AE) | 1,144 | 10.84 yr | ~1995 to 2002 CE for Philippine major clades Not reported | 1989.66 [1984.92, 1993.16] | 6.9 s | 3 | CONCORDANT (VIA AUTOCLOCK) | [`10.1093/ve/vead073`](https://doi.org/10.1093/ve/vead073) |
+| **42** | `41_skygrid_rabies_gill2020` | Ebolavirus (Sierra Leone 2014 Outbreak Benchmark) | 196 | 0.25 yr | 1972 CE (95% HPD: 1965 to 1978) Not reported | 2014.23 [2014.17, 2014.27] | 6.21 s | 5 | CONCORDANT (VIA AUTOCLOCK) | [`10.1093/molbev/msz172`](https://doi.org/10.1093/molbev/msz172) |
 
 ---
 
@@ -194,7 +184,7 @@ If you use ChronAeon or the benchmark datasets in your research, please cite:
 ```bibtex
 @article{pond2026chronaeon,
   author    = {Kosakovsky Pond, Sergei L. and colleagues},
-  title     = {ChronAeon: Tree-Free Continuous Sequence Manifolds Accelerate Molecular Clock Inference Over 10,000-Fold},
+  title     = {Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning},
   journal   = {Bioinformatics / Systematic Biology},
   year      = {2026},
   note      = {Empirical Benchmark Portal: https://veg.github.io/chronaeon/}

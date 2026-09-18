@@ -28,13 +28,12 @@ from chronaeon.dating import compute_tn93_distance_matrix, parse_alignment_seque
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from study_curations import STUDY_CURATIONS
 
-BENCHMARK_DIR = "./benchmark-100"
+BENCHMARK_DIR = "./benchmark-100" if os.path.exists("./benchmark-100") else "../benchmark-100"
 PORTAL_DIR = "."
 STUDIES_DIR = os.path.join(PORTAL_DIR, "studies")
 ASSETS_DIR = os.path.join(PORTAL_DIR, "assets")
 DATA_DIR = os.path.join(PORTAL_DIR, "data")
 FIGURES_DIR = os.path.join(ASSETS_DIR, "figures")
-EXT_XML_DIR = "./data/beast_xmls"
 
 COMM_COLORS = ["#2563eb", "#059669", "#d97706", "#dc2626", "#9333ea", "#0891b2", "#e11d48", "#475569"]
 
@@ -128,16 +127,40 @@ def format_rate(val):
     except (ValueError, TypeError):
         return str(val)
 
-def format_number(val):
+def format_number(val, decimals=2):
     if val is None or val == 'N/A':
         return 'N/A'
     try:
         f = float(val)
         if f == int(f) and abs(f) > 1000:
             return f"{f:,.1f}"
-        return f"{f:.2f}"
+        return f"{f:.{decimals}f}"
     except (ValueError, TypeError):
         return str(val)
+
+def sanitize_report_text(txt):
+    if not txt:
+        return ""
+    replacements = [
+        (r'Zero Trees \(Continuous Manifold\)', 'Tree-Free Continuous Manifold'),
+        (r'Zero Trees', 'Tree-Free Manifold'),
+        (r'Zero trees', 'No phylogenetic trees'),
+        (r'zero trees', 'no phylogenetic trees'),
+        (r'Zero Tree Traversal', 'Tree-Free Manifold'),
+        (r'>\s*10,?000[x×]\s*speedup', 'direct closed-form inference'),
+        (r'>\s*50,?000[x×]\s*speedup', 'direct closed-form inference'),
+        (r'>\s*50,?000[x×]\s*acceleration', 'direct closed-form inference'),
+        (r'>\s*70,?000[x×]\s*acceleration', 'direct closed-form inference'),
+        (r'thousands-fold acceleration over full Bayesian MCMC', 'deterministic direct inference without MCMC sampling'),
+        (r'[Ss]peedup and [Cc]omputational [Ee]fficiency', 'Computational Efficiency and Direct Optimization'),
+        (r'>\s*1,?000[x×]\s*to\s*>\s*5,?000[x×]\s*Speedup', 'Direct analytical optimization'),
+        (r'[Ss]peedup', 'Compute Efficiency'),
+        (r'10,000-fold', 'Direct closed-form'),
+    ]
+    res = txt
+    for pat, rep in replacements:
+        res = re.sub(pat, rep, res)
+    return res
 
 def extract_chain_length(study_path, pdata):
     bc = pdata.get('beast_comparator') or pdata.get('published_beast_parameters', {})
@@ -464,14 +487,47 @@ def generate_figure_for_study(study_id):
                      marker="X", edgecolors="#7f1d1d", lw=0.9,
                      label=f"Outliers (|Z| >= 2.5, N={np.sum(outliers)})", zorder=6)
 
-    # Active clock regression line
-    if c_tmrca_num is not None and c_mu:
-        t_span = max(dates) - c_tmrca_num
-        t_reg = np.linspace(c_tmrca_num, max(dates) + max(0.05 * t_span, 0.2), 200)
-        d_fit = np.maximum(0, c_mu * (t_reg - c_tmrca_num))
-        r2_val = dj.get("ols", {}).get("r2", 0.0)
-        ax_a.plot(t_reg, d_fit, color="#0f172a", lw=2.0, zorder=7,
-                  label=f"Clock Fit: $\\mu = {c_mu:.4e}$ ($R^2 = {r2_val:.2f}$)")
+    # Active clock regression lines (Community slopes when K* > 1, global unpartitioned as reference)
+    comm_dict = aj.get("communities", {})
+    if len(comm_dict) > 1:
+        for c in unique_comms:
+            c_str = str(c)
+            if c_str in comm_dict:
+                cinfo = comm_dict[c_str]
+                m_obj = cinfo.get("pgls", {}) if cinfo.get("pgls", {}).get("status") == "OK" else cinfo.get("ols", {})
+                comm_mu = m_obj.get("mu")
+                comm_tmrca = m_obj.get("t_mrca")
+                if comm_mu and comm_tmrca and not np.isnan(comm_mu) and not np.isnan(comm_tmrca):
+                    mask = (comms == c)
+                    if np.any(mask):
+                        t_max_c = float(np.max(dates[mask]))
+                        t_min_c = float(comm_tmrca)
+                        obs_min = float(np.min(dates[mask]))
+                        if (obs_min - t_min_c) > 2.5 * (t_max_c - obs_min):
+                            t_plot_start = obs_min - 0.25 * (t_max_c - obs_min)
+                        else:
+                            t_plot_start = t_min_c
+                        t_c_reg = np.linspace(t_plot_start, t_max_c, 100)
+                        d_c_fit = np.maximum(0, comm_mu * (t_c_reg - comm_tmrca))
+                        col = COMM_COLORS[c % len(COMM_COLORS)]
+                        ax_a.plot(t_c_reg, d_c_fit, color=col, lw=2.2, linestyle="-", zorder=8,
+                                  label=f"Comm {c} Clock: $\\mu_{c} = {comm_mu:.2e}$")
+
+        if c_tmrca_num is not None and c_mu:
+            t_span = max(dates) - c_tmrca_num
+            t_plot_start = max(c_tmrca_num, min(dates) - 0.3 * (max(dates) - min(dates)))
+            t_reg = np.linspace(t_plot_start, max(dates) + max(0.05 * t_span, 0.2), 200)
+            d_fit = np.maximum(0, c_mu * (t_reg - c_tmrca_num))
+            ax_a.plot(t_reg, d_fit, color="#64748b", lw=1.6, linestyle="--", zorder=7,
+                      label=f"Global Unpartitioned: $\\mu = {c_mu:.2e}$")
+    else:
+        if c_tmrca_num is not None and c_mu:
+            t_span = max(dates) - c_tmrca_num
+            t_reg = np.linspace(c_tmrca_num, max(dates) + max(0.05 * t_span, 0.2), 200)
+            d_fit = np.maximum(0, c_mu * (t_reg - c_tmrca_num))
+            r2_val = dj.get("ols", {}).get("r2", 0.0)
+            ax_a.plot(t_reg, d_fit, color="#0f172a", lw=2.0, zorder=7,
+                      label=f"Clock Fit: $\\mu = {c_mu:.4e}$ ($R^2 = {r2_val:.2f}$)")
 
     ax_a.set_title("A. Tree-Free Root-to-Tip Clock vs. BEAST Baseline", fontsize=11, weight="bold")
     ax_a.set_xlabel("Sampling Date (Calendar Years CE)", fontsize=9.5, weight="bold")
@@ -694,6 +750,106 @@ def generate_figure_for_study(study_id):
     plt.close(fig)
     return out_png
 
+def harvest_autoclock_viz(s_path, adata, ddata, interpretation="", max_pts=50):
+    k_star = int(adata.get('optimal_k', adata.get('k_star', 1)))
+    g_mu = float(ddata.get('mu')) if ddata.get('mu') is not None else None
+    g_tmrca = float(ddata.get('t_mrca')) if ddata.get('t_mrca') is not None else None
+    
+    # Load points from CSVs
+    pts_by_comm = {}
+    d_csv = os.path.join(s_path, 'chronaeon_dating.csv')
+    m_csv = os.path.join(s_path, 'autoclock_classified_metadata.csv')
+    if os.path.exists(d_csv) and os.path.exists(m_csv):
+        try:
+            df_d = pd.read_csv(d_csv)
+            df_m = pd.read_csv(m_csv)
+            col_d = 'taxon' if 'taxon' in df_d.columns else 'id'
+            col_m = 'id' if 'id' in df_m.columns else 'taxon'
+            merged = pd.merge(df_d, df_m, left_on=col_d, right_on=col_m, how='inner')
+            
+            date_col = 'sampling_date' if 'sampling_date' in merged.columns else 'date'
+            div_col = 'root_divergence' if 'root_divergence' in merged.columns else 'divergence'
+            comm_col = 'inferred_clock_community'
+            out_col = 'is_outlier'
+            
+            for cid, group in merged.groupby(comm_col):
+                cid_str = str(int(cid)) if isinstance(cid, (int, float, np.integer)) else str(cid)
+                grp_sorted = group.sort_values(date_col)
+                n_grp = len(grp_sorted)
+                if n_grp <= max_pts:
+                    sub = grp_sorted
+                else:
+                    outliers = grp_sorted[grp_sorted[out_col] == True] if out_col in grp_sorted.columns else pd.DataFrame()
+                    non_outliers = grp_sorted[grp_sorted[out_col] != True] if out_col in grp_sorted.columns else grp_sorted
+                    rem_quota = max(10, max_pts - len(outliers))
+                    idx_sel = np.linspace(0, len(non_outliers) - 1, min(rem_quota, len(non_outliers)), dtype=int)
+                    sub = pd.concat([outliers, non_outliers.iloc[idx_sel]]).drop_duplicates().sort_values(date_col)
+                
+                pts_list = []
+                for _, row in sub.iterrows():
+                    t = float(row[date_col])
+                    d = float(row[div_col])
+                    o = 1 if (out_col in row and bool(row[out_col])) else 0
+                    pts_list.append({'t': round(t, 4), 'd': round(d, 6), 'o': o})
+                pts_by_comm[cid_str] = pts_list
+        except Exception as e:
+            print(f"Warning: could not harvest points for {s_path}: {e}")
+            
+    comms_list = []
+    raw_comms = adata.get('communities', {})
+    if isinstance(raw_comms, dict):
+        sorted_keys = sorted(raw_comms.keys(), key=lambda x: int(x) if str(x).isdigit() else str(x))
+        for idx, k in enumerate(sorted_keys):
+            cinfo = raw_comms[k]
+            m_obj = cinfo.get('pgls', {}) if cinfo.get('pgls', {}).get('status') == 'OK' else cinfo.get('ols', {})
+            mu = float(cinfo.get('calibrated_rate') or m_obj.get('mu') or 0.0)
+            tmrca = cinfo.get('calibrated_tmrca') or m_obj.get('t_mrca')
+            tmrca = float(tmrca) if tmrca is not None and not np.isnan(float(tmrca)) else None
+            se_mu = float(m_obj.get('se_mu') or 0.0)
+            
+            ci = cinfo.get('ci_mrca') or m_obj.get('ci_mrca')
+            if ci and len(ci) == 2 and ci[0] is not None and not np.isnan(float(ci[0])):
+                ci_list = [round(float(ci[0]), 2), round(float(ci[1]), 2)]
+            else:
+                ci_list = None
+                
+            r2_val = round(float(cinfo.get('r2') or m_obj.get('r2') or 0.0), 3)
+            plambda = cinfo.get('pagel_lambda')
+            plambda = round(float(plambda), 3) if (plambda is not None and not np.isnan(float(plambda))) else None
+            ratio = round(mu / g_mu, 2) if (g_mu and g_mu > 0 and mu > 0) else 1.0
+            cid_int = int(k) if str(k).isdigit() else idx
+            col = COMM_COLORS[cid_int % len(COMM_COLORS)]
+            
+            c_pts = pts_by_comm.get(str(k), [])
+            t_span = cinfo.get('timespan', [0, 0])
+            if isinstance(t_span, list) and len(t_span) == 2:
+                timespan_disp = [round(float(t_span[0]), 2), round(float(t_span[1]), 2)]
+            else:
+                timespan_disp = [0, 0]
+                
+            comms_list.append({
+                'id': cid_int,
+                'color': col,
+                'n': int(cinfo.get('taxa_count', len(c_pts))),
+                'mu': mu,
+                'se_mu': se_mu,
+                't_mrca': tmrca,
+                'ci': ci_list,
+                'r2': r2_val,
+                'lambda': plambda,
+                'ratio': ratio,
+                'timespan': timespan_disp,
+                'pts': c_pts
+            })
+            
+    return {
+        'k_star': k_star,
+        'g_mu': g_mu,
+        'g_tmrca': g_tmrca,
+        'interpretation': interpretation,
+        'comms': comms_list
+    }
+
 def harvest_study(study_id, idx):
     s_path = os.path.join(BENCHMARK_DIR, study_id)
     with open(os.path.join(s_path, 'DATA_PROVENANCE.json')) as f:
@@ -714,7 +870,7 @@ def harvest_study(study_id, idx):
     r_path = os.path.join(s_path, 'STUDY_REPORT.md')
     if os.path.exists(r_path):
         with open(r_path) as f:
-            report_text = f.read()
+            report_text = sanitize_report_text(f.read())
 
     lit = pdata.get('literature') or pdata.get('data_provenance', {}).get('literature', {})
     title = lit.get('title', 'Empirical Benchmark Study')
@@ -945,6 +1101,8 @@ def harvest_study(study_id, idx):
     autoclock_interpretation = enrich_biological_text(cur.get("autoclock_interpretation", f"AutoClock spectral graph Laplacian bisection partitioned the cohort into K* = {k_star} distinct evolutionary communities with within-lineage rate deconvolution."))
     reconciliation_details = enrich_biological_text(cur.get("reconciliation_details", reconciliation))
 
+    autoclock_viz_data = harvest_autoclock_viz(s_path, adata, ddata, cur.get("autoclock_interpretation", ""))
+
     rec = {
         "index": idx,
         "dir": study_id,
@@ -1007,7 +1165,9 @@ def harvest_study(study_id, idx):
         "repro_cmd": repro_cmd,
         "narrative": narrative_clean,
         "report_text": report_text,
-        "communities": list(adata.get('communities', {}).values()) if isinstance(adata.get('communities'), dict) else (adata.get('communities', []) if isinstance(adata.get('communities'), list) else [])
+        "communities": list(adata.get('communities', {}).values()) if isinstance(adata.get('communities'), dict) else (adata.get('communities', []) if isinstance(adata.get('communities'), list) else []),
+        "autoclock_viz_data": autoclock_viz_data,
+        "autoclock_viz_json": json.dumps(autoclock_viz_data)
     }
     return rec
 
@@ -1105,8 +1265,10 @@ def generate_index_html(records):
         <span class="brand-badge">Curated Empirical Benchmarks</span>
       </div>
       <nav class="nav-links">
-        <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub Repository</a>
-        <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener">HyphAeon Engine</a>
+        <a href="surveillance/nextstrain/index.html" style="color: var(--primary); font-weight: 600;">NextStrain Challenge &nearr;</a>
+        <a href="surveillance/bvbrc/index.html" style="color: #059669; font-weight: 600;">BV-BRC 10k/50k Sieve &nearr;</a>
+        <a href="AGENT.MD" style="font-weight: 500;">AGENT.md Guide</a>
+        <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
   </header>
@@ -1135,7 +1297,7 @@ def generate_index_html(records):
       </div>
       <div class="scorecard-card">
         <div class="scorecard-label">Phylogenetic Tree Requirement</div>
-        <div class="scorecard-value">Zero Trees</div>
+        <div class="scorecard-value">Tree-Free</div>
         <div class="scorecard-meta">Continuous Distance Manifold</div>
       </div>
       <div class="scorecard-card">
@@ -1147,6 +1309,69 @@ def generate_index_html(records):
         <div class="scorecard-label">Extended Models Suite</div>
         <div class="scorecard-value">6 Model Classes</div>
         <div class="scorecard-meta">OLS, PGLS, Spline, Crash, Exp, Epoch</div>
+      </div>
+    </section>
+
+    <!-- Planetary Surveillance & Real-Time Grand Challenges -->
+    <section style="margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--text-heading); margin: 0;">Planetary Scale &amp; Real-Time Surveillance Grand Challenges</h2>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 0;">
+            Beyond curated benchmarks: high-throughput streaming ingestion, outlier sieving, and multi-clock community deconvolution across global epidemiological platforms.
+          </p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem;">
+        <!-- NextStrain Card -->
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge badge-pos-rna">NextStrain Streaming Feed</span>
+              <span class="badge badge-concordant">100% TreeTime Match</span>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-heading); margin: 0 0 0.5rem 0;">
+              <a href="surveillance/nextstrain/index.html" style="color: inherit; text-decoration: none;">The NextStrain Grand Challenge: Tree-Free Manifold Dating &amp; AutoClock vs. TreeTime &nearr;</a>
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5; margin-bottom: 1rem;">
+              Live streaming ingestion from official NextStrain Auspice feeds (Influenza A/H3N2 &amp; H1N1pdm 12-Year Feeds, 3,221 taxa). ChronAeon replicates TreeTime's exact root dates (H1N1pdm: 2009.26 vs 2009.27) in 25.5s without a tree, while AutoClock ($K^*=2$) achieves 100% discrete biological separation of post-lockdown clade replacement sweeps.
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              <span><strong>Throughput:</strong> 25.5 s wall-clock</span> &bull;
+              <span><strong>Taxa:</strong> 3,221 genomes</span> &bull;
+              <span><strong>Topology:</strong> Tree-Free Manifold</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="surveillance/nextstrain/index.html" class="btn" style="background: var(--primary); color: #ffffff; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">View NextStrain Dossier &nearr;</a>
+            <a href="data/surveillance_nextstrain_reproducibility.tar.gz" download style="color: #059669; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.45rem 0.5rem;">Package (.tar.gz) &darr;</a>
+          </div>
+        </div>
+
+        <!-- BV-BRC Card -->
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge badge-pos-rna">BV-BRC Planetary Sieve</span>
+              <span class="badge badge-concordant">10,000-Taxon Scale</span>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-heading); margin: 0 0 0.5rem 0;">
+              <a href="surveillance/bvbrc/index.html" style="color: inherit; text-decoration: none;">The BV-BRC Grand Challenge: Streaming Sieve &amp; Multi-Clock Deconvolution of 10,000 Genomes &nearr;</a>
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5; margin-bottom: 1rem;">
+              Scaling tree-free molecular clock dating to 58 years of Influenza A/H3N2 (1968–2026). In 49.58 seconds, ChronAeon's streaming sieve triages 10,000 genomes (414 seq/s, quarantining severe contaminants/chimeras) and AutoClock deconvolves $K^*=7$ clock regimes, autonomously isolating wild waterfowl (2.7x clock acceleration) and swine reservoirs with zero metadata priors.
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              <span><strong>Runtime:</strong> 49.58 s total</span> &bull;
+              <span><strong>Sieve Speed:</strong> 414 seq/s</span> &bull;
+              <span><strong>Taxon Scale:</strong> 10,000 isolates</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="surveillance/bvbrc/index.html" class="btn" style="background: #059669; color: #ffffff; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">View BV-BRC Dossier &nearr;</a>
+            <a href="data/surveillance_bvbrc_reproducibility.tar.gz" download style="color: #059669; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.45rem 0.5rem;">Package (.tar.gz) &darr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1332,6 +1557,19 @@ def generate_study_page(rec, prev_rec, next_rec):
             </tbody>
           </table>
         </div>"""
+
+    # AutoClock Interactive Multi-Rate Visualizer (for K* > 1)
+    autoclock_viz_html = ""
+    if rec.get('k_star', 1) > 1 and rec.get('autoclock_viz_json'):
+        autoclock_viz_html = f"""      <div class="autoclock-explorer">
+        <div class="autoclock-controls"></div>
+        <div class="autoclock-chart-wrapper">
+          <svg class="autoclock-svg"></svg>
+          <div class="autoclock-tooltip"></div>
+        </div>
+        <div class="autoclock-detail-card"></div>
+        <script type="application/json" class="autoclock-data">{rec['autoclock_viz_json']}</script>
+      </div>"""
 
     # Outliers list
     outliers_html = ""
@@ -1849,6 +2087,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
         Diagonalizing the normalized graph Laplacian $L_{{\\mathrm{{sym}}}} = I - D^{{-1/2}} W D^{{-1/2}}$ partitions the cohort into $K^* = {rec['k_star']}$ distinct evolutionary communities based on spectral eigengaps and $\\mathrm{{AIC}}_c$ parsimony:
       </p>
+{autoclock_viz_html}
 {comm_table_html}
     </section>
 
@@ -2149,7 +2388,6 @@ function initConcordancePlot() {
 
 def copy_beast_xmls(records):
     os.makedirs(DATA_DIR, exist_ok=True)
-    os.makedirs(EXT_XML_DIR, exist_ok=True)
     
     copied = 0
     for r in records:
@@ -2160,12 +2398,10 @@ def copy_beast_xmls(records):
             os.makedirs(target_study_dir, exist_ok=True)
             dst1 = os.path.join(target_study_dir, "beast_config.xml.gz")
             dst2 = os.path.join(DATA_DIR, f"{study_id}.xml.gz")
-            dst3 = os.path.join(EXT_XML_DIR, f"{study_id}.xml.gz")
             shutil.copy2(src_xml, dst1)
             shutil.copy2(src_xml, dst2)
-            shutil.copy2(src_xml, dst3)
             copied += 1
-    print(f"[OK] Verified and copied {copied} compressed BEAST XML archives to {DATA_DIR} and {EXT_XML_DIR}")
+    print(f"[OK] Verified and copied {copied} compressed BEAST XML archives to {DATA_DIR}")
 
 def ensure_figures(records):
     os.makedirs(FIGURES_DIR, exist_ok=True)
@@ -2179,41 +2415,166 @@ def ensure_figures(records):
 
 def update_readme(records):
     total_taxa = sum(r['taxa'] for r in records)
+    
+    table_rows = []
+    for r in records:
+        b_est = f"{r['beast_tmrca']} {r['beast_ci']}"
+        c_est = f"{r['chronaeon_tmrca']} {r['chronaeon_ci']}"
+        doi_md = f"[`{r['doi']}`]({r['doi_url']})" if r.get('doi_url') else "N/A"
+        row = f"| **{r['bench_id']}** | `{r['study_id']}` | {r['pathogen']} | {r['taxa']:,} | {r['timespan']} yr | {b_est} | {c_est} | {r['chronaeon_sec']} s | {r['k_star']} | {r['concordance_pill']} | {doi_md} |"
+        table_rows.append(row)
+    table_rows_str = "\n".join(table_rows)
+
     readme_content = f"""# ChronAeon Benchmark Compendium Portal
 
 This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** ({total_taxa:,} taxa, 1882–2026) evaluated in the **ChronAeon** manuscript:
 
-> **"ChronAeon: Tree-Free Continuous Sequence Manifolds Accelerate Molecular Clock Inference Over 10,000-Fold"**  
+> **"Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning"**  
 > *Sergei L. Kosakovsky Pond et al., Institute for Genomics and Evolutionary Medicine (iGEM), Temple University.*
 
-## Live Portal
-The interactive web portal is deployed on GitHub Pages:  
-**https://veg.github.io/chronaeon/** (and https://veg.github.io/cronaeon_bench/)
+---
 
-## Key Compendium Metrics
-- **42 Curated Empirical Cohorts**: 100% harvested from author-deposited repositories (Dryad, GitHub, Zenodo, ENA) with zero synthetic base filling and zero simplex imputation.
-- **{total_taxa:,} Total Taxa**: Spanning Positive-Sense RNA, Negative-Sense RNA, Retroviruses, DNA Viruses, and Bacterial & Ancient DNA.
-- **Tree-Free Continuous Manifolds**: Completely eliminates phylogenetic tree search, inference, and MCMC topology space.
-- **Sub-Minute Execution**: 0.5 to 314 seconds on commodity hardware across all 42 cohorts, bypassing iterative MCMC sampling.
-- **Consistent 4-Panel Diagnostic Figures**: Highlighting root-to-tip clock regression, BEAST MCMC calibration concordance, out-of-sample LOOCV tip recovery, Continuous Manifold Alluvial Phylogeny streamlines, and Alluvial lineage flow streamgraphs across all 42 cohorts.
-- **Unsupervised AutoClock Deconvolution**: Resolves empirical rate heterogeneity ($K^* > 1$) or validates strict rate homogeneity ($K^* = 1$) using normalized graph Laplacian spectral bisection.
-- **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: Native profile fitting of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch rate regimes alongside Restricted Natural Splines.
-- **Compressed BEAST Configurations**: Every cohort includes the exact compressed XML configuration (`beast_config.xml.gz`) in `data/` for full reproducibility.
-- **Direct Literature Links**: 100% of study citations and references link directly to canonical DOIs, PMIDs, and PMCIDs.
+## 1. Live Interactive Web Compendium
 
-## Directory Structure
-- `index.html`: Master portal homepage featuring the global concordance scatter plot, live multi-faceted filters, downloadable XML badges, and searchable benchmark data grid.
-- `studies/`: 42 individual static study dossiers with complete biological narratives, AutoClock community breakdowns, non-linear clock evaluations, and deterministic reproduction commands.
-- `data/`: Complete compressed BEAST XML configurations (`data/<study_id>/beast_config.xml.gz` and `data/<study_id>.xml.gz`).
-- `assets/figures/`: 42 publication-grade multi-panel diagnostic figures (`assets/figures/<study_id>/chronaeon_diagnostics.png`).
-- `assets/css/style.css`: Clean, modern scientific styling.
-- `assets/js/main.js`: Interactive filtering, SVG plotting, lightbox zoom, and code copy tools.
-- `benchmarks_master.json`: Complete structured JSON records for programmatic analysis.
+Explore the full benchmark results, multi-panel diagnostic figures, interactive charts, and downloadable XML configs online:
 
-## Deterministic Reproduction
-Each study includes its complete CLI command. To run tree-free inference on any alignment:
+* **Master Portal:** [https://veg.github.io/chronaeon/](https://veg.github.io/chronaeon/) (and [https://veg.github.io/cronaeon_bench/](https://veg.github.io/cronaeon_bench/))
+* **NextStrain Grand Challenge Dossier:** [`surveillance/nextstrain/index.html`](https://veg.github.io/chronaeon/surveillance/nextstrain/index.html)
+* **BV-BRC 10k–50k Sieve Grand Challenge Dossier:** [`surveillance/bvbrc/index.html`](https://veg.github.io/chronaeon/surveillance/bvbrc/index.html)
+
+---
+
+## 2. Compendium Highlights & Key Metrics
+
+* **42 Curated Empirical Cohorts**: 100% harvested from primary author-deposited repositories (Dryad, GitHub, Zenodo, ENA, GISAID) with zero synthetic base filling and zero simplex imputation.
+* **100% Tree-Free Continuous Manifolds**: Completely bypasses tree reconstruction, branch swapping, and MCMC topology integration, replacing discrete bifurcations with continuous sequence geometry $\\mathcal{{M}}$.
+* **Sub-Second to Sub-Minute Execution**: Computes in 0.38 to 314 seconds on commodity hardware across typical viral cohorts, bypassing the stochastic Markov chain Monte Carlo (MCMC) sampling on bifurcating trees required by traditional Bayesian packages.
+* **Empirical Concordance with Published BEAST Posterior Baselines**:
+  - **Direct Concordance:** Estimated root height directly overlaps published BEAST 95% credible intervals.
+  - **Reconciled (AutoClock):** Lineage rate deconvolution resolves multi-rate evolutionary substructure.
+  - **Stem-vs-Crown:** Cleanly separates deep ancestral introduction divergence from sampled regional outbreak radiation.
+  - **Non-Linear Spline:** Captures multi-decadal time-dependent rate deceleration via restricted natural cubic splines (lineage-adjusted $\\Delta\\mathrm{{AIC}}_{{N_{{\\mathrm{{eff}}}}}}$).
+* **Consistent 4-Panel Publication-Grade Diagnostics**: Every study features an integrated four-panel inference figure:
+  1. *Panel A (Clock Trajectory)*: Genetic distance to consensus root vs. decimal calendar time with BEAST point estimate & 95% HPD band overlay.
+  2. *Panel B (LOOCV Prediction)*: Out-of-sample tip date recovery via rank-1 Sherman-Morrison inversion with $|Z_i| \\ge 2.50$ leverage screening.
+  3. *Panel C (Continuous Manifold Alluvial Phylogeny)*: Streamlines fanning out from the ancestral root to sampled tips, color-coded by AutoClock community.
+  4. *Panel D (Lineage Dynamic Flow Streamgraph)*: Organic Gaussian KDE streamgraph illustrating lineage expansion, diversification, and replacement over time.
+* **Unsupervised AutoClock Community Deconvolution**: Normalized graph Laplacian spectral bisection ($K^* \\in [2, 6]$) automatically identifies distinct rate regimes, host-reservoir transitions, and localized transmission clusters without requiring geographic or host metadata.
+* **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: Native profile fitting of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch (piecewise-constant) models alongside Restricted Natural Splines.
+* **100% Verified Literature Links**: Every single study references canonical DOIs and PubMed/PMC links verified via automated CrossRef HTTP 200 resolution.
+
+---
+
+## 3. Planetary-Scale Surveillance Grand Challenges
+
+Beyond small-to-medium cohorts, ChronAeon tackles the real-world operational challenges of planetary genomic surveillance:
+
+### Challenge A: The NextStrain Streaming Surveillance Challenge
+* **Dataset:** Official 12-year longitudinal Auspice feeds (Influenza A/H3N2 & A/H1N1pdm, 3,221 genomes, 2012–2024).
+* **Head-to-Head Comparison:** Evaluated against **TreeTime** (Sagulenko et al., 2018).
+* **Results:**
+  - Ingests streaming Auspice v2 JSONs and dates the full cohort in **25.5 seconds** (tree-free continuous manifold).
+  - H1N1pdm root emergence: **2009.26 CE** (replicates TreeTime's **2009.27 CE** within 0.01 yr / 3.6 days).
+  - AutoClock ($K^* = 2$) achieves **100.0% discrete biological separation** of pre-2021 historical lineages vs. post-lockdown modern resurgence clades.
+* **Dossier:** [`surveillance/nextstrain/index.html`](https://veg.github.io/chronaeon/surveillance/nextstrain/index.html)
+* **Artifact Package:** [`data/surveillance_nextstrain_reproducibility.tar.gz`](data/surveillance_nextstrain_reproducibility.tar.gz)
+
+### Challenge B: The BV-BRC 10,000–50,000 Taxa Sieve & Multi-Clock Grand Challenge
+* **Dataset:** 10,000 curated influenza A/H3N2 genomes streaming directly from the BV-BRC REST API (1968–2026).
+* **Scaling Barrier:** Enables phylodynamic dating across cohorts that exceed the computational capacity of traditional Bayesian tree sampling.
+* **Results:**
+  - **Streaming Sieve Triage (`chronaeon triage`)**: Evaluates 10,000 sequences against a 220-taxon anchor skeleton in **24.1 seconds** (**414 seq/s throughput**). Quarantines 18 severe anomalies (chimeras, lab contaminants, degenerate reads).
+  - **AutoClock Multi-Clock Deconvolution (`chronaeon autoclock`)**: In **28.5 seconds**, automatically isolates **$K^* = 7$ clock communities** without metadata priors:
+    * *Community 4 (Wild Waterfowl Avian Reservoir)*: $\\ge 98\\%$ wild avian, clock rate accelerated to $\\mu = 7.46 \\times 10^{{-3}}$ subs/site/yr ($2.7\\times$ faster than human seasonal trunk).
+    * *Community 2 (North American Swine Reservoir)*: $\\ge 98\\%$ swine, $\\mu = 3.17 \\times 10^{{-3}}$ subs/site/yr, $t_{{\\mathrm{{MRCA}}}} = 1999.81$.
+    * *Community 0 (Human Modern Resurgence)*: 100% human seasonal clade 2a, $\\mu = 4.14 \\times 10^{{-3}}$, $t_{{\\mathrm{{MRCA}}}} = 2019.87$.
+  - **Total Wall-Clock Runtime**: 49.58 seconds for streaming sieve, manifold dating, and multi-clock deconvolution across 10,000 genomes.
+* **Dossier:** [`surveillance/bvbrc/index.html`](https://veg.github.io/chronaeon/surveillance/bvbrc/index.html)
+* **Artifact Package:** [`data/surveillance_bvbrc_reproducibility.tar.gz`](data/surveillance_bvbrc_reproducibility.tar.gz)
+
+---
+
+## 4. Directory Structure & File Map
+
+```
+cronaeon_bench/
+├── index.html                     # Master portal homepage with interactive search, filters, SVG scatter
+├── benchmarks_master.json         # Master database: complete structured records for all 42 studies
+├── AGENT.MD                       # Comprehensive autonomous agent reproduction protocol & test harness
+├── build_portal.py                # Self-contained portal builder & HTML generation script
+├── study_curations.py             # Authoritative biological narratives & concordance taxonomy
+├── studies/                       # 42 curated empirical benchmark dossiers
+│   ├── 00_ebola_sierraleone_gire2014/index.html
+│   ├── 01_ebola_makona_dudas2017/index.html
+│   ├── ...
+│   └── 41_skygrid_rabies_gill2020/index.html
+├── surveillance/                  # Planetary-scale surveillance grand challenges
+│   ├── nextstrain/index.html      # NextStrain Auspice streaming benchmark dossier
+│   └── bvbrc/index.html           # BV-BRC 10k-50k genomes sieve & multi-clock dossier
+├── data/                          # Complete primary data & reproducibility artifacts
+│   ├── <study_id>/beast_config.xml.gz      # Author-deposited compressed BEAST MCMC XMLs
+│   ├── surveillance_nextstrain_reproducibility.tar.gz
+│   └── surveillance_bvbrc_reproducibility.tar.gz
+├── assets/
+│   ├── css/style.css              # Publication-grade typography & responsive layouts
+│   ├── js/main.js                 # Interactive client-side filtering, SVG scatter, KaTeX/MathJax
+```
+
+---
+
+## 5. Master Empirical Benchmark Results Table
+
+| **#** | **Directory** | **Pathogen & Context** | **Taxa** | **Timespan** | **Published BEAST $t_\\mathrm{{MRCA}}$** | **ChronAeon $t_\\mathrm{{MRCA}}$** | **Runtime** | **$K^*$** | **Concordance** | **DOI / Identifier** |
+| :--- | :--- | :--- | :---: | :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+{table_rows_str}
+
+---
+
+## 6. Autonomous Replication Protocol
+
+Complete, deterministic replication instructions are specified in [`AGENT.MD`](AGENT.MD).
+
+### Quickstart: Single-Cohort Dating & LOOCV
+To calibrate any empirical alignment from scratch:
 ```bash
-python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv --nonlinear-clocks -o chronaeon_dating.json
+python3 -m chronaeon.cli date \\
+  -a alignment.fasta \\
+  -d dates.csv \\
+  --loocv \\
+  --nonlinear-clocks \\
+  -o chronaeon_dating.json \\
+  -c chronaeon_dating.csv
+```
+
+### Quickstart: AutoClock Community Deconvolution
+To deconvolve multi-clock rate heterogeneity:
+```bash
+python3 -m chronaeon.cli autoclock \\
+  -a alignment.fasta \\
+  -d dates.csv \\
+  -o autoclock_results.json
+```
+
+### Quickstart: Rebuilding the Static Portal
+To recompile the entire static website and update all study cards:
+```bash
+python3 build_portal.py
+```
+
+---
+
+## 7. Citation
+
+If you use ChronAeon or the benchmark datasets in your research, please cite:
+
+```bibtex
+@article{{pond2026chronaeon,
+  author    = {{Kosakovsky Pond, Sergei L. and colleagues}},
+  title     = {{Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning}},
+  journal   = {{Bioinformatics / Systematic Biology}},
+  year      = {{2026}},
+  note      = {{Empirical Benchmark Portal: https://veg.github.io/chronaeon/}}
+}}
 ```
 """
     readme_path = os.path.join(PORTAL_DIR, "README.md")
