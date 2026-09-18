@@ -908,7 +908,7 @@ def harvest_study(study_id, idx):
     if not outliers:
         outliers = ddata.get('outliers', [])
 
-    repro_cmd = f"python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv --dudas-models -o chronaeon_dating.json -c chronaeon_dating.csv"
+    repro_cmd = f"python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv --nonlinear-clocks -o chronaeon_dating.json -c chronaeon_dating.csv"
 
     # Narrative extraction
     default_narrative = f"Empirical evaluation of {pathogen} ({locus}) based on {short_citation}. Tree-free continuous sequence manifolds infer molecular clock dynamics and evaluate temporal concordance against published Bayesian MCMC baselines."
@@ -1284,8 +1284,8 @@ def compute_speedup_label(beast_runtime_str, mcmc_states_str, chronaeon_sec):
 def generate_study_page(rec, prev_rec, next_rec):
     study_id = rec['study_id']
     
-    # Dudas model comparison rows
-    dudas = rec.get('dudas_models', {})
+    # Non-linear clock model comparison rows
+    dudas = rec.get('nonlinear_clocks') or rec.get('dudas_models', {})
     dudas_rows = []
     if dudas:
         models_order = [
@@ -1312,7 +1312,7 @@ def generate_study_page(rec, prev_rec, next_rec):
     dudas_table_html = ""
     if dudas_rows:
         dudas_table_html = f"""        <div style="margin-top: 1.5rem;">
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">Suchard / Dudas Extended Time-Varying Models Evaluation</h3>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">Non-Linear Molecular Clocks Suite Evaluation (<code>--nonlinear-clocks</code>)</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
             Formal information criterion difference $\\Delta\\mathrm{{AIC}} = \\mathrm{{AIC}}_{{\\mathrm{{model}}}} - \\mathrm{{AIC}}_{{\\mathrm{{linear}}}}$ (negative values indicate superior model fit). Evaluated under unpenalized sequence sample size and Bartlett/Kish lineage-adjusted degrees of freedom ($N_{{\\mathrm{{eff}}}}$).
           </p>
@@ -1679,7 +1679,7 @@ def generate_study_page(rec, prev_rec, next_rec):
                   Pre-specified clock/tree model prior comparison via path sampling (PS) or stepping-stone sampling (SS) marginal likelihood estimation.
                 </td>
                 <td>
-                  Lineage-adjusted $\\Delta\\mathrm{{AIC}}_{{N_{{\\mathrm{{eff}}}}}}$ evaluation across 6 Suchard/Dudas extended models. Selected model: <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.75rem;">{rec['chronaeon_active_model']}</span> ($N_{{\\mathrm{{eff}}}} = {rec['n_eff']}$, Fieller $g = {rec['fieller_g']}$).
+                  Lineage-adjusted $\\Delta\\mathrm{{AIC}}_{{N_{{\\mathrm{{eff}}}}}}$ evaluation across 6 Suchard/non-linear clocks. Selected model: <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.75rem;">{rec['chronaeon_active_model']}</span> ($N_{{\\mathrm{{eff}}}} = {rec['n_eff']}$, Fieller $g = {rec['fieller_g']}$).
                 </td>
               </tr>
               <tr>
@@ -1946,7 +1946,7 @@ def generate_study_page(rec, prev_rec, next_rec):
   -a alignment.fasta \\
   -d dates.csv \\
   --loocv \\
-  --dudas-models \\
+  --nonlinear-clocks \\
   -o chronaeon_dating.json \\
   -c chronaeon_dating.csv</pre>
       </div>
@@ -2236,13 +2236,13 @@ The interactive web portal is deployed on GitHub Pages:
 - **Extreme Speedup**: 0.5 to 314 seconds on commodity hardware versus 5,000,000 to 1,000,000,000 MCMC states in BEAST 1.x / 2.x.
 - **Consistent 4-Panel Diagnostic Figures**: Highlighting root-to-tip clock regression, BEAST MCMC calibration concordance, out-of-sample LOOCV tip recovery, Continuous Manifold Alluvial Phylogeny streamlines, and Alluvial lineage flow streamgraphs across all 42 cohorts.
 - **Unsupervised AutoClock Deconvolution**: Resolves empirical rate heterogeneity ($K^* > 1$) or validates strict rate homogeneity ($K^* = 1$) using normalized graph Laplacian spectral bisection.
-- **Suchard / Dudas Extended Models**: Native profile fitting of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch rate regimes alongside Restricted Natural Splines.
+- **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: Native profile fitting of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch rate regimes alongside Restricted Natural Splines.
 - **Compressed BEAST Configurations**: Every cohort includes the exact compressed XML configuration (`beast_config.xml.gz`) in `data/` for full reproducibility.
 - **Direct Literature Links**: 100% of study citations and references link directly to canonical DOIs, PMIDs, and PMCIDs.
 
 ## Directory Structure
 - `index.html`: Master portal homepage featuring the global concordance scatter plot, live multi-faceted filters, downloadable XML badges, and searchable benchmark data grid.
-- `studies/`: 42 individual static study dossiers with complete biological narratives, AutoClock community breakdowns, Dudas model evaluations, and deterministic reproduction commands.
+- `studies/`: 42 individual static study dossiers with complete biological narratives, AutoClock community breakdowns, non-linear clock evaluations, and deterministic reproduction commands.
 - `data/`: Complete compressed BEAST XML configurations (`data/<study_id>/beast_config.xml.gz` and `data/<study_id>.xml.gz`).
 - `assets/figures/`: 42 publication-grade multi-panel diagnostic figures (`assets/figures/<study_id>/chronaeon_diagnostics.png`).
 - `assets/css/style.css`: Clean, modern scientific styling.
@@ -2252,7 +2252,7 @@ The interactive web portal is deployed on GitHub Pages:
 ## Deterministic Reproduction
 Each study includes its complete CLI command. To run tree-free inference on any alignment:
 ```bash
-python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv --dudas-models -o chronaeon_dating.json
+python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv --nonlinear-clocks -o chronaeon_dating.json
 ```
 """
     readme_path = os.path.join(PORTAL_DIR, "README.md")

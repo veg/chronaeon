@@ -100,7 +100,7 @@ python3 -m chronaeon.cli date \
   -a alignment.fasta \
   -d dates.csv \
   --loocv \
-  --dudas-models \
+  --nonlinear-clocks \
   -o chronaeon_dating.json \
   -c chronaeon_dating.csv \
   2>&1 | tee chronaeon_dating.log
@@ -111,7 +111,7 @@ python3 -m chronaeon.cli date \
    - Standard OLS molecular clock regression across distance manifold.
    - Attention PGLS regression with Pagel's $\lambda^*$ phylogenetic signal parameterization.
    - Restricted Natural Cubic Splines (detecting multi-decadal time-dependent rate deceleration).
-   - Suchard / Dudas Extended Models Suite: Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and 3-Epoch Polyepoch NNLS.
+   - Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>): Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and 3-Epoch Polyepoch NNLS.
 2. **Analytical & Empirical Confidence Bounds**:
    - Exact Fieller ratio inversion analytical 95% confidence interval on $t_{\mathrm{MRCA}}$.
    - Denny-Fieller $g$-statistic ($g \ll 1.0$ validates strong temporal signal; $g \ge 1.0$ indicates insufficient signal).
@@ -156,7 +156,7 @@ To execute the entire 42-cohort empirical benchmark suite autonomously from scra
 #!/usr/bin/env python3
 """
 batch_run_42_benchmarks.py
-Runs single-clock dating, LOOCV, Dudas extended models, and AutoClock deconvolution
+Runs single-clock dating, LOOCV, non-linear clocks, and AutoClock deconvolution
 across all 42 empirical cohorts in benchmark-100.
 """
 
@@ -190,13 +190,13 @@ for idx, study in enumerate(studies, 1):
     print(f"==================================================")
     t0 = time.time()
     
-    # 1. Single-clock dating + LOOCV + Dudas extended models
+    # 1. Single-clock dating + LOOCV + non-linear clocks
     cmd_date = [
         "python3", "-m", "chronaeon.cli", "date",
         "-a", "alignment.fasta",
         "-d", "dates.csv",
         "--loocv",
-        "--dudas-models",
+        "--nonlinear-clocks",
         "-o", "chronaeon_dating.json",
         "-c", "chronaeon_dating.csv"
     ]

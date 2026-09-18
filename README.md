@@ -40,7 +40,7 @@ Explore the full benchmark results, multi-panel diagnostic figures, interactive 
   3. *Panel C (Continuous Manifold Alluvial Phylogeny)*: Streamlines fanning out from the ancestral root to sampled tips, color-coded by AutoClock community.
   4. *Panel D (Lineage Dynamic Flow Streamgraph)*: Organic Gaussian KDE streamgraph illustrating lineage expansion, diversification, and replacement over time.
 * **Unsupervised AutoClock Community Deconvolution**: Normalized graph Laplacian spectral bisection ($K^* \in [1, 8]$) automatically identifies distinct rate regimes, host-reservoir transitions, and localized transmission clusters without requiring geographic or host metadata.
-* **Suchard / Dudas Extended Models Suite**: In addition to linear OLS and attention PGLS, native profiling of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch (piecewise-constant) models.
+* **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: In addition to linear OLS and attention PGLS, native profiling of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch (piecewise-constant) models.
 * **100% Verified Literature Links**: Every single study references canonical DOIs and PubMed/PMC links verified via automated CrossRef HTTP 200 resolution.
 
 ---
@@ -165,7 +165,7 @@ python3 -m chronaeon.cli date \
   -a alignment.fasta \
   -d dates.csv \
   --loocv \
-  --dudas-models \
+  --nonlinear-clocks \
   -o chronaeon_dating.json \
   -c chronaeon_dating.csv
 ```

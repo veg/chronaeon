@@ -286,7 +286,7 @@
                   Pre-specified clock/tree model prior comparison via path sampling (PS) or stepping-stone sampling (SS) marginal likelihood estimation.
                 </td>
                 <td>
-                  Lineage-adjusted $\Delta\mathrm{AIC}_{N_{\mathrm{eff}}}$ evaluation across 6 Suchard/Dudas extended models. Selected model: <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.75rem;">PGLS</span> ($N_{\mathrm{eff}} = 58.3$, Fieller $g = 0.13$).
+                  Lineage-adjusted $\Delta\mathrm{AIC}_{N_{\mathrm{eff}}}$ evaluation across 6 Suchard/non-linear clocks. Selected model: <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.75rem;">PGLS</span> ($N_{\mathrm{eff}} = 58.3$, Fieller $g = 0.13$).
                 </td>
               </tr>
               <tr>
@@ -358,7 +358,7 @@
       </table>
 
         <div style="margin-top: 1.5rem;">
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">Suchard / Dudas Extended Time-Varying Models Evaluation</h3>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">Non-Linear Molecular Clocks Suite Evaluation (<code>--nonlinear-clocks</code>)</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
             Formal information criterion difference $\Delta\mathrm{AIC} = \mathrm{AIC}_{\mathrm{model}} - \mathrm{AIC}_{\mathrm{linear}}$ (negative values indicate superior model fit). Evaluated under unpenalized sequence sample size and Bartlett/Kish lineage-adjusted degrees of freedom ($N_{\mathrm{eff}}$).
           </p>
@@ -516,7 +516,7 @@
   -a alignment.fasta \
   -d dates.csv \
   --loocv \
-  --dudas-models \
+  --nonlinear-clocks \
   -o chronaeon_dating.json \
   -c chronaeon_dating.csv</pre>
       </div>
