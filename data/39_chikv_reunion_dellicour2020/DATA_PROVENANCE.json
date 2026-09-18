@@ -1,0 +1,37 @@
+{
+  "study_id": "39_chikv_reunion_dellicour2020",
+  "pathogen": "Chikungunya Virus (CHIKV, 2024-2025 R\u00e9union Island Epidemic)",
+  "locus": "Complete coding genome (11,439 bp / 3,745 codons)",
+  "literature": {
+    "title": "Unraveling the epidemiological and dispersal dynamics of the 2024\u20132025 chikungunya virus epidemic on R\u00e9union Island",
+    "authors": "Etienne Frumence, Rapha\u00eblle Klitting, Kyla Serres, Yucai Shao, Filippo Monti, Muriel Vincent, Mandev S. Gill, Marc A. Suchard, Philippe Lemey, Xavier de Lamballerie, Marie-C. Jaffar-Bandjee, Simon Dellicour",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2026,
+    "volume": "123",
+    "issue": "38",
+    "pages": "e2621019123",
+    "doi": "10.1073/pnas.2621019123",
+    "pmid": "42748151",
+    "pmcid": null
+  },
+  "alignment": {
+    "num_sequences": 251,
+    "taxa_count": 251
+  },
+  "beast_comparator": {
+    "software": "BEAST v10.5.0-dev / BEAST 1.10.4",
+    "substitution_model": "HKY + Gamma4 (SRD06)",
+    "clock_model": "Uncorrelated Lognormal Relaxed Clock (UCLD)",
+    "tree_prior": "Non-parametric Bayesian Skygrid Coalescent",
+    "published_rate": "8.8e-4 subs/site/year (95% HPD: 6.2e-4 to 1.16e-3)",
+    "published_tmrca": "2004.8 CE (95% HPD: 2004.5 to 2005.1)",
+    "mcmc_states": 100000000,
+    "wall_clock_runtime": "Not reported in publication (MCMC states: 100,000,000)"
+  },
+  "cryptographic_hashes": {
+    "alignment.fasta": "f61b112e9c87a2b148ba3d7053b200d476af6c5fb5b8c40db3451c467d9784b4",
+    "dates.csv": "e7ae412eb8487405550b38fbc0f12ba687dc209801376d6dd36da0720c2a9f43",
+    "paper.pdf": "9389e7f7694ab36105d54b3fbbce9fc38aba0904886b500220d478445156d7e1",
+    "beast_config.xml.gz": "fb8842f5aa1a28d7fb701d13a3774d880d5a575fabef00f33f57050e0ed123f7"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "study_id": "34_asfv_europe_gambaro2025",
+  "pathogen": "African Swine Fever Virus (ASFV Genotype II, Asfarviridae)",
+  "organism": "African swine fever virus",
+  "data_provenance": {
+    "literature": {
+      "title": "Exploiting Viral DNA Genomes to Explore the Dispersal History of African Swine Fever Genotype II Lineages in Europe",
+      "authors": "Fabiana G\u00e1mbaro, Lynnette C. Goatley, Thomas J. Foster, Chandana Tennakoon, Graham L. Freimanis, Steven Van Borm, Marius Masiulis, Paulius Bu\u0161auskas, Christopher L. Netherton, Simon Dellicour",
+      "journal": "Genome Biology and Evolution",
+      "volume": "17",
+      "issue": "6",
+      "article_id": "evaf102",
+      "year": 2025,
+      "doi": "10.1093/gbe/evaf102",
+      "pmcid": "PMC12146690",
+      "pmid": "40485544",
+      "url": "https://academic.oup.com/gbe/article/17/6/evaf102/8158521",
+      "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12146690/pdf/evaf102.pdf"
+    },
+    "github_repository": {
+      "repository_url": "https://github.com/sdellicour/asfv_phylogeography",
+      "data_path": "Scripts_&_data/Alignment_1804e_DTA/Alignment_18042024/Alignment_180424e.xml",
+      "description": "Original BEAST 1.10.4 discrete trait analysis XML containing alignment, temporal calibration, and trait states"
+    },
+    "input_files": {
+      "paper.pdf": {
+        "description": "Authentic published open-access paper PDF from PMC12146690 / Genome Biology and Evolution",
+        "sha256": "f31f018f84fea22b77704b61bcd11833a4707464089e8051e42f0e73415d6b7d",
+        "file_size_bytes": 5469552
+      },
+      "alignment.fasta": {
+        "description": "Multiple sequence alignment of whole ASFV genomes in FASTA format (exact sequence parity with BEAST XML, no imputation)",
+        "sha256": "b05755680011b9dcf2c683e6bb6892785d263d5a09561f5cf466f5d488ed1afb",
+        "taxa_count": 99,
+        "sequence_length_bp": 190205,
+        "file_size_bytes": 18831504
+      },
+      "dates.csv": {
+        "description": "Collection dates in decimal years extracted from BEAST XML taxon date attributes",
+        "sha256": "3a48aede7e37f2f39b015209ea162e27d9a39731f1d8990734a9343e6ba1a44b",
+        "sample_count": 99,
+        "temporal_range": [
+          1998.0,
+          2022.6383561643836
+        ],
+        "file_size_bytes": 2711
+      },
+      "beast_config.xml.gz": {
+        "description": "Gzip-compressed BEAST 1.10.4 input XML harvested from official study GitHub repository",
+        "sha256": "f8495a5aa0696603e3407d4af6174d9efa9dc02d211c8338f85a93412938f5f2",
+        "uncompressed_sha256": "ebb0bae3234547e23ab90310820e27836508bd61be03ab25d5711c31c2c54359",
+        "file_size_bytes": 5262706
+      }
+    }
+  },
+  "published_beast_parameters": {
+    "software": "BEAST 1.10.4",
+    "substitution_model": "GTR + Gamma (4 rate categories)",
+    "clock_model": "Relaxed molecular clock (uncorrelated lognormal distribution, UCLD)",
+    "demographic_tree_prior": "Coalescent Skygrid model",
+    "discrete_traits": "Discrete phylogeographic diffusion model with BSSVS",
+    "mcmc_chain_length": 1000000000,
+    "mcmc_sampling_frequency": 100000,
+    "burn_in_fraction": 0.1,
+    "runtime": "Not reported in publication (MCMC states: 1,000,000,000)",
+    "substitution_rate": {
+      "mean": 5.72e-06,
+      "hpd_95_lower": 4.38e-06,
+      "hpd_95_upper": 7.01e-06,
+      "units": "substitutions/site/year"
+    },
+    "tmrca": {
+      "description": "Time of the most recent common ancestor of the ASFV European clade",
+      "point_estimate": 2006.15,
+      "point_estimate_range_text": "around 2005-2007",
+      "hpd_95_lower": 2004.6,
+      "hpd_95_upper": 2007.7,
+      "ancestral_root_location": "Georgia",
+      "ancestral_root_posterior_probability": 0.86
+    },
+    "verbatim_quote": "With this time-scaled phylogenetic inference, we estimate for ASFV an evolutionary rate of 5.72 \u00d7 10\u22126 substitution/site/year (95% highest posterior density interval [HPD] = [4.38 \u00d7 10\u22126, 7.01 \u00d7 10\u22126]), as well as the time of the most common ancestor to the viruses circulating in Europe to be around 2005\u20132007 (95% HPD = [2004.6, 2007.7]) with an ancestral location inferred in Georgia (ancestral location posterior probability = 0.86)."
+  },
+  "literature": {
+    "title": "Exploiting Viral DNA Genomes to Explore the Dispersal History of African Swine Fever Genotype II Lineages in Europe",
+    "authors": "Fabiana G\u00e1mbaro, Lynnette C. Goatley, Thomas J. Foster, Chandana Tennakoon, Graham L. Freimanis, Steven Van Borm, Marius Masiulis, Paulius Bu\u0161auskas, Christopher L. Netherton, Simon Dellicour",
+    "journal": "Genome Biology and Evolution",
+    "volume": "17",
+    "issue": "6",
+    "article_id": "evaf102",
+    "year": 2025,
+    "doi": "10.1093/gbe/evaf102",
+    "pmcid": "PMC12146690",
+    "pmid": "40485544",
+    "url": "https://academic.oup.com/gbe/article/17/6/evaf102/8158521",
+    "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12146690/pdf/evaf102.pdf"
+  }
+}

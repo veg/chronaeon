@@ -1,0 +1,1692 @@
+sequence_id,date,clade,subclade,region,country
+A/Victoria/210/2009,2009.418,unassigned,unassigned,Oceania,Australia
+A/Wisconsin/15/2009,2009.432,unassigned,unassigned,North America,USA
+A/Perth/16/2009-egg,2009.264,unassigned,unassigned,Oceania,Australia
+A/Perth/16/2009,2009.264,unassigned,unassigned,Oceania,Australia
+A/Victoria/208/2009,2009.418,unassigned,unassigned,Oceania,Australia
+A/Perth/10/2010,2010.396,unassigned,unassigned,Oceania,Australia
+A/Iowa/19/2010,2010.996,unassigned,unassigned,North America,USA
+A/Alaska/5/2010,2010.936,unassigned,unassigned,North America,USA
+A/Stockholm/18/2011,2011.141,unassigned,unassigned,Europe,Sweden
+A/Southauckland/7/2012,2012.452,3B,unassigned,Oceania,New Zealand
+A/Victoria/361/2011,2011.999,3C,A,Oceania,Australia
+A/Victoria/361/2011-egg,2011.001,3C,A,Oceania,Australia
+A/Texas/50/2012,2012.999,3C,A,North America,USA
+A/Texas/50/2012-egg,2012.999,3C,A,North America,USA
+A/Zhejiang-Wuxin/130/2015,2015.018,3C,A,China,China
+A/Hawaii/22/2012,2012.52,3C,A,North America,USA
+A/Christchurch/516/2012,2012.515,3C,A,Oceania,New Zealand
+A/Wisconsin/34/2014,2014.747,3C.3,A.3,North America,USA
+A/Zambia/6-020/2014,2014.73,3C.3,A.3,Africa,Zambia
+A/Zambia/4-00021/2015,2015.07,3C.3,A.3,Africa,Zambia
+A/Zambia/2-00106/2015,2015.229,3C.3,A.3,Africa,Zambia
+A/Zambia/4-303/2014,2014.87,3C.3,A.3,Africa,Zambia
+A/Zambia/4-288/2014,2014.944,3C.3,A.3,Africa,Zambia
+A/Paraguay/3144/2014,2014.886,3C.3,A.3,South America,Paraguay
+A/Santiago/70123/2014,2014.818,3C.3,A.3,South America,Chile
+A/Tocantins/18288/2015,2015.166,3C.3,A.3,South America,Brazil
+A/Tocantins/16261/2015,2015.133,3C.3,A.3,South America,Brazil
+A/Norway/2326/2015,2015.355,3C.3,A.3,Europe,Norway
+A/Victoria/5076/2014,2014.821,3C.3b,A.3.2,Oceania,Australia
+A/Victoria/6001/2015,2015.01,3C.3b,A.3.2,Oceania,Australia
+A/Netherlands/876/2016,2016.111,3C.3b,A.3.2,Europe,Netherlands
+A/Tucuman/I2377/2014,2014.733,3C.3b,A.3.2,South America,Argentina
+A/Victoria/5065/2014,2014.73,3C.3b,A.3.2,Oceania,Australia
+A/Taiwan/775/2015,2015.385,3C.3b,A.3.2,China,Taiwan
+A/Taiwan/504/2015,2015.207,3C.3b,A.3.2,China,Taiwan
+A/RheinlandPfalz/13/2014,2014.853,3C.3b,A.3.2,Europe,Germany
+A/Malta/MX001178/2014,2014.804,3C.3b,A.3.2,Europe,Malta
+A/Austria/838274/2015,2015.081,3C.3b,A.3.2,Europe,Austria
+A/Slovenia/1411/2015,2015.19,3C.3b,A.3.2,Europe,Slovenia
+A/Stockholm/6/2014,2014.1,3C.3,A.3,Europe,Sweden
+A/Uruguay/86/2015,2015.61,3C.3,A.3,South America,Uruguay
+A/Zonguldak/3161/2016,2016.097,3C.3,A.3,West Asia,Turkey
+A/Norway/2665/2015,2015.856,3C.3,A.3,Europe,Norway
+A/Sachsen/2/2016,2016.048,3C.3,A.3,Europe,Germany
+A/SouthAustralia/55/2014,2014.446,3C.3a,C,Oceania,Australia
+A/Switzerland/9715293/2013,2013.999,3C.3a,C,Europe,Switzerland
+A/Switzerland/9715293/2013-egg,2013.993,3C.3a,C,Europe,Switzerland
+A/Tasmania/11/2014,2014.204,3C.3a,C,Oceania,Australia
+A/Kobe/63/2014,2014.385,3C.3a,C,Japan Korea,Japan
+A/Norway/466/2014,2014.092,3C.3a,C,Europe,Norway
+A/Ulaanbaatar/4846/2014,2014.974,3C.3a,C,West Asia,Mongolia
+A/Tianjin-Hexi/195/2015,2015.086,3C.3a,C,China,China
+A/Madagascar/3069/2014,2014.807,3C.3a,C,Africa,Madagascar
+A/Lao/I1018/2014,2014.747,3C.3a,C,Southeast Asia,Laos
+A/Yokohama/92/2014,2014.801,3C.3a,C,Japan Korea,Japan
+A/Shandong-Zhifu/1499/2014,2014.76,3C.3a,C,China,China
+A/Vietnam/627/2014,2014.873,3C.3a,C,Southeast Asia,Vietnam
+A/Vietnam/630/2014,2014.955,3C.3a,C,Southeast Asia,Vietnam
+A/Yokohama/89/2014,2014.738,3C.3a,C,Japan Korea,Japan
+A/Shandong-Fushan/144/2014,2014.736,3C.3a,C,China,China
+A/Zhejiang-Yongkang/147/2016,2016.042,3C.3a,C,China,China
+A/Yunnan-Linxiang/11032/2014,2014.842,3C.3a,C,China,China
+A/SaudiArabia/8/2014,2014.758,3C.3a,C,West Asia,Saudi Arabia
+A/Yunnan-Wenshan/1805/2015,2015.76,3C.3a,C,China,China
+A/Texas/88/2016,2016.149,3C.3a,C,North America,USA
+A/Valdivia/72413/2015,2015.763,3C.3a,C,South America,Chile
+A/Talca/79797/2015,2015.848,3C.3a,C,South America,Chile
+A/Valparaiso/63203/2016,2016.671,3C.3a,C,South America,Chile
+A/Roraima/144238-IEC/2016,2016.799,3C.3a,C,South America,Brazil
+A/Nevada/22/2016,2016.173,3C.3a,C,North America,USA
+A/Perth/22/2016,2016.288,3C.3a,C,Oceania,Australia
+A/Idaho/33/2016-egg,2016.433,3C.3a,C,North America,USA
+A/Idaho/33/2016,2016.433,3C.3a,C,North America,USA
+A/Wellington/4/2016,2016.548,3C.3a,C,Oceania,New Zealand
+A/Townsville/51/2016,2016.949,3C.3a,C,Oceania,Australia
+A/Iceland/69/2017,2017.185,3C.3a,C,Europe,Iceland
+A/Ireland/98/2016,2016.993,3C.3a,C,Europe,Ireland
+A/NewZealand/831/2016,2016.633,3C.3a,C,Oceania,New Zealand
+A/Victoria/504/2016,2016.37,3C.3a,C,Oceania,Australia
+A/Norway/3545/2016,2016.365,3C.3a,C,Europe,Norway
+A/Peru/27/2015,2015.281,3C.3a,C,South America,Peru
+A/Kenya/160/2018,2018.582,3C.3a,C,Africa,Kenya
+A/Colombia/6646/2017,2017.859,3C.3a,C,South America,Colombia
+A/Texas/71/2017,2017.21,3C.3a,C,North America,USA
+A/Virginia/27/2017,2017.264,3C.3a,C,North America,USA
+A/SantaCatarina/918/2017,2017.79,3C.3a,C,South America,Brazil
+A/Brazil/4139/2018,2018.593,3C.3a,C,South America,Brazil
+A/Pernambuco/151608-IEC/2018,2018.127,3C.3a,C,South America,Brazil
+A/Luxembourg/18015797/2018,2018.232,3C.3a,C,Europe,Luxembourg
+A/Kansas/14/2017,2017.999,3C.3a,C,North America,USA
+A/Kansas/14/2017-egg,2017.999,3C.3a1,C.1,North America,USA
+A/Peru/6019/2019,2019.681,3C.3a1,C.1,South America,Peru
+A/Wellington/53/2019,2019.727,3C.3a1,C.1,Oceania,New Zealand
+A/Wellington/52/2019,2019.642,3C.3a1,C.1,Oceania,New Zealand
+A/Indiana/8/2018,2018.1,3C.3a1,C.1,North America,USA
+A/Albania/80/2019,2019.212,3C.3a1,C.1,Europe,Albania
+A/Bolivia/3906/2018,2018.692,3C.3a1,C.1,South America,Bolivia
+A/Yokosuka/NHRC_OID_FDX70722/2019,2019.292,3C.3a1,C.1,Japan Korea,Japan
+A/Argentina/1333/2019,2019.536,3C.3a1,C.1,South America,Argentina
+A/Peru/6219/2019,2019.971,3C.3a1,C.1,South America,Peru
+A/Argentina/2852/2019,2019.867,3C.3a1,C.1,South America,Argentina
+A/Pennsylvania/866/2019,2019.259,3C.3a1,C.1,North America,USA
+A/Italy/9690/2019,2019.275,3C.3a1,C.1,Europe,Italy
+A/Suriname/828/2019,2019.582,3C.3a1,C.1,South America,Suriname
+A/Victoria/975/2019,2019.314,3C.3a1,C.1,Oceania,Australia
+A/Malta/53539/2019,2019.062,3C.3a1,C.1,Europe,Malta
+A/Latvia/3-012433/2019,2019.171,3C.3a1,C.1,Europe,Latvia
+A/Peru/6619/2019,2019.774,3C.3a1,C.1,South America,Peru
+A/Iceland/37/2020,2020.234,3C.3a1,C.1,Europe,Iceland
+A/Austria/1210937/2019,2019.999,3C.3a1,C.1,Europe,Austria
+A/Brest/2490/2019,2019.826,3C.3a1,C.1,Europe,France
+A/Ireland/87568/2019,2019.832,3C.3a1,C.1,Europe,Ireland
+A/Sweden/87/2020,2020.16,3C.3a1,C.1,Europe,Sweden
+A/Victoria/2873/2019,2019.993,3C.3a1,C.1,Oceania,Australia
+A/Victoria/79/2020,2020.165,3C.3a1,C.1,Oceania,Australia
+A/Poland/1521/2020,2020.012,3C.3a1,C.1,Europe,Poland
+A/Melilla/1088/2020,2020.149,3C.3a1,C.1,Europe,Spain
+A/Norway/828/2020,2020.1,3C.3a1,C.1,Europe,Norway
+A/Luxembourg/LNS8654682/2020,2020.195,3C.3a1,C.1,Europe,Luxembourg
+A/Netherlands/477/2020,2020.187,3C.3a1,C.1,Europe,Netherlands
+A/Singapore/22/2012,2012.43,3C,A,Southeast Asia,Singapore
+A/Thailand/CU-H3689/2015,2015.141,3C,A,Southeast Asia,Thailand
+A/Thailand/CU-B11065/2014,2014.785,3C.2a,B,Southeast Asia,Thailand
+A/HongKong/4801/2014,2014.999,3C.2a,B,China,Hong Kong
+A/HongKong/4801/2014-egg,2014.983,3C.2a,B,China,Hong Kong
+A/SriLanka/64/2014,2014.9,3C.2a,B,South Asia,Sri Lanka
+A/SriLanka/72/2014,2014.993,3C.2a,B,South Asia,Sri Lanka
+A/SriLanka/1/2015,2015.004,3C.2a,B,South Asia,Sri Lanka
+A/Townsville/1/2017,2017.144,3C.2a4,B.4,Oceania,Australia
+A/Yokohama/139/2017,2017.382,3C.2a4,B.4,Japan Korea,Japan
+A/Bermuda/362/2017,2017.089,3C.2a4,B.4,North America,Bermuda
+A/Yokohama/31/2017,2017.045,3C.2a4,B.4,Japan Korea,Japan
+A/Honduras/188/2017,2017.368,3C.2a4,B.4,North America,Honduras
+A/Yamanashi/1790/2017,2017.177,3C.2a4,B.4,Japan Korea,Japan
+A/Yokohama/84/2017,2017.103,3C.2a4,B.4,Japan Korea,Japan
+A/Singapore/TT0096/2017,2017.07,3C.2a4,B.4,Southeast Asia,Singapore
+A/Indonesia/Nihrd-Pal350/2017,2017.171,3C.2a4,B.4,Southeast Asia,Indonesia
+A/Bangladesh/1010/2017,2017.314,3C.2a4,B.4,South Asia,Bangladesh
+A/Victoria/2018/2017,2017.316,3C.2a4,B.4,Oceania,Australia
+A/Vaxjo/1/2017,2017.664,3C.2a4,B.4,Europe,Sweden
+A/Hawaii/47/2014,2014.544,3C.2a,B,North America,USA
+A/SaoPaulo/9-134/2014,2014.955,3C.2a,B,South America,Brazil
+A/Tocantins/4622/2015,2015.051,3C.2a,B,South America,Brazil
+A/Victoria/9/2015,2015.385,3C.2a,B,Oceania,Australia
+A/Stockholm/24/2014,2014.736,3C.2a,B,Europe,Sweden
+A/Victoria/944/2014,2014.84,3C.2a,B,Oceania,Australia
+A/Wyoming/9/2014,2014.771,3C.2a,B,North America,USA
+A/Wyoming/17/2014,2014.897,3C.2a,B,North America,USA
+A/NewCaledonia/71/2014,2014.615,3C.2a,B,Oceania,New Caledonia
+A/SriLanka/8/2015,2015.229,3C.2a,B,South Asia,Sri Lanka
+A/SriLanka/73/2014,2014.771,3C.2a,B,South Asia,Sri Lanka
+A/SouthAfrica/R1734/2015,2015.319,3C.2a,B,Africa,South Africa
+A/Zambia/9-00008/2015,2015.862,3C.2a,B,Africa,Zambia
+A/SouthAfrica/R4157/2015,2015.448,3C.2a,B,Africa,South Africa
+A/Mozambique/IR499/2015,2015.138,3C.2a,B,Africa,Mozambique
+A/SouthAfrica/R3989/2015,2015.511,3C.2a,B,Africa,South Africa
+A/SouthAfrica/4639/2016,2016.512,3C.2a,B,Africa,South Africa
+A/Oman/5494/2015,2015.796,3C.2a,B,West Asia,Oman
+A/Sapporo/71/2015,2015.955,3C.2a,B,Japan Korea,Japan
+A/Bangladesh/3400/2015,2015.396,3C.2a,B,South Asia,Bangladesh
+A/Bangladesh/203006/2015,2015.922,3C.2a,B,South Asia,Bangladesh
+A/Cambodia/FSS31758/2015,2015.936,3C.2a,B,Southeast Asia,Cambodia
+A/Tunisia/559/2016,2016.034,3C.2a,B,Africa,Tunisia
+A/South-Africa/VW0105/2016,2016.602,3C.2a,B,Africa,South Africa
+A/NordrheinWestfalen/39/2016,2016.171,3C.2a,B,Europe,Germany
+A/Perugia/25/2016,2016.25,3C.2a,B,Europe,Italy
+A/Oman/5191/2016,2016.436,3C.2a,B,West Asia,Oman
+A/Phuket/421/2016,2016.933,3C.2a,B,Southeast Asia,Thailand
+A/Wisconsin/20/2015,2015.149,3C.2a,B,North America,USA
+A/Washington/37/2015,2015.344,3C.2a,B,North America,USA
+A/Norway/2590/2015,2015.615,3C.2a,B,Europe,Norway
+A/Uganda/215/2017,2017.059,3C.2a,B,Africa,Uganda
+A/Uganda/1610/2016,2016.116,3C.2a,B,Africa,Uganda
+A/Sendai-H/N280/2015,2015.558,3C.2a,B,Japan Korea,Japan
+A/Nebraska/19/2015,2015.81,3C.2a,B,North America,USA
+A/Yokohama/109/2016,2016.184,3C.2a,B,Japan Korea,Japan
+A/SouthAfrica/R2665/2015,2015.396,3C.2a,B,Africa,South Africa
+A/Wellington/7/2015,2015.459,3C.2a,B,Oceania,New Zealand
+A/Townsville/37/2015,2015.796,3C.2a,B,Oceania,Australia
+A/Townsville/38/2015,2016.086,3C.2a,B,Oceania,Australia
+A/Wellington/4/2015,2015.538,3C.2a,B,Oceania,New Zealand
+A/Victoria/898/2015,2015.648,3C.2a,B,Oceania,Australia
+A/India/609/2015,2015.141,3C.2a,B,South Asia,India
+A/Michigan/15/2014,2014.999,3C.2a,B,North America,USA
+A/HongKong/7127/2014-egg,2014.999,3C.2a,B,China,Hong Kong
+A/NewCaledonia/71/2014-egg,2016.327,3C.2a,B,Oceania,New Caledonia
+A/Ordu/1603/2014,2014.834,3C.2a,B,West Asia,Turkey
+A/Yokohama/81/2015,2015.166,3C.2a,B,Japan Korea,Japan
+A/Yokohama/88/2015,2015.3,3C.2a,B,Japan Korea,Japan
+A/Saitama/103/2014-egg,2014.878,3C.2a,B,Japan Korea,Japan
+A/Saitama/103/2014,2014.878,3C.2a,B,Japan Korea,Japan
+A/Yokohama/184/2014,2014.982,3C.2a,B,Japan Korea,Japan
+A/Yokohama/97/2014,2014.867,3C.2a,B,Japan Korea,Japan
+A/Victoria/509/2015,2015.311,3C.2a,B,Oceania,Australia
+A/Yokohama/5/2015,2015.015,3C.2a,B,Japan Korea,Japan
+A/Yokohama/55/2015,2015.089,3C.2a,B,Japan Korea,Japan
+A/Thailand/CU-B11843/2015,2015.308,3C.2a,B,Southeast Asia,Thailand
+A/Wyoming/2/2015,2015.04,3C.2a,B,North America,USA
+A/Tehran/106491/2015,2015.303,3C.2a,B,West Asia,Iran
+A/SouthAfrica/5390/2015,2015.656,3C.2a,B,Africa,South Africa
+A/Bulgaria/477/2015,2015.158,3C.2a,B,Europe,Bulgaria
+A/Thailand/CU-B11518/2015,2015.051,3C.2a,B,Southeast Asia,Thailand
+A/Vologda/CRIE-22/2015,2015.062,3C.2a,B,West Asia,Russia
+A/Fiji/2/2015,2015.166,3C.2a,B,Oceania,Fiji
+A/Wisconsin/69/2015,2015.497,3C.2a,B,North America,USA
+A/Athens/2584/2016,2016.138,3C.2a,B,Europe,Greece
+A/Parana/293/2016,2016.239,3C.2a,B,South America,Brazil
+A/Yokohama/123/2016,2016.411,3C.2a,B,Japan Korea,Japan
+A/SouthAfrica/4363/2016,2016.493,3C.2a,B,Africa,South Africa
+A/Texas/183/2016,2016.665,3C.2a,B,North America,USA
+A/Peru/8316/2016,2016.633,3C.2a,B,South America,Peru
+A/Valparaiso/33881/2016,2016.376,3C.2a,B,South America,Chile
+A/Vina/50464/2016,2016.537,3C.2a,B,South America,Chile
+A/Valparaiso/49572/2016,2016.447,3C.2a,B,South America,Chile
+A/Vietnam/171/2015,2015.242,3C.2a,B,Southeast Asia,Vietnam
+A/Finland/504/2015,2015.034,3C.2a,B,Europe,Finland
+A/Bulgaria/482/2015,2015.171,3C.2a,B,Europe,Bulgaria
+A/Ghana/FS-15-0773/2015,2015.96,3C.2a,B,Africa,Ghana
+A/Marseille/2588/2015,2015.914,3C.2a3,B.3,Europe,France
+A/Serbia/2059/2016,2016.225,3C.2a3,B.3,Europe,Serbia
+A/Picardie/973/2017,2017.119,3C.2a3,B.3,Europe,France
+A/Dakar/17/2016,2016.668,3C.2a3,B.3,Africa,Senegal
+A/Extremadura/390/2017,2017.021,3C.2a3,B.3,Europe,Spain
+A/UlanUde/1/2016,2016.933,3C.2a3,B.3,West Asia,Russia
+A/Tunisia/15302/2017,2016.99,3C.2a3,B.3,Africa,Tunisia
+A/Tunis/14115/2016,2016.914,3C.2a3,B.3,Africa,Tunisia
+A/Tanzania/4357/2017,2017.237,3C.2a3,B.3,Africa,Tanzania
+A/Tanzania/4390/2017,2017.292,3C.2a3,B.3,Africa,Tanzania
+A/Antananarivo/1998/2017,2017.336,3C.2a3,B.3,Africa,Madagascar
+A/Kazakhstan/6975/2017,2017.032,3C.2a3,B.3,West Asia,Kazakhstan
+A/Khakassia/CRIE-360/2017,2017.464,3C.2a3,B.3,West Asia,Russia
+A/Singapore/TT1374/2016,2016.917,3C.2a3,B.3,Southeast Asia,Singapore
+A/Maryland/23/2016,2016.903,3C.2a3,B.3,North America,USA
+A/Taipei/123/2017,2017.092,3C.2a3,B.3,China,Taiwan
+A/Lao/753/2017,2017.158,3C.2a3,B.3,Southeast Asia,Laos
+A/Nonthaburi/414/2016,2016.876,3C.2a3,B.3,Southeast Asia,Thailand
+A/Moscow/165/2016,2016.9,3C.2a3,B.3,West Asia,Russia
+A/Ghana/2717/2017,2017.705,3C.2a3,B.3,Africa,Ghana
+A/Volgograd/RII745S/2016,2016.824,3C.2a3,B.3,West Asia,Russia
+A/Moscow/46/2017,2017.144,3C.2a3,B.3,West Asia,Russia
+A/Iasi/3816/2016,2016.993,3C.2a3,B.3,Europe,Romania
+A/California/179/2016,2016.922,3C.2a3,B.3,North America,USA
+A/Moldova/14006/2017,2017.1,3C.2a3,B.3,Europe,Moldova
+A/Maldives/158/2017,2017.144,3C.2a3,B.3,South Asia,Maldives
+A/Maldives/499/2017,2017.221,3C.2a3,B.3,South Asia,Maldives
+A/Ohio/31/2017,2017.563,3C.2a3,B.3,North America,USA
+A/NewZealand/671/2017,2017.492,3C.2a3,B.3,Oceania,New Zealand
+A/Wellington/5/2017,2017.41,3C.2a3,B.3,Oceania,New Zealand
+A/Cameroon/4372/2018,2018.295,3C.2a3,B.3,Africa,Cameroon
+A/Togo/1048/2017,2017.81,3C.2a3,B.3,Africa,Togo
+A/Yokohama/112/2018,2018.842,3C.2a3,B.3,Japan Korea,Japan
+A/Mali/235/2018,2018.867,3C.2a3,B.3,Africa,Mali
+A/Mali/57/2018,2018.768,3C.2a3,B.3,Africa,Mali
+A/Zhejiang-Shangcheng/1153/2018,2018.144,3C.2a3,B.3,China,China
+A/Yunnan-Gucheng/1887/2018,2018.87,3C.2a3,B.3,China,China
+A/HongKong/4994/2017,2017.963,3C.2a3,B.3,China,Hong Kong
+A/Townsville/16/2017,2017.911,3C.2a3,B.3,Oceania,Australia
+A/Choibalsan/3093/2017,2017.925,3C.2a3,B.3,West Asia,Mongolia
+A/Taiwan/1445/2017,2017.853,3C.2a3,B.3,China,Taiwan
+A/Congo/319/2018,2018.41,3C.2a3,B.3,Africa,Democatic Republic of the Congo
+A/Congo/422/2018,2018.522,3C.2a3,B.3,Africa,Democatic Republic of the Congo
+A/Congo/735/2018,2018.99,3C.2a3,B.3,Africa,Democatic Republic of the Congo
+A/Norway/3319/2014,2014.963,3C.2a,B,Europe,Norway
+A/Bulgaria/490/2015,2015.174,3C.2a,B,Europe,Bulgaria
+A/Wisconsin/24/2015,2015.185,3C.2a,B,North America,USA
+A/Stavropol/8/2015,2015.941,3C.2a,B,West Asia,Russia
+A/Wisconsin/9/2015,2015.133,3C.2a,B,North America,USA
+A/NewJersey/26/2014,2014.878,3C.2a,B,North America,USA
+A/Victoria/73/2015,2015.722,3C.2a,B,Oceania,Australia
+A/Yekaterinburg/239/2015,2015.174,3C.2a,B,West Asia,Russia
+A/YoshkarOla/CRIE-80/2015,2015.149,3C.2a,B,West Asia,Russia
+A/Ukraine/6784/2015,2015.245,3C.2a,B,Europe,Ukraine
+A/HongKong/7127/2014,2014.574,3C.2a,B,China,Hong Kong
+A/Sweden/77/2014,2014.963,3C.2a,B,Europe,Sweden
+A/Taiwan/596/2015,2015.297,3C.2a,B,China,Taiwan
+A/Toyama/107/2015,2015.368,3C.2a,B,Japan Korea,Japan
+A/Wyoming/18/2015,2015.725,3C.2a,B,North America,USA
+A/England/54020563/2015,2015.73,3C.2a,B,Europe,United Kingdom
+A/Trencin/558/2015,2015.147,3C.2a,B,Europe,Slovakia
+A/Valparaiso/50323/2015,2015.56,3C.2a,B,South America,Chile
+A/Valparaiso/42142/2015,2015.475,3C.2a,B,South America,Chile
+A/Guangdong/724/2015,2015.626,3C.2a,B,China,China
+A/Montana/28/2015,2015.73,3C.2a,B,North America,USA
+A/Alaska/240/2015,2015.705,3C.2a,B,North America,USA
+A/Guangdong/616/2015,2015.514,3C.2a,B,China,China
+A/Vietnam/106/2015,2015.574,3C.2a,B,Southeast Asia,Vietnam
+A/Vietnam/95/2015,2015.478,3C.2a,B,Southeast Asia,Vietnam
+A/Taiwan/805/2015,2015.426,3C.2a,B,China,Taiwan
+A/Washington/45/2015,2015.456,3C.2a,B,North America,USA
+A/Tokyo/15347/2015,2015.771,3C.2a,B,Japan Korea,Japan
+A/Wakayama-C/105/2015,2015.623,3C.2a,B,Japan Korea,Japan
+A/Victoria/922/2015,2015.234,3C.2a,B,Oceania,Australia
+A/Wellington/1/2015,2015.092,3C.2a,B,Oceania,New Zealand
+A/Hessen/49/2015,2015.862,3C.2a,B,Europe,Germany
+A/Oman/5287/2015,2015.607,3C.2a,B,West Asia,Oman
+A/SouthAfrica/6131/2015,2015.747,3C.2a,B,Africa,South Africa
+A/Brandenburg/48/2015,2015.875,3C.2a,B,Europe,Germany
+A/Tunisia/12370/2015,2015.768,3C.2a,B,Africa,Tunisia
+A/SaudiArabia/78764/2015,2015.733,3C.2a,B,West Asia,Saudi Arabia
+A/Bangladesh/914007/2015,2015.716,3C.2a,B,South Asia,Bangladesh
+A/Bangladesh/9015/2015,2015.659,3C.2a,B,South Asia,Bangladesh
+A/Sydney/530/2014,2014.925,3C.2a,B,Oceania,Australia
+A/Wyoming/20/2014,2014.938,3C.2a,B,North America,USA
+A/Wisconsin/66/2015,2015.303,3C.2a,B,North America,USA
+A/RioGrandeDoNorte/134696-IEC/2015,2015.267,3C.2a,B,South America,Brazil
+A/Slovenia/2975/2015,2015.87,3C.2a,B,Europe,Slovenia
+A/Norway/2573/2015,2015.549,3C.2a,B,Europe,Norway
+A/Alaska/140/2015,2015.61,3C.2a,B,North America,USA
+A/PuertoMontt/73064/2015,2015.741,3C.2a,B,South America,Chile
+A/Norway/2571/2015,2015.538,3C.2a,B,Europe,Norway
+A/Trinidad/187/2016,2016.018,3C.2a,B,South America,Trinidad and Tobago
+A/Trinidad/2603/2015,2015.966,3C.2a,B,South America,Trinidad and Tobago
+A/Wyoming/19/2015,2015.84,3C.2a,B,North America,USA
+A/Washington/77/2015,2015.988,3C.2a,B,North America,USA
+A/Victoria/455/2015,2015.955,3C.2a,B,Oceania,Australia
+A/Vietnam/GS150287/2015,2015.377,3C.2a,B,Southeast Asia,Vietnam
+A/Finland/526/2015,2015.281,3C.2a,B,Europe,Finland
+A/SaoPaulo/3-32002/2015,2015.388,3C.2a,B,South America,Brazil
+A/Sydney/9/2016,2016.02,3C.2a,B,Oceania,Australia
+A/Vietnam/GS150761/2015,2015.719,3C.2a,B,Southeast Asia,Vietnam
+A/Vietnam/GS151050/2015,2015.826,3C.2a,B,Southeast Asia,Vietnam
+A/Vietnam/6058/2016,2016.392,3C.2a,B,Southeast Asia,Vietnam
+A/Vietnam/6038/2016,2016.515,3C.2a,B,Southeast Asia,Vietnam
+A/Kazakhstan/53/2015,2015.897,3C.2a,B,West Asia,Kazakhstan
+A/Vietnam/157/2015,2015.582,3C.2a,B,Southeast Asia,Vietnam
+A/Yunnan-Wenshan/1893/2015,2015.856,3C.2a,B,China,China
+A/Yunnan-Linxiang/1718/2016,2016.439,3C.2a,B,China,China
+A/NewYork/78/2016,2016.318,3C.2a,B,North America,USA
+A/Bangladesh/5008/2015,2015.782,3C.2a,B,South Asia,Bangladesh
+A/Vietnam/172/2015,2015.848,3C.2a,B,Southeast Asia,Vietnam
+A/Italy-FVG/105/2015,2015.9,3C.2a,B,Europe,Italy
+A/SriLanka/63/2015,2016.086,3C.2a,B,South Asia,Sri Lanka
+A/Santiago/24151/2016,2016.277,3C.2a,B,South America,Chile
+A/Tsaralalana/2054/2016,2016.335,3C.2a,B,Africa,Madagascar
+A/Victoria/7/2016,2016.43,3C.2a,B,Oceania,Australia
+A/Kenya/23/2016,2016.78,3C.2a,B,Africa,Kenya
+A/Seoul/1595/2015,2015.703,3C.2a,B,Japan Korea,South Korea
+A/Tianjin-Baodi/1165/2017,2017.163,3C.2a,B,China,China
+A/Kawasaki/109/2016,2016.526,3C.2a2,B.2,Japan Korea,Japan
+A/Washington/16/2017,2017.067,3C.2a2,B.2,North America,USA
+A/Trang/51/2017,2017.39,3C.2a2,B.2,Southeast Asia,Thailand
+A/Trang/87/2017,2017.464,3C.2a2,B.2,Southeast Asia,Thailand
+A/HongKong/2302/2016,2016.575,3C.2a2,B.2,China,Hong Kong
+A/HongKong/247/2017,2017.021,3C.2a2,B.2,China,Hong Kong
+A/Zhejiang-Jiaojiang/1255/2017,2017.281,3C.2a2,B.2,China,China
+A/Victoria/1/2017,2017.193,3C.2a2,B.2,Oceania,Australia
+A/Yunnan-Xianggelila/1375/2017,2017.393,3C.2a2,B.2,China,China
+A/Brisbane/321/2016,2016.966,3C.2a2,B.2,Oceania,Australia
+A/Brisbane/318/2016,2016.947,3C.2a2,B.2,Oceania,Australia
+A/NorthCarolina/4/2017,2017.07,3C.2a2,B.2,North America,USA
+A/Yokohama/131/2017,2017.286,3C.2a2,B.2,Japan Korea,Japan
+A/Zhejiang-Nanhu/1679/2017,2017.637,3C.2a2,B.2,China,China
+A/Nebraska/2/2017,2017.026,3C.2a2,B.2,North America,USA
+A/Zambia/305/2017,2017.867,3C.2a2,B.2,Africa,Zambia
+A/Wisconsin/19/2017-egg,2017.062,3C.2a2,B.2,North America,USA
+A/Norway/4465/2016-egg,2016.999,3C.2a2,B.2,Europe,Norway
+A/Peru/3817/2017,2017.933,3C.2a2,B.2,South America,Peru
+A/Iceland/137/2017,2017.988,3C.2a2,B.2,Europe,Iceland
+A/Niedersachsen/187/2017,2017.914,3C.2a2,B.2,Europe,Germany
+A/Denmark/98/2017,2017.968,3C.2a2,B.2,Europe,Denmark
+A/Lithuania/MB10238/2018,2018.24,3C.2a2,B.2,Europe,Lithuania
+A/Moscow/149/2018,2018.275,3C.2a2,B.2,West Asia,Russia
+A/Iceland/95/2018,2018.382,3C.2a2,B.2,Europe,Iceland
+A/Iceland/94/2018,2018.371,3C.2a2,B.2,Europe,Iceland
+A/Montenegro/41/2017,2017.993,3C.2a2,B.2,Europe,Montenegro
+A/Dnipropetrovsk/416/2018,2018.311,3C.2a2,B.2,Europe,Ukraine
+A/Tyumen/RII-2/2018,2018.442,3C.2a2,B.2,West Asia,Russia
+A/Finland/921/2018,2018.289,3C.2a2,B.2,Europe,Finland
+A/NewZealand/783/2017,2017.511,3C.2a2,B.2,Oceania,New Zealand
+A/Uruguay/170/2017,2017.412,3C.2a2,B.2,South America,Uruguay
+A/Ireland/28834/2018,2018.199,3C.2a2,B.2,Europe,Ireland
+A/Suriname/2354/2017,2017.925,3C.2a2,B.2,South America,Suriname
+A/Brazil/8164/2017,2017.725,3C.2a2,B.2,South America,Brazil
+A/VinaDelMar/60406/2018,2018.555,3C.2a2,B.2,South America,Chile
+A/Finland/912/2018,2018.19,3C.2a2,B.2,Europe,Finland
+A/Townsville/1000/2018,2018.127,3C.2a2,B.2,Oceania,Australia
+A/Bretagne/1565/2017-egg,2018.834,3C.2a2,B.2,Europe,France
+A/Switzerland/882/2017,2017.777,3C.2a2,B.2,Europe,Switzerland
+A/Bretagne/1413/2017,2017.771,3C.2a2,B.2,Europe,France
+A/Paris/1362/2017,2017.7,3C.2a2,B.2,Europe,France
+A/Switzerland/8060/2017,2017.999,3C.2a2,B.2,Europe,Switzerland
+A/Switzerland/8060/2017-egg,2017.992,3C.2a2,B.2,Europe,Switzerland
+A/MinasGerais/39/2018,2018.034,3C.2a2,B.2,South America,Brazil
+A/Brisbane/117/2018,2018.568,3C.2a2,B.2,Oceania,Australia
+A/PuertoRico/21/2018,2018.492,3C.2a2,B.2,North America,Puerto Rico
+A/NewMexico/14/2018,2018.147,3C.2a2,B.2,North America,USA
+A/Paraguay/9159/2018,2018.193,3C.2a2,B.2,South America,Paraguay
+A/Arizona/37/2018,2018.396,3C.2a2,B.2,North America,USA
+A/Wisconsin/335/2017,2017.851,3C.2a2,B.2,North America,USA
+A/Kharkiv/266/2018,2018.289,3C.2a2,B.2,Europe,Ukraine
+A/SuratThani/83/2018,2018.251,3C.2a2,B.2,Southeast Asia,Thailand
+A/Sachsen/47/2018,2018.179,3C.2a2,B.2,Europe,Germany
+A/Brisbane/1/2018,2018.004,3C.2a2,B.2,Oceania,Australia
+A/Brisbane/36/2018,2018.226,3C.2a2,B.2,Oceania,Australia
+A/Finland/18/2019,2019.078,3C.2a2,B.2,Europe,Finland
+A/Yokohama/199/2017,2017.936,3C.2a2,B.2,Japan Korea,Japan
+A/Rancagua/54068/2018,2018.486,3C.2a2,B.2,South America,Chile
+A/Bahrain/449/2018,2018.604,3C.2a2,B.2,West Asia,Bahrain
+A/Peru/769818/2018,2018.807,3C.2a2,B.2,South America,Peru
+A/Slovenia/2792/2017,2017.993,3C.2a2,B.2,Europe,Slovenia
+A/AltoHospicio/37840/2018,2018.297,3C.2a2,B.2,South America,Chile
+A/Yokohama/53/2018,2018.19,3C.2a2,B.2,Japan Korea,Japan
+A/Wakayama/62/2018,2018.086,3C.2a2,B.2,Japan Korea,Japan
+A/Loei/1152/2018,2018.462,3C.2a2,B.2,Southeast Asia,Thailand
+A/Yokohama/100/2018,2018.738,3C.2a2,B.2,Japan Korea,Japan
+A/Yasothon/21/2019,2019.007,3C.2a2,B.2,Southeast Asia,Thailand
+A/Yokohama/14/2018,2018.04,3C.2a2,B.2,Japan Korea,Japan
+A/Yamanashi/18202/2018,2018.308,3C.2a2,B.2,Japan Korea,Japan
+A/Christchurch/504/2018,2018.599,3C.2a2,B.2,Oceania,New Zealand
+A/Victoria/908/2018,2018.738,3C.2a2,B.2,Oceania,Australia
+A/Victoria/909/2018,2018.821,3C.2a2,B.2,Oceania,Australia
+A/Miyazaki/72/2018,2018.5,3C.2a2,B.2,Japan Korea,Japan
+A/Wisconsin/4/2018,2018.004,3C.2a2,B.2,North America,USA
+A/Victoria/2020/2018,2018.396,3C.2a2,B.2,Oceania,Australia
+A/Kanagawa/ZC1735/2018,2018.604,3C.2a2,B.2,Japan Korea,Japan
+A/HongKong/656/2018,2018.264,3C.2a2,B.2,China,Hong Kong
+A/Sapporo/51/2018,2018.423,3C.2a2,B.2,Japan Korea,Japan
+A/Brisbane/1/2018-egg,2018.826,3C.2a2,B.2,Oceania,Australia
+A/Yokohama/111/2018,2018.801,3C.2a2,B.2,Japan Korea,Japan
+A/Philippines/464/2018,2018.344,3C.2a2,B.2,Southeast Asia,Philippines
+A/Virginia/24/2018,2018.199,3C.2a2,B.2,North America,USA
+A/Sapporo/45/2018,2018.33,3C.2a2,B.2,Japan Korea,Japan
+A/Taiwan/81101/2018,2018.812,3C.2a2,B.2,China,Taiwan
+A/Taiwan/80749/2018,2018.514,3C.2a2,B.2,China,Taiwan
+A/Yamaguchi/28/2015,2015.933,3C.2a,B,Japan Korea,Japan
+A/SriLanka/61/2015,2015.911,3C.2a,B,South Asia,Sri Lanka
+A/Yokohama/81/2016,2016.116,3C.2a,B,Japan Korea,Japan
+A/Yokohama/102/2015,2015.884,3C.2a,B,Japan Korea,Japan
+A/Wakayama-C/103/2015,2015.489,3C.2a,B,Japan Korea,Japan
+A/HongKong/50/2016-egg,2015.996,3C.2a,B,China,Hong Kong
+A/Singapore/INFTT-16-0083/2016,2016.059,3C.2a,B,Southeast Asia,Singapore
+A/Slovenia/39/2016,2016.015,3C.2a,B,Europe,Slovenia
+A/Victoria/2015/2016,2016.204,3C.2a,B,Oceania,Australia
+A/Bulgaria/920/2016,2016.225,3C.2a,B,Europe,Bulgaria
+A/Alaska/232/2015-egg,2015.999,3C.2a,B,North America,USA
+A/Yunnan-Qilin/1902/2015,2015.733,3C.2a,B,China,China
+A/Alaska/232/2015,2015.705,3C.2a,B,North America,USA
+A/Yokohama/119/2016,2016.277,3C.2a,B,Japan Korea,Japan
+A/Ontario/RV2414/2015,2015.864,3C.2a,B,North America,Canada
+A/Yunnan-Zhaoyang/11110/2015,2015.941,3C.2a,B,China,China
+A/NorthCarolina/4/2016,2016.034,3C.2a,B,North America,USA
+A/Talca/14380/2016,2016.16,3C.2a,B,South America,Chile
+A/Yokohama/4/2016,2016.026,3C.2a,B,Japan Korea,Japan
+A/Tianjin-Nankai/1405/2016,2016.184,3C.2a,B,China,China
+A/Sichuan-Jinjiang/8156/2016,2016.305,3C.2a,B,China,China
+A/HongKong/1706/2016,2016.367,3C.2a,B,China,Hong Kong
+A/Tochigi/16153/2016,2016.458,3C.2a,B,Japan Korea,Japan
+A/Ecuador/1614/2017,2017.281,3C.2a,B,South America,Ecuador
+A/SriLanka/39/2016,2016.908,3C.2a,B,South Asia,Sri Lanka
+A/SriLanka/49/2016,2016.755,3C.2a,B,South Asia,Sri Lanka
+A/SriLanka/45/2016,2016.96,3C.2a,B,South Asia,Sri Lanka
+A/SriLanka/5/2017,2017.021,3C.2a,B,South Asia,Sri Lanka
+A/Yozgat/14/2017,2016.004,3C.2a,B,West Asia,Turkey
+A/Bangladesh/5010/2016,2016.488,3C.2a,B,South Asia,Bangladesh
+A/SaudiArabia/193825/2016,2016.72,3C.2a,B,West Asia,Saudi Arabia
+A/Yokohama/200/2016,2016.974,3C.2a,B,Japan Korea,Japan
+A/SantaCatarina/1909/2016,2016.988,3C.2a,B,South America,Brazil
+A/Victoria/673/2016,2016.884,3C.2a,B,Oceania,Australia
+A/Singapore/TT1329/2016,2016.821,3C.2a,B,Southeast Asia,Singapore
+A/Kyiv/850/2016,2016.818,3C.2a,B,Europe,Ukraine
+A/Canberra/7/2016,2016.275,3C.2a,B,Oceania,Australia
+A/Vietnam/6021/2016,2016.327,3C.2a,B,Southeast Asia,Vietnam
+A/Victoria/825/2016,2016.693,3C.2a,B,Oceania,Australia
+A/Vietnam/6179/2016,2016.63,3C.2a,B,Southeast Asia,Vietnam
+A/Lao/F2884/2016,2016.717,3C.2a,B,Southeast Asia,Laos
+A/Colombia/1408/2016,2016.889,3C.2a,B,South America,Colombia
+A/Luxembourg/16018339/2016,2016.261,3C.2a,B,Europe,Luxembourg
+A/Brisbane/197/2015,2015.856,3C.2a,B,Oceania,Australia
+A/Wisconsin/87/2015,2015.826,3C.2a,B,North America,USA
+A/Taiwan/794/2016,2016.69,3C.2a,B,China,Taiwan
+A/Taiwan/960/2016,2016.87,3C.2a,B,China,Taiwan
+A/Bangladesh/429/2016,2016.602,3C.2a,B,South Asia,Bangladesh
+A/HongKong/2391/2016,2016.605,3C.2a,B,China,Hong Kong
+A/Singapore/INFTT-16-0297/2016,2016.152,3C.2a,B,Southeast Asia,Singapore
+A/Tehran/50179/2016,2016.258,3C.2a,B,West Asia,Iran
+A/Varamin/49785/2016,2016.245,3C.2a,B,West Asia,Iran
+A/Rennes/497/2016,2016.067,3C.2a1,B.1,Europe,France
+A/Singapore/INFKK-16-0294/2016,2016.173,3C.2a1,B.1,Southeast Asia,Singapore
+A/Newcastle/30/2016,2016.242,3C.2a1,B.1,Oceania,Australia
+A/SouthAustralia/135/2016,2016.75,3C.2a1,B.1,Oceania,Australia
+A/Stockholm/26/2016,2016.253,3C.2a1,B.1,Europe,Sweden
+A/NosyBe/1060/2016,2016.245,3C.2a1,B.1,Africa,Madagascar
+A/Oman/5466/2016,2016.512,3C.2a1,B.1,North America,USA
+A/Latvia/11-053089/2016,2016.889,3C.2a1,B.1,Europe,Latvia
+A/Tokyo/160298/2016,2016.687,3C.2a1,B.1,Japan Korea,Japan
+A/Arizona/67/2016,2016.34,3C.2a1,B.1,North America,USA
+A/Bangladesh/3001/2016,2016.668,3C.2a1,B.1,South Asia,Bangladesh
+A/Washington/106/2016,2016.963,3C.2a1,B.1,North America,USA
+A/Delaware/32/2016,2016.873,3C.2a1,B.1,North America,USA
+A/Wisconsin/84/2016,2016.745,3C.2a1,B.1,North America,USA
+A/Portugal/SU12/2016,2016.816,3C.2a1,B.1,Europe,Portugal
+A/Zambia/2-00087/2017,2017.127,3C.2a1,B.1,Africa,Zambia
+A/Singapore/Infimh-16-0019/2016,2016.452,3C.2a1,B.1,Southeast Asia,Singapore
+A/Singapore/Infimh-16-0019/2016-egg,2016.701,3C.2a1,B.1,Southeast Asia,Singapore
+A/NorthernIreland/64360271/2016,2016.786,3C.2a1,B.1,Europe,United Kingdom
+A/Stockholm/32/2016,2016.561,3C.2a1,B.1,Europe,Sweden
+A/Norway/3806/2016-egg,2016.449,3C.2a1,B.1,Europe,Norway
+A/Oman/4726/2016,2016.376,3C.2a1,B.1,West Asia,Oman
+A/Kyiv/80/2017,2017.086,3C.2a1,B.1,Europe,Ukraine
+A/Yokohama/124/2016,2016.633,3C.2a1,B.1,Japan Korea,Japan
+A/Yokohama/149/2016,2016.914,3C.2a1a,B.1.1,Japan Korea,Japan
+A/Oregon/19/2016,2016.799,3C.2a1a,B.1.1,North America,USA
+A/Peru/6917/2017,2017.432,3C.2a1a,B.1.1,South America,Peru
+A/Greece/4/2017-egg,2017.004,3C.2a1a,B.1.1,Europe,Greece
+A/Uruguay/43/2017,2017.223,3C.2a1a,B.1.1,South America,Uruguay
+A/Congo/553/2017,2017.936,3C.2a1a,B.1.1,Africa,Democatic Republic of the Congo
+A/Congo/7/2018,2018.01,3C.2a1a,B.1.1,Africa,Democatic Republic of the Congo
+A/Visby/5/2017,2017.177,3C.2a1a,B.1.1,Europe,Sweden
+A/StPetersburg/274/2017,2017.278,3C.2a1a,B.1.1,West Asia,Russia
+A/Stockholm/27/2017,2017.278,3C.2a1a,B.1.1,Europe,Sweden
+A/SouthAfrica/R05675/2017,2017.495,3C.2a1a,B.1.1,Africa,South Africa
+A/Austria/973209/2017,2017.149,3C.2a1a,B.1.1,Europe,Austria
+A/StPetersburg/311/2017,2017.166,3C.2a1a,B.1.1,West Asia,Russia
+A/Santiago/56159/2017,2017.541,3C.2a1a,B.1.1,South America,Chile
+A/Antananarivo/1067/2016,2016.261,3C.2a1,B.1,Africa,Madagascar
+A/Antananarivo/1067/2016-egg,2016.261,3C.2a1,B.1,Africa,Madagascar
+A/India/8359/2016,2016.542,3C.2a1,B.1,South Asia,India
+A/Bahrain/786/2016,2016.665,3C.2a1,B.1,West Asia,Bahrain
+A/Yamaguchi/34/2016,2016.824,3C.2a1,B.1,Japan Korea,Japan
+A/Texas/68/2017,2017.163,3C.2a1,B.1,North America,USA
+A/Florida/23/2017,2017.223,3C.2a1,B.1,North America,USA
+A/Guatemala/228/2017,2017.464,3C.2a1,B.1,North America,Guatemala
+A/Bangladesh/8007/2017,2017.371,3C.2a1,B.1,South Asia,Bangladesh
+A/Oman/5468/2016,2016.51,3C.2a1,B.1,West Asia,Oman
+A/Finland/725/2016,2016.952,3C.2a1,B.1,Europe,Finland
+A/Norway/4112/2016,2016.643,3C.2a1,B.1,Europe,Norway
+A/SouthCarolina/4/2017,2017.045,3C.2a1,B.1,North America,USA
+A/Uruguay/14/2017,2017.084,3C.2a1,B.1,South America,Uruguay
+A/Singapore/TT0555/2017,2017.36,3C.2a1,B.1,Southeast Asia,Singapore
+A/Netherlands/3112/2017,2017.314,3C.2a1,B.1,Europe,Netherlands
+A/Victoria/1000/2017,2017.073,3C.2a1,B.1,Oceania,Australia
+A/Parana/99/2017,2017.127,3C.2a1,B.1,South America,Brazil
+A/Colombia/5238/2017,2017.588,3C.2a1,B.1,South America,Colombia
+A/India/9930/2017,2017.821,3C.2a1,B.1,South Asia,India
+A/SaudiArabia/VRG-04/2017,2017.412,3C.2a1,B.1,West Asia,Saudi Arabia
+A/Oman/5186/2017,2017.752,3C.2a1,B.1,West Asia,Oman
+A/Pakistan/178/2017,2017.582,3C.2a1,B.1,West Asia,Pakistan
+A/Paris/1379/2017,2017.719,3C.2a1,B.1,Europe,France
+A/Texas/290/2017,2017.796,3C.2a1,B.1,North America,USA
+A/Paris/1340/2017,2017.662,3C.2a1,B.1,Europe,France
+A/Philippines/189/2018,2018.136,3C.2a1,B.1,Southeast Asia,Philippines
+A/AbuDhabi/134/2018,2018.785,3C.2a1,B.1,West Asia,United Arab Emirates
+A/Sydney/22/2018,2018.168,3C.2a1,B.1,Oceania,Australia
+A/Madagascar/1123/2018,2018.232,3C.2a1,B.1,Africa,Madagascar
+A/Wisconsin/95/2018,2018.585,3C.2a1,B.1,North America,USA
+A/Victoria/9/2019,2019.081,3C.2a1,B.1,Oceania,Australia
+A/HongKong/2060/2018,2018.722,3C.2a1,B.1,China,Hong Kong
+A/Nagano/2731/2017,2017.908,3C.2a1,B.1,Japan Korea,Japan
+A/SriLanka/94/2017,2017.914,3C.2a1,B.1,South Asia,Sri Lanka
+A/Canterbury/4/2018,2018.445,3C.2a1,B.1,Oceania,New Zealand
+A/Georgia/714/2017,2017.552,3C.2a1,B.1,West Asia,Georgia Country
+A/HongKong/4829/2017,2017.807,3C.2a1,B.1,China,Hong Kong
+A/Bangladesh/1371/2018,2018.56,3C.2a1,B.1,South Asia,Bangladesh
+A/Bangladesh/723/2018,2018.653,3C.2a1,B.1,South Asia,Bangladesh
+A/Maldives/1068/2017,2017.7,3C.2a1,B.1,South Asia,Maldives
+A/Yokohama/145/2017,2017.741,3C.2a1,B.1,Japan Korea,Japan
+A/Philippines/758/2017,2017.689,3C.2a1,B.1,Southeast Asia,Philippines
+A/Zhejiang-Nanhu/1745/2017,2017.695,3C.2a1,B.1,China,China
+A/Nonthaburi/182/2017,2017.626,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/Bangladesh/2171/2017,2017.448,3C.2a1b.1,B.1.2.1,South Asia,Bangladesh
+A/Lithuania/MB10772/2018,2018.256,3C.2a1b.1,B.1.2.1,Europe,Lithuania
+A/Sydney/13/2018,2018.007,3C.2a1b.1,B.1.2.1,Oceania,Australia
+A/Vietnam/Lisn131/2017,2017.566,3C.2a1b.1,B.1.2.1,Southeast Asia,Vietnam
+A/Tokyo/17185/2017,2017.456,3C.2a1b.1,B.1.2.1,Japan Korea,Japan
+A/HongKong/2286/2017,2017.941,3C.2a1b.1,B.1.2.1,China,Hong Kong
+A/HongKong/2286/2017-egg,2017.941,3C.2a1b.1,B.1.2.1,China,Hong Kong
+A/Afghanistan/616/2017,2017.9,3C.2a1b.1,B.1.2.1,West Asia,Afghanistan
+A/Afghanistan/833/2017,2017.941,3C.2a1b.1,B.1.2.1,West Asia,Afghanistan
+A/Wisconsin/327/2017,2017.725,3C.2a1b.1,B.1.2.1,North America,USA
+A/Oman/5101/2017,2017.738,3C.2a1b.1,B.1.2.1,West Asia,Oman
+A/Yokosuka/26/2017,2017.801,3C.2a1b.1,B.1.2.1,Japan Korea,Japan
+A/Wellington/1/2018,2018.311,3C.2a1b.1,B.1.2.1,Oceania,New Zealand
+A/NewZealand/2391/2017,2017.67,3C.2a1b.1,B.1.2.1,Oceania,New Zealand
+A/Victoria/653/2017,2017.607,3C.2a1b.1,B.1.2.1,Oceania,Australia
+A/Victoria/653/2017-egg,2017.607,3C.2a1b.1,B.1.2.1,Oceania,Australia
+A/Victoria/899/2017,2017.777,3C.2a1b.1,B.1.2.1,Oceania,Australia
+A/India/4658/2018,2018.086,3C.2a1b.1,B.1.2.1,South Asia,India
+A/India/4667/2018,2018.24,3C.2a1b.1,B.1.2.1,South Asia,India
+A/Lao/4043/2017,2017.79,3C.2a1b.1,B.1.2.1,Southeast Asia,Laos
+A/Lopburi/172/2018,2018.656,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/Chanthaburi/1363/2018,2018.538,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/Bangladesh/2/2017,2017.588,3C.2a1b.1,B.1.2.1,South Asia,Bangladesh
+A/Bangladesh/2097/2017,2017.497,3C.2a1b.1,B.1.2.1,South Asia,Bangladesh
+A/HongKong/3630/2017,2017.549,3C.2a1b.1,B.1.2.1,China,Hong Kong
+A/Townsville/18/2017,2017.993,3C.2a1b.1,B.1.2.1,Oceania,Australia
+A/Wakayama-C/107/2017,2017.612,3C.2a1b.1,B.1.2.1,Japan Korea,Japan
+A/Florida/52/2017,2017.59,3C.2a1b.1,B.1.2.1,North America,USA
+A/Trang/2627/2017,2017.944,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/Cambodia/1054/2017,2017.905,3C.2a1b.1,B.1.2.1,Southeast Asia,Cambodia
+A/Vietnam/GHS180004/2018,2018.012,3C.2a1b.1,B.1.2.1,Southeast Asia,Vietnam
+A/Vladimir/191/2018,2018.347,3C.2a1b.1,B.1.2.1,West Asia,Russia
+A/Yokohama/181/2017,2017.908,3C.2a1b.1,B.1.2.1,Japan Korea,Japan
+A/Yunnan-Linxiang/1594/2018,2018.407,3C.2a1b.1,B.1.2.1,China,China
+A/NewCaledonia/8/2018,2018.16,3C.2a1b.1,B.1.2.1,Oceania,New Caledonia
+A/Maldives/1471/2017,2017.952,3C.2a1b.1,B.1.2.1,South Asia,Maldives
+A/Oman/1759/2018,2018.19,3C.2a1b.1,B.1.2.1,West Asia,Oman
+A/Oman/943/2018,2018.086,3C.2a1b.1,B.1.2.1,West Asia,Oman
+A/CzechRepublic/1060/2019,2019.19,3C.2a1b.1,B.1.2.1,Europe,Czech Republic
+A/Lebanon/661/2018,2018.908,3C.2a1b.1,B.1.2.1,West Asia,Lebanon
+A/Lebanon/560/2018,2018.67,3C.2a1b.1,B.1.2.1,West Asia,Lebanon
+A/Bangladesh/155/2018,2018.018,3C.2a1b.1,B.1.2.1,South Asia,Bangladesh
+A/Bhutan/742/2018,2018.719,3C.2a1b.1,B.1.2.1,South Asia,Bhutan
+A/India/534/2019,2019.273,3C.2a1b.1,B.1.2.1,South Asia,India
+A/Nonthaburi/329/2018,2018.834,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/SriLanka/55/2018,2018.87,3C.2a1b.1,B.1.2.1,South Asia,Sri Lanka
+A/SriLanka/45/2018,2018.763,3C.2a1b.1,B.1.2.1,South Asia,Sri Lanka
+A/SouthDakota/44/2018,2018.738,3C.2a1b.1,B.1.2.1,North America,USA
+A/Srinigar/AG313/2019,2018.999,3C.2a1b.1,B.1.2.1,South Asia,India
+A/Srinigar/AG480/2019,2019.053,3C.2a1b.1,B.1.2.1,South Asia,India
+A/Minnesota/58/2018,2018.889,3C.2a1b.1,B.1.2.1,North America,USA
+A/Estonia/119717/2019,2019.16,3C.2a1b.1,B.1.2.1,Europe,Estonia
+A/Poland/3029/2019,2019.152,3C.2a1b.1,B.1.2.1,Europe,Poland
+A/Iasi/243581/2019,2019.177,3C.2a1b.1,B.1.2.1,Europe,Romania
+A/Mogilev/1315/2019,2019.177,3C.2a1b.1,B.1.2.1,Europe,Belarus
+A/AbuDhabi/240/2018-egg,2018.001,3C.2a1b.1,B.1.2.1,West Asia,United Arab Emirates
+A/AbuDhabi/240/2018,2018.001,3C.2a1b.1,B.1.2.1,West Asia,United Arab Emirates
+A/NorthCarolina/36/2018,2018.256,3C.2a1b.1,B.1.2.1,North America,USA
+A/Jiangxi-Zhushan/1657/2018,2018.632,3C.2a1b.1,B.1.2.1,China,China
+A/Beijing-Huairou/1557/2018,2018.174,3C.2a1b.1,B.1.2.1,China,China
+A/HongKong/681/2018,2018.27,3C.2a1b.1,B.1.2.1,China,Hong Kong
+A/Townsville/23/2018,2018.552,3C.2a1b.1,B.1.2.1,Oceania,Australia
+A/HongKong/45/2019,2018.979,3C.2a1b.1b,D,China,China
+A/HongKong/121/2019,2019.004,3C.2a1b.1b,D,China,Hong Kong
+A/Zhejiang-Lucheng/1951/2019,2019.774,3C.2a1b.1b,D,China,China
+A/Zhejiang-Yongkang/1235/2019,2019.212,3C.2a1b.1b,D,China,China
+A/DistrictOfColumbia/3/2019,2019.007,3C.2a1b.1b,D,North America,USA
+A/Mahasarakham/51/2019,2019.086,3C.2a1b.1b,D,Southeast Asia,Thailand
+A/Lao/1214/2019,2019.347,3C.2a1b.1b,D,Southeast Asia,Laos
+A/Mahasarakham/116/2019,2019.171,3C.2a1b.1b,D,Southeast Asia,Thailand
+A/Oman/4518/2019,2019.544,3C.2a1b.1b,D,West Asia,Oman
+A/Bangladesh/3055/2019,2019.388,3C.2a1b.1b,D,South Asia,Bangladesh
+A/Yokohama/237/2019,2019.9,3C.2a1b.1b,D,Japan Korea,Japan
+A/Philippines/1551/2019,2019.87,3C.2a1b.1b,D,Southeast Asia,Philippines
+A/Finland/140/2019,2019.914,3C.2a1b.1b,D,Europe,Finland
+A/Bangladesh/1582/2019,2019.478,3C.2a1b.1b,D,South Asia,Bangladesh
+A/Kuwait/5141/2019,2019.766,3C.2a1b.1b,D,West Asia,Kuwait
+A/Philippines/1372/2019,2019.768,3C.2a1b.1b,D,Southeast Asia,Philippines
+A/Darwin/726/2019,2019.755,3C.2a1b.1b,D,Oceania,Australia
+A/Delaware/39/2019,2019.404,3C.2a1b.1b,D,North America,USA
+A/Zambia/700159/2021,2021.423,3C.2a1b.1b,D,Africa,Zambia
+A/Zambia/305/2021,2021.259,3C.2a1b.1b,D,Africa,Zambia
+A/Kenya/143/2021,2021.686,3C.2a1b.1b,D,Africa,Kenya
+A/Pennsylvania/1033/2019,2019.922,3C.2a1b.1b,D,North America,USA
+A/Pennsylvania/1026/2019-egg,2019.842,3C.2a1b.1b,D,North America,USA
+A/Pennsylvania/1026/2019,2019.768,3C.2a1b.1b,D,North America,USA
+A/Bangladesh/18-1012/2019,2019.799,3C.2a1b.1b,D,South Asia,Bangladesh
+A/Nepal/20FL1005/2020,2020.217,3C.2a1b.1b,D,South Asia,Nepal
+A/SouthAuckland/2/2020,2020.988,3C.2a1b.1b,D,Oceania,New Zealand
+A/Wisconsin/52/2020,2020.193,3C.2a1b.1b,D,North America,USA
+A/Yunnan-Linxiang/1480/2020,2020.764,3C.2a1b.1b,D,China,China
+A/Zhejiang-Xihu/3108/2019,2019.292,3C.2a1b.1b,D,China,China
+A/HongKong/2671/2019,2019.459,3C.2a1b.1b,D,China,Hong Kong
+A/HongKong/2671/2019-egg,2019.459,3C.2a1b.1b,D,China,Hong Kong
+A/Yunnan-Qilin/11/2020,2020.007,3C.2a1b.1b,D,China,China
+A/Yunnan-Wenshan/1269/2020,2020.209,3C.2a1b.1b,D,China,China
+A/Yunnan-Wenshan/1489/2020,2020.439,3C.2a1b.1b,D,China,China
+A/Yunnan-Wenshan/1606/2020,2020.553,3C.2a1b.1b,D,China,China
+A/Yunnan-Wenshan/1218/2021,2021.201,3C.2a1b.1b,D,China,China
+A/Yunnan-Wenshan/1435/2020,2020.362,3C.2a1b.1b,D,China,China
+A/Zhejiang-Shangcheng/1450/2019,2019.423,3C.2a1b.1b,D,China,China
+A/Yunnan-Linxiang/1670/2020,2020.9,3C.2a1b.1b,D,China,China
+A/Victoria/7/2020,2020.01,3C.2a1b.1b,D,Oceania,Australia
+A/Lao/1789/2019,2019.497,3C.2a1b.1b,D,Southeast Asia,Laos
+A/Saitama/95/2020,2020.217,3C.2a1b.1b,D,Japan Korea,Japan
+A/Nonthaburi/63/2020,2020.173,3C.2a1b.1b,D,Southeast Asia,Thailand
+A/Cambodia/e0403374/2020,2020.184,3C.2a1b.1b,D,Southeast Asia,Cambodia
+A/HongKong/4669/2019,2019.963,3C.2a1b.1b,D,China,Hong Kong
+A/Zhejiang-Lucheng/11038/2019,2019.862,3C.2a1b.1b,D,China,China
+A/Zhejiang-Shangcheng/1725/2019,2019.673,3C.2a1b.1b,D,China,China
+A/Yunnan-Wuhua/1670/2019,2019.637,3C.2a1b.1b,D,China,China
+A/Yunnan-Gucheng/1268/2020,2020.1,3C.2a1b.1b,D,China,China
+A/Yokohama/34/2020,2020.053,3C.2a1b.1b,D,Japan Korea,Japan
+A/Nepal/19FL1496/2019,2019.141,3C.2a1b.1,B.1.2.1,South Asia,Nepal
+A/Vitebsk/927/2019,2019.16,3C.2a1b.1,B.1.2.1,Europe,Belarus
+A/Constanta/239165/2018,2018.933,3C.2a1b.1,B.1.2.1,Europe,Romania
+A/NewHampshire/24/2018,2018.558,3C.2a1b.1,B.1.2.1,North America,USA
+A/LaRioja/2202/2018,2018.251,3C.2a1b.1,B.1.2.1,Europe,Spain
+A/Maine/46/2018,2018.993,3C.2a1b.1,B.1.2.1,North America,USA
+A/Santiago/38093/2018,2018.347,3C.2a1b.1,B.1.2.1,South America,Chile
+A/Netherlands/10601/2018,2018.79,3C.2a1b.1,B.1.2.1,Europe,Netherlands
+A/Argentina/934/2019,2019.481,3C.2a1b.1,B.1.2.1,South America,Argentina
+A/Bolivia/237/2019,2019.095,3C.2a1b.1,B.1.2.1,South America,Bolivia
+A/Concepcion/106858/2018,2018.922,3C.2a1b.1,B.1.2.1,South America,Chile
+A/Ecuador/1246/2018,2018.886,3C.2a1b.1,B.1.2.1,South America,Ecuador
+A/Colombia/4140/2019,2019.316,3C.2a1b.1,B.1.2.1,South America,Colombia
+A/Peru/3819/2019,2019.344,3C.2a1b.1,B.1.2.1,South America,Peru
+A/Ecuador/4472/2019,2019.026,3C.2a1b.1,B.1.2.1,South America,Ecuador
+A/HongKong/1101/2018,2018.445,3C.2a1b.1,B.1.2.1,China,Hong Kong
+A/Togo/299/2019,2019.152,3C.2a1b.1,B.1.2.1,Africa,Togo
+A/Trnava/70/2019,2019.042,3C.2a1b.1,B.1.2.1,Europe,Slovakia
+A/Orsha/1450/2019,2019.174,3C.2a1b.1,B.1.2.1,Europe,Belarus
+A/Moscow/220/2018,2018.968,3C.2a1b.1,B.1.2.1,West Asia,Russia
+A/BosniaHerzegovina/87911/2019,2019.275,3C.2a1b.1,B.1.2.1,Europe,Bosnia and Herzegovina
+A/Macedonia/737/2019,2019.078,3C.2a1b.1,B.1.2.1,Europe,Macedonia
+A/Kenya/130/2019,2019.503,3C.2a1b.1,B.1.2.1,Africa,Kenya
+A/Mozambique/243/2019,2019.212,3C.2a1b.1,B.1.2.1,Africa,Mozambique
+A/Togo/717/2019,2019.47,3C.2a1b.1,B.1.2.1,Africa,Togo
+A/BurkinaFaso/1449/2019,2019.037,3C.2a1b.1,B.1.2.1,Africa,Burkina Faso
+A/Lebanon/231/2019,2019.081,3C.2a1b.1,B.1.2.1,West Asia,Lebanon
+A/StPetersburg/RII-322/2019,2019.267,3C.2a1b.1,B.1.2.1,West Asia,Russia
+A/Serbia/584/2019,2019.147,3C.2a1b.1,B.1.2.1,Europe,Serbia
+A/Nakhonphanom/2883/2018,2018.922,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/Togo/634/2019,2019.382,3C.2a1b.1,B.1.2.1,Africa,Togo
+A/Nigeria/4117/2019,2019.618,3C.2a1b.1,B.1.2.1,Africa,Nigeria
+A/SaudiArabia/VRG-57/2020,2020.949,3C.2a1b.1,B.1.2.1,West Asia,Saudi Arabia
+A/Mali/361/2019,2019.851,3C.2a1b.1,B.1.2.1,Africa,Mali
+A/SouthKorea/11906/2020,2020.124,3C.2a1b.1a,B.1.2.1.1,Japan Korea,South Korea
+A/Niger/7228/2019,2019.738,3C.2a1b.1a,B.1.2.1.1,Africa,Niger
+A/Mali/86/2020,2020.654,3C.2a1b.1a,B.1.2.1.1,Africa,Mali
+A/Yokohama/291/2019,2019.968,3C.2a1b.1a,B.1.2.1.1,Japan Korea,Japan
+A/Stavropol/10/2020,2020.171,3C.2a1b.1a,B.1.2.1.1,West Asia,Russia
+A/Togo/230/2020,2020.07,3C.2a1b.1a,B.1.2.1.1,Africa,Togo
+A/Yokohama/68/2020,2020.001,3C.2a1b.1a,B.1.2.1.1,Japan Korea,Japan
+A/Niger/7346/2019,2019.832,3C.2a1b.1a,B.1.2.1.1,Africa,Niger
+A/Spain/12026/2020,2020.116,3C.2a1b.1a,B.1.2.1.1,Europe,Spain
+A/Perth/20/2020-egg,2020.389,3C.2a1b.1a,B.1.2.1.1,Oceania,Australia
+A/Perth/20/2020,2020.078,3C.2a1b.1a,B.1.2.1.1,Oceania,Australia
+A/Moldova/14405/2020,2020.075,3C.2a1b.1a,B.1.2.1.1,Europe,Moldova
+A/Togo/1973/2019,2019.933,3C.2a1b.1a,B.1.2.1.1,Africa,Togo
+A/Zahle/358/2020,2020.154,3C.2a1b.1a,B.1.2.1.1,West Asia,Lebanon
+A/NewYork/21/2020,2020.097,3C.2a1b.1a,B.1.2.1.1,North America,USA
+A/Santiago/26038/2020,2020.209,3C.2a1b.1a,B.1.2.1.1,South America,Chile
+A/Philippines/1/2021,2021.366,3C.2a1b.1a,B.1.2.1.1,Southeast Asia,Philippines
+A/Ethiopia/1055/2021,2021.9,3C.2a1b.1a,B.1.2.1.1,Africa,Ethiopia
+A/Ethiopia/4004/2021,2021.651,3C.2a1b.1a,B.1.2.1.1,Africa,Ethiopia
+A/Mali/20051/2020,2020.154,3C.2a1b.1a,B.1.2.1.1,Africa,Mali
+A/Mali/20060/2020,2020.168,3C.2a1b.1a,B.1.2.1.1,Africa,Mali
+A/Mali/20046/2020,2020.687,3C.2a1b.1a,B.1.2.1.1,Africa,Mali
+A/Togo/771/2020,2020.791,3C.2a1b.1a,B.1.2.1.1,Africa,Togo
+A/Nigeria/5059/2020,2020.914,3C.2a1b.1a,B.1.2.1.1,Africa,Nigeria
+A/Niger/8749/2021,2021.037,3C.2a1b.1a,B.1.2.1.1,Africa,Niger
+A/Togo/1246/2021,2021.801,3C.2a1b.1a,B.1.2.1.1,Africa,Togo
+A/Niger/8635/2020,2020.99,3C.2a1b.1a,B.1.2.1.1,Africa,Niger
+A/Togo/237/2021,2021.168,3C.2a1b.1a,B.1.2.1.1,Africa,Togo
+A/Uganda/7/2021,2021.33,3C.2a1b.1a,B.1.2.1.1,Africa,Uganda
+A/Zambia/172/2021,2021.536,3C.2a1b.1a,B.1.2.1.1,Africa,Zambia
+A/Sydney/8/2021,2021.884,3C.2a1b.1a,B.1.2.1.1,Oceania,Australia
+A/Uganda/210/2022,2022.141,3C.2a1b.1a,B.1.2.1.1,Africa,Uganda
+A/Mozambique/309/2017,2017.656,3C.2a1b.1,B.1.2.1,Africa,Mozambique
+A/Taiwan/544/2017,2017.464,3C.2a1b.1,B.1.2.1,China,Taiwan
+A/Kenya/167/2018,2018.426,3C.2a1b.1,B.1.2.1,Africa,Kenya
+A/Mozambique/8218/2018,2018.16,3C.2a1b.1,B.1.2.1,Africa,Mozambique
+A/SouthAfrica/R07380/2017,2017.566,3C.2a1b.1,B.1.2.1,Africa,South Africa
+A/NewZealand/2337/2017,2017.64,3C.2a1b.1,B.1.2.1,Oceania,New Zealand
+A/Singapore/TT0495/2017,2017.322,3C.2a1b.1,B.1.2.1,Southeast Asia,Singapore
+A/Yokohama/143/2017,2017.579,3C.2a1b.1,B.1.2.1,Japan Korea,Japan
+A/Zambia/4-381/2018,2018.692,3C.2a1b.1,B.1.2.1,Africa,Zambia
+A/SuratThani/65/2018,2018.201,3C.2a1b.1,B.1.2.1,Southeast Asia,Thailand
+A/Vietnam/237/2018,2018.736,3C.2a1b.2,E,Southeast Asia,Vietnam
+A/Vietnam/241/2018,2018.755,3C.2a1b.2,E,Southeast Asia,Vietnam
+A/Iowa/60/2018,2018.793,3C.2a1b.2,E,North America,USA
+A/Cambodia/e0512384/2020,2020.253,3C.2a1b.2,E,Southeast Asia,Cambodia
+A/Zhejiang-Haishu/1980/2019,2019.401,3C.2a1b.2,E,China,China
+A/Victoria/753/2018,2018.851,3C.2a1b.2,E,Oceania,Australia
+A/Newcastle/82/2018,2018.977,3C.2a1b.2,E,Oceania,Australia
+A/Sachsen/97/2019,2019.21,3C.2a1b.2,E,Europe,Germany
+A/Vologda/RII-1090S/2020,2020.026,3C.2a1b.2,E,West Asia,Russia
+A/AbuDhabi/54/2019,2019.368,3C.2a1b.2,E,West Asia,United Arab Emirates
+A/Martinique/481/2019,2019.212,3C.2a1b.2,E,North America,Martinique
+A/Norway/1881/2019,2019.316,3C.2a1b.2,E,Europe,Norway
+A/Yokosuka/NHRC_OID_FDX70622/2019,2019.122,3C.2a1b.2,E,Japan Korea,Japan
+A/StPetersburg/RII-300/2019,2019.234,3C.2a1b.2,E,West Asia,Russia
+A/SouthAustralia/34/2019,2019.999,3C.2a1b.2,E,Oceania,Australia
+A/SouthAustralia/34/2019-egg,2019.1,3C.2a1b.2,E,Oceania,Australia
+A/Okinawa/74/2019,2019.503,3C.2a1b.2,E,Japan Korea,Japan
+A/Finland/123/2019,2019.349,3C.2a1b.2,E,Europe,Finland
+A/Netherlands/99/2019,2019.04,3C.2a1b.2,E,Europe,Netherlands
+A/Yokosuka/17/2019,2019.021,3C.2a1b.2,E,Japan Korea,Japan
+A/Uppsala/6/2019,2019.275,3C.2a1b.2,E,Europe,Sweden
+A/Sachsen/92/2019,2019.212,3C.2a1b.2,E,Europe,Germany
+A/Sweden/61/2019,2019.24,3C.2a1b.2,E,Europe,Sweden
+A/Sweden/60/2019,2019.212,3C.2a1b.2,E,Europe,Sweden
+A/Zhejiang-Nanhu/1108/2019,2019.1,3C.2a1b.2,E,China,China
+A/Yokohama/132/2019,2019.163,3C.2a1b.2b,E.2,Japan Korea,Japan
+A/Victoria/909/2019,2019.16,3C.2a1b.2b,E.2,Oceania,Australia
+A/Swansea/7185/2019,2019.059,3C.2a1b.2b,E.2,Europe,United Kingdom
+A/Yokosuka/57/2018,2018.977,3C.2a1b.2b,E.2,Japan Korea,Japan
+A/ChiangRai/197/2019,2019.295,3C.2a1b.2b,E.2,Southeast Asia,Thailand
+A/Yokohama/158/2019,2019.347,3C.2a1b.2b,E.2,Japan Korea,Japan
+A/Christchurch/515/2019-egg,2019.253,3C.2a1b.2b,E.2,Oceania,New Zealand
+A/Wellington/8/2019,2019.223,3C.2a1b.2b,E.2,Oceania,New Zealand
+A/Wellington/27/2019,2019.382,3C.2a1b.2b,E.2,Oceania,New Zealand
+A/Victoria/2703/2019,2019.497,3C.2a1b.2b,E.2,Oceania,Australia
+A/Montana/18/2019,2019.136,3C.2a1b.2b,E.2,North America,USA
+A/Nakhonphanom/498/2019,2019.481,3C.2a1b.2b,E.2,Southeast Asia,Thailand
+A/MinasGerais/12710/2020,2020.138,3C.2a1b.2b,E.2,South America,Brazil
+A/Saitama/176/2019,2019.642,3C.2a1b.2b,E.2,Japan Korea,Japan
+A/VinaDelMar/82289/2019,2019.185,3C.2a1b.2b,E.2,South America,Chile
+A/Lao/2461/2019,2019.678,3C.2a1b.2b,E.2,Southeast Asia,Laos
+A/Yasothon/384/2019,2019.623,3C.2a1b.2b,E.2,Southeast Asia,Thailand
+A/Valencia/10_1422/2020,2020.13,3C.2a1b.2b,E.2,Europe,Spain
+A/Hawaii/42/2019,2019.404,3C.2a1b.2b,E.2,North America,USA
+A/Lisbon/37/2019,2019.895,3C.2a1b.2b,E.2,Europe,Portugal
+A/HongKong/3055/2019,2019.541,3C.2a1b.2b,E.2,China,Hong Kong
+A/Abudhabi/67/2019,2019.733,3C.2a1b.2b,E.2,West Asia,United Arab Emirates
+A/Victoria/223/2019,2019.612,3C.2a1b.2b,E.2,Oceania,Australia
+A/Tokyo/19139/2019,2019.473,3C.2a1b.2b,E.2,Japan Korea,Japan
+A/Victoria/2859/2019,2019.862,3C.2a1b.2b,E.2,Oceania,Australia
+A/Wisconsin/3/2020,2020.023,3C.2a1b.2b,E.2,North America,USA
+A/Victoria/97/2019,2019.451,3C.2a1b.2b,E.2,Oceania,Australia
+A/Santiago/4891/2020,2020.031,3C.2a1b.2b,E.2,South America,Chile
+A/Uppsala/7/2019,2019.845,3C.2a1b.2b,E.2,Europe,Sweden
+A/Michigan/450/2019,2019.733,3C.2a1b.2b,E.2,North America,USA
+A/NorthDakota/34/2019,2019.815,3C.2a1b.2b,E.2,North America,USA
+A/Wisconsin/557/2019,2019.536,3C.2a1b.2b,E.2,North America,USA
+A/Iceland/72/2019,2019.393,3C.2a1b.2b,E.2,Europe,Iceland
+A/Portugal/MS74/2020,2020.22,3C.2a1b.2b,E.2,Europe,Portugal
+A/Wisconsin/554/2019,2019.448,3C.2a1b.2b,E.2,North America,USA
+A/Maldives/810/2018,2018.407,3C.2a1b.2,E,South Asia,Maldives
+A/Maldives/925/2018,2018.423,3C.2a1b.2,E,South Asia,Maldives
+A/Sachsen/94/2018,2018.963,3C.2a1b.2,E,Europe,Germany
+A/Wrexham/6341/2019,2019.223,3C.2a1b.2,E,Europe,United Kingdom
+A/CoteDIvoire/650/2019,2019.292,3C.2a1b.2,E,Africa,Côte d'Ivoire
+A/Kuwait/6435/2018,2018.525,3C.2a1b.2,E,West Asia,Kuwait
+A/Oman/4262/2019,2019.481,3C.2a1b.2,E,West Asia,Oman
+A/Pakistan/1213/2019,2019.108,3C.2a1b.2,E,West Asia,Pakistan
+A/Moldova/147/2019,2019.051,3C.2a1b.2,E,Europe,Moldova
+A/Qatar/16-VI-19-0049409/2019,2019.653,3C.2a1b.2a,E.1,West Asia,Qatar
+A/Christchurch/502/2020,2020.253,3C.2a1b.2a,E.1,Oceania,New Zealand
+A/Abudhabi/59/2019,2019.659,3C.2a1b.2a,E.1,West Asia,United Arab Emirates
+A/Victoria/2855/2019,2019.81,3C.2a1b.2a,E.1,Oceania,Australia
+A/AbuDhabi/85/2019,2019.897,3C.2a1b.2a,E.1,West Asia,United Arab Emirates
+A/Iceland/82/2019,2019.815,3C.2a1b.2a,E.1,Europe,Iceland
+A/Yokohama/168/2019,2019.722,3C.2a1b.2a,E.1,Japan Korea,Japan
+A/Michigan/437/2019,2019.653,3C.2a1b.2a,E.1,North America,USA
+A/Bahrain/835/2019,2019.944,3C.2a1b.2a,E.1,West Asia,Bahrain
+A/Singapore/TT0043/2020,2020.015,3C.2a1b.2a,E.1,Southeast Asia,Singapore
+A/Brandenburg/28/2019,2019.9,3C.2a1b.2a,E.1,Europe,Germany
+A/Anantnag/AG_159/2019,2019.914,3C.2a1b.2a,E.1,South Asia,India
+A/Fujian-Xinluo/1684/2020,2020.288,3C.2a1b.2a,E.1,China,China
+A/Philippines/25/2020,2020.102,3C.2a1b.2a,E.1,Southeast Asia,Philippines
+A/Yokohama/187/2019,2019.758,3C.2a1b.2a,E.1,Japan Korea,Japan
+A/Bhutan/885/2019,2019.538,3C.2a1b.2a,E.1,South Asia,Bhutan
+A/Bhutan/162/2019,2019.618,3C.2a1b.2a,E.1,South Asia,Bhutan
+A/Bhutan/1095/2019,2019.733,3C.2a1b.2a,E.1,South Asia,Bhutan
+A/SriLanka/55/2019,2019.971,3C.2a1b.2a,E.1,South Asia,Sri Lanka
+A/Utah/53/2019,2019.848,3C.2a1b.2a,E.1,North America,USA
+A/SriLanka/65/2020,2020.018,3C.2a1b.2a,E.1,South Asia,Sri Lanka
+A/Kitakyushu/1/2020,2020.583,3C.2a1b.2a,E.1,Japan Korea,Japan
+A/SriLanka/58/2020,2020.143,3C.2a1b.2a,E.1,South Asia,Sri Lanka
+A/Saitama/92/2020,2020.255,1,F,Japan Korea,Japan
+A/Tasmania/503/2020,2020.127,1,F,Oceania,Australia
+A/Tasmania/503/2020-egg,2020.127,1,F,Oceania,Australia
+A/Miyagi/2/2021,2021.166,1,F,Japan Korea,Japan
+A/TimorLeste/17/2020,2020.51,1,F,Southeast Asia,East Timor
+A/TimorLeste/2/2020,2020.654,1,F,Southeast Asia,East Timor
+A/TimorLeste/43/2021,2021.081,1,F,Southeast Asia,East Timor
+A/TimorLeste/8/2022,2022.048,1,F,Southeast Asia,East Timor
+A/Darwin/2/2021,2021.158,1,F,Oceania,Australia
+A/Thailand/5/2021,2021.478,1a,F.1,Southeast Asia,Thailand
+A/Cambodia/e0826360/2020,2020.999,1a,F.1,Southeast Asia,Cambodia
+A/Cambodia/e0826360/2020-egg,2020.54,1a,F.1,Southeast Asia,Cambodia
+A/Cambodia/nC_106184/2020,2020.835,1a,F.1,Southeast Asia,Cambodia
+A/Lao/1745/2020,2020.717,1a,F.1,Southeast Asia,Laos
+A/Lao/1421/2021,2021.278,1a,F.1,Southeast Asia,Laos
+A/Lao/799/2021,2021.163,1a,F.1,Southeast Asia,Laos
+A/Vietnam/Vnhcm-Gs520/2020,2020.807,1a,F.1,Southeast Asia,Vietnam
+A/California/55/2020,2020.78,1a,F.1,North America,USA
+A/Cambodia/925256/2020,2020.734,1a,F.1,Southeast Asia,Cambodia
+A/Lao/580/2021,2021.141,1a,F.1,Southeast Asia,Laos
+A/Vietnam/Vnhcm-Gs653/2019,2019.979,1a,F.1,Southeast Asia,Vietnam
+A/Yamagata/2/2021,2021.108,1a,F.1,Japan Korea,Japan
+A/Guangxi-Fangcheng/11111/2021,2021.727,1a.1,F.1.1,China,China
+A/Guangxi/7240/2021,2021.938,1a.1,F.1.1,China,China
+A/Zhejiang-Shangcheng/1915/2022,2022.61,1a.1,F.1.1,China,China
+A/Guangdong-Zhongshan/1443/2022,2022.371,1a.1,F.1.1,China,China
+A/Zhejiang-yongkang/1312/2022,2022.199,1a.1,F.1.1,China,China
+A/Yunnan-Zhenxiong/51/2023,2023.089,1a.1,F.1.1,China,China
+A/Zhejiang-Nanhu/11082/2022,2022.812,1a.1,F.1.1,China,China
+A/Yunnan-Lushui/1989/2022,2022.248,1a.1,F.1.1,China,China
+A/Hainan-Baotinglizumiaozuzizhi/35/2022,2022.451,1a.1,F.1.1,China,China
+A/Zhejiang-Nanhu/1746/2022,2022.547,1a.1,F.1.1,China,China
+A/Zhejiang-Shangcheng/11000/2022,2022.667,1a.1,F.1.1,China,China
+A/Shanghai/YP1136C2/2023,2023.073,1a.1,F.1.1,China,China
+A/Zhejiang-Yuecheng/1906/2023,2023.67,1a.1,F.1.1,China,China
+A/India/Pun-NIV290244/2021,2021.032,2,G,South Asia,India
+A/Wisconsin/2/2021,2021.062,2d,G.4,North America,USA
+A/Kenya/111/2021,2021.133,2d,G.4,Africa,Kenya
+A/AbuDhabi/2210622842/2021,2021.168,2d,G.4,West Asia,United Arab Emirates
+A/AbuDhabi/2210332924/2021,2021.103,2d,G.4,West Asia,United Arab Emirates
+A/Nepal/20FL2312/2020,2020.966,2,G,South Asia,Nepal
+A/Nepal/21FL0201/2021,2021.086,2,G,South Asia,Nepal
+A/SchleswigHolstein/1/2021,2021.873,2,G,Europe,Germany
+A/Michigan/173/2020,2020.884,2,G,North America,USA
+A/Michigan/173/2020-egg,2020.884,2,G,North America,USA
+A/India/PUN-NIV298154/2021,2021.24,2c,G.3,South Asia,India
+A/Pennsylvania/1/2021,2021.212,2c,G.3,North America,USA
+A/India/PUN-NIV312063/2021,2021.352,2c,G.3,South Asia,India
+A/SouthAfrica/R07089/2022,2022.429,2c,G.3,Africa,South Africa
+A/NewYork/2/2021,2021.541,2c,G.3,North America,USA
+A/AbuDhabi/2211541032/2021,2021.421,2c,G.3,West Asia,United Arab Emirates
+A/Minnesota/2/2021,2021.459,2c,G.3,North America,USA
+A/Darwin/45/2021,2021.818,2c,G.3,Oceania,Australia
+A/Darwin/36/2021-egg,2021.736,2c,G.3,Oceania,Australia
+A/Darwin/36/2021,2021.736,2c,G.3,Oceania,Australia
+A/Moscow/6/2022,2022.051,2c,G.3,West Asia,Russia
+A/Netherlands/9/2022,2022.012,2c,G.3,Europe,Netherlands
+A/Bangladesh/3005/2020-egg,2020.673,2,G,Oceania,Australia
+A/Bangladesh/911009/2020-egg,2020.673,2,G,South Asia,Bangladesh
+A/Salalah/520266545/2020,2020.761,2,G,West Asia,Oman
+A/Bangladesh/1006/2020,2020.652,2,G,North America,USA
+A/Bangladesh/10006/2020,2020.652,2,G,South Asia,Bangladesh
+A/Bangladesh/911009/2020,2020.673,2,G,South Asia,Bangladesh
+A/Bangladesh/4005/2020,2020.758,2,G,South Asia,Bangladesh
+A/AbuDhabi/390121/2021,2021.04,2,G,West Asia,United Arab Emirates
+A/Yekaterinburg/10-01V/2021,2021.645,2,G,West Asia,Russia
+A/Tyumen/1V/2021,2021.577,2,G,West Asia,Russia
+A/Netherlands/717/2022,2022.245,2b,G.2,Europe,Netherlands
+A/Netherlands/999/2022,2022.347,2b,G.2.1,Europe,Netherlands
+A/Sendai/45/2023,2023.689,2b,G.2.1,Japan Korea,Japan
+A/Yokosuka/2/2023,2023.722,2b,G.2.1,Japan Korea,Japan
+A/Yamaguchi/22FS212_2/2022,2023.429,2b,G.2.1,Japan Korea,Japan
+A/Yamaguchi/22FS212/2022,2022.412,2b,G.2.1,Japan Korea,Japan
+A/Shizuoka/20/2023,2023.177,2b,G.2.1,Japan Korea,Japan
+A/Trnava/97/2022,2022.952,2b,G.2.1,Europe,Slovakia
+A/Montana/8/2023,2023.023,2b,G.2.1,North America,USA
+A/Latvia/12-084272/2022,2022.988,2b,G.2.1,Europe,Latvia
+A/VelikyNovgorod/RII-MH132654S/2023,2023.111,2b,G.2.1,West Asia,Russia
+A/Veneto/USAFSAM-14144/2023,2023.1,2b,G.2.1,Europe,Italy
+A/Albania/289788/2022,2022.697,2b,G.2.1,Europe,Albania
+A/Lisbon/6/2023,2023.067,2b,G.2.2,Europe,Portugal
+A/Lisbon/532/2022,2022.711,2b,G.2.2,Europe,Portugal
+A/Greece/ILI_249/2023,2023.01,2b,G.2.2,Europe,Greece
+A/Romania/94/2023,2023.122,2b,G.2.2,Europe,Romania
+A/Guyane/187/2023,2023.152,2b,G.2.2,South America,French Guiana
+A/Yokohama/4/2022,2022.947,2b,G.2.2,Japan Korea,Japan
+A/Yokohama/100/2023,2023.527,2b,G.2.2,Japan Korea,Japan
+A/Yokohama/90/2023,2023.267,2b,G.2.2,Japan Korea,Japan
+A/Yokohama/78/2023,2023.207,2b,G.2.2,Japan Korea,Japan
+A/Guatemala/667/2023,2023.418,2b,G.2,North America,Guatemala
+A/Bahrain/8523/2022,2022.533,2b,G.2,West Asia,Bahrain
+A/Maldives/765/2022,2022.656,2b,G.2,South Asia,Maldives
+A/AbuDhabi/7444/2022,2022.892,2b,G.2,West Asia,United Arab Emirates
+A/Lebanon/175/2022,2022.933,2b,G.2,West Asia,Lebanon
+A/MountLebanon/65/2023,2023.023,2b,G.2,West Asia,Lebanon
+A/SouthAfrica/PET28078/2023,2023.226,2b,G.2,Africa,South Africa
+A/Utah/15/2023,2023.1,2b,G.2,North America,USA
+A/Victoria/5165/2022,2022.826,2b,G.2,Oceania,Australia
+A/Bahrain/1241/2022,2022.796,2b,G.2,West Asia,Bahrain
+A/Victoria/342/2023,2023.221,2b,G.2,Oceania,Australia
+A/Victoria/260/2023,2023.199,2b,G.2,Oceania,Australia
+A/Victoria/164/2023,2023.193,2b,G.2,Oceania,Australia
+A/Washington/44/2022,2022.612,2b,G.2,North America,USA
+A/Sidon/S0213/2022,2022.919,2b,G.2,West Asia,Lebanon
+A/Sidon/S0212/2022,2022.933,2b,G.2,West Asia,Lebanon
+A/Moulins/R2232198/2022,2022.549,2b,G.2,Europe,France
+A/Florida/57/2022,2022.41,2b,G.2,North America,USA
+A/Yamaguchi/25/2023,2023.36,2b,G.2,Japan Korea,Japan
+A/Victoria/5290/2022,2022.985,2b,G.2,Oceania,Australia
+A/Pennsylvania/45/2022,2022.527,2b,G.2,North America,USA
+A/Trinidad/2141/2023,2023.051,2b,G.2,South America,Trinidad and Tobago
+A/Santiago/133908/2022,2022.908,2b,G.2,South America,Chile
+A/Pennsylvania/37/2023,2023.163,2b,G.2,North America,USA
+A/Santiago/133909/2022,2022.908,2b,G.2,South America,Chile
+A/Mississippi/40/2022,2022.889,2b,G.2,North America,USA
+A/Rondonia/357218507-IAL/2023,2023.467,2b,G.2,South America,Brazil
+A/Darwin/11/2021,2021.3,2a,G.1,Oceania,Australia
+A/NorthernTerritory/ATCC-9/2021,2021.256,2a,G.1,Oceania,Australia
+A/Darwin/9/2021-egg,2021.292,2a,G.1,Oceania,Australia
+A/Darwin/9/2021,2021.292,2a,G.1,Oceania,Australia
+A/Stockholm/5/2021,2021.289,2a,G.1,Europe,Sweden
+A/TimorLeste/98/2022,2022.179,2a,G.1,Southeast Asia,East Timor
+A/TimorLeste/64/2022,2022.144,2a,G.1,Southeast Asia,East Timor
+A/Guyane/130/2022,2022.086,2a,G.1,South America,French Guiana
+A/India/2153/2021,2021.648,2a,G.1,South Asia,India
+A/Nevada/8/2022,2022.182,2a,G.1,North America,USA
+A/Tokyo/22024/2022,2022.568,2a,G.1,Japan Korea,Japan
+A/Yamaguchi/1/2022,2022.629,2a,G.1,Japan Korea,Japan
+A/Yamaguchi/2/2022,2022.67,2a,G.1,Japan Korea,Japan
+A/Delaware/1/2021,2021.289,2a,G.1,North America,USA
+A/Singapore/INFTT0002/2021,2021.533,2a,G.1,Southeast Asia,Singapore
+A/Canterbury/1/2021,2021.533,2a,G.1,Oceania,New Zealand
+A/Philippines/24/2021,2021.922,2a,G.1,Southeast Asia,Philippines
+A/Philippines/21/2021,2021.823,2a,G.1,Southeast Asia,Philippines
+A/Darwin/6/2021-egg,2021.204,2a,G.1,Oceania,Australia
+A/Darwin/6/2021,2021.204,2a,G.1,Oceania,Australia
+A/Moscow/2/2021,2021.338,2a.2,G.1.2,West Asia,Russia
+A/StPetersburg/RII-09/2021,2021.842,2a.2,G.1.2,West Asia,Russia
+A/Voronezh/8/2021,2021.708,2a.2,G.1.2,West Asia,Russia
+A/Victoria/4411c/2022,2022.582,2a.2,G.1.2,Oceania,Australia
+A/Netherlands/718/2022,2022.242,2a.2,G.1.2,Europe,Netherlands
+A/Vladivostok/NRCEM-13/2022,2022.168,2a.2,G.1.2,West Asia,Russia
+A/Switzerland/9650/2022,2022.311,2a.2,G.1.2,Europe,Switzerland
+A/India/Pune-Nivari_22_31/2022,2022.486,2a,G.1,South Asia,India
+A/Thuringen/6/2022,2022.16,2a.1,G.1.1,Europe,Germany
+A/Thuringen/4/2022,2022.122,2a.1,G.1.1,Europe,Germany
+A/California/1/2022,2022.01,2a.1,G.1.1,North America,USA
+A/Belgium/S0003/2022,2022.012,2a.1,G.1.1,Europe,Belgium
+A/Poland/PL39/2022,2022.133,2a.1,G.1.1,Europe,Poland
+A/Uvs/61060/2022,2022.316,2a.1,G.1.1,West Asia,Mongolia
+A/Estonia/168142/2022,2022.012,2a.1,G.1.1,Europe,Estonia
+A/Wisconsin/38/2023,2023.259,2a.1,G.1.1,North America,USA
+A/Victoria/993/2022,2022.322,2a.1,G.1.1,Oceania,Australia
+A/Victoria/72/2022,2022.245,2a.1,G.1.1,Oceania,Australia
+A/Wellington/9/2022,2022.393,2a.1,G.1.1,Oceania,New Zealand
+A/NewZealand/306/2022,2022.475,2a.1,G.1.1,Oceania,New Zealand
+A/Victoria/4844/2022,2022.508,2a.1,G.1.1,Oceania,Australia
+A/Uppsala/5/2021,2021.829,2a.1,G.1.1,Europe,Sweden
+A/Tunisia/1580/2022,2022.204,2a.1,G.1.1,Africa,Tunisia
+A/Thuringen/23/2022,2022.41,2a.1,G.1.1,Europe,Germany
+A/UnitedKingdom/13320/2022,2022.377,2a.1,G.1.1,Europe,United Kingdom
+A/Victoria/5/2022,2022.007,2a.1,G.1.1,Oceania,Australia
+A/Finland/280/2022,2022.168,2a.1,G.1.1,Europe,Finland
+A/Milan/112/2022,2022.336,2a.1,G.1.1,Europe,Italy
+A/Victoria/5198/2022,2022.738,2a.1,G.1.1,Oceania,Australia
+A/Thuringen/40/2022,2022.774,2a.1,G.1.1,Europe,Germany
+A/NewJersey/31/2022,2022.708,2a.1,G.1.1,North America,USA
+A/SuratThani/NIC-P2977/2022,2022.664,2a.1,G.1.1,Southeast Asia,Thailand
+A/NewYork/3/2021,2021.708,2a.1a,G.1.1.1,North America,USA
+A/Maryland/2/2021,2021.755,2a.1a,G.1.1.1,North America,USA
+A/Arizona/25/2022,2022.325,2a.1a,G.1.1.1,North America,USA
+A/RhodeIsland/9/2021,2021.914,2a.1a,G.1.1.1,North America,USA
+A/Yokohama/3/2021,2021.949,2a.1a,G.1.1.1,Japan Korea,Japan
+A/Colorado/6/2022,2022.103,2a.1a,G.1.1.1,North America,USA
+A/Victoria/6/2022,2022.116,2a.1a,G.1.1.1,Oceania,Australia
+A/Valparaiso/66437/2022,2022.396,2a.1a,G.1.1.1,South America,Chile
+A/Picardie/28479/2021,2021.711,2a.1,G.1.1,Europe,France
+A/Thailand/508/2022,2022.478,2a.1,G.1.1,Southeast Asia,Thailand
+A/Thailand/1489/2022,2022.355,2a.1,G.1.1,Southeast Asia,Thailand
+A/Trieste/16/2022,2022.13,2a.1,G.1.1,Europe,Italy
+A/Croatia/75169/2022,2022.316,2a.1,G.1.1,Europe,Croatia
+A/Croatia/69089/2022,2022.245,2a.1,G.1.1,Europe,Croatia
+A/Bulgaria/1827/2022,2022.264,2a.1,G.1.1,Europe,Bulgaria
+A/Finland/300/2022,2022.738,2a.1b,G.1.1.2,Europe,Finland
+A/Victoria/5211/2022,2022.895,2a.1b,G.1.1.2,Oceania,Australia
+A/Henan-Shihe/1977/2023,2023.774,2a.1b,G.1.1.2,China,China
+A/Tunisia/1652/2023,2023.084,2a.1b,G.1.1.2,Africa,Tunisia
+A/Austria/1598137/2023,2023.177,2a.1b,G.1.1.2,Europe,Austria
+A/Norway/7235/2023,2023.39,2a.1b,G.1.1.2,Europe,Norway
+A/Swansea/9594/2022,2022.93,2a.1b,G.1.1.2,Europe,United Kingdom
+A/StPetersburg/RII-9000S/2023,2023.032,2a.1b,G.1.1.2,West Asia,Russia
+A/Switzerland/89582/2022,2022.93,2a.1b,G.1.1.2,Europe,Switzerland
+A/Macedonia/IPH-MKD-288SARI/2022,2022.911,2a.1b,G.1.1.2,Europe,Macedonia
+A/Michigan/60/2022,2022.796,2a.1b,G.1.1.2,North America,USA
+A/Netherlands/1617/2023,2023.39,2a.1b,G.1.1.2,Europe,Netherlands
+A/StPetersburg/RII-14137S/2023,2023.193,2a.1b,G.1.1.2,West Asia,Russia
+A/Valladolid/4167/2023,2023.215,2a.1b,G.1.1.2,Europe,Spain
+A/Leon/4311/2023,2023.215,2a.1b,G.1.1.2,Europe,Spain
+A/Kanagawa/AC2316/2023,2023.768,2a.1b,G.1.1.2,Japan Korea,Japan
+A/Brisbane/273/2023,2023.368,2a.1b,G.1.1.2,Oceania,Australia
+A/Bolivia/18559VIR/2022,2022.264,2a,G.1,South America,Bolivia
+A/India/PUN-NIV323256/2021,2021.47,2a,G.1,South Asia,India
+A/India/Aurangabad-QC-21_55/2021,2021.673,2a,G.1,South Asia,India
+A/India/PUN-NIV301759/2021,2021.278,2a,G.1,South Asia,India
+A/Zgharta/6633/2021,2021.818,2a.3,G.1.3,West Asia,Lebanon
+A/SriLanka/5/2022,2022.048,2a.3,G.1.3,South Asia,Sri Lanka
+A/Myanmar/I039/2021,2021.582,2a.3,G.1.3,Southeast Asia,Myanmar
+A/Victoria/5/2021,2021.61,2a.3,G.1.3,Oceania,Australia
+A/Alaska/1/2021,2021.634,2a.3,G.1.3,North America,USA
+A/Alaska/1/2021-egg,2021.601,2a.3,G.1.3,North America,USA
+A/Singapore/SAR86232/2021,2021.889,2a.3,G.1.3,Southeast Asia,Singapore
+A/Darwin/24/2021-egg,2021.612,2a.3,G.1.3,Oceania,Australia
+A/Darwin/24/2021,2021.61,2a.3,G.1.3,Oceania,Australia
+A/Bhutan/1137/2021,2021.99,2a.3,G.1.3,South Asia,Bhutan
+A/India/Kerala-NIVQC471/2021,2021.875,2a.3,G.1.3,South Asia,India
+A/AbuDhabi/3550500/2021,2021.971,2a.3b,G.1.3.2,West Asia,United Arab Emirates
+A/Bhutan/1331/2022,2022.837,2a.3b,G.1.3.2,South Asia,Bhutan
+A/Bhutan/1287/2022,2022.738,2a.3b,G.1.3.2,South Asia,Bhutan
+A/Norway/32026/2022,2022.744,2a.3b,G.1.3.2,Europe,Norway
+A/SriLanka/26/2022,2022.988,2a.3b,G.1.3.2,South Asia,Sri Lanka
+A/UmmAlQuwain/7615/2023,2023.467,2a.3b,G.1.3.2,West Asia,United Arab Emirates
+A/SriLanka/7/2023,2023.045,2a.3b,G.1.3.2,South Asia,Sri Lanka
+A/California/37/2021,2021.941,2a.3,G.1.3,North America,USA
+A/England/214191723/2021,2021.779,2a.3,G.1.3,Europe,United Kingdom
+A/Hungary/9/2021,2021.933,2a.3,G.1.3,Europe,Hungary
+A/Netherlands/99/2021,2021.9,2a.3,G.1.3,Europe,Netherlands
+A/Santiago/188970/2021,2021.916,2a.3,G.1.3,South America,Chile
+A/Victoria/9/2021,2021.952,2a.3,G.1.3,Oceania,Australia
+A/Rome/3/2021,2021.84,2a.3,G.1.3,Europe,Italy
+A/Lisbon/70/2022,2022.062,2a.3,G.1.3,Europe,Portugal
+A/Qatar/25-VI-22-1930279/2022,2022.653,2a.3,G.1.3,West Asia,Qatar
+A/Paraiba/181445-IEC/2021,2021.719,2a.3,G.1.3,South America,Brazil
+A/PuertoMontt/71529/2022,2022.421,2a.3,G.1.3,South America,Chile
+A/Poland/PL80/2022,2022.914,2a.3,G.1.3,Europe,Poland
+A/SantaCatarina/1975/2022,2022.034,2a.3,G.1.3,South America,Brazil
+A/Uruguay/1046/2022,2022.179,2a.3,G.1.3,South America,Uruguay
+A/Zambia/7161/2022,2022.273,2a.3,G.1.3,Africa,Zambia
+A/Zambia/1455/2022,2022.818,2a.3,G.1.3,Africa,Zambia
+A/Zambia/1315/2022,2022.508,2a.3,G.1.3,Africa,Zambia
+A/Zambia/9275/2022,2022.642,2a.3,G.1.3,Africa,Zambia
+A/SaoPaulo/SPPU08586/2021,2021.911,2a.3,G.1.3,South America,Brazil
+A/Ireland/6979/2021,2021.968,2a.3,G.1.3,Europe,Ireland
+A/Trujillo/TRU02885/2023,2023.199,2a.3,G.1.3,South America,Peru
+A/Peru/2024/2023,2023.303,2a.3,G.1.3,South America,Peru
+A/Peru/5443/2023,2023.412,2a.3,G.1.3,South America,Peru
+A/Uruguay/3769/2022,2022.815,2a.3,G.1.3,South America,Uruguay
+A/Georgia/17/2023,2023.086,2a.3,G.1.3,North America,USA
+A/HongKong/33/2022,2022.87,2a.3,G.1.3,China,Hong Kong
+A/Michigan/83/2022,2022.859,2a.3,G.1.3,North America,USA
+A/Chile/9522/2022,2022.971,2a.3,G.1.3,South America,Chile
+A/VinaDelMar/90277/2022,2022.547,2a.3,G.1.3,South America,Chile
+A/Trujillo/TRU02780/2023,2022.862,2a.3,G.1.3,South America,Peru
+A/VinaDelMar/116666/2022,2022.719,2a.3,G.1.3,South America,Chile
+A/Valparaiso/94712/2022,2022.582,2a.3,G.1.3,South America,Chile
+A/SriLanka/8/2022,2022.815,2a.3a,G.1.3.1,South Asia,Sri Lanka
+A/Singapore/SAR39241/2022,2022.319,2a.3a,G.1.3.1,Southeast Asia,Singapore
+A/Maldives/819/2021,2021.749,2a.3a,G.1.3.1,South Asia,Maldives
+A/Nepal/21FL2141/2021,2021.566,2a.3a,G.1.3.1,South Asia,Nepal
+A/Niger/10238/2021,2021.971,2a.3a,G.1.3.1,Africa,Niger
+A/Niger/10322/2022,2022.015,2a.3a,G.1.3.1,Africa,Niger
+A/Norway/29512/2021,2021.9,2a.3a,G.1.3.1,Europe,Norway
+A/Togo/1949/2022,2022.738,2a.3a,G.1.3.1,Africa,Togo
+A/Togo/159/2023,2023.092,2a.3a,G.1.3.1,Africa,Togo
+A/Niger/3290/2022,2022.993,2a.3a,G.1.3.1,Africa,Niger
+A/CoteDIvoire/3789/2023,2023.851,2a.3a,G.1.3.1,Africa,Côte d'Ivoire
+A/Ghana/1229/2024,2024.597,2a.3a,G.1.3.1,Africa,Ghana
+A/Ghana/7934/2023,2023.741,2a.3a,G.1.3.1,Africa,Ghana
+A/Togo/1668/2023,2023.829,2a.3a,G.1.3.1,Africa,Togo
+A/Portugal/210312/2022,2022.155,2a.3a,G.1.3.1,Europe,Portugal
+A/Ghana/2122/2022,2022.39,2a.3a,G.1.3.1,Africa,Ghana
+A/Thailand/25/2022,2022.842,2a.3a,G.1.3.1,Southeast Asia,Thailand
+A/Yokohama/31/2023,2023.064,2a.3a,G.1.3.1,Japan Korea,Japan
+A/Yokohama/51/2023,2023.092,2a.3a,G.1.3.1,Japan Korea,Japan
+A/Nepal/PPHL09/2022,2022.579,2a.3a,G.1.3.1,South Asia,Nepal
+A/India/Kashmir-Niviso_22_06/2022,2022.401,2a.3a,G.1.3.1,South Asia,India
+A/UnitedKingdom/13538/2022,2022.774,2a.3a,G.1.3.1,Europe,United Kingdom
+A/BurkinaFaso/2539/2022,2022.892,2a.3a,G.1.3.1,Africa,Burkina Faso
+A/Bahrain/1899/2023,2023.582,2a.3a.1,J.4,West Asia,Bahrain
+A/Tenby/1009/2023,2023.579,2a.3a.1,J.4,Europe,United Kingdom
+A/Songkhla/THIS28/2023,2023.549,2a.3a.1,J.4,Southeast Asia,Thailand
+A/France/IDF-RELAB-IPP12405/2024,2024.807,2a.3a.1,J.4,Europe,France
+A/BurkinaFaso/3131/2023,2023.886,2a.3a.1,J.4,Africa,Burkina Faso
+A/Yaounde/23V-12684/2023,2023.944,2a.3a.1,J.4,Africa,Cameroon
+A/Bahrain/2317/2023,2023.79,2a.3a.1,J.4,West Asia,Bahrain
+A/Bahrain/4658/2022,2022.36,2a.3a.1,J,West Asia,Bahrain
+A/Wakayama/3/2022,2022.867,2a.3a.1,J,Japan Korea,Japan
+A/HongKong/37/2022,2022.922,2a.3a.1,J,China,Hong Kong
+A/Thailand/9/2022,2022.527,2a.3a.1,J,Southeast Asia,Thailand
+A/Thailand/8/2022-egg,2022.718,2a.3a.1,J,Oceania,Australia
+A/Thailand/8/2022,2022.525,2a.3a.1,J,Southeast Asia,Thailand
+A/TimorLeste/54/2023,2023.974,2a.3a.1,J,Southeast Asia,East Timor
+A/TimorLeste/55/2023,2023.873,2a.3a.1,J,Southeast Asia,East Timor
+A/Oman/9537/2022,2022.445,2a.3a.1,J,West Asia,Oman
+A/Massachusetts/18/2022,2022.423,2a.3a.1,J,North America,USA
+A/SuratThani/P4427/2022,2022.938,2a.3a.1,J,Southeast Asia,Thailand
+A/Ontario/RV00530/2023,2023.338,2a.3a.1,J,North America,Canada
+A/SuratThani/3897/2022,2022.823,2a.3a.1,J,Southeast Asia,Thailand
+A/Toulon/NOMS22133/2022,2022.705,2a.3a.1,J,Europe,France
+A/Toulon/NOMS22129/2022,2022.632,2a.3a.1,J,Europe,France
+A/AbuDhabi/2946/2022,2022.722,2a.3a.1,J,West Asia,United Arab Emirates
+A/Newcastle/113/2023,2023.347,2a.3a.1,J,Oceania,Australia
+A/Uaq/12396/2023,2023.692,2a.3a.1,J,West Asia,United Arab Emirates
+A/SouthAfrica/R07227/2023,2023.453,2a.3a.1,J,Africa,South Africa
+A/NewMexico/43/2023,2023.579,2a.3a.1,J,North America,USA
+A/SouthAfrica/R07771/2023,2023.5,2a.3a.1,J,Africa,South Africa
+A/SouthAfrica/R06126/2023,2023.412,2a.3a.1,J,Africa,South Africa
+A/SouthAfrica/R06066/2023,2023.407,2a.3a.1,J,Africa,South Africa
+A/Switzerland/86247/2022,2022.87,2a.3a.1,J,Europe,Switzerland
+A/Singapore/TT0216/2023,2023.223,2a.3a.1,J,Southeast Asia,Singapore
+A/Canberra/79/2023,2023.338,2a.3a.1,J,Oceania,Australia
+A/Lisbon/5/2023,2023.007,2a.3a.1,J,Europe,Portugal
+A/Vietnam/3030/2023,2023.656,2a.3a.1,J,Southeast Asia,Vietnam
+A/Utah/33/2023,2023.481,2a.3a.1,J,North America,USA
+A/SriLanka/7/2024,2024.004,2a.3a.1,J,South Asia,Sri Lanka
+A/Bawshar/52310940/2023,2023.303,2a.3a.1,J,West Asia,Oman
+A/Wisconsin/62/2023,2023.686,2a.3a.1,J,North America,USA
+A/Zhejiang-Nanhu/1438/2023,2023.333,2a.3a.1,J.3,China,China
+A/Singapore/TT0430/2023,2023.379,2a.3a.1,J.3,Southeast Asia,Singapore
+A/Zhejiang-Nanhu/1420/2023,2023.314,2a.3a.1,J.3,China,China
+A/Anhui-Jinan/11028/2023,2023.774,2a.3a.1,J.3,China,China
+A/Brunei/111/2023,2023.818,2a.3a.1,J.3,Southeast Asia,Brunei
+A/ZabaykalskyKrai/41-5V/2023,2023.834,2a.3a.1,J.3,West Asia,Russia
+A/Shanghai/PT1523C1/2023,2023.486,2a.3a.1,J.3,China,China
+A/Victoria/967/2023,2023.341,2a.3a.1,J,Oceania,Australia
+A/Victoria/916/2023,2023.314,2a.3a.1,J,Oceania,Australia
+A/Victoria/2289/2023,2023.492,2a.3a.1,J,Oceania,Australia
+A/Wellington/6/2023,2023.147,2a.3a.1,J,Oceania,New Zealand
+A/Nepal/S574/2023,2023.155,2a.3a.1,J,South Asia,Nepal
+A/Kenya/105/2023,2023.585,2a.3a.1,J,Africa,Kenya
+A/Bangladesh/3031/2023,2023.325,2a.3a.1,J,South Asia,Bangladesh
+A/Maldives/1074/2023,2023.503,2a.3a.1,J,South Asia,Maldives
+A/Maldives/823/2023,2023.407,2a.3a.1,J,South Asia,Maldives
+A/Maldives/991/2023,2023.47,2a.3a.1,J,South Asia,Maldives
+A/RasAlKhaimah/8132/2023,2023.522,2a.3a.1,J,West Asia,United Arab Emirates
+A/TimorLeste/50/2023,2023.832,2a.3a.1,J,Southeast Asia,East Timor
+A/SuratThani/P2518/2023,2023.495,2a.3a.1,J,Southeast Asia,Thailand
+A/Suriname/609/2023,2023.629,2a.3a.1,J,South America,Suriname
+A/Suriname/506/2023,2023.538,2a.3a.1,J,South America,Suriname
+A/Thailand/22/2022,2022.725,2a.3a.1,J,Southeast Asia,Thailand
+A/TimorLeste/25/2023,2023.053,2a.3a.1,J,Southeast Asia,East Timor
+A/Maldives/1898/2023,2023.818,2a.3a.1,J.1,South Asia,Maldives
+A/HongKong/1534/2023,2023.519,2a.3a.1,J.1,China,Hong Kong
+A/Guangdong-Zhenjiang/1261/2024,2024.31,2a.3a.1,J.1,China,China
+A/HongKong/EPI0161/2023,2023.585,2a.3a.1,J.1,China,Hong Kong
+A/Shanghai-Putuo/1727/2023,2023.695,2a.3a.1,J.1,China,China
+A/Slovenia/8/2024,2023.99,2a.3a.1,J.1,Europe,Slovenia
+A/Santiago/99025/2023,2023.982,2a.3a.1,J.1,South America,Chile
+A/Okinawa/329/2024,2024.365,2a.3a.1,J.1,Japan Korea,Japan
+A/Yamagata/139/2024,2024.272,2a.3a.1,J.1,Japan Korea,Japan
+A/Yamaguchi/77/2024,2024.135,2a.3a.1,J.1,Japan Korea,Japan
+A/Victoria/3099/2023,2023.897,2a.3a.1,J.1.1,Oceania,Australia
+A/Lyon-CHU/250546769/2025,2025.248,2a.3a.1,J.1.1,Europe,France
+A/Zambia/11-NIC-072/2024,2024.081,2a.3a.1,J.1.1,Africa,Zambia
+A/Zambia/119/2024,2024.261,2a.3a.1,J.1.1,Africa,Zambia
+A/Pennsylvania/98/2023,2023.971,2a.3a.1,J.1.1,North America,USA
+A/Victoria/1520A/2024,2024.542,2a.3a.1,J.1.1,Oceania,Australia
+A/Vietnam/5018/2025,2025.026,2a.3a.1,J.1.1,Southeast Asia,Vietnam
+A/Victoria/995/2024,2024.48,2a.3a.1,J.1.1,Oceania,Australia
+A/France/PAC-RELAB-IPP02589/2024,2024.078,2a.3a.1,J.1.1,Europe,France
+A/Oman/3989/2024,2024.419,2a.3a.1,J.1.1,West Asia,Oman
+A/Fujairah/9666/2024,2024.354,2a.3a.1,J.1.1,West Asia,United Arab Emirates
+A/Singapore/MOH0334/2024,2024.581,2a.3a.1,J.1.1,Southeast Asia,Singapore
+A/Swansea/8407/2024,2024.769,2a.3a.1,J.1.1,Europe,United Kingdom
+A/Athens/ILI1563/2024,2024.906,2a.3a.1,J.1.1,Europe,Greece
+A/Albania/310457/2024,2024.999,2a.3a.1,J.1.1,Europe,Albania
+A/Victoria/2195/2023,2023.53,2a.3a.1,J.1,Oceania,Australia
+A/Yokosuka/12/2023,2023.867,2a.3a.1,J.1,Japan Korea,Japan
+A/Yokohama/167/2023,2023.793,2a.3a.1,J.1,Japan Korea,Japan
+A/Finland/431/2023,2023.832,2a.3a.1,J.1,Europe,Finland
+A/Zhejiang-Wuxin/1256/2024,2024.294,2a.3a.1,J.1,China,China
+A/Zhejiang-Tongxiang/322/2023,2023.878,2a.3a.1,J.1,China,China
+A/Yokohama/110/2023,2023.662,2a.3a.1,J.1,Japan Korea,Japan
+A/Wellington/61/2023,2023.664,2a.3a.1,J.1,Oceania,New Zealand
+A/Victoria/3240/2023,2023.895,2a.3a.1,J.1,Oceania,Australia
+A/Wellington/69/2023,2023.774,2a.3a.1,J.1,Oceania,New Zealand
+A/Sydney/856/2023,2023.938,2a.3a.1,J.1,Oceania,Australia
+A/Kanagawa/IC2311/2023,2023.793,2a.3a.1,J.1,Japan Korea,Japan
+A/Yokosuka/16/2023,2023.955,2a.3a.1,J.1,Japan Korea,Japan
+A/Yokohama/10/2024,2024.078,2a.3a.1,J.1,Japan Korea,Japan
+A/Wisconsin/99/2023,2023.87,2a.3a.1,J.1,North America,USA
+A/ValencianCommunity/935/2024,2024.179,2a.3a.1,J.1,Europe,Spain
+A/Uppsala/SE24-00437/2024,2024.02,2a.3a.1,J.1,Europe,Sweden
+A/Segovia/54/2023,2023.807,2a.3a.1,J.1,Europe,Spain
+A/France/PDL-IPP04796/2024,2024.212,2a.3a.1,J.1,Europe,France
+A/Vietnam/227/2023,2023.089,2a.3a.1,J,Southeast Asia,Vietnam
+A/Victoria/59/2023,2023.062,2a.3a.1,J,Oceania,Australia
+A/Sydney/1304/2022,2022.823,2a.3a.1,J,Oceania,Australia
+A/Ulsan/65/2022,2022.832,2a.3a.1,J,Japan Korea,South Korea
+A/NewYork/66/2022,2022.993,2a.3a.1,J,North America,USA
+A/Thailand/CU-PEH230999/2023,2023.678,2a.3a.1,J,Southeast Asia,Thailand
+A/SouthAustralia/48/2023,2023.144,2a.3a.1,J,Oceania,Australia
+A/Albania/289813/2022,2022.949,2a.3a.1,J,Europe,Albania
+A/PaysDeLoire/5590/2023,2023.163,2a.3a.1,J,Europe,France
+A/Zhejiang-Yiwu/1231/2023,2023.177,2a.3a.1,J,China,China
+A/Lao/1666/2023,2023.297,2a.3a.1,J,Southeast Asia,Laos
+A/NewYork/33/2023,2023.582,2a.3a.1,J,North America,USA
+A/Zhejiang-Wuxin/1863/2023,2023.771,2a.3a.1,J,China,China
+A/Zambia/1295/2023,2023.24,2a.3a.1,J,Africa,Zambia
+A/SouthAfrica/R04548/2023,2023.322,2a.3a.1,J,Africa,South Africa
+A/SriLanka/R5_BC14/2024,2024.619,2a.3a.1,J.2,South Asia,Sri Lanka
+A/DistrictOfColumbia/27/2023,2023.938,2a.3a.1,J.2,North America,USA
+A/Ireland/24264/2024,2024.214,2a.3a.1,J.2,Europe,Ireland
+A/Wisconsin/57/2024,2024.22,2a.3a.1,J.2,North America,USA
+A/Croatia/10136RV/2023,2023.278,2a.3a.1,J.2,Europe,Croatia
+A/Croatia/10136RV/2023-egg,2023.925,2a.3a.1,J.2,Europe,Croatia
+A/Kanagawa/IC2346/2023,2023.988,2a.3a.1,J.2,Japan Korea,Japan
+A/Kentucky/29/2024,2024.447,2a.3a.1,J.2.5,North America,USA
+A/Yokohama/30/2025,2025.13,2a.3a.1,J.2.5,Japan Korea,Japan
+A/Colorado/229/2024,2024.862,2a.3a.1,J.2.5,North America,USA
+A/Wisconsin/18/2025,2025.053,2a.3a.1,J.2.5,North America,USA
+A/Yunnan-Xishan/11120/2025,2025.3,2a.3a.1,J.2,China,China
+A/Lithuania/MB2501060048/2025,2024.996,2a.3a.1,J.2,Europe,Lithuania
+A/Luxembourg/LNS9442753/2025,2025.13,2a.3a.1,J.2,Europe,Luxembourg
+A/SouthAfrica/8461/2025,2025.675,2a.3a.1,J.2,Africa,South Africa
+A/Yekaterinburg/82/2025,2025.27,2a.3a.1,J.2,West Asia,Russia
+A/Solna/SE25-08259/2025,2025.462,2a.3a.1,J.2,Europe,Sweden
+A/Talca/69165/2024,2024.643,2a.3a.1,J.2,South America,Chile
+A/Talca/75547/2024,2024.717,2a.3a.1,J.2,South America,Chile
+A/Victoria/440/2024,2024.324,2a.3a.1,J.2,Oceania,Australia
+A/HongKong/2293/2024,2024.6,2a.3a.1,J.2,China,Hong Kong
+A/Zhejiang-Haishu/1221/2025,2025.095,2a.3a.1,J.2,China,China
+A/Hungary/146/2025,2025.234,2a.3a.1,J.2,Europe,Hungary
+A/Guam/5525/2025,2025.034,2a.3a.1,J.2,Oceania,Guam
+A/Lao/1649/2024,2024.48,2a.3a.1,J.2,Southeast Asia,Laos
+A/Yokohama/31/2024,2024.556,2a.3a.1,J.2,Japan Korea,Japan
+A/HongKong/8080/2024,2024.542,2a.3a.1,J.2,China,Hong Kong
+A/Belgium/H0083/2024,2024.605,2a.3a.1,J.2,Europe,Belgium
+A/Philippines/ILI24-1543/2024,2024.52,2a.3a.1,J.2,Southeast Asia,Philippines
+A/Yamaguchi/97/2024,2024.638,2a.3a.1,J.2,Japan Korea,Japan
+A/Yokohama/48/2024,2024.747,2a.3a.1,J.2,Japan Korea,Japan
+A/SaoPaulo/358537332-IAL/2025,2025.601,2a.3a.1,J.2,South America,Brazil
+A/Victoria/818/2025,2025.415,2a.3a.1,J.2,Oceania,Australia
+A/Colombia/3073/2025,2025.752,2a.3a.1,J.2.3,South America,Colombia
+A/Valdivia/62477/2025,2025.568,2a.3a.1,J.2.3,South America,Chile
+A/Goias/520695502-IAL/2025,2025.927,2a.3a.1,J.2.3,South America,Brazil
+A/Kentucky/24/2026,2026.136,2a.3a.1,J.2.3,North America,USA
+A/Netherlands/10685/2024,2024.947,2a.3a.1,J.2.3,Europe,Netherlands
+A/Netherlands/77/2025,2025.015,2a.3a.1,J.2.3,Europe,Netherlands
+A/Victoria/869/2025,2025.41,2a.3a.1,J.2.3,Oceania,Australia
+A/Victoria/769/2025,2025.401,2a.3a.1,J.2.3,Oceania,Australia
+A/Luxembourg/LNS9749400/2026,2026.075,2a.3a.1,J.2.3,Europe,Luxembourg
+A/SaoPaulo/358562700-IAL/2025,2025.714,2a.3a.1,J.2.3,South America,Brazil
+A/SaoPaulo/358685105-IAL/2025,2025.886,2a.3a.1,J.2.3,South America,Brazil
+A/Paraguay/1476/2026,2026.023,2a.3a.1,J.2.3,South America,Paraguay
+A/Utah/52/2025,2025.489,2a.3a.1,J.2.3,North America,USA
+A/Tokyo/EIS13-029/2025,2025.289,2a.3a.1,J.2.3,Japan Korea,Japan
+A/Temuco/53782/2025,2025.448,2a.3a.1,J.2.3,South America,Chile
+A/Valdivia/37488/2025,2025.325,2a.3a.1,J.2.3,South America,Chile
+A/CzechRepublic/2887/2023,2023.903,2a.3a.1,J.2,Europe,Czech Republic
+A/StPetersburg/RII-60/2024,2024.788,2a.3a.1,J.2,West Asia,Russia
+A/HongKong/8052/2024,2024.816,2a.3a.1,J.2,China,Hong Kong
+A/Yokohama/51/2024,2024.772,2a.3a.1,J.2,Japan Korea,Japan
+A/Yekaterinburg/47/2024,2024.236,2a.3a.1,J.2,West Asia,Russia
+A/Luxembourg/LNS9469187/2025,2025.133,2a.3a.1,J.2,Europe,Luxembourg
+A/Belgium/S00631/2025,2024.993,2a.3a.1,J.2,Europe,Belgium
+A/Wales/810/2025,2025.256,2a.3a.1,J.2,Europe,United Kingdom
+A/Belgium/S3780/2025,2025.171,2a.3a.1,J.2,Europe,Belgium
+A/Wellington/67/2023,2023.722,2a.3a.1,J.2,Oceania,New Zealand
+A/Victoria/9/2024,2024.004,2a.3a.1,J.2,Oceania,Australia
+A/Kenya/139/2024,2024.392,2a.3a.1,J.2,Africa,Kenya
+A/Kenya/122/2024,2024.102,2a.3a.1,J.2,Africa,Kenya
+A/Netherlands/97/2024,2024.015,2a.3a.1,J.2,Europe,Netherlands
+A/Netherlands/1839/2024,2024.827,2a.3a.1,J.2,Europe,Netherlands
+A/Romania/590210/2025,2025.075,2a.3a.1,J.2,Europe,Romania
+A/Washington/6/2025,2025.092,2a.3a.1,J.2,North America,USA
+A/Macedonia/5/2024,2024.25,2a.3a.1,J.2,Europe,Macedonia
+A/India/Pun-Nivcov241918/2024,2024.299,2a.3a.1,J.2,South Asia,India
+A/Sweden/SE24-15931/2024,2024.881,2a.3a.1,J.2,Europe,Sweden
+A/Minnesota/111/2024,2024.695,2a.3a.1,J.2,North America,USA
+A/Yunnan-Xishan/11334/2025,2025.36,2a.3a.1,J.2,China,China
+A/Maldives/1141/2024,2024.411,2a.3a.1,J.2,South Asia,Maldives
+A/Phuket/302/2024,2024.408,2a.3a.1,J.2,Southeast Asia,Thailand
+A/AbuDhabi/8430/2024,2024.318,2a.3a.1,J.2,West Asia,United Arab Emirates
+A/Tokyo/EIS10-294/2024,2024.485,2a.3a.1,J.2,Japan Korea,Japan
+A/Bangladesh/3726/2024,2024.48,2a.3a.1,J.2,South Asia,Bangladesh
+A/Michigan/82/2024,2024.264,2a.3a.1,J.2,North America,USA
+A/Bhutan/1699/2024,2024.747,2a.3a.1,J.2.4,South Asia,Bhutan
+A/Nepal/S774/2025,2025.152,2a.3a.1,J.2.4,South Asia,Nepal
+A/Bhutan/90/2024,2024.906,2a.3a.1,J.2.4,South Asia,Bhutan
+A/Valladolid/1187/2025,2025.018,2a.3a.1,J.2.4,Europe,Spain
+A/Sydney/1359/2024,2024.911,2a.3a.1,J.2.4,Oceania,Australia
+A/Singapore/GP20238/2024-egg,2024.985,2a.3a.1,J.2.4,Southeast Asia,Singapore
+A/Singapore/GP20238/2024,2025.001,2a.3a.1,J.2.4,Europe,United Kingdom
+A/Iceland/13146/2025,2025.316,2a.3a.1,J.2.4,Europe,Iceland
+A/Ulaanbaatar/1898/2025,2025.368,2a.3a.1,J.2.4,West Asia,Mongolia
+A/Ulaanbaatar/2031/2025,2025.423,2a.3a.1,J.2.4,West Asia,Mongolia
+A/Mississippi/37/2025,2025.374,2a.3a.1,J.2.4,North America,USA
+A/WesternAustralia/2526815156/2025,2025.733,2a.3a.1,J.2.4,Oceania,Australia
+A/Wairarapa/1/2025,2025.571,2a.3a.1,J.2.4,Oceania,New Zealand
+A/Odisha/727/2025,2025.275,2a.3a.1,J.2.4,South Asia,India
+A/Fujian-Yanping/11201/2025,2025.382,2a.3a.1,J.2.4,China,China
+A/Bhutan/2232/2025,2025.648,2a.3a.1,J.2.4,South Asia,Bhutan
+A/Maldives/1256/2025,2025.47,2a.3a.1,J.2.4,South Asia,Maldives
+A/Maldives/1472/2025,2025.505,2a.3a.1,J.2.4,South Asia,Maldives
+A/Tokyo/EIS13-275/2025,2025.495,2a.3a.1,J.2.4,Japan Korea,Japan
+A/Minnesota/101/2025,2025.632,2a.3a.1,J.2.4,North America,USA
+A/Sydney/68/2025,2025.086,2a.3a.1,J.2.4,Oceania,Australia
+A/Kanagawa/AC2413/2025,2025.226,2a.3a.1,J.2.4,Japan Korea,Japan
+A/Yamagata/111/2025,2025.286,2a.3a.1,J.2.4,Japan Korea,Japan
+A/Zamora/434/2025,2025.958,2a.3a.1,J.2.4,Europe,Spain
+A/Bhutan/644/2025,2025.747,2a.3a.1,J.2.4,South Asia,Bhutan
+A/Zambia/93/2025,2025.563,2a.3a.1,J.2.4,Africa,Zambia
+A/Netherlands/2125/2025,2025.615,2a.3a.1,J.2.4,Europe,Netherlands
+A/NewMexico/1/2026,2026.007,2a.3a.1,J.2.4.2,North America,USA
+A/Bhutan/BUM06/2025,2025.771,2a.3a.1,J.2.4.2,South Asia,Bhutan
+A/Lao/308/2026,2026.097,2a.3a.1,J.2.4,Southeast Asia,Laos
+A/Darwin/1454/2025-egg,2025.61,2a.3a.1,K,Oceania,Australia
+A/Singapore/WH0052/2026,2026.377,2a.3a.1,K,Southeast Asia,Singapore
+A/Luxembourg/LNS9193090/2026,2026.166,2a.3a.1,K,Europe,Luxembourg
+A/Yasothon/B123/2026,2026.078,2a.3a.1,K,Southeast Asia,Thailand
+A/Tokyo/EIS13-615/2025,2025.662,2a.3a.1,K,Japan Korea,Japan
+A/Finland/133/2026,2026.41,2a.3a.1,K,Europe,Finland
+A/Llandudno/9129/2026,2026.248,2a.3a.1,K,Europe,United Kingdom
+A/Temuco/63754/2026,2026.585,2a.3a.1,K,South America,Chile
+A/Maldives/2535/2025,2025.859,2a.3a.1,K,South Asia,Maldives
+A/Croatia/HZJZ-9489/2026,2026.127,2a.3a.1,K,Europe,Croatia
+A/Macedonia/IPH-MKD-283G/2025,2025.999,2a.3a.1,K,Europe,Macedonia
+A/Montenegro/2227142502/2025,2025.936,2a.3a.1,K,Europe,Montenegro
+A/BurkinaFaso/3078/2025,2025.925,2a.3a.1,K,Africa,Burkina Faso
+A/SouthAfrica/738/2025,2025.845,2a.3a.1,K,Africa,South Africa
+A/Wisconsin/114/2025,2025.503,2a.3a.1,K,North America,USA
+A/Ulsan/864/2026,2026.188,2a.3a.1,K,Japan Korea,South Korea
+A/France/PDL-IPP02161/2026,2026.267,2a.3a.1,K,Europe,France
+A/Yasothon/B209/2026,2026.163,2a.3a.1,K,Southeast Asia,Thailand
+A/Vietnam/PF325274/2025,2025.582,2a.3a.1,K,Southeast Asia,Vietnam
+A/Victoria/2609915560/2026,2026.27,2a.3a.1,K,Oceania,Australia
+A/Vietnam/PF325402/2025,2025.903,2a.3a.1,K,Southeast Asia,Vietnam
+IPE06761,2026.111,2a.3a.1,K,South America,Peru
+A/Yunnan-Linxiang/1369/2026,2026.166,2a.3a.1,K,China,China
+A/WestVirginia/35/2026,2026.212,2a.3a.1,K,North America,USA
+A/Zhetysu/3497/2025,2025.815,2a.3a.1,K,West Asia,Kazakhstan
+A/SouthAustralia/2624900647/2026,2026.681,2a.3a.1,K,Oceania,Australia
+A/Bangkok/5896/2025,2025.966,2a.3a.1,K,Southeast Asia,Thailand
+A/WesternAustralia/2523716882/2025,2025.648,2a.3a.1,K,Oceania,Australia
+A/Guam/7570/2025,2025.84,2a.3a.1,K,Oceania,Guam
+A/Yokosuka/11/2025,2025.815,2a.3a.1,K,Japan Korea,Japan
+A/Iceland/16220/2026,2026.333,2a.3a.1,K,Europe,Iceland
+A/Santiago/28639/2026,2026.262,2a.3a.1,K,South America,Chile
+A/Guam/8287/2026,2026.138,2a.3a.1,K,Oceania,Guam
+A/Belgium/S3610/2026,2026.182,2a.3a.1,K,Europe,Belgium
+A/Croatia/HZJZ-9444/2026,2026.042,2a.3a.1,K,Europe,Croatia
+A/WesternAustralia/2602716250/2026,2026.073,2a.3a.1,K,Oceania,Australia
+A/Tokyo/EIS91-027/2026,2026.377,2a.3a.1,K,Japan Korea,Japan
+A/Norway/4793/2026,2026.489,2a.3a.1,K,Europe,Norway
+TUM00033,2026.196,2a.3a.1,K,South America,Peru
+A/PuertoRico/26/2026,2026.399,2a.3a.1,K,North America,Puerto Rico
+A/Lithuania/P25-71547/2025,2025.993,2a.3a.1,K,Europe,Lithuania
+A/Trieste/237/2025,2025.908,2a.3a.1,K,Europe,Italy
+A/Albania/319834/2026,2026.059,2a.3a.1,K,Europe,Albania
+A/INDIA/JIPMER/NIECMC/38/2026,2026.273,2a.3a.1,K,South Asia,India
+A/Uppsala/SE26-07695/2026,2026.607,2a.3a.1,K,Europe,Sweden
+A/Finland/138/2026,2026.486,2a.3a.1,K,Europe,Finland
+A/Maldives/2932/2026,2026.527,2a.3a.1,K,South Asia,Maldives
+A/Luxembourg/LNS9749240/2026,2026.032,2a.3a.1,K,Europe,Luxembourg
+A/Maldives/1658/2026,2026.36,2a.3a.1,K,South Asia,Maldives
+A/Singapore/WH0073/2026,2026.445,2a.3a.1,K,Southeast Asia,Singapore
+A/SaudiArabia/26040700103/2026,2026.588,2a.3a.1,K,West Asia,Saudi Arabia
+A/Tokyo/EIS91-055/2026,2026.495,2a.3a.1,K,Japan Korea,Japan
+A/WestVirginia/40/2026,2026.248,2a.3a.1,K,North America,USA
+A/Yokosuka/12/2025,2025.895,2a.3a.1,K,Japan Korea,Japan
+A/Yokosuka/16/2025,2025.933,2a.3a.1,K,Japan Korea,Japan
+A/Lisbon/99/2026,2026.095,2a.3a.1,K,Europe,Portugal
+A/Yokosuka/1/2026,2026.056,2a.3a.1,K,Japan Korea,Japan
+A/Darwin/1415/2025,2025.588,2a.3a.1,K,Oceania,Australia
+A/Finland/830/2025,2025.664,2a.3a.1,K,Europe,Finland
+A/Malta/MX62837/2025,2025.766,2a.3a.1,K,Europe,Malta
+A/Niger/2556/2025,2025.785,2a.3a.1,K,Africa,Niger
+A/VinadelMar/59388/2026,2026.544,2a.3a.1,K,South America,Chile
+A/VinadelMar/49191/2026,2026.453,2a.3a.1,K,South America,Chile
+A/England/2029897/2026,2026.632,2a.3a.1,K,Europe,United Kingdom
+A/Tokyo/EIS91-085/2026,2026.593,2a.3a.1,K,Japan Korea,Japan
+A/WesternAustralia/2620415625/2026,2026.558,2a.3a.1,K,Oceania,Australia
+A/Tokyo/EIS15-151/2026,2026.503,2a.3a.1,K,Japan Korea,Japan
+A/Victoria/237/2026,2026.368,2a.3a.1,K,Oceania,Australia
+A/WesternAustralia/2622217517/2026,2026.607,2a.3a.1,K,Oceania,Australia
+A/Visby/SE26-03351/2026,2026.212,2a.3a.1,K,Europe,Sweden
+A/Zhetysu/Inf-P-3952/2025,2025.952,2a.3a.1,K,West Asia,Kazakhstan
+A/Madagascar/539/2026,2026.089,2a.3a.1,K,Africa,Madagascar
+A/Mississippi/44/2025,2025.941,2a.3a.1,K,North America,USA
+A/Wisconsin/138/2025,2025.747,2a.3a.1,K,North America,USA
+A/Zhejiang-Nanhu/1354/2026,2026.27,2a.3a.1,K,China,China
+A/Wisconsin/144/2025,2025.782,2a.3a.1,K,North America,USA
+A/Wisconsin/155/2025,2025.842,2a.3a.1,K,North America,USA
+A/India/PUD_NIV26_740/2026,2026.053,2a.3a.1,K,South Asia,India
+A/India/NIECMC/27,2026.24,2a.3a.1,K,South Asia,India
+A/Tunisia/282/2026,2026.012,2a.3a.1,K,Africa,Tunisia
+A/Ukraine/HCL026083024502/2026,2026.158,2a.3a.1,K,Europe,Ukraine
+A/Ulsan/1019/2026,2026.264,2a.3a.1,K,Japan Korea,South Korea
+A/CzechRepublic/506/2026,2026.059,2a.3a.1,K,Europe,Czech Republic
+A/Victoria/187/2026,2026.221,2a.3a.1,K,Oceania,Australia
+A/WesternAustralia/2534415989/2025,2025.941,2a.3a.1,K,Oceania,Australia
+A/Yunnan-Xishan/12069/2026,2026.607,2a.3a.1,K,China,China
+A/Zhejiang-Yongkang/1456/2026,2026.421,2a.3a.1,K,China,China
+A/Wellington/2/2026,2026.462,2a.3a.1,K,Oceania,New Zealand
+A/Zhejiang-Shangcheng/11948/2026,2026.538,2a.3a.1,K,China,China
+A/Zhejiang-Gongshu/1434/2026,2026.338,2a.3a.1,K,China,China
+A/Alaska/36/2026,2026.481,2a.3a.1,K,North America,USA
+A/Yasothon/B740/2026,2026.59,2a.3a.1,K,Southeast Asia,Thailand
+A/WesternAustralia/2530216228/2025,2025.826,2a.3a.1,K,Oceania,Australia
+A/Yunnan-Zhaoyang/11246/2025,2025.927,2a.3a.1,K,China,China
+A/Yaroslavl/103/2025,2026.089,2a.3a.1,K,West Asia,Russia
+A/Thuringen/71/2025,2025.826,2a.3a.1,K,Europe,Germany
+A/SriLanka/16/2026,2026.473,2a.3a.1,K,South Asia,Sri Lanka
+A/SriLanka/38/2026,2026.615,2a.3a.1,K,South Asia,Sri Lanka
+FS-26-7217,2026.618,2a.3a.1,K,Africa,Ghana
+A/Virginia/GKISBBBK15769/2026,2026.59,2a.3a.1,K,North America,USA
+FS_26_5603,2026.5,2a.3a.1,K,Africa,Ghana
+A/Ghana/5097/2026,2026.459,2a.3a.1,K,Africa,Ghana
+A/Zhejiang-Shangcheng/1310/2026,2026.097,2a.3a.1,K,China,China
+A/CoteDIvoire/828/2026,2026.188,2a.3a.1,K,Africa,Côte d'Ivoire
+A/Finland/76/2026,2026.242,2a.3a.1,K,Europe,Finland
+A/SaoPaulo/358938479-IAL/2026,2026.349,2a.3a.1,K,South America,Brazil
+A/Virginia/GKISBBBI75227/2026,2026.497,2a.3a.1,K,North America,USA
+A/Surgut/RII-MH290552S/2026,2026.168,2a.3a.1,K,West Asia,Russia
+A/SriLanka/111/2025,2025.996,2a.3a.1,K,South Asia,Sri Lanka
+A/Zavkhan/20253268/2025,2025.895,2a.3a.1,K,West Asia,Mongolia
+A/Uganda/3792/2026,2026.248,2a.3a.1,K,Africa,Uganda
+A/Yekaterinburg/RII-MH292441S/2026,2026.034,2a.3a.1,K,West Asia,Russia
+A/Tak/P3479/2026,2026.552,2a.3a.1,K,Southeast Asia,Thailand
+A/ThesprotiaGR/SENT10499/2025,2025.96,2a.3a.1,K,Europe,Greece
+A/Yokohama/15/2026,2026.13,2a.3a.1,K,Japan Korea,Japan
+A/Lisbon/96/2026,2026.251,2a.3a.1,K,Europe,Portugal
+A/Slovakia/uvzsr-2626/2026,2026.185,2a.3a.1,K,Europe,Slovakia
+A/Uganda/UVRI_KSW8722/2026,2026.358,2a.3a.1,K,Africa,Uganda
+A/Netherlands/3104/2025,2025.963,2a.3a.1,K,Europe,Netherlands
+A/Lithuania/P25-70281/2025,2025.974,2a.3a.1,K,Europe,Lithuania
+A/India/PUD_NIV26_742/2026,2026.127,2a.3a.1,K,South Asia,India
+A/StPetersburg/RII-MH291326S/2026,2026.341,2a.3a.1,K,West Asia,Russia
+A/StPetersburg/RII-25-5484S/2026,2026.297,2a.3a.1,K,West Asia,Russia
+A/Victoria/3234B/2023,2023.93,2a.3a.1,J.2,Oceania,Australia
+A/Vasteras/SE23-14213/2023,2023.525,2a.3a.1,J.2,Europe,Sweden
+A/Venezuela/4978/2023,2023.779,2a.3a.1,J.2,South America,Venezuela
+A/Victoria/167/2024,2024.242,2a.3a.1,J.2,Oceania,Australia
+A/Switzerland/94675/2023,2023.947,2a.3a.1,J.2,Europe,Switzerland
+A/Muscat/7234671/2023,2023.755,2a.3a.1,J.2,West Asia,Oman
+A/Oman/7407/2023,2023.944,2a.3a.1,J.2,West Asia,Oman
+A/Kanagawa/IC2338/2023,2023.947,2a.3a.1,J.2,Japan Korea,Japan
+A/Oklahoma/5/2024,2024.105,2a.3a.1,J.2,North America,USA
+A/Slovenia/49/2024,2024.583,2a.3a.1,J.2,Europe,Slovenia
+A/Vietnam/PF224067/2024,2024.141,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/Vietnam/PF324072/2024,2024.258,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/Wakayama/33/2024,2024.892,2a.3a.1,J.2,Japan Korea,Japan
+A/Vietnam/PF524545/2025,2024.988,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/Guangxi-Longzhou/1484/2025,2025.437,2a.3a.1,J.2,China,China
+A/Vietnam/5108/2025,2025.179,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/Vietnam/2472/2024,2024.72,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/Vietnam/PF125261/2025,2025.544,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/Vietnam/5067/2025,2025.16,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/SuratThani/1486/2025,2025.448,2a.3a.1,J.2,Southeast Asia,Thailand
+A/Lao/740/2025,2025.388,2a.3a.1,J.2,Southeast Asia,Laos
+A/Lao/510/2025,2025.327,2a.3a.1,J.2,Southeast Asia,Laos
+A/Netherlands/1747/2023,2023.801,2a.3a.1,J.2,Europe,Netherlands
+A/Vietnam/PF224396/2024,2024.758,2a.3a.1,J.2,Southeast Asia,Vietnam
+A/ChiangRai/1932/2024,2024.236,2a.3a.1,J.2,Southeast Asia,Thailand
+A/Zhejiang-Nanhu/130/2024,2024.097,2a.3a.1,J.2.1,China,China
+A/Colorado/6/2024,2024.004,2a.3a.1,J.2.1,North America,USA
+A/Slovenia/21/2024,2024.001,2a.3a.1,J.2.1,Europe,Slovenia
+A/Zhejiang-Haishu/1908/2024,2024.428,2a.3a.1,J.2.1,China,China
+A/Shanghai-Fengxian/1912/2023,2023.79,2a.3a.1,J.2.1,China,China
+A/Vietnam/PF224039/2024,2024.078,2a.3a.1,J.2.1,Southeast Asia,Vietnam
+A/Colombia/1744/2024,2024.764,2a.3a.1,J.2.1,South America,Colombia
+A/Colombia/1472/2024,2024.482,2a.3a.1,J.2.1,South America,Colombia
+A/Zamyn-Uud/33/2024,2024.01,2a.3a.1,J.2.1,West Asia,Mongolia
+A/Zhejiang-Xiuzhou/385/2023,2023.93,2a.3a.1,J.2.1,China,China
+A/Tokyo/EIS10-618/2024,2024.624,2a.3a.1,J.2.1,Japan Korea,Japan
+A/Guyana/10084/2024,2024.406,2a.3a.1,J.2.1,South America,Guyana
+A/BosniaHerzegovina/1149/2024,2024.182,2a.3a.1,J.2.1,Europe,Bosnia and Herzegovina
+A/Switzerland/47775/2024,2024.255,2a.3a.1,J.2.1,Europe,Switzerland
+A/Sydney/711/2024,2024.518,2a.3a.1,J.2.1,Oceania,Australia
+A/Uganda/UVRI_KIS6777/2024,2024.862,2a.3a.1,J.2.1,Africa,Uganda
+A/Zhejiang-Zhangxing/1831/2025,2025.782,2a.3a.1,J.2.1,China,China
+A/Zhejiang-Wuxin/1244/2025,2025.226,2a.3a.1,J.2.1,China,China
+A/TianjinHebei/117/2024,2024.001,2a.3a.1,J.2.1,China,China
+A/CoteDIvoire/824/2024,2024.198,2a.3a.1,J.2.1,Africa,Côte d'Ivoire
+A/Iceland/9695/2024,2024.228,2a.3a.1,J.2.1,Europe,Iceland
+A/Zhejiang-Longwan/1195/2024,2024.214,2a.3a.1,J.2.1,China,China
+A/Sichuan-Qingyang/1586/2024,2024.365,2a.3a.1,J.2.1,China,China
+A/Latvia/1-066146/2024,2024.053,2a.3a.1,J.2.1,Europe,Latvia
+A/YoshkarOla/RII-MH172459S/2024,2024.105,2a.3a.1,J.2.1,West Asia,Russia
+A/Guizhou-Yilongxin/2738/2024,2024.766,2a.3a.1,J.2.1,China,China
+A/Yunnan-Wenshan/11051/2024,2024.843,2a.3a.1,J.2.1,China,China
+A/Yunnan-Mengliandaizulahuzuwazuzizhi/1185/2024,2024.98,2a.3a.1,J.2.1,China,China
+A/Vaxjo/SE24-17397/2024,2024.958,2a.3a.1,J.2.1,Europe,Sweden
+A/Belgium/S8309/2024,2024.895,2a.3a.1,J.2.1,Europe,Belgium
+A/Jilin-Ningjiang/1204/2025,2025.097,2a.3a.1,J.2.1,China,China
+A/Perth/815/2024,2024.411,2a.3a.1,J.2,Oceania,Australia
+A/Yamanashi/24026/2024,2024.138,2a.3a.1,J.2,Japan Korea,Japan
+A/Kazakhstan/13/2023,2023.358,2a.3a.1,J.2,West Asia,Kazakhstan
+A/Bangladesh/3015/2024,2024.122,2a.3a.1,J.2,South Asia,Bangladesh
+A/Ghana/1122/2024,2024.561,2a.3a.1,J.2,Africa,Ghana
+A/Ghana/1500/2024,2024.72,2a.3a.1,J.2,Africa,Ghana
+A/Ghana/394/2025,2025.081,2a.3a.1,J.2,Africa,Ghana
+A/Slovenia/1634/2023,2023.741,2a.3a.1,J.2,Europe,Slovenia
+A/Netherlands/1674/2023,2023.662,2a.3a.1,J.2,Europe,Netherlands
+A/Halmstad/5/2023,2023.659,2a.3a.1,J.2,Europe,Sweden
+A/Arica/52920/2024,2024.499,2a.3a.1,J.2,South America,Chile
+A/Argentina/116/2024,2024.329,2a.3a.1,J.2,South America,Argentina
+A/Ireland/24704/2024,2024.108,2a.3a.1,J.2,Europe,Ireland
+A/Darwin/1067/2024,2024.499,2a.3a.1,J.2,Oceania,Australia
+A/Denmark/1612/2023,2023.738,2a.3a.1,J.2,Europe,Denmark
+A/Romania/564337/2024,2024.048,2a.3a.1,J.2,Europe,Romania
+A/Valparaiso/7570/2024,2024.064,2a.3a.1,J.2,South America,Chile
+A/Valparaiso/11568/2024,2024.113,2a.3a.1,J.2,South America,Chile
+A/Ghana/942/2025,2025.138,2a.3a.1,J.2,Africa,Ghana
+A/Ghana/3370/2024,2024.43,2a.3a.1,J.2,Africa,Ghana
+A/Galicia/GA-CHUAC-118/2024,2024.474,2a.3a.1,J.2,Europe,Spain
+A/Salalah/52425062/2024,2024.657,2a.3a.1,J.2,West Asia,Oman
+A/Bangladesh/8022/2024,2024.54,2a.3a.1,J.2,South Asia,Bangladesh
+A/England/242400295/2024,2024.419,2a.3a.1,J.2,Europe,United Kingdom
+A/Colombia/1601/2024,2024.835,2a.3a.1,J.2,South America,Colombia
+A/Sharjah/1768/2024,2024.862,2a.3a.1,J.2,West Asia,United Arab Emirates
+A/Thessaloniki/C-5273/2023,2023.938,2a.3a.1,J.2,Europe,Greece
+A/Zhejiang-Shangcheng/1895/2024,2024.69,2a.3a.1,J.2,China,China
+A/Victoria/587/2025,2025.295,2a.3a.1,J.2,Oceania,Australia
+A/Turkmenistan/801/2025,2024.933,2a.3a.1,J.2,West Asia,Turkmenistan
+A/France/NOR-IPP21111/2023,2023.703,2a.3a.1,J.2,Europe,France
+A/Netherlands/3144/2023,2023.966,2a.3a.1,J.2,Europe,Netherlands
+A/Bhutan/1490/2023,2023.626,2a.3a.1,J.2,South Asia,Bhutan
+A/Sydney/878/2023,2023.752,2a.3a.1,J.2,Oceania,Australia
+A/Norway/8239/2023,2023.563,2a.3a.1,J.2,Europe,Norway
+A/SouthAfrica/8483/2024,2024.775,2a.3a.1,J.2,Africa,South Africa
+A/Nevada/32/2023,2023.81,2a.3a.1,J.2,North America,USA
+A/Canberra/302/2023,2023.777,2a.3a.1,J.2,Oceania,Australia
+A/Victoria/2906/2023,2023.856,2a.3a.1,J.2,Oceania,Australia
+A/Lao/F4672/2023,2023.79,2a.3a.1,J.2,Southeast Asia,Laos
+A/Montenegro/244677/2023,2023.949,2a.3a.1,J.2,Europe,Montenegro
+A/Belgium/S03252/2023,2023.76,2a.3a.1,J.2,Europe,Belgium
+A/Paraiba/2023-044623-IEC/2023,2023.741,2a.3a.1,J.2,South America,Brazil
+A/Catalonia/NSVH102161296/2023,2023.695,2a.3a.1,J.2,Europe,Spain
+A/Maldives/1772/2023,2023.741,2a.3a.1,J.2,South Asia,Maldives
+A/Sweden/SE24-52465/2024,2024.086,2a.3a.1,J.2,Europe,Sweden
+A/Ynysfach/348/2024,2024.504,2a.3a.1,J.2,Europe,United Kingdom
+A/Croatia/HZJZ_6179/2023,2023.829,2a.3a.1,J.2,Europe,Croatia
+A/Ireland/17646/2024,2024.157,2a.3a.1,J.2,Europe,Ireland
+A/Washington/207/2024,2024.373,2a.3a.1,J.2,North America,USA
+A/India/PUN-NIV24_1168/2024,2024.217,2a.3a.1,J.2,South Asia,India
+A/Virginia/41/2024,2024.917,2a.3a.1,J.2,North America,USA
+A/Bhutan/2209/2024,2024.958,2a.3a.1,J.2,South Asia,Bhutan
+A/Para/2024-013575-IEC/2024,2024.234,2a.3a.1,J.2,South America,Brazil
+A/Norway/4754/2024,2024.488,2a.3a.1,J.2,Europe,Norway
+A/Catalonia/NSVH102423723/2024,2024.695,2a.3a.1,J.2,Europe,Spain
+A/Catalonia/NSVH102421648/2024,2024.684,2a.3a.1,J.2,Europe,Spain
+A/Guizhou-Nanming/1639/2025,2025.284,2a.3a.1,J.2,China,China
+A/Wyoming/24/2025,2025.188,2a.3a.1,J.2,North America,USA
+A/Wisconsin/154/2024,2024.818,2a.3a.1,J.2,North America,USA
+A/Tokyo/EIS11-171/2024,2024.917,2a.3a.1,J.2,Japan Korea,Japan
+A/Sydney/16/2025,2025.056,2a.3a.1,J.2,Oceania,Australia
+A/Guam/5965/2025,2025.16,2a.3a.1,J.2,Oceania,Guam
+A/SaoPaulo/357389770-IAL/2023,2023.889,2a.3a.1,J.2,South America,Brazil
+A/Lisbon/177/2024,2024.499,2a.3a.1,J.2,Europe,Portugal
+A/France/PAC-HCL025088704302/2025,2025.407,2a.3a.1,J.2,Europe,France
+A/Fiji/295/2024,2024.843,2a.3a.1,J.2,Oceania,Fiji
+A/Ecuador/6629/2024,2024.958,2a.3a.1,J.2,South America,Ecuador
+A/Peru/2104/2025,2025.401,2a.3a.1,J.2,South America,Peru
+A/Lisbon/662/2025,2025.253,2a.3a.1,J.2,Europe,Portugal
+A/Victoria/436/2025,2025.199,2a.3a.1,J.2,Oceania,Australia
+A/Victoria/3620/2024,2024.988,2a.3a.1,J.2,Oceania,Australia
+A/ZabaykalskyKrai/562-3V/2025,2025.193,2a.3a.1,J.2,West Asia,Russia
+A/Ecuador/6687/2025,2025.018,2a.3a.1,J.2,South America,Ecuador
+A/Ohio/253/2024,2024.567,2a.3a.1,J.2,North America,USA
+A/Yakutia/198-11V/2025,2025.001,2a.3a.1,J.2,West Asia,Russia
+A/Yokohama/40/2025,2025.215,2a.3a.1,J.2,Japan Korea,Japan
+A/Hungary/305/2024,2024.911,2a.3a.1,J.2,Europe,Hungary
+A/Austria/MUW1790184/2025,2025.084,2a.3a.1,J.2,Europe,Austria
+A/Reunion/CHU724122775301/2024,2024.993,2a.3a.1,J.2,Africa,Réunion
+A/Parma/50/2024,2024.859,2a.3a.1,J.2,Europe,Italy
+A/Suriname/207/2025,2025.19,2a.3a.1,J.2,South America,Suriname
+A/Slovenia/NLZOH-8008-21-2023/2024,2024.903,2a.3a.1,J.2,Europe,Slovenia
+A/SchleswigHolstein/54/2024,2024.848,2a.3a.1,J.2,Europe,Germany
+A/Croatia/HZJZ_8382/2025,2025.021,2a.3a.1,J.2,Europe,Croatia
+A/Luxembourg/LNS8590557/2025,2025.16,2a.3a.1,J.2,Europe,Luxembourg
+A/Kosovo/3406/2024,2024.996,2a.3a.1,J.2,Europe,Kosovo
+A/Switzerland/SNRCI-HUG-46478886/2024,2024.887,2a.3a.1,J.2,Europe,Switzerland
+A/Bulgaria/2825/2025,2025.237,2a.3a.1,J.2,Europe,Bulgaria
+A/Fujian-Pinghe/31/2025,2025.149,2a.3a.1,J.2,China,China
+A/Lyon/242033699/2025,2024.999,2a.3a.1,J.2,Europe,France
+A/Norway/7644/2025,2025.396,2a.3a.1,J.2,Europe,Norway
+A/Mold/3754/2025,2025.651,2a.3a.1,J.2,Europe,United Kingdom
+A/Tasmania/557/2025,2025.462,2a.3a.1,J.2,Oceania,Australia
+A/Canberra/382/2023,2023.884,2a.3a.1,J.2.2,Oceania,Australia
+A/Maldives/Male-NIV241365/2023,2023.988,2a.3a.1,J.2.2,South Asia,Maldives
+A/Maldives/2125/2023,2023.911,2a.3a.1,J.2.2,South Asia,Maldives
+A/BanskaBystrica/83/2024,2024.064,2a.3a.1,J.2.2,Europe,Slovakia
+A/Yokosuka/2/2024,2024.214,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Lisbon/216/2023,2023.955,2a.3a.1,J.2.2,Europe,Portugal
+A/Victoria/99/2024,2024.146,2a.3a.1,J.2.2,Oceania,Australia
+A/Victoria/800/2024,2024.433,2a.3a.1,J.2.2,Oceania,Australia
+A/Sydney/761/2024,2024.507,2a.3a.1,J.2.2,Oceania,Australia
+A/Bahrain/8389/2024,2024.698,2a.3a.1,J.2.2,West Asia,Bahrain
+A/SaudiArabia/PHL/FS8301/2024,2024.512,2a.3a.1,J.2.2,West Asia,Saudi Arabia
+A/Pennsylvania/234/2024,2024.501,2a.3a.1,J.2.2,North America,USA
+A/Victoria/3568/2024,2024.824,2a.3a.1,J.2.2,Oceania,Australia
+A/Estonia/KL4538/2025,2025.152,2a.3a.1,J.2.2,Europe,Estonia
+A/Victoria/3627/2024,2024.835,2a.3a.1,J.2.2,Oceania,Australia
+A/Kanagawa/IC2405/2024,2024.914,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Yokohama/49/2025,2025.36,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Yokosuka/3/2025,2025.04,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Yokohama/111/2024,2024.949,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Beijing-Chaoyang/11253/2024,2024.422,2a.3a.1,J.2.2,China,China
+A/Samoa/34/2024,2024.818,2a.3a.1,J.2.2,Oceania,Samoa
+A/Wellington/85/2024,2024.619,2a.3a.1,J.2.2,Oceania,New Zealand
+A/Croatia/3644/2024,2024.567,2a.3a.1,J.2.2,Europe,Croatia
+A/Ranong/DAI458/2024,2024.597,2a.3a.1,J.2.2,Southeast Asia,Thailand
+A/Yangon/I080/2024,2024.873,2a.3a.1,J.2.2,Southeast Asia,Myanmar
+A/SriLanka/36/2025,2025.36,2a.3a.1,J.2.2,South Asia,Sri Lanka
+A/SriLanka/R5_BC35/2025,2025.045,2a.3a.1,J.2.2,South Asia,Sri Lanka
+A/SriLanka/100/2024,2024.766,2a.3a.1,J.2.2,South Asia,Sri Lanka
+A/France/PDL-RELAB-IPP02068/2025,2025.073,2a.3a.1,J.2.2,Europe,France
+A/Tasmania/627/2025,2025.514,2a.3a.1,J.2.2,Oceania,Australia
+A/SriLanka/BC60March2026,2025.168,2a.3a.1,J.2.2,South Asia,Sri Lanka
+A/Stockholm/SE24-53070/2024,2024.307,2a.3a.1,J.2.2,Europe,Sweden
+A/Victoria/958/2024,2024.433,2a.3a.1,J.2.2,Oceania,Australia
+A/Victoria/928/2024,2024.411,2a.3a.1,J.2.2,Oceania,Australia
+A/Victoria/478/2024,2024.367,2a.3a.1,J.2.2,Oceania,Australia
+A/Perth/836/2024,2024.482,2a.3a.1,J.2.2,Oceania,Australia
+A/Taiwan/C21735/2025,2025.007,2a.3a.1,J.2.2,China,Taiwan
+A/Norway/9843/2024,2024.955,2a.3a.1,J.2.2,Europe,Norway
+A/Minnesota/97/2024,2024.594,2a.3a.1,J.2.2,North America,USA
+A/Tokyo/EIS10-591/2024,2024.619,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Lithuania/MB250102_0073/2024,2024.977,2a.3a.1,J.2.2,Europe,Lithuania
+A/Victoria/3507/2024,2024.714,2a.3a.1,J.2.2,Oceania,Australia
+A/Vietnam/25366/2025,2025.823,2a.3a.1,J.2.2,Southeast Asia,Vietnam
+A/Valdivia/13322/2025,2025.103,2a.3a.1,J.2.2,South America,Chile
+A/Slovenia/NLZOH-8008-21-513/2025,2025.103,2a.3a.1,J.2.2,Europe,Slovenia
+A/SouthAfrica/R05190/2025,2025.429,2a.3a.1,J.2.2,Africa,South Africa
+A/SouthAfrica/3360/2025,2025.245,2a.3a.1,J.2.2,Africa,South Africa
+A/SouthAfrica/4820/2025,2025.399,2a.3a.1,J.2.2,Africa,South Africa
+A/SouthAfrica/5736/2025,2025.484,2a.3a.1,J.2.2,Africa,South Africa
+A/SouthAfrica/8320/2025,2025.656,2a.3a.1,J.2.2,Africa,South Africa
+A/Netherlands/2095/2025,2025.481,2a.3a.1,J.2.2,Europe,Netherlands
+A/Tokyo/EIS13-360/2025,2025.555,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Oman/CPHL_7255092/2025,2025.664,2a.3a.1,J.2.2,West Asia,Oman
+A/Xinjiang-Changji/1952/2025,2025.212,2a.3a.1,J.2.2,China,China
+A/Croatia/31CRV/2025,2025.27,2a.3a.1,J.2.2,Europe,Croatia
+A/Zhejiang-Shangcheng/12993/2025,2025.848,2a.3a.1,J.2.2,China,China
+A/Zhejiang-Shangcheng/11853/2025,2025.514,2a.3a.1,J.2.2,China,China
+A/Vietnam/PF226156/2026,2026.325,2a.3a.1,J.2.2,Southeast Asia,Vietnam
+A/Zhejiang-Shangcheng/12399/2025,2025.667,2a.3a.1,J.2.2,China,China
+A/Jonkoping/SE25-09086/2025,2025.56,2a.3a.1,J.2.2,Europe,Sweden
+A/Yasothon/B259/2025,2025.738,2a.3a.1,J.2.2,Southeast Asia,Thailand
+A/Wales/715/2025,2025.251,2a.3a.1,J.2.2,Europe,United Kingdom
+A/Qinghai-Tongren/1347/2025,2025.421,2a.3a.1,J.2.2,China,China
+A/SouthAfrica/4119/2025,2025.327,2a.3a.1,J.2.2,Africa,South Africa
+A/Vladivostok/25/2025,2025.708,2a.3a.1,J.2.2,West Asia,Russia
+A/Yokosuka/10/2025,2025.673,2a.3a.1,J.2.2,Japan Korea,Japan
+A/Sichuan-Qingyang/8316/2025,2025.629,2a.3a.1,J.2.2,China,China
+A/Belgium/56/2025,2025.36,2a.3a.1,J.2.2,Europe,Belgium
+A/Wisconsin/100/2025,2025.264,2a.3a.1,J.2.2,North America,USA
+A/Vladivostok/4/2025,2025.149,2a.3a.1,J.2.2,West Asia,Russia
+A/Slovakia/uvzsr-40435/2025,2025.177,2a.3a.1,J.2.2,Europe,Slovakia
+A/Switzerland/UN-SNRCI-HUG-47661090/2025,2025.229,2a.3a.1,J.2.2,Europe,Switzerland

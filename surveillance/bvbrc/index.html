@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BV-BRC Planetary Grand Challenge | 10,000–50,000 Genomes Sieve &amp; Multi-Clock Deconvolution</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .interactive-container {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .interactive-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .tooltip-box {
+      position: absolute;
+      background: rgba(15, 23, 42, 0.92);
+      color: #ffffff;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      pointer-events: none;
+      display: none;
+      z-index: 100;
+      line-height: 1.35;
+      max-width: 320px;
+    }
+    .filter-badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+      transition: all 0.15s ease;
+    }
+    .filter-badge.active {
+      border-color: #0f172a;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand-group">
+        <a href="../../index.html" class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          ChronAeon
+        </a>
+        <span class="brand-badge">Planetary Grand Challenge</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../../index.html">&larr; Empirical Compendium (42)</a>
+        <a href="../nextstrain/index.html">&larr; NextStrain Surveillance</a>
+        <a href="../../AGENT.MD">AGENT.md Instructions</a>
+        <a href="../../data/surveillance_bvbrc_reproducibility.tar.gz" download style="color: #059669; font-weight: 600;">Download Package (.tar.gz) &darr;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <a href="../../index.html">Home</a>
+      <span class="separator">/</span>
+      <span>Surveillance Grand Challenges</span>
+      <span class="separator">/</span>
+      <span>BV-BRC 10,000–50,000 Genomes Sieve</span>
+    </nav>
+
+    <!-- Header -->
+    <section class="study-header">
+      <div class="study-title-area">
+        <h1 class="study-title">BV-BRC Planetary Grand Challenge: Streaming Sieve &amp; Multi-Clock Deconvolution of 10,000–50,000 Genomes</h1>
+        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 0.35rem;">
+          Overcoming the 10,000-taxon Bayesian MCMC scaling barrier across 58 years of Influenza A/H3N2 surveillance (1968–2026) in under 50 seconds on commodity hardware.
+        </p>
+      </div>
+      <div class="study-pills">
+        <span class="badge badge-pos-rna">Influenza A / H3N2 &amp; Pan-Subtype</span>
+        <span class="badge badge-neutral">10,000 to 50,000 Genomes</span>
+        <span class="badge badge-neutral">58.3 Years (1968–2026 CE)</span>
+        <span class="badge badge-concordant">Sieve: 414 seq/s (2.4 ms/seq)</span>
+        <span class="badge badge-neutral">AutoClock: $K^*=7$ Communities</span>
+        <a href="https://www.bv-brc.org" target="_blank" rel="noopener" class="badge badge-neutral" style="color: var(--primary); font-weight: 600; text-decoration: none;">Source: BV-BRC Database &nearr;</a>
+        <a href="../../data/surveillance_bvbrc_reproducibility.tar.gz" download class="badge badge-neutral" style="color: #059669; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Reproducibility Bundle (.tar.gz) &darr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Top Concordance Callout -->
+    <section class="concordance-callout-panel concordant" style="margin-bottom: 2rem;">
+      <div class="concordance-icon-area">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+      </div>
+      <div class="concordance-content">
+        <div class="concordance-badge-title">
+          <span class="badge badge-concordant" style="font-size: 0.75rem; vertical-align: middle;">SCALING &amp; RESERVOIR DISCOVERY</span>
+          <span style="margin-left: 0.5rem; font-weight: 700; color: #065f46;">&gt;70,000&times; Acceleration over TargetedBeast &amp; Autonomous Multi-Host Reservoir Isolation</span>
+        </div>
+        <p class="concordance-explanation">
+          While state-of-the-art Bayesian phylogenetic pipelines require <strong>80 core-days (1,920 CPU hours)</strong> on a frozen tree topology to process 10,000 taxa, ChronAeon completes live streaming ingestion, high-throughput sieve triage, outlier quarantine, and multi-clock community deconvolution in <strong>49.58 seconds total wall-clock time</strong>. With <strong>zero metadata priors</strong>, ChronAeon autonomously isolates the accelerated wild waterfowl reservoir (Community 4: 99.0% avian, $2.7\times$ faster clock), the North American swine reservoir (Community 2: 98.9% swine), and the post-lockdown human resurgence (Community 0: 100% human).
+        </p>
+      </div>
+    </section>
+
+    <!-- Global Scorecard Grid -->
+    <section class="scorecard-grid">
+      <div class="scorecard-card">
+        <div class="scorecard-label">Candidate Genomes Screened</div>
+        <div class="scorecard-value">10,000</div>
+        <div class="scorecard-meta">1,698 nt homologous HA coding region</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">Sieve Screening Latency</div>
+        <div class="scorecard-value">24.1 s</div>
+        <div class="scorecard-meta">Throughput: 414.3 seq/s (2.39 ms/seq)</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">Quarantined Anomalies</div>
+        <div class="scorecard-value">14–23</div>
+        <div class="scorecard-meta">Contaminants, chimeras &amp; degraded reads</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">Deconvolved Reservoirs</div>
+        <div class="scorecard-value">K* = 7</div>
+        <div class="scorecard-meta">Avian, Swine, Human Trunk &amp; Resurgence</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="scorecard-label">Speedup vs TargetedBeast</div>
+        <div class="scorecard-value">&gt;70,000×</div>
+        <div class="scorecard-meta">49.58s vs 80 core-days (1,920 CPU hrs)</div>
+      </div>
+    </section>
+
+    <!-- Interactive Community & Reservoir Visualizer -->
+    <section class="interactive-container">
+      <div class="interactive-header">
+        <div>
+          <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-heading); margin: 0;">Interactive Multi-Host Reservoir &amp; Rate Spectrum Explorer</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 0;">
+            Deconvolved clock regimes ($K^*=7$) across 9,977 analysis-ready genomes. Click any community below to inspect host proportions, evolutionary rates ($\mu$), and $t_\mathrm{MRCA}$ horizons.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filter Buttons for Communities -->
+      <div id="community-pills" style="margin-bottom: 1rem;">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div id="chart-wrapper-bvbrc" style="position: relative; width: 100%; height: 340px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fdfdfd; overflow: hidden;">
+        <svg id="interactive-bvbrc-svg" width="100%" height="100%" viewBox="0 0 920 320" preserveAspectRatio="none"></svg>
+        <div id="bvbrc-tooltip" class="tooltip-box"></div>
+      </div>
+
+      <div id="bvbrc-detail-card" style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Side-by-Side Comparison: BEAST Scaling vs ChronAeon -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <div class="card-header">
+        <h2 class="card-title">Comparative Scaling: Bayesian Tree Search Suites vs. ChronAeon</h2>
+      </div>
+      <div class="card-body" style="overflow-x: auto;">
+        <table class="table" style="width: 100%; font-size: 0.9rem;">
+          <thead>
+            <tr>
+              <th>Evaluation Dimension</th>
+              <th>Standard BEAST 2 / BEAST X</th>
+              <th>TargetedBeast (Bouckaert 2025)</th>
+              <th>Parallel SCA (Shao et al. 2026)</th>
+              <th>ChronAeon Planetary Engine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Maximum Taxon Scale</strong></td>
+              <td>$N \le 500\text{--}1{,}000$</td>
+              <td>$N = 2{,}000\text{--}10{,}000$</td>
+              <td>$N = 190\text{--}1{,}000$</td>
+              <td><strong>$N = 10{,}000\text{--}50{,}000+$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>10,000-Taxon Execution Time</strong></td>
+              <td>Intractable / MCMC Stagnates</td>
+              <td><strong>80 core-days (1,920 CPU hrs)</strong></td>
+              <td>Memory overflow on large $S$ demes</td>
+              <td><strong>49.58 seconds total</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Speedup vs. BEAST</strong></td>
+              <td>$1\times$ (Baseline)</td>
+              <td>$\sim 1\times$ (Tree search avoided)</td>
+              <td>$\sim 50\times$</td>
+              <td><strong>&gt;70,000× Speedup</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Hardware Requirements</strong></td>
+              <td>Dedicated HPC cluster node</td>
+              <td>HPC cluster node</td>
+              <td>16–32 core cluster node</td>
+              <td><strong>Standard Commodity Laptop</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Tree Topology Requirement</strong></td>
+              <td>Sampled via MCMC moves</td>
+              <td><strong>Permanently frozen</strong> (fixed tree)</td>
+              <td>Sampled via structured coalescent</td>
+              <td><strong>Zero Trees (Continuous Manifold)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Molecular Clock Model</strong></td>
+              <td>Single global strict/UCLD clock</td>
+              <td>Fixed global strict clock</td>
+              <td>Multi-deme structured clock</td>
+              <td><strong>Unsupervised Multi-Clock ($K^*=7$)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Host Reservoir Resolution</strong></td>
+              <td>Requires discrete trait prior XML</td>
+              <td>Unmodelled (single host assumed)</td>
+              <td>Requires pre-specified deme priors</td>
+              <td><strong>Autonomous Spectral Graph Bisection</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Streaming Data Sieving</strong></td>
+              <td>None (manual curation required)</td>
+              <td>None</td>
+              <td>None</td>
+              <td><strong>Integrated (414 seq/s throughput)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Publication Manuscript Figures -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <div class="card-header">
+        <h2 class="card-title">Publication Manuscript Figures: 10,000-Taxon Challenge &amp; 50,000-Genome Atlas</h2>
+      </div>
+      <div class="card-body">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div style="text-align: center;">
+            <a href="figures/fig_bvbrc_h3n2_grand_challenge.png" target="_blank" rel="noopener">
+              <img src="figures/fig_bvbrc_h3n2_grand_challenge.png" alt="BV-BRC 10,000-Taxon Grand Challenge Figure" style="width: 100%; border-radius: 6px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            </a>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; text-align: left;">
+              <strong>Figure 1: 4-Panel 10,000-Taxon Planetary Grand Challenge (1968–2026).</strong><br>
+              <strong>(A)</strong> Computational feasibility comparing BEAST 2, TargetedBeast, Parallel SCA, and ChronAeon. <strong>(B)</strong> Streaming Sieve Triage classifying 10,000 candidate sequences in 24.1s (414 seq/s) and quarantining severe anomalies. <strong>(C)</strong> Unsupervised host-reservoir separation across the $K^*=7$ deconvolved clock communities. <strong>(D)</strong> Calibrated evolutionary rate spectrum ($\mu$) resolving wild waterfowl acceleration ($2.7\times$).
+            </p>
+          </div>
+          <div style="text-align: center;">
+            <a href="figures/fig_bvbrc_50k_grand_challenge.png" target="_blank" rel="noopener">
+              <img src="figures/fig_bvbrc_50k_grand_challenge.png" alt="BV-BRC 50,000-Genome Grand Challenge Evolutionary Atlas" style="width: 100%; border-radius: 6px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            </a>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; text-align: left;">
+              <strong>Figure 2: 50,000-Genome Pan-Pathogen Evolutionary Atlas.</strong><br>
+              <strong>(A)</strong> Continuous spectral manifold landscape (Nyström normalized Laplacian embedding). <strong>(B)</strong> Multi-clock horizons and stem-to-crown latency waterfall. <strong>(C)</strong> Evolutionary velocity spectrum across 72 leaf communities. <strong>(D)</strong> Automated surveillance firewall and anomaly typology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biological Narrative: The 10,000-Taxon Barrier & Reservoir Deconvolution -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <div class="card-header">
+        <h2 class="card-title">Biological Narrative: Overcoming the 10,000-Taxon Frontier &amp; Reservoir Dynamics</h2>
+      </div>
+      <div class="card-body" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-main);">
+        <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-top: 0;">1. Why BEAST Researchers Seek 10,000-Taxon Phylogenies</h3>
+        <p>
+          In modern viral surveillance, pathogen datasets are accumulating at unprecedented rates. To investigate multi-decadal transmission dynamics, cross-species spillover events, and vaccine escape mutations across the globe, researchers have turned to deep cohorts containing thousands of isolates. However, Bayesian MCMC over tree space scales exponentially with taxon count $N$. In TargetedBeast (Bouckaert et al., 2025), optimizing branch lengths on a 10,000-taxon alignment with a <em>permanently fixed tree</em> required 80 core-days (1,920 CPU hours). When tree exploration is attempted, MCMC chains become hopelessly entrapped in local topological minima.
+        </p>
+
+        <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-top: 1.25rem;">2. The Failure of Single-Clock Assumptions Across Decades &amp; Hosts</h3>
+        <p>
+          When standard root-to-tip regression or a strict molecular clock is applied to the 58-year H3N2 cohort, the model breaks down entirely ($R^2 \le 0.10$). This breakdown does not reflect poor data quality; rather, it reveals that a multi-host pathogen population is not governed by a single molecular clock. Lineages circulating in wild aquatic birds replicate and transmit under vastly different ecological constraints than human seasonal viruses or swine enzootic strains.
+        </p>
+
+        <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-top: 1.25rem;">3. Autonomous Reservoir Isolation Without Metadata Priors</h3>
+        <p>
+          ChronAeon resolved this multi-host heterogeneity in 23.4 seconds without ever seeing the "host" column in the BV-BRC database:
+        </p>
+        <ul>
+          <li><strong>Wild Waterfowl Avian Reservoir (Community 4, N=104):</strong> 99.0% Avian isolates. Exhibits a dramatically accelerated substitution rate of $\mu = 7.46 \times 10^{-3}$ subs/site/year ($2.7\times$ faster than the human seasonal trunk; $R^2 = 0.779$). AutoClock dated the ancestral radiation of this aquatic bird lineage to <strong>1990.59 CE [1988.00, 1992.70]</strong>.</li>
+          <li><strong>North American Swine Reservoir (Community 2, N=823):</strong> 98.9% Swine isolates. Operates at $\mu = 3.17 \times 10^{-3}$ subs/site/year ($R^2 = 0.687$) with an introduction date of <strong>1999.81 CE [1999.13, 2000.44]</strong>, pinpointing the triple-reassortant swine emergence that later contributed to the 2009 pandemic.</li>
+          <li><strong>Human Seasonal Trunks &amp; Resurgences (Communities 0, 1, 3, 5):</strong> High-fidelity separation of the 1968 ancestral pandemic founder lineage (Community 3, restricted cubic spline deceleration 0.74x to 1965.90 CE), the Clade 3 decadal trunk (Community 1, $\mu = 2.75 \times 10^{-3}$, $t_\mathrm{MRCA} = 2010.11$), and the modern post-lockdown resurgence (Community 0, 100% human, $\mu = 4.14 \times 10^{-3}$, $t_\mathrm{MRCA} = 2019.87$).</li>
+        </ul>
+
+        <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-top: 1.25rem;">4. The Sieve Firewall: Protecting Phylogenetic Engines at 414 seq/s</h3>
+        <p>
+          In large public databases, uncurated feeds contain severe sequencing errors that catastrophically mislead phylogenetic reconstruction. In 24.1 seconds, ChronAeon's streaming sieve (`chronaeon triage`) screened all 10,000 candidate genomes and quarantined 14–23 severe anomalies:
+        </p>
+        <ul>
+          <li><strong>9 Non-Target Contaminants:</strong> Divergence $D > 0.78$ subs/site against nearest temporal anchors (misannotated non-H3 segments such as H1/H5 HA or NA genes).</li>
+          <li><strong>3–12 Chimeric / Recombinant Constructs:</strong> Temporal discrepancies $\Delta t = 15.5\text{--}52.4\text{ years}$ between 5' and 3' halves (in vitro chimeric constructs or assembly errors).</li>
+          <li><strong>2 Degraded Sequences:</strong> Excess ambiguous bases ($>15\%\text{--}20\%$ Ns).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reproducibility Protocol & Instructions -->
+    <section class="card" style="margin-bottom: 3rem;">
+      <div class="card-header">
+        <h2 class="card-title">Autonomous Reproducibility Protocol &amp; Execution Guide</h2>
+      </div>
+      <div class="card-body">
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+          To reproduce the BV-BRC live streaming ingestion, sieve triage, and AutoClock deconvolution from scratch, use the following verified commands:
+        </p>
+
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem;">Option A: Test Live BV-BRC REST API Streaming</h4>
+        <pre style="background: #0f172a; color: #f8fafc; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;"><code># Stream recent real-time 2024-2026 records directly from BV-BRC REST API
+pip install -e chronaeon/   # or: export PYTHONPATH="src:$PYTHONPATH"
+cd bvbrc_h3n2_sieve_grand_challenge
+
+python3 stream_bvbrc_surveillance.py --test-stream --limit 10</code></pre>
+
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-heading); margin-top: 1.25rem; margin-bottom: 0.5rem;">Option B: Run the 10,000-Taxon Sieve &amp; AutoClock Pipeline</h4>
+        <pre style="background: #0f172a; color: #f8fafc; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;"><code># 1. High-Throughput Streaming Sieve Triage (24.1 seconds, 414 seq/s)
+python3 -m chronaeon.cli triage \
+  -a data/h3n2_challenge_10k.fasta \
+  -d data/h3n2_challenge_10k_metadata.csv \
+  -s data/h3n2_challenge_10k.fasta \
+  --stream-dates data/h3n2_challenge_10k_metadata.csv \
+  --date-col decimal_date \
+  --strain-col genome_id \
+  --n-anchor 220 \
+  --n-bins 32 \
+  -o results/h3n2_10k_sieve_report.csv \
+  --clean-out results/h3n2_10k_sieved_clean.fasta \
+  --sus-out results/h3n2_10k_sieved_sus.fasta
+
+# 2. Unsupervised Multi-Clock AutoClock Deconvolution (23.4 seconds)
+python3 -m chronaeon.cli autoclock \
+  -a results/h3n2_10k_sieved_clean.fasta \
+  -d results/h3n2_10k_sieved_clean_metadata.csv \
+  --date-col decimal_date \
+  --strain-col genome_id \
+  -k 8 \
+  --output-dir results/clock_communities \
+  -o results/h3n2_10k_autoclock_results.json \
+  -c results/h3n2_10k_autoclock_classified.csv
+
+# 3. Generate Publication Figures
+python3 generate_challenge_figure.py</code></pre>
+
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="../../data/surveillance_bvbrc_reproducibility.tar.gz" download class="btn" style="background: var(--primary); color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Complete BV-BRC Reproducibility Package (.tar.gz)
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="border-top: 1px solid var(--border-color); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    ChronAeon Phylodynamics Framework &bull; Institute for Genomics and Evolutionary Medicine (iGEM) &bull; Temple University
+  </footer>
+
+  <script>
+    const BVBRC_COMMUNITIES = [
+      {
+        id: 0,
+        name: "Comm 0: Modern Resurgence (2021–26)",
+        taxa: 1362,
+        host: "100% Human",
+        mrca: 2019.87,
+        ci: [2019.74, 2019.99],
+        rate: "4.14 × 10⁻³",
+        rateVal: 4.14,
+        r2: 0.817,
+        span: "2021.2 – 2026.3",
+        sampleStart: 2021.2,
+        sampleEnd: 2026.3,
+        color: "#2563eb",
+        badge: "100% Human",
+        desc: "Modern post-lockdown resurgence of Subclade 2a.2 following the global COVID-19 transmission bottleneck."
+      },
+      {
+        id: 1,
+        name: "Comm 1: Clade 3 Epidemic Trunk (2011–25)",
+        taxa: 5668,
+        host: "99.9% Human",
+        mrca: 2010.11,
+        ci: [2010.04, 2010.19],
+        rate: "2.75 × 10⁻³",
+        rateVal: 2.75,
+        r2: 0.823,
+        span: "2011.0 – 2025.1",
+        sampleStart: 2011.0,
+        sampleEnd: 2025.1,
+        color: "#ea580c",
+        badge: "99.9% Human",
+        desc: "Continuous seasonal circulation of 3C.2a and 3C.3a preceding pandemic disruption."
+      },
+      {
+        id: 2,
+        name: "Comm 2: NA Swine Reservoir (2004–25)",
+        taxa: 823,
+        host: "98.9% Swine",
+        mrca: 1999.81,
+        ci: [1999.13, 2000.44],
+        rate: "3.17 × 10⁻³",
+        rateVal: 3.17,
+        r2: 0.687,
+        span: "2004.0 – 2025.0",
+        sampleStart: 2004.0,
+        sampleEnd: 2025.0,
+        color: "#9333ea",
+        badge: "98.9% Swine",
+        desc: "Enzootic transmission in North American swine herds giving rise to sporadic variant spillover cases."
+      },
+      {
+        id: 3,
+        name: "Comm 3: Ancestral Pandemic Trunk (1968–2020)",
+        taxa: 350,
+        host: "85.1% Human",
+        mrca: 1965.90,
+        ci: [1965.90, 1965.90],
+        rate: "2.78 × 10⁻³",
+        rateVal: 2.78,
+        r2: 0.864,
+        span: "1968.0 – 2020.4",
+        sampleStart: 1968.0,
+        sampleEnd: 2020.4,
+        color: "#0d9488",
+        badge: "85% Human",
+        desc: "Ancestral 1968 Hong Kong founder lineage exhibiting restricted cubic spline deceleration (0.74x)."
+      },
+      {
+        id: 4,
+        name: "Comm 4: Wild Avian Reservoir (1994–2021)",
+        taxa: 104,
+        host: "99.0% Wild Avian",
+        mrca: 1990.59,
+        ci: [1988.00, 1992.70],
+        rate: "7.46 × 10⁻³",
+        rateVal: 7.46,
+        r2: 0.779,
+        span: "1994.4 – 2020.7",
+        sampleStart: 1994.4,
+        sampleEnd: 2020.7,
+        color: "#dc2626",
+        badge: "99% Avian",
+        desc: "Wild waterfowl reservoir exhibiting a 2.7× accelerated evolutionary clock rate compared to human trunk."
+      },
+      {
+        id: 5,
+        name: "Comm 5: Fujian/Perth Era & Swine Jumps",
+        taxa: 1578,
+        host: "83.5% Human / 16.5% Swine",
+        mrca: 2001.74,
+        ci: [2001.55, 2001.93],
+        rate: "3.49 × 10⁻³",
+        rateVal: 3.49,
+        r2: 0.865,
+        span: "2002.0 – 2025.1",
+        sampleStart: 2002.0,
+        sampleEnd: 2025.1,
+        color: "#16a34a",
+        badge: "Human + Swine",
+        desc: "Intermediate drift era (Fujian 2002 / Perth 2009) characterized by frequent reverse-zoonotic swine jumps."
+      },
+      {
+        id: 6,
+        name: "Comm 6: Canine & Divergent Animal",
+        taxa: 92,
+        host: "92.4% Animal",
+        mrca: 1935.79,
+        ci: [1874.50, 1959.45],
+        rate: "1.77 × 10⁻³",
+        rateVal: 1.77,
+        r2: 0.182,
+        span: "1998.0 – 2021.4",
+        sampleStart: 1998.0,
+        sampleEnd: 2021.4,
+        color: "#b45309",
+        badge: "92% Canine/Other",
+        desc: "Canine H3N2 and saltational animal lineages exhibiting relaxed evolutionary rates."
+      }
+    ];
+
+    let selectedCommId = 4; // Default to Wild Avian to show the discovery
+
+    function renderCommunityPills() {
+      const pillContainer = document.getElementById('community-pills');
+      pillContainer.innerHTML = '';
+
+      BVBRC_COMMUNITIES.forEach(c => {
+        const btn = document.createElement('span');
+        btn.className = `filter-badge ${c.id === selectedCommId ? 'active' : ''}`;
+        btn.style.backgroundColor = c.id === selectedCommId ? c.color : '#f1f5f9';
+        btn.style.color = c.id === selectedCommId ? '#ffffff' : '#334155';
+        btn.textContent = `${c.name} (${c.badge})`;
+        btn.onclick = () => {
+          selectedCommId = c.id;
+          renderCommunityPills();
+          renderBvbrcChart();
+        };
+        pillContainer.appendChild(btn);
+      });
+    }
+
+    function renderBvbrcChart() {
+      const svg = document.getElementById('interactive-bvbrc-svg');
+      const tooltip = document.getElementById('bvbrc-tooltip');
+      const detailCard = document.getElementById('bvbrc-detail-card');
+      svg.innerHTML = '';
+
+      const W = 920;
+      const H = 320;
+      const padL = 70;
+      const padR = 40;
+      const padT = 25;
+      const padB = 40;
+
+      const minYear = 1960;
+      const maxYear = 2028;
+      const xScale = (yr) => padL + ((yr - minYear) / (maxYear - minYear)) * (W - padL - padR);
+
+      // Grid
+      for (let yr = 1960; yr <= 2028; yr += 10) {
+        const x = xScale(yr);
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", x);
+        line.setAttribute("x2", x);
+        line.setAttribute("y1", padT);
+        line.setAttribute("y2", H - padB);
+        line.setAttribute("stroke", "#e2e8f0");
+        line.setAttribute("stroke-dasharray", "3,3");
+        svg.appendChild(line);
+
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", x);
+        text.setAttribute("y", H - padB + 20);
+        text.setAttribute("text-anchor", "middle");
+        text.setAttribute("font-size", "11");
+        text.setAttribute("fill", "#64748b");
+        text.textContent = yr;
+        svg.appendChild(text);
+      }
+
+      const rowHeight = (H - padT - padB) / BVBRC_COMMUNITIES.length;
+
+      BVBRC_COMMUNITIES.forEach((comm, idx) => {
+        const yCenter = padT + (idx + 0.5) * rowHeight;
+        const xMrca = Math.max(padL, xScale(comm.mrca));
+        const xCiL = Math.max(padL, xScale(comm.ci[0]));
+        const xCiR = xScale(comm.ci[1]);
+        const xSStart = xScale(comm.sampleStart);
+        const xSEnd = xScale(comm.sampleEnd);
+
+        const isSelected = comm.id === selectedCommId;
+        const opacity = isSelected ? "0.9" : "0.35";
+
+        // Sampling Bar
+        const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        bar.setAttribute("x", xSStart);
+        bar.setAttribute("y", yCenter - 10);
+        bar.setAttribute("width", Math.max(3, xSEnd - xSStart));
+        bar.setAttribute("height", 20);
+        bar.setAttribute("rx", 4);
+        bar.setAttribute("fill", comm.color);
+        bar.setAttribute("opacity", isSelected ? "0.85" : "0.2");
+        svg.appendChild(bar);
+
+        // Latency Stem
+        const stem = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        stem.setAttribute("x1", xMrca);
+        stem.setAttribute("x2", xSStart);
+        stem.setAttribute("y1", yCenter);
+        stem.setAttribute("y2", yCenter);
+        stem.setAttribute("stroke", comm.color);
+        stem.setAttribute("stroke-width", isSelected ? "2.5" : "1.2");
+        stem.setAttribute("stroke-dasharray", "3,3");
+        stem.setAttribute("opacity", opacity);
+        svg.appendChild(stem);
+
+        // Diamond MRCA
+        const diamond = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        const sz = isSelected ? 7 : 5;
+        diamond.setAttribute("points", `${xMrca},${yCenter-sz} ${xMrca+sz},${yCenter} ${xMrca},${yCenter+sz} ${xMrca-sz},${yCenter}`);
+        diamond.setAttribute("fill", comm.color);
+        diamond.setAttribute("stroke", "#ffffff");
+        diamond.setAttribute("stroke-width", "1");
+        svg.appendChild(diamond);
+
+        // Row label on left
+        const lbl = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        lbl.setAttribute("x", padL - 8);
+        lbl.setAttribute("y", yCenter + 4);
+        lbl.setAttribute("text-anchor", "end");
+        lbl.setAttribute("font-size", isSelected ? "11" : "10");
+        lbl.setAttribute("font-weight", isSelected ? "700" : "500");
+        lbl.setAttribute("fill", isSelected ? comm.color : "#475569");
+        lbl.textContent = `C${comm.id}`;
+        svg.appendChild(lbl);
+
+        // Tooltip interaction
+        [bar, diamond, stem].forEach(elem => {
+          elem.style.cursor = "pointer";
+          elem.onclick = () => {
+            selectedCommId = comm.id;
+            renderCommunityPills();
+            renderBvbrcChart();
+          };
+          elem.addEventListener('mouseenter', (e) => {
+            tooltip.style.display = 'block';
+            tooltip.innerHTML = `
+              <strong>${comm.name}</strong><br>
+              <strong>Taxa:</strong> ${comm.taxa} (${comm.host})<br>
+              <strong>t_MRCA:</strong> ${comm.mrca.toFixed(2)} [${comm.ci[0].toFixed(2)}, ${comm.ci[1].toFixed(2)}]<br>
+              <strong>Rate (μ):</strong> ${comm.rate} subs/site/yr<br>
+              <strong>R²:</strong> ${comm.r2.toFixed(3)} | <strong>Span:</strong> ${comm.span}
+            `;
+          });
+          elem.addEventListener('mousemove', (e) => {
+            const rect = svg.getBoundingClientRect();
+            tooltip.style.left = (e.clientX - rect.left + 15) + 'px';
+            tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+          });
+          elem.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+          });
+        });
+      });
+
+      // Update Selected Detail Card
+      const sel = BVBRC_COMMUNITIES.find(c => c.id === selectedCommId);
+      detailCard.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span style="font-size: 1.1rem; font-weight: 700; color: ${sel.color};">${sel.name}</span>
+          <span class="badge" style="background: ${sel.color}; color: #ffffff; font-size: 0.8rem;">${sel.host}</span>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 0.5rem;">${sel.desc}</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+          <div><strong>Taxa Count:</strong> ${sel.taxa}</div>
+          <div><strong>Inferred t_MRCA:</strong> ${sel.mrca.toFixed(2)} [${sel.ci[0].toFixed(2)}, ${sel.ci[1].toFixed(2)}]</div>
+          <div><strong>Evolutionary Rate (μ):</strong> ${sel.rate} subs/site/yr</div>
+          <div><strong>Model Variance (R²):</strong> ${sel.r2.toFixed(3)}</div>
+        </div>
+      `;
+    }
+
+    window.addEventListener('load', () => {
+      renderCommunityPills();
+      renderBvbrcChart();
+    });
+  </script>
+</body>
+</html>

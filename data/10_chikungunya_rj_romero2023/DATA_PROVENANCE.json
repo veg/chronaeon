@@ -1,0 +1,51 @@
+{
+  "study_id": "10_chikungunya_rj_romero2023",
+  "organism": "Chikungunya virus (ECSA genotype)",
+  "literature": {
+    "title": "Epidemiological and genomic investigation of chikungunya virus in Rio de Janeiro state, Brazil, between 2015 and 2018",
+    "authors": "Moreira FRR, de Menezes MT, Salgado-Benvindo C, Whittaker C, Cox V, Chandradeva N, ..., Tanuri A",
+    "journal": "PLoS Neglected Tropical Diseases",
+    "year": 2023,
+    "doi": "10.1371/journal.pntd.0011536",
+    "pmid": "37769008",
+    "pmcid": "PMC10564160",
+    "pdf_sha256": "6c65bee71e26f558fb6afe447b63d56f5d2c9e832450bad23441a87326ddd936",
+    "verified_page1_text": "Title: Epidemiological and genomic investigation of chikungunya virus in Rio de Janeiro state, Brazil, between 2015 and 2018 Authors: Filipe Romero Re",
+    "volume": "17",
+    "issue": "9",
+    "pages": "e0011536"
+  },
+  "alignment": {
+    "source_repository": "GitHub filiperomero2/CHIKV_RJ_2015-2018",
+    "file_path": "alignment.fasta",
+    "taxa_count": 148,
+    "sites": 11172,
+    "sha256": "62fed4bdb38862b65529d70ae0f0130f69c813f1eefe7984bad668e6ab2aacb7"
+  },
+  "metadata": {
+    "source": "GitHub filiperomero2/CHIKV_RJ_2015-2018",
+    "file_path": "dates.csv",
+    "temporal_range": [
+      2014.6493150684933,
+      2018.7342465753425
+    ],
+    "sha256": "a1c20c9d85690228eb7a5ad7277267045966a9913f1188c155d18c3c3e74f27f"
+  },
+  "beast_comparator": {
+    "software": "BEAST v1.10.4",
+    "clock_model": "Uncorrelated Lognormal Relaxed Clock (UCLD)",
+    "substitution_model": "HKY + Gamma4",
+    "tree_prior": "Monthly Non-parametric Coalescent Skygrid",
+    "published_tmrca_point": 2014.56,
+    "published_tmrca_95hpd": [
+      2014.38,
+      2014.64
+    ],
+    "published_rate": "0.000587 subs/site/yr",
+    "mcmc_chain_states": "100,000,000 states",
+    "wall_clock_runtime": "Not reported in publication (MCMC states: 100,000,000)",
+    "verbatim_quote": "The evolutionary rate for the ECSA genotype in Rio de Janeiro was estimated at 5.87 x 10^-4 substitutions/site/year (95% HPD: 5.05 - 6.82 x 10^-4).",
+    "beast_config_file": "beast_config.xml.gz",
+    "beast_config_sha256": "de93dd33ced8332ca58cb7814bc3133f59c7681baf55292744cadb24275171fc"
+  }
+}

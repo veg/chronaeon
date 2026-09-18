@@ -1,0 +1,50 @@
+{
+  "study_id": "11_dengue_polyepoch_suchard2020",
+  "pathogen": "Dengue virus (DENV complete polyprotein)",
+  "literature": {
+    "title": "Inhomogeneous continuous-time Markov chains to infer flexible time-varying evolutionary rates",
+    "authors": "Pratyusa Datta, Philippe Lemey, Marc A. Suchard",
+    "journal": "arXiv preprint",
+    "year": 2025,
+    "volume": "",
+    "issue": "",
+    "pages": "arXiv:2510.11982",
+    "doi": "10.48550/arXiv.2510.11982",
+    "pmid": null,
+    "pmcid": null,
+    "pdf_sha256": "b2b3151c79fb356356e51c08a91ff6127e371d476c405249b7ac9037f5b86838"
+  },
+  "alignment": {
+    "source_repository": "https://github.com/suchard-group/polyepoch_model_supplement",
+    "exact_author_file": "dengue_pcm.xml",
+    "file_path": "alignment.fasta",
+    "taxa_count": 352,
+    "sites": 10173,
+    "sha256": "bc656c5d9c91c53ac808d33c10d64af9b145751d2e6e838f2bcd48bd94b500e2"
+  },
+  "metadata": {
+    "source": "https://github.com/suchard-group/polyepoch_model_supplement tip dates",
+    "file_path": "dates.csv",
+    "temporal_range": [
+      1973.0,
+      2010.0
+    ],
+    "sha256": "a31872fbdf9f492562a709dd306bf19753fb89815add5d7968a4d107f3075bc5"
+  },
+  "beast_comparator": {
+    "clock_model": "Polyepoch Clock Model / Random Local Clock",
+    "substitution_model": "GTR + Gamma",
+    "tree_prior": "Skygrid Nonparametric Coalescent",
+    "published_tmrca_point": 1965.0,
+    "published_tmrca_95hpd": [
+      1958.0,
+      1972.0
+    ],
+    "published_rate": "7.5e-4 subs/site/yr",
+    "mcmc_chain_states": "100,000,000 states",
+    "wall_clock_runtime": "Not reported in publication (MCMC states: 100,000,000)",
+    "verbatim_quote": "Analysis of the Dengue dataset reveals temporal heterogeneity in substitution rates across multi-decade sampling horizons with tMRCA in the mid-1960s.",
+    "beast_config_file": "beast_config.xml.gz",
+    "beast_config_sha256": "7c8d3a94fbb4a0ce24efe70ee8aded4fbe62f784b951dca070c475e553425729"
+  }
+}

@@ -284,12 +284,28 @@ a:hover {
   background: var(--success-bg);
   color: var(--success-text);
   border-color: var(--success-border);
+  font-weight: 700;
 }
 
 .badge-reconciled {
+  background: #f3e8ff;
+  color: #6d28d9;
+  border-color: #d8b4fe;
+  font-weight: 700;
+}
+
+.badge-stem-crown {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+  font-weight: 700;
+}
+
+.badge-nonlinear {
   background: #e0f2fe;
   color: #0369a1;
   border-color: #bae6fd;
+  font-weight: 700;
 }
 
 .badge-neutral {
@@ -297,6 +313,40 @@ a:hover {
   color: var(--text-muted);
   border-color: var(--border-color);
   font-family: var(--font-mono);
+}
+
+/* Narrative Reconciliation Banners */
+.narrative-reconciliation-banner {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.banner-concordant {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #16a34a;
+}
+
+.banner-reconciled {
+  background: #faf5ff;
+  border: 1px solid #d8b4fe;
+  border-left: 5px solid #7c3aed;
+}
+
+.banner-stem-crown {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 5px solid #d97706;
+}
+
+.banner-nonlinear {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-left: 5px solid #0284c7;
 }
 
 /* Topline Interpretation Highlight Card */
@@ -798,3 +848,146 @@ a:hover {
   .filter-bar { flex-direction: column; align-items: stretch; }
   .search-box { width: 100%; }
 }
+
+/* Paper & External Resource Links */
+.paper-link,
+.paper-citation-link,
+.paper-title-link {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.paper-link:hover,
+.paper-citation-link:hover,
+.paper-title-link:hover {
+  color: var(--primary-hover);
+  text-decoration-thickness: 2px;
+}
+
+.dossier-view-btn {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.dossier-view-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-hover);
+  text-decoration: none;
+}
+
+.beast-xml-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #059669;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.beast-xml-badge:hover {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+/* Clean Biological Narrative Grid & Cards */
+.narrative-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.narrative-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.narrative-card-paper {
+  border-left: 5px solid #2563eb;
+}
+
+.narrative-card-chronaeon {
+  border-left: 5px solid #059669;
+}
+
+.narrative-card-autoclock {
+  border-left: 5px solid #7c3aed;
+}
+
+.narrative-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.narrative-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.narrative-card-paper .narrative-card-title svg {
+  color: #2563eb;
+}
+
+.narrative-card-chronaeon .narrative-card-title svg {
+  color: #059669;
+}
+
+.narrative-card-autoclock .narrative-card-title svg {
+  color: #7c3aed;
+}
+
+.narrative-card-body p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Side-by-Side Comparison Table */
+.side-by-side-table th {
+  padding: 0.75rem 1rem;
+}
+
+.side-by-side-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+}
+
+.side-by-side-table td:nth-child(2) {
+  background-color: rgba(37, 99, 235, 0.02);
+}
+
+.side-by-side-table td:nth-child(3) {
+  background-color: rgba(5, 150, 105, 0.02);
+}
+
+
