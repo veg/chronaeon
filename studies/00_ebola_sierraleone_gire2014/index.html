@@ -160,7 +160,7 @@
             <span class="badge badge-pos-rna" style="font-size: 0.72rem;">Tree-Free Manifold (OLS)</span>
           </div>
           <div class="narrative-card-body">
-            <p>ChronAeon processed the 196-taxon Sierra Leone alignment in 0.52 seconds on commodity hardware, achieving over 100,000× speedup compared to the 50,000,000 MCMC states evaluated in BEAST. ChronAeon inferred an ancestral root height of 2014.30 CE (95% Fieller analytical CI [2014.24, 2014.34]), perfectly matching the published BEAST point estimate (2014.20 CE) within 36 days and falling entirely within the published 95% HPD interval. The inferred tree-free substitution rate of 1.55 × 10^-3 subs/site/year matches the empirical within-outbreak kinetics without requiring phylogenetic tree reconstruction. Out-of-sample LOOCV date recovery achieved a tip MAE of 31.5 days across all 196 isolates.</p>
+            <p>ChronAeon processed the 196-taxon Sierra Leone alignment in 0.52 seconds on commodity hardware without iterative MCMC sampling. ChronAeon inferred an ancestral root height of 2014.30 CE (95% Fieller analytical CI [2014.24, 2014.34]), perfectly matching the published BEAST point estimate (2014.20 CE) within 36 days and falling entirely within the published 95% HPD interval. The inferred tree-free substitution rate of 1.55 × 10^-3 subs/site/year matches the empirical within-outbreak kinetics without requiring phylogenetic tree reconstruction. Out-of-sample LOOCV date recovery achieved a tip MAE of 31.5 days across all 196 isolates.</p>
           </div>
         </div>
 
@@ -304,11 +304,10 @@
                 <td><strong>Compute Execution Time &amp; Sampling Depth</strong></td>
                 <td>
                   <strong>50,000,000 states</strong>
-                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Estimated BEAST cluster duration: ~4–48 hours</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">MCMC sampling iterations</div>
                 </td>
                 <td>
                   <strong style="color: #059669; font-size: 1.05rem;">2.98s</strong>
-                  <span class="badge badge-concordant" style="font-size: 0.72rem; margin-left: 0.35rem;">~7,200× faster</span>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Direct linear algebra on distance manifold; zero Markov chain overhead.</div>
                 </td>
               </tr>

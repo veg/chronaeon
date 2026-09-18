@@ -15,8 +15,8 @@ This document provides complete, deterministic instructions for an autonomous AI
    All sequences are harvested directly from author-deposited repositories (Dryad, GitHub, Zenodo, ENA). All native ambiguous characters, gaps, and IUPAC ambiguity codes are strictly preserved.
 3. **Exact Alignment Parity with Published BEAST Benchmarks**:
    Every empirical cohort corresponds 100% identically to the published author BEAST 1.x / 2.x XML configuration archive (`beast_config.xml.gz`).
-4. **Deterministic Reproducibility & Mathematical Speedup**:
-   Every ChronAeon and AutoClock execution runs in 0.5 to 314 seconds on commodity hardware (Apple Silicon MPS or single CPU core), delivering over $1,000\times$ to $100,000\times$ speedup compared to the $5,000,000$ to $1,000,000,000$ stochastic MCMC states evaluated in published BEAST baselines.
+4. **Deterministic Reproducibility & Sub-Minute Execution**:
+   Every ChronAeon and AutoClock execution runs deterministically in 0.5 to 314 seconds on commodity hardware (Apple Silicon MPS or single CPU core), bypassing the stochastic Markov chain Monte Carlo state sampling on bifurcating trees required by traditional Bayesian packages.
 
 ---
 
@@ -271,7 +271,7 @@ python3 cronaeon_bench/build_portal.py
 2. **Biological Narrative Integration**:
    Imports curated study narratives from `scratch/study_curations.py`:
    - *Part A: What did the original study find?* (Published BEAST baseline, root date, substitution rate, epidemiological context).
-   - *Part B: What did ChronAeon find?* (Tree-free manifold model selection, root height, Fieller CI, runtime speedup, LOOCV tip MAE).
+   - *Part B: What did ChronAeon find?* (Tree-free manifold model selection, root height, Fieller CI, wall-clock execution time, LOOCV tip MAE).
    - *Part C: AutoClock Community Deconvolution & Biological Interpretation* (Deconvolution into $K^*$ transmission communities, biological meaning of clades).
    - *Temporal Concordance Taxonomy & Prominent Reconciliation Banners*:
       Every empirical cohort is classified into an authoritative 4-way concordance taxonomy:
@@ -515,7 +515,7 @@ python3 ./scripts/generate_fig_bvbrc_50k.py
    - Wild Waterfowl Avian Reservoir (Community 4): $\ge 98\%$ avian, accelerated rate $\mu \approx 7.46 \times 10^{-3}$ ($2.7\times$ faster than human seasonal trunk), $t_{\mathrm{MRCA}} \approx 1990.59$.
    - North American Swine Reservoir (Community 2): $\ge 98\%$ swine, $\mu \approx 3.17 \times 10^{-3}$, $t_{\mathrm{MRCA}} \approx 1999.81$.
    - Modern Resurgence (Community 0): 100% human, $\mu \approx 4.14 \times 10^{-3}$, $t_{\mathrm{MRCA}} \approx 2019.87$.
-5. **Speedup:** Total wall-clock time $\le 55$ seconds ($>70,000\times$ faster than TargetedBeast's 80 core-days).
+5. **Runtime Latency:** Total wall-clock time $\le 55$ seconds on commodity hardware for streaming sieve, dating, and AutoClock deconvolution on 10,000 genomes.
 
 ---
 

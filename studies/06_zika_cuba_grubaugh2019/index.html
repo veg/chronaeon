@@ -160,7 +160,7 @@
             <span class="badge badge-pos-rna" style="font-size: 0.72rem;">Tree-Free Manifold (OLS)</span>
           </div>
           <div class="narrative-card-body">
-            <p>ChronAeon analyzed the 283 genomes in 1.18 seconds, achieving a >100,000× speedup over BEAST's 1 billion iterations. ChronAeon PGLS was selected (Pagel's lambda* = 0.94), inferring an overall root of 2012.58 CE (OLS) / 2011.60 CE (PGLS). LOOCV tip predictive accuracy achieved a tip MAE of 175.3 days across all 283 isolates.</p>
+            <p>ChronAeon analyzed the 283 genomes in 1.18 seconds, operating directly on the continuous sequence manifold without traversing BEAST's 1 billion MCMC iterations. HyphAeon PGLS was selected (Pagel's lambda* = 0.94), inferring an overall root of 2012.58 CE (OLS) / 2011.60 CE (PGLS). LOOCV tip predictive accuracy achieved a tip MAE of 175.3 days across all 283 isolates.</p>
           </div>
         </div>
 
@@ -304,11 +304,10 @@
                 <td><strong>Compute Execution Time &amp; Sampling Depth</strong></td>
                 <td>
                   <strong>1,000,000,000 states (10^9 iterations, logged every 100,000 states, 200,000,000 burn-in)</strong>
-                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Estimated BEAST cluster duration: ~4–48 hours</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">MCMC sampling iterations</div>
                 </td>
                 <td>
                   <strong style="color: #059669; font-size: 1.05rem;">7.11s</strong>
-                  <span class="badge badge-concordant" style="font-size: 0.72rem; margin-left: 0.35rem;">~60,800× faster</span>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Direct linear algebra on distance manifold; zero Markov chain overhead.</div>
                 </td>
               </tr>

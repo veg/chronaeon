@@ -1139,9 +1139,9 @@ def generate_index_html(records):
         <div class="scorecard-meta">Continuous Distance Manifold</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">Speedup Frontier</div>
-        <div class="scorecard-value">Up to 10,000×</div>
-        <div class="scorecard-meta">Seconds vs. 10M–1,000M MCMC States</div>
+        <div class="scorecard-label">Execution Latency</div>
+        <div class="scorecard-value">0.4s &ndash; 314s</div>
+        <div class="scorecard-meta">Sub-Minute Tree-Free Manifold Dating</div>
       </div>
       <div class="scorecard-card">
         <div class="scorecard-label">Extended Models Suite</div>
@@ -1243,43 +1243,6 @@ def generate_index_html(records):
 </html>
 """
     return html_content
-
-def compute_speedup_label(beast_runtime_str, mcmc_states_str, chronaeon_sec):
-    try:
-        c_sec = float(chronaeon_sec)
-        if c_sec <= 0:
-            c_sec = 0.01
-        s = str(beast_runtime_str).lower().strip()
-        m_day = re.search(r'([\d\.]+)\s*(?:days|day)', s)
-        m_hr = re.search(r'([\d\.]+)\s*(?:hours|hour|hr|hrs)', s)
-        m_min = re.search(r'([\d\.]+)\s*(?:minutes|minute|min)', s)
-        b_sec = None
-        if m_day:
-            b_sec = float(m_day.group(1)) * 86400.0
-        elif m_hr:
-            b_sec = float(m_hr.group(1)) * 3600.0
-        elif m_min:
-            b_sec = float(m_min.group(1)) * 60.0
-        elif 'hour' in s:
-            b_sec = 8 * 3600.0
-        if not b_sec or b_sec <= 0:
-            m_states = re.search(r'([\d,]+)', str(mcmc_states_str))
-            if m_states:
-                st_val = float(m_states.group(1).replace(',', ''))
-                b_sec = max(7200.0, (st_val / 50000000.0) * 6.0 * 3600.0)
-            else:
-                b_sec = 6.0 * 3600.0
-        if b_sec and b_sec > 0:
-            ratio = b_sec / c_sec
-            if ratio >= 1000:
-                return f"~{int(round(ratio, -2)):,}× faster"
-            elif ratio >= 10:
-                return f"~{int(ratio):,}× faster"
-            else:
-                return f"~{ratio:.1f}× faster"
-    except Exception:
-        pass
-    return "&gt; 10,000× faster"
 
 def generate_study_page(rec, prev_rec, next_rec):
     study_id = rec['study_id']
@@ -1487,12 +1450,11 @@ def generate_study_page(rec, prev_rec, next_rec):
         chron_card_style = 'style="border-top: 3px solid #16a34a;"'
         top_reconciliation_banner_html = ""
 
-    speedup_label = compute_speedup_label(rec.get('beast_runtime'), rec.get('beast_mcmc_states'), rec.get('chronaeon_sec', 1.0))
     b_run_raw = str(rec.get('beast_runtime', '')).strip()
     if b_run_raw and "not reported" not in b_run_raw.lower():
         b_runtime_display = f"Reported compute duration: {render_markdown(b_run_raw)}"
     else:
-        b_runtime_display = "Estimated BEAST cluster duration: ~4–48 hours"
+        b_runtime_display = "MCMC sampling iterations"
 
     b_rate_str = str(rec['beast_rate']).strip()
     b_rate_unit = "" if ("subs" in b_rate_str.lower() or "s/s/y" in b_rate_str.lower()) else " subs/site/yr"
@@ -1699,7 +1661,6 @@ def generate_study_page(rec, prev_rec, next_rec):
                 </td>
                 <td>
                   <strong style="color: #059669; font-size: 1.05rem;">{rec['chronaeon_sec']}s</strong>
-                  <span class="badge badge-concordant" style="font-size: 0.72rem; margin-left: 0.35rem;">{speedup_label}</span>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Direct linear algebra on distance manifold; zero Markov chain overhead.</div>
                 </td>
               </tr>
@@ -2233,7 +2194,7 @@ The interactive web portal is deployed on GitHub Pages:
 - **42 Curated Empirical Cohorts**: 100% harvested from author-deposited repositories (Dryad, GitHub, Zenodo, ENA) with zero synthetic base filling and zero simplex imputation.
 - **{total_taxa:,} Total Taxa**: Spanning Positive-Sense RNA, Negative-Sense RNA, Retroviruses, DNA Viruses, and Bacterial & Ancient DNA.
 - **Tree-Free Continuous Manifolds**: Completely eliminates phylogenetic tree search, inference, and MCMC topology space.
-- **Extreme Speedup**: 0.5 to 314 seconds on commodity hardware versus 5,000,000 to 1,000,000,000 MCMC states in BEAST 1.x / 2.x.
+- **Sub-Minute Execution**: 0.5 to 314 seconds on commodity hardware across all 42 cohorts, bypassing iterative MCMC sampling.
 - **Consistent 4-Panel Diagnostic Figures**: Highlighting root-to-tip clock regression, BEAST MCMC calibration concordance, out-of-sample LOOCV tip recovery, Continuous Manifold Alluvial Phylogeny streamlines, and Alluvial lineage flow streamgraphs across all 42 cohorts.
 - **Unsupervised AutoClock Deconvolution**: Resolves empirical rate heterogeneity ($K^* > 1$) or validates strict rate homogeneity ($K^* = 1$) using normalized graph Laplacian spectral bisection.
 - **Non-Linear Clocks Suite (<code>--nonlinear-clocks</code>)**: Native profile fitting of Exact Quadratic, Profile Exponential, Bilinear Surge-and-Crash, and Polyepoch rate regimes alongside Restricted Natural Splines.
