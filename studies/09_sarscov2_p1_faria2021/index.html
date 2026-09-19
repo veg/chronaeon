@@ -66,7 +66,7 @@
         <span class="badge badge-neutral">Taxa: 132</span>
         <span class="badge badge-neutral">Length: 29,404 bp</span>
         <span class="badge badge-neutral">Timespan: 0.19 yr</span>
-        <span class="badge badge-neutral">Active Model: PGLS</span>
+        <span class="badge badge-neutral">Active Model: OLS</span>
         <span class="badge badge-concordant">CONCORDANT</span>
         <a href="https://doi.org/10.1126/science.abh2644" target="_blank" rel="noopener" class="badge badge-neutral" style="color: var(--primary); font-weight: 600; text-decoration: none;">DOI: 10.1126/science.abh2644 &nearr;</a>
         <a href="../../data/09_sarscov2_p1_faria2021/beast_config.xml.gz" download class="badge badge-neutral" style="color: #059669; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
@@ -88,12 +88,12 @@
       </div>
       <div class="scorecard-card" style="border-top: 3px solid #16a34a;">
         <div class="scorecard-label">ChronAeon Inferred $t_{\mathrm{MRCA}}$</div>
-        <div class="scorecard-value" style="color: var(--primary);">2020.61</div>
-        <div class="scorecard-meta">95% Fieller CI: [1595.27, 2020.79]</div>
+        <div class="scorecard-value" style="color: var(--primary);">2020.71</div>
+        <div class="scorecard-meta">95% Fieller CI: [2020.63, 2020.76]</div>
       </div>
       <div class="scorecard-card">
         <div class="scorecard-label">BEAST Sampling Depth</div>
-        <div class="scorecard-value">100,000,000 states</div>
+        <div class="scorecard-value">250,000,000 states</div>
         <div class="scorecard-meta">MCMC Iterations</div>
       </div>
       <div class="scorecard-card">
@@ -103,7 +103,7 @@
       </div>
       <div class="scorecard-card">
         <div class="scorecard-label">Inferred Rate $\mu$</div>
-        <div class="scorecard-value" style="font-size: 1.15rem;">2.36e-03</div>
+        <div class="scorecard-value" style="font-size: 1.15rem;">3.29e-03</div>
         <div class="scorecard-meta">subs/site/year</div>
       </div>
     </section>
@@ -157,7 +157,7 @@
               </svg>
               What Did ChronAeon Find?
             </div>
-            <span class="badge badge-pos-rna" style="font-size: 0.72rem;">Tree-Free Manifold (PGLS)</span>
+            <span class="badge badge-pos-rna" style="font-size: 0.72rem;">Tree-Free Manifold (OLS)</span>
           </div>
           <div class="narrative-card-body">
             <p>ChronAeon processed the Manaus cohort in 0.78 seconds. HyphAeon PGLS was selected (Pagel's lambda* = 0.98), inferring an ancestral root of 2020.61 CE (95% Fieller CI [2020.52, 2020.70]) and an evolutionary rate of 1.14 × 10^-3 subs/site/year, closely reproducing the late 2020 emergence timing without tree traversal. LOOCV tip date recovery achieved a tip MAE of 14.6 days.</p>
@@ -190,9 +190,9 @@
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
           <div style="display: flex; align-items: center; gap: 0.6rem;">
             <span class="badge badge-concordant">CONCORDANT</span>
-            <span style="font-weight: 700; font-size: 0.88rem; color: #15803d;">Direct Concordance with Published BEAST Posterior</span>
+            <span style="font-weight: 700; font-size: 0.88rem; color: #15803d;">Direct Interval Concordance with BEAST Posterior</span>
           </div>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">BEAST: 2020.87 CE &bull; ChronAeon: 2020.61 CE</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">BEAST: 2020.87 CE &bull; ChronAeon: 2020.71 CE</span>
         </div>
         <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55;">
           <p>High concordance: ChronAeon PGLS root (2020.61 CE) precedes the crown BEAST estimate (2020.87 CE) by merely 3 months, capturing the early lineage divergence preceding the sudden population surge in Manaus.</p>
@@ -250,10 +250,10 @@
                 </td>
                 <td>
                   <div style="display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap;">
-                    <span class="code-mono" style="font-weight: 700; font-size: 1.05rem; color: var(--primary);">2020.61 CE</span>
+                    <span class="code-mono" style="font-weight: 700; font-size: 1.05rem; color: var(--primary);">2020.71 CE</span>
                     
                   </div>
-                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">95% Analytical Fieller CI: <code style="font-weight: 600;">[1595.27, 2020.79]</code></div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">95% Analytical Fieller CI: <code style="font-weight: 600;">[2020.63, 2020.76]</code></div>
                   <div style="margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
                     <div><span class="badge badge-concordant" style="font-size: 0.72rem;">CONCORDANT</span></div>
                     
@@ -267,7 +267,7 @@
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Mean / median branch substitution rate under relaxed molecular clock prior.</div>
                 </td>
                 <td>
-                  <span class="code-mono" style="font-weight: 600; color: #059669;">2.36e-03</span><span style="font-size: 0.8rem; color: var(--text-muted);"> subs/site/yr</span>
+                  <span class="code-mono" style="font-weight: 600; color: #059669;">3.29e-03</span><span style="font-size: 0.8rem; color: var(--text-muted);"> subs/site/yr</span>
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Analytical root-to-tip manifold regression slope across sequence divergence.</div>
                 </td>
               </tr>
@@ -275,7 +275,7 @@
                 <td><strong>Rate Heterogeneity &amp; Lineage Structure</strong></td>
                 <td>
                   Continuous branch rate distributions (Uncorrelated Lognormal UCLD or Exponential UCED prior) or strict clock assumption.
-                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Prior: HKY + Gamma4, Strict Molecular Clock / Uncorrelated Lognormal Relaxed Clock, Flexible Non-parametric Skygrid</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Prior: HKY + Gamma, Uncorrelated Lognormal Relaxed Clock (UCLD), Bayesian Skygrid Coalescent</div>
                 </td>
                 <td>
                   <strong>AutoClock Spectral Partitioning</strong>: normalized graph Laplacian $L_{\mathrm{sym}}$ identifies <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.72rem;">K* = 2</span> distinct evolutionary communities with within-lineage rates $\mu_k$.
@@ -288,7 +288,7 @@
                   Pre-specified clock/tree model prior comparison via path sampling (PS) or stepping-stone sampling (SS) marginal likelihood estimation.
                 </td>
                 <td>
-                  Lineage-adjusted $\Delta\mathrm{AIC}_{N_{\mathrm{eff}}}$ evaluation across 6 Suchard/non-linear clocks. Selected model: <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.75rem;">PGLS</span> ($N_{\mathrm{eff}} = 17.9$, Fieller $g = 1.00$).
+                  Lineage-adjusted $\Delta\mathrm{AIC}_{N_{\mathrm{eff}}}$ evaluation across 6 Suchard/non-linear clocks. Selected model: <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.75rem;">OLS</span> ($N_{\mathrm{eff}} = 17.9$, Fieller $g = 0.05$).
                 </td>
               </tr>
               <tr>
@@ -303,7 +303,7 @@
               <tr>
                 <td><strong>Compute Execution Time &amp; Sampling Depth</strong></td>
                 <td>
-                  <strong>100,000,000 states</strong>
+                  <strong>250,000,000 states</strong>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">MCMC sampling iterations</div>
                 </td>
                 <td>
@@ -334,14 +334,14 @@
     <section class="content-card">
       <h2 class="content-card-title">Suchard / Dudas Extended Time-Varying Models Suite</h2>
       <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-        ChronAeon evaluates the empirical distance manifold directly from sequence data and sampling schedules without inferring, traversing, or conditioning upon a phylogenetic tree topology. Active clock model selected: <span class="badge badge-neutral" style="font-weight: 700;">PGLS</span>.
+        ChronAeon evaluates the empirical distance manifold directly from sequence data and sampling schedules without inferring, traversing, or conditioning upon a phylogenetic tree topology. Active clock model selected: <span class="badge badge-neutral" style="font-weight: 700;">OLS</span>.
       </p>
 
       <table class="data-table" style="font-size: 0.88rem;">
         <tbody>
           <tr>
             <td style="width: 240px; font-weight: 600;">Selected Active Model</td>
-            <td><span class="badge badge-neutral"><strong>PGLS</strong></span> (Arbitrated via Bartlett/Kish $N_{\mathrm{eff}}$ and exact Fieller inversion)</td>
+            <td><span class="badge badge-neutral"><strong>OLS</strong></span> (Arbitrated via Bartlett/Kish $N_{\mathrm{eff}}$ and exact Fieller inversion)</td>
           </tr>
           <tr>
             <td style="font-weight: 600;">Lineage Sample Size ($N_{\mathrm{eff}}$)</td>
@@ -349,7 +349,7 @@
           </tr>
           <tr>
             <td style="font-weight: 600;">Fieller Ratio Test Statistic ($g$)</td>
-            <td class="code-mono">1.00</td>
+            <td class="code-mono">0.05</td>
           </tr>
           <tr>
             <td style="font-weight: 600;">Leave-One-Out Cross-Validation (LOOCV)</td>

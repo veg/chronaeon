@@ -93,7 +93,7 @@
       </div>
       <div class="scorecard-card">
         <div class="scorecard-label">BEAST Sampling Depth</div>
-        <div class="scorecard-value">50,000,000 states</div>
+        <div class="scorecard-value">100,000,000 states</div>
         <div class="scorecard-meta">MCMC Iterations</div>
       </div>
       <div class="scorecard-card">
@@ -190,7 +190,7 @@
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem;">
           <div style="display: flex; align-items: center; gap: 0.6rem;">
             <span class="badge badge-concordant">CONCORDANT</span>
-            <span style="font-weight: 700; font-size: 0.88rem; color: #15803d;">Direct Concordance with Published BEAST Posterior</span>
+            <span style="font-weight: 700; font-size: 0.88rem; color: #15803d;">Direct Interval Concordance with BEAST Posterior</span>
           </div>
           <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">BEAST: 2014.20 CE &bull; ChronAeon: 2014.30 CE</span>
         </div>
@@ -275,7 +275,7 @@
                 <td><strong>Rate Heterogeneity &amp; Lineage Structure</strong></td>
                 <td>
                   Continuous branch rate distributions (Uncorrelated Lognormal UCLD or Exponential UCED prior) or strict clock assumption.
-                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Prior: GTR + Gamma, Uncorrelated Lognormal Relaxed Clock (UCLD), Nonparametric Skygrid Coalescent</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Prior: HKY + Gamma, Uncorrelated Lognormal Relaxed Clock (UCLD), Bayesian Skygrid Coalescent</div>
                 </td>
                 <td>
                   <strong>AutoClock Spectral Partitioning</strong>: normalized graph Laplacian $L_{\mathrm{sym}}$ identifies <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.72rem;">K* = 2</span> distinct evolutionary communities with within-lineage rates $\mu_k$.
@@ -303,7 +303,7 @@
               <tr>
                 <td><strong>Compute Execution Time &amp; Sampling Depth</strong></td>
                 <td>
-                  <strong>50,000,000 states</strong>
+                  <strong>100,000,000 states</strong>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">MCMC sampling iterations</div>
                 </td>
                 <td>
