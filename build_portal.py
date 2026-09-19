@@ -164,7 +164,9 @@ def sanitize_report_text(txt):
     return res
 
 def inspect_beast_xml(study_path, pdata=None):
-    xml_path = os.path.join(study_path, 'beast_config.xml.gz')
+    xml_path = os.path.join(study_path, 'beast.xml.gz')
+    if not os.path.exists(xml_path):
+        xml_path = os.path.join(study_path, 'beast_config.xml.gz')
     info = {}
     if os.path.exists(xml_path):
         try:
@@ -1215,7 +1217,7 @@ def harvest_study(study_id, idx):
     if not outliers:
         outliers = ddata.get('outliers', [])
 
-    repro_cmd = f"python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv --nonlinear-clocks -o chronaeon_dating.json -c chronaeon_dating.csv"
+    repro_cmd = f"python3 -m chronaeon.cli date --beast beast.xml.gz --loocv --nonlinear-clocks -o chronaeon_dating.json -c chronaeon_dating.csv"
 
     # Narrative extraction
     default_narrative = f"Empirical evaluation of {pathogen} ({locus}) based on {short_citation}. Tree-free continuous sequence manifolds infer molecular clock dynamics and evaluate temporal concordance against published Bayesian MCMC baselines."
@@ -1349,7 +1351,7 @@ def generate_index_html(records):
             citation_html = html.escape(r['citation'])
 
         # BEAST XML download badge
-        xml_badge_html = f'<a href="data/{r["study_id"]}/beast_config.xml.gz" download class="beast-xml-badge" onclick="event.stopPropagation();" title="Download BEAST MCMC XML configuration (compressed)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> XML (.gz) &darr;</a>'
+        xml_badge_html = f'<a href="data/{r["study_id"]}/beast.xml.gz" download class="beast-xml-badge" onclick="event.stopPropagation();" title="Download BEAST MCMC XML configuration (compressed)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> XML (.gz) &darr;</a>'
 
         row = f"""            <tr data-taxonomy="{html.escape(r['taxonomy'])}" data-clock="{clock_attr}" data-concordance="{concordance_attr}" onclick="window.location.href='studies/{r['study_id']}/index.html'" style="cursor: pointer;">
               <td class="code-mono" style="color: var(--text-muted);">{r['index']:02d}</td>
@@ -2086,15 +2088,15 @@ def generate_study_page(rec, prev_rec, next_rec):
               <tr>
                 <td><strong>Reproducibility &amp; Artifact Access</strong></td>
                 <td>
-                  <a href="../../data/{rec['study_id']}/beast_config.xml.gz" download class="beast-xml-badge" style="font-size: 0.75rem; text-decoration: none;">
+                  <a href="../../data/{rec['study_id']}/beast.xml.gz" download class="beast-xml-badge" style="font-size: 0.75rem; text-decoration: none;">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     BEAST XML (.gz) &darr;
                   </a>
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem;">{pid_links_html}</div>
                 </td>
                 <td>
-                  <code style="font-size: 0.78rem; display: inline-block; padding: 0.2rem 0.4rem; background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 4px;">python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv</code>
-                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem;">Deterministic, instantaneous CLI reproduction from raw alignment.</div>
+                  <code style="font-size: 0.78rem; display: inline-block; padding: 0.2rem 0.4rem; background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 4px;">python3 -m chronaeon.cli date --beast beast.xml.gz --loocv</code>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem;">Deterministic, instantaneous CLI reproduction directly from shipped BEAST archive.</div>
                 </td>
               </tr>
             </tbody>
@@ -2185,7 +2187,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       <nav class="nav-links">
         <a href="../../index.html">&larr; Master Compendium</a>
         {header_paper_link}
-        <a href="../../data/{rec['study_id']}/beast_config.xml.gz" download style="color: #059669; font-weight: 600;">BEAST XML (.gz) &darr;</a>
+        <a href="../../data/{rec['study_id']}/beast.xml.gz" download style="color: #059669; font-weight: 600;">BEAST XML (.gz) &darr;</a>
       </nav>
     </div>
   </header>
@@ -2217,7 +2219,7 @@ def generate_study_page(rec, prev_rec, next_rec):
         <span class="badge badge-neutral">Active Model: {rec['chronaeon_active_model']}</span>
         <span class="badge {st_class}">{rec['concordance_pill']}</span>
         {doi_pill}
-        <a href="../../data/{rec['study_id']}/beast_config.xml.gz" download class="badge badge-neutral" style="color: #059669; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+        <a href="../../data/{rec['study_id']}/beast.xml.gz" download class="badge badge-neutral" style="color: #059669; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           BEAST XML (.gz) &darr;
         </a>
@@ -2312,7 +2314,7 @@ def generate_study_page(rec, prev_rec, next_rec):
         <button class="copy-btn" data-target="cli-code-{rec['index']}">Copy Command</button>
       </div>
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-        Execute the exact ChronAeon pipeline directly from raw multi-sequence FASTA alignments and dates using the CLI:
+        Execute the exact ChronAeon pipeline directly from the shipped BEAST XML archive using the CLI:
       </p>
       <div class="terminal-box">
         <div class="terminal-header">
@@ -2324,8 +2326,7 @@ def generate_study_page(rec, prev_rec, next_rec):
           <span>bash &mdash; chronaeon</span>
         </div>
         <pre class="terminal-code" id="cli-code-{rec['index']}">python3 -m chronaeon.cli date \\
-  -a alignment.fasta \\
-  -d dates.csv \\
+  --beast beast.xml.gz \\
   --loocv \\
   --nonlinear-clocks \\
   -o chronaeon_dating.json \\
@@ -2574,12 +2575,16 @@ def copy_beast_xmls(records):
     for r in records:
         study_id = r['study_id']
         src_xml = os.path.join(BENCHMARK_DIR, study_id, "beast_config.xml.gz")
+        if not os.path.exists(src_xml):
+            src_xml = os.path.join(BENCHMARK_DIR, study_id, "beast.xml.gz")
         if os.path.exists(src_xml):
             target_study_dir = os.path.join(DATA_DIR, study_id)
             os.makedirs(target_study_dir, exist_ok=True)
             dst1 = os.path.join(target_study_dir, "beast_config.xml.gz")
+            dst_beast = os.path.join(target_study_dir, "beast.xml.gz")
             dst2 = os.path.join(DATA_DIR, f"{study_id}.xml.gz")
             shutil.copy2(src_xml, dst1)
+            shutil.copy2(src_xml, dst_beast)
             shutil.copy2(src_xml, dst2)
             copied += 1
     print(f"[OK] Verified and copied {copied} compressed BEAST XML archives to {DATA_DIR}")
@@ -2693,7 +2698,7 @@ cronaeon_bench/
 │   ├── nextstrain/index.html      # NextStrain Auspice streaming benchmark dossier
 │   └── bvbrc/index.html           # BV-BRC 10k-50k genomes sieve & multi-clock dossier
 ├── data/                          # Complete primary data & reproducibility artifacts
-│   ├── <study_id>/beast_config.xml.gz      # Author-deposited compressed BEAST MCMC XMLs
+│   ├── <study_id>/beast.xml.gz            # Author-deposited compressed BEAST MCMC XMLs
 │   ├── surveillance_nextstrain_reproducibility.tar.gz
 │   └── surveillance_bvbrc_reproducibility.tar.gz
 ├── assets/
@@ -2716,11 +2721,10 @@ cronaeon_bench/
 Complete, deterministic replication instructions are specified in [`AGENT.MD`](AGENT.MD).
 
 ### Quickstart: Single-Cohort Dating & LOOCV
-To calibrate any empirical alignment from scratch:
+To calibrate any empirical alignment directly from the shipped BEAST XML archive:
 ```bash
 python3 -m chronaeon.cli date \\
-  -a alignment.fasta \\
-  -d dates.csv \\
+  --beast beast.xml.gz \\
   --loocv \\
   --nonlinear-clocks \\
   -o chronaeon_dating.json \\
@@ -2728,11 +2732,10 @@ python3 -m chronaeon.cli date \\
 ```
 
 ### Quickstart: AutoClock Community Deconvolution
-To deconvolve multi-clock rate heterogeneity:
+To deconvolve multi-clock rate heterogeneity directly from the shipped BEAST XML archive:
 ```bash
 python3 -m chronaeon.cli autoclock \\
-  -a alignment.fasta \\
-  -d dates.csv \\
+  --beast beast.xml.gz \\
   -o autoclock_results.json
 ```
 

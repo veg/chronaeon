@@ -85,7 +85,7 @@ cronaeon_bench/
 │   ├── nextstrain/index.html      # NextStrain Auspice streaming benchmark dossier
 │   └── bvbrc/index.html           # BV-BRC 10k-50k genomes sieve & multi-clock dossier
 ├── data/                          # Complete primary data & reproducibility artifacts
-│   ├── <study_id>/beast_config.xml.gz      # Author-deposited compressed BEAST MCMC XMLs
+│   ├── <study_id>/beast.xml.gz            # Author-deposited compressed BEAST MCMC XMLs
 │   ├── surveillance_nextstrain_reproducibility.tar.gz
 │   └── surveillance_bvbrc_reproducibility.tar.gz
 ├── assets/
@@ -149,11 +149,10 @@ cronaeon_bench/
 Complete, deterministic replication instructions are specified in [`AGENT.MD`](AGENT.MD).
 
 ### Quickstart: Single-Cohort Dating & LOOCV
-To calibrate any empirical alignment from scratch:
+To calibrate any empirical alignment directly from the shipped BEAST XML archive:
 ```bash
 python3 -m chronaeon.cli date \
-  -a alignment.fasta \
-  -d dates.csv \
+  --beast beast.xml.gz \
   --loocv \
   --nonlinear-clocks \
   -o chronaeon_dating.json \
@@ -161,11 +160,10 @@ python3 -m chronaeon.cli date \
 ```
 
 ### Quickstart: AutoClock Community Deconvolution
-To deconvolve multi-clock rate heterogeneity:
+To deconvolve multi-clock rate heterogeneity directly from the shipped BEAST XML archive:
 ```bash
 python3 -m chronaeon.cli autoclock \
-  -a alignment.fasta \
-  -d dates.csv \
+  --beast beast.xml.gz \
   -o autoclock_results.json
 ```
 

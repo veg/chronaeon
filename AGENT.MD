@@ -14,7 +14,7 @@ This document provides complete, deterministic instructions for an autonomous AI
 2. **Zero Simplex Imputation & Zero Synthetic Base-Filling**:
    All sequences are harvested directly from author-deposited repositories (Dryad, GitHub, Zenodo, ENA). All native ambiguous characters, gaps, and IUPAC ambiguity codes are strictly preserved.
 3. **Exact Alignment Parity with Published BEAST Benchmarks**:
-   Every empirical cohort corresponds 100% identically to the published author BEAST 1.x / 2.x XML configuration archive (`beast_config.xml.gz`).
+   Every empirical cohort corresponds 100% identically to the published author BEAST 1.x / 2.x XML configuration archive (`beast.xml.gz` / `beast_config.xml.gz`).
 4. **Deterministic Reproducibility & Sub-Minute Execution**:
    Every ChronAeon and AutoClock execution runs deterministically in 0.5 to 314 seconds on commodity hardware (Apple Silicon MPS or single CPU core), bypassing the stochastic Markov chain Monte Carlo state sampling on bifurcating trees required by traditional Bayesian packages.
 
@@ -60,7 +60,7 @@ print(f'[OK] ChronAeon module imported successfully. Active acceleration device:
 │   │   ├── alignment.fasta                 # Exact author multi-sequence FASTA
 │   │   ├── dates.csv                       # Normalized decimal sampling dates (e.g. 2014.521)
 │   │   ├── DATA_PROVENANCE.json            # Literature DOI, PMID, PMCID, and BEAST configuration
-│   │   ├── beast_config.xml.gz             # Exact compressed author BEAST XML
+│   │   ├── beast.xml.gz                    # Exact compressed author BEAST XML (also beast_config.xml.gz)
 │   │   ├── chronaeon_dating.json           # [Generated] Single-clock calibration & LOOCV
 │   │   ├── chronaeon_dating.csv            # [Generated] Per-taxon residuals and studentized Z
 │   │   ├── autoclock_results.json          # [Generated] AutoClock spectral deconvolution
@@ -78,7 +78,7 @@ print(f'[OK] ChronAeon module imported successfully. Active acceleration device:
 │   │   └── figures/<study_id>/             # Standardized 4-panel diagnostic figures
 │   │       └── chronaeon_diagnostics.png   # Panels A, B, C (Alluvial), D (Streamgraph)
 │   ├── data/<study_id>/                    # Downloadable compressed BEAST XML archives
-│   │   └── beast_config.xml.gz
+│   │   └── beast.xml.gz                    # Shipped author BEAST XML (also beast_config.xml.gz)
 │   └── studies/<study_id>/                 # 42 individual publication study dossiers
 │       └── index.html                      # Comprehensive study evaluation dossier
 └── scratch/                                # Build engines and authoritative curation metadata
@@ -92,19 +92,19 @@ print(f'[OK] ChronAeon module imported successfully. Active acceleration device:
 
 ### Step 1: Single-Cohort ChronAeon Dating & LOOCV Evaluation
 
-For any target cohort `<study_dir>` in `benchmark-100/`:
+For any target cohort `<study_dir>` in `benchmark-100/` or using shipped portal data:
 ```bash
 cd ./benchmark-100/<study_dir>
 
 python3 -m chronaeon.cli date \
-  -a alignment.fasta \
-  -d dates.csv \
+  --beast beast.xml.gz \
   --loocv \
   --nonlinear-clocks \
   -o chronaeon_dating.json \
   -c chronaeon_dating.csv \
   2>&1 | tee chronaeon_dating.log
 ```
+*(Note: `--beast beast.xml.gz` directly ingests sequence matrices and collection dates from the compressed XML archive. Alternatively, `-a alignment.fasta -d dates.csv` can be supplied if raw alignments and date files are used.)*
 
 #### What This Evaluates:
 1. **Root-to-Tip Geometric Manifold Regression**:
@@ -125,13 +125,12 @@ python3 -m chronaeon.cli date \
 
 ### Step 2: AutoClock Unsupervised Multi-Rate Community Deconvolution
 
-For any target cohort `<study_dir>` in `benchmark-100/`:
+For any target cohort `<study_dir>` in `benchmark-100/` or using shipped portal data:
 ```bash
 cd ./benchmark-100/<study_dir>
 
 python3 -m chronaeon.cli autoclock \
-  -a alignment.fasta \
-  -d dates.csv \
+  --beast beast.xml.gz \
   -o autoclock_results.json \
   2>&1 | tee chronaeon_autoclock.log
 ```
@@ -299,7 +298,7 @@ python3 cronaeon_bench/build_portal.py
    - Dimension 7: Compute Execution Time & Sampling Depth (10M–1,000M MCMC states vs seconds on Apple Silicon / CPU)
    - Dimension 8: Reproducibility & Artifact Access (Downloadable `.xml.gz` vs CLI one-liner)
 5. **BEAST XML Archive Provisioning**:
-   Copies compressed author BEAST XML files (`beast_config.xml.gz`) into `cronaeon_bench/data/<study_id>/` and updates all download buttons.
+   Copies compressed author BEAST XML files (`beast.xml.gz` and `beast_config.xml.gz`) into `cronaeon_bench/data/<study_id>/` and updates all download buttons.
 6. **Master Compendium Index (`index.html`)**:
    Builds the searchable, filterable master compendium table, taxonomy filter pills (Negative-Sense RNA, Positive-Sense RNA, Retroviruses, DNA Viruses, Bacteria & Ancient DNA), clock model pills (Linear OLS, Attention PGLS, Restricted Natural Spline), search bar, global scorecards, and interactive client-side SVG concordance scatter plot.
 
@@ -362,9 +361,11 @@ for sid in study_dirs:
         errors.append(f"Figure file suspiciously small ({os.path.getsize(fig_path)} bytes) for {sid}")
 
     # 3. Check compressed BEAST XML archive
-    xml_path = os.path.join(DATA_DIR, sid, "beast_config.xml.gz")
+    xml_path = os.path.join(DATA_DIR, sid, "beast.xml.gz")
     if not os.path.exists(xml_path):
-        errors.append(f"Missing beast_config.xml.gz for {sid}")
+        xml_path = os.path.join(DATA_DIR, sid, "beast_config.xml.gz")
+    if not os.path.exists(xml_path):
+        errors.append(f"Missing beast.xml.gz for {sid}")
 
 # Check root index.html
 root_index = os.path.join(PORTAL_DIR, "index.html")

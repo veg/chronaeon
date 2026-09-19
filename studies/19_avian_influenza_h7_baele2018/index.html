@@ -37,7 +37,7 @@
       <nav class="nav-links">
         <a href="../../index.html">&larr; Master Compendium</a>
         <a href="https://doi.org/10.1093/molbev/msad242" target="_blank" rel="noopener">Primary Paper (DOI) &nearr;</a>
-        <a href="../../data/19_avian_influenza_h7_baele2018/beast_config.xml.gz" download style="color: #059669; font-weight: 600;">BEAST XML (.gz) &darr;</a>
+        <a href="../../data/19_avian_influenza_h7_baele2018/beast.xml.gz" download style="color: #059669; font-weight: 600;">BEAST XML (.gz) &darr;</a>
       </nav>
     </div>
   </header>
@@ -69,7 +69,7 @@
         <span class="badge badge-neutral">Active Model: PGLS</span>
         <span class="badge badge-stem-crown">STEM VS CROWN</span>
         <a href="https://doi.org/10.1093/molbev/msad242" target="_blank" rel="noopener" class="badge badge-neutral" style="color: var(--primary); font-weight: 600; text-decoration: none;">DOI: 10.1093/molbev/msad242 &nearr;</a>
-        <a href="../../data/19_avian_influenza_h7_baele2018/beast_config.xml.gz" download class="badge badge-neutral" style="color: #059669; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+        <a href="../../data/19_avian_influenza_h7_baele2018/beast.xml.gz" download class="badge badge-neutral" style="color: #059669; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           BEAST XML (.gz) &darr;
         </a>
@@ -326,15 +326,15 @@
               <tr>
                 <td><strong>Reproducibility &amp; Artifact Access</strong></td>
                 <td>
-                  <a href="../../data/19_avian_influenza_h7_baele2018/beast_config.xml.gz" download class="beast-xml-badge" style="font-size: 0.75rem; text-decoration: none;">
+                  <a href="../../data/19_avian_influenza_h7_baele2018/beast.xml.gz" download class="beast-xml-badge" style="font-size: 0.75rem; text-decoration: none;">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     BEAST XML (.gz) &darr;
                   </a>
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem;">DOI: <a href="https://doi.org/10.1093/molbev/msad242" target="_blank" rel="noopener" class="paper-link"><code>10.1093/molbev/msad242</code> &nearr;</a> &bull; PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/37950885/" target="_blank" rel="noopener" class="paper-link"><code>37950885</code> &nearr;</a> &bull; PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10665039/" target="_blank" rel="noopener" class="paper-link"><code>PMC10665039</code> &nearr;</a></div>
                 </td>
                 <td>
-                  <code style="font-size: 0.78rem; display: inline-block; padding: 0.2rem 0.4rem; background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 4px;">python3 -m chronaeon.cli date -a alignment.fasta -d dates.csv --loocv</code>
-                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem;">Deterministic, instantaneous CLI reproduction from raw alignment.</div>
+                  <code style="font-size: 0.78rem; display: inline-block; padding: 0.2rem 0.4rem; background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 4px;">python3 -m chronaeon.cli date --beast beast.xml.gz --loocv</code>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem;">Deterministic, instantaneous CLI reproduction directly from shipped BEAST archive.</div>
                 </td>
               </tr>
             </tbody>
@@ -502,7 +502,7 @@
         <button class="copy-btn" data-target="cli-code-20">Copy Command</button>
       </div>
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-        Execute the exact ChronAeon pipeline directly from raw multi-sequence FASTA alignments and dates using the CLI:
+        Execute the exact ChronAeon pipeline directly from the shipped BEAST XML archive using the CLI:
       </p>
       <div class="terminal-box">
         <div class="terminal-header">
@@ -514,8 +514,7 @@
           <span>bash &mdash; chronaeon</span>
         </div>
         <pre class="terminal-code" id="cli-code-20">python3 -m chronaeon.cli date \
-  -a alignment.fasta \
-  -d dates.csv \
+  --beast beast.xml.gz \
   --loocv \
   --nonlinear-clocks \
   -o chronaeon_dating.json \
