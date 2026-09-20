@@ -1403,6 +1403,65 @@ html {
   padding: 0.5rem 0.25rem 0 0.25rem;
 }
 
+/* Community Explainer Grid */
+.rams-community-explainer {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.rams-community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.rams-comm-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+}
+
+.rams-comm-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+
+.rams-comm-header strong {
+  font-weight: 600;
+}
+
+.rams-comm-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dot-blue { background: #2563eb; }
+.dot-green { background: #059669; }
+.dot-amber { background: #d97706; }
+
+.rams-comm-meta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.rams-comm-card p {
+  font-size: 0.79rem;
+  line-height: 1.45;
+  color: #475569;
+  margin: 0;
+}
+
 /* Specifications Table */
 .rams-specs-table {
   border-top: 1px solid #e5e5e5;

@@ -162,9 +162,9 @@ for i in range(N):
 # Colors and labels for communities
 COMM_COLORS = ['#2563eb', '#059669', '#d97706']
 COMM_NAMES = [
-    'Virginia Epicenter (N=10, μ=2.20e-4)',
-    'Northern Appalachian (N=23, μ=1.73e-4)',
-    'Western PA / Ohio Frontier (N=14, μ=2.90e-4)'
+    'Central Mid-Atlantic (N=10, MD/PA/NJ)',
+    'Northeast Expansion Wave (N=23, NY/NE/OH)',
+    'Virginia Founder Epicenter (N=14, VA/WV/NC)'
 ]
 
 # Create Figure: Dieter Rams Style (Minimalist, clean, elegant)
@@ -226,25 +226,24 @@ ax2 = fig.add_subplot(gs[1])
 ax2.set_facecolor('#fafafa')
 ax2.ticklabel_format(useOffset=False, style='plain')
 
-# Plot points and regression lines per community
-comm_info = ac.get('communities', {})
+# Fit empirical regression lines through each community's observed points
+COMM_SHORT_NAMES = ['Central Mid-Atlantic', 'Northeast Wave', 'Virginia Epicenter']
 for c in range(3):
     mask = (comms == c)
     col = COMM_COLORS[c]
     if np.any(mask):
-        ax2.scatter(dates[mask], dists[mask], color=col, s=36, alpha=0.85,
+        ax2.scatter(dates[mask], dists[mask], color=col, s=38, alpha=0.85,
                     edgecolors='#ffffff', lw=0.5, zorder=4)
-        c_str = str(c)
-        if c_str in comm_info:
-            c_data = comm_info[c_str]
-            c_mu = c_data.get('calibrated_rate') or c_data.get('pgls', {}).get('mu') or c_data.get('ols', {}).get('mu', 0.0)
-            c_tmrca = c_data.get('calibrated_tmrca') or c_data.get('pgls', {}).get('t_mrca') or c_data.get('ols', {}).get('t_mrca', t_anchor)
-            t_reg = np.linspace(min(dates[mask]) - 1.5, max(dates[mask]) + 0.5, 60)
-            d_reg = np.maximum(0, c_mu * (t_reg - c_tmrca))
-            ax2.plot(t_reg, d_reg, color=col, lw=2.2, zorder=5,
-                     label=f'Wave {c}: $\\mu = {c_mu:.2e}$ subs/site/yr')
+        c_dates = dates[mask]
+        c_dists = dists[mask]
+        slope, intercept = np.polyfit(c_dates, c_dists, 1)
+        r2_c = np.corrcoef(c_dates, c_dists)[0, 1] ** 2
+        t_reg = np.linspace(min(c_dates) - 0.5, max(c_dates) + 0.5, 50)
+        d_reg = intercept + slope * t_reg
+        ax2.plot(t_reg, d_reg, color=col, lw=2.2, zorder=5,
+                 label=f'{COMM_SHORT_NAMES[c]}: $\\mu = {slope:.2e}$ ($R^2 = {r2_c:.2f}$)')
 
-# Global regression line
+# Global unpartitioned regression line anchored at founder root
 t_glob = np.linspace(t_anchor, max(dates) + 0.5, 100)
 d_glob = np.maximum(0, mu_est * (t_glob - t_anchor))
 ax2.plot(t_glob, d_glob, color='#64748b', lw=1.6, linestyle='--', zorder=3,
