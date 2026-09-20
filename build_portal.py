@@ -1463,7 +1463,7 @@ def generate_index_html(records):
             For decades, standard molecular clock tools like BEAST have required reconstructing the pathogen's genealogical tree and exploring millions of possible branching patterns using MCMC. During an ongoing epidemic with thousands of sequenced genomes, this tree search quickly becomes a computational bottleneck: analyses take days or weeks, forcing researchers to downsample their data and discard the majority of collected sequences.
           </p>
           <p>
-            ChronAeon reconsiders this premise: is a phylogenetic tree strictly necessary to read the molecular clock? Because temporal divergence is fundamentally captured by the accumulation of genetic differences from an ancestral origin, ChronAeon reconstructs an ancestral sequence profile and measures genetic distance directly across sampling dates using continuous distance geometry. By replacing combinatorial tree search with closed-form statistical estimation, ChronAeon computes substitution rates and origin dates across tens of thousands of genomes in seconds on a standard laptop—with certified parity to published Bayesian results.
+            ChronAeon reconsiders this premise: is a phylogenetic tree strictly necessary to read the molecular clock? Because temporal divergence is fundamentally captured by the accumulation of genetic differences from an ancestral origin, ChronAeon reconstructs an ancestral sequence profile and measures genetic distance directly across sampling dates using continuous distance geometry. By replacing combinatorial tree search with closed-form statistical estimation, ChronAeon computes substitution rates and origin dates rapidly, yielding estimates that closely align with published Bayesian models.
           </p>
           <p>
             When an outbreak involves multiple transmission waves, animal spillovers, or co-circulating variants mutating at different speeds, ChronAeon's spectral clustering algorithm automatically detects and isolates these distinct evolutionary tempos, without requiring pre-assigned lineages or prior metadata.
@@ -1504,7 +1504,7 @@ def generate_index_html(records):
           </div>
           <div class="rams-spec-row">
             <div class="rams-spec-label">Empirical Validation</div>
-            <div class="rams-spec-val">42 published empirical BEAST cohorts ({total_taxa:,} taxa; 1882–2026) with certified exact BEAST alignment parity, plus NextStrain (3,221 taxa) and BV-BRC (10,000 taxa) surveillance streams.</div>
+            <div class="rams-spec-val">42 published empirical BEAST cohorts ({total_taxa:,} taxa; 1882–2026) evaluated using original author alignments and dates, alongside NextStrain (3,221 taxa) and BV-BRC (10,000 taxa) surveillance datasets.</div>
           </div>
         </div>
       </div>
