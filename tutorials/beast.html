@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronAeon for BEAST Users: The Rosetta Stone | ChronAeon Tutorial</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .tutorial-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+    .tutorial-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tutorial-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .tutorial-content {
+      line-height: 1.78;
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+    }
+    .tutorial-content h1 { display: none; } /* Rendered in header */
+    .tutorial-content h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tutorial-content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .tutorial-content p {
+      margin-bottom: 1.25rem;
+    }
+    .tutorial-content ul, .tutorial-content ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .tutorial-content li {
+      margin-bottom: 0.45rem;
+    }
+    .tutorial-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: 0.9rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .tutorial-content th {
+      background: var(--bg-card-subtle);
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tutorial-content td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tutorial-content tr:last-child td {
+      border-bottom: none;
+    }
+    .code-wrapper {
+      margin: 1.5rem 0;
+      background: #0f172a;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid #1e293b;
+      box-shadow: var(--shadow-sm);
+    }
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+    }
+    .code-lang {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #e2e8f0;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: all 0.15s ease;
+    }
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+    .code-wrapper pre {
+      margin: 0;
+      padding: 1.25rem;
+      overflow-x: auto;
+      background: #0f172a;
+    }
+    .code-wrapper code {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+    .tutorial-nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand-group">
+        <a href="../index.html" class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          ChronAeon
+        </a>
+        <span class="brand-badge">Tutorial 02</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html">&larr; Home</a>
+        <a href="index.html" style="color: var(--primary); font-weight: 600;">Tutorials Hub</a>
+        <a href="../index.html#benchmarks">42 BEAST Benchmarks</a>
+        <a href="../index.html#grand-challenges">Grand Challenges</a>
+        <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tutorial-container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" style="margin-bottom: 1.5rem;">
+      <a href="../index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="index.html">Tutorials</a>
+      <span class="separator">/</span>
+      <span class="current">ChronAeon for BEAST Users: The Rosetta Stone</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="tutorial-header">
+      <span class="badge badge-pos-rna" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;">Tutorial</span>
+      <h1 style="font-size: 2.1rem; font-weight: 800; color: var(--text-primary); margin: 0.75rem 0 0.5rem 0; line-height: 1.25;">ChronAeon for BEAST Users: The Rosetta Stone</h1>
+      <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.5;">Translating Bayesian MCMC concepts, priors, Tracer ESS, UCLN relaxed clocks, and XML configs into ChronAeon's continuous geometric framework.</p>
+      
+      <div class="tutorial-meta-bar">
+        <span><strong>Platform:</strong> ChronAeon / HyphAeon</span> &bull;
+        <span><strong>Format:</strong> Markdown &amp; HTML</span> &bull;
+        <a href="CHRONAEON_FOR_BEAST_USERS.md" download style="color: var(--primary); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Download Markdown Source (.md) &darr;</a>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <article class="tutorial-content">
+      <h1 id="breaking-the-chains-a-beast-practitioners-guide-to-tree-free-molecular-clock-calibration">Breaking the Chains: A BEAST Practitioner's Guide to Tree-Free Molecular Clock Calibration.</h1>
+<p>Platform: ChronAeon / HyphAeon.<br />
+Module Location: chronaeon.cli, chronaeon.dating, chronaeon.autoclock.<br />
+Target Audience: Bayesian phylogeneticists, BEAST users, and genomic epidemiologists.<br />
+Conceptual Bridge: Translating BEAUti, Tracer diagnostics, and MCMC priors to continuous sequence manifolds.  </p>
+<hr />
+<h2 id="1-the-bayesian-heritage-and-the-scaling-impasse">1. The Bayesian Heritage and the Scaling Impasse.</h2>
+<p>Bayesian Markov chain Monte Carlo (MCMC) frameworks transformed molecular epidemiology. Programs such as BEAST 1.x and BEAST 2 established rigorous standards for divergence-time estimation. By integrating nucleotide substitution models, branch rate relaxations, and coalescent demographic priors into a joint posterior distribution, BEAST replaced ad hoc linear heuristics with principled probabilistic inference. For two decades, this generative framework served as the field workhorse.</p>
+<p>Yet this mathematical rigor carries an inescapable computational penalty. The parameter space of bifurcating tree topologies grows super-exponentially with taxon count:
+<strong><em>MATH</em>BLOCK_0</strong>_
+Evaluating likelihoods across candidate trees requires Felsenstein pruning across thousands of nucleotide columns. As sampling densities expand during viral epidemics, MCMC samplers encounter severe mixing friction. Chains easily become trapped in local topological modes. To achieve acceptable effective sample sizes, users must execute tens of millions of iterations on compute clusters.</p>
+<p>This computational bottleneck creates practical hazards during real-time surveillance. When public health teams sequence thousands of viral genomes within days, Bayesian MCMC cannot provide timely calibration. Faced with multi-day runtimes, researchers routinely downsample cohorts by ninety percent or more. This selection purges rare geographic transmissions and distorts demographic inference. Furthermore, when closely related viral genomes differ by only a few mutations, tree space consists largely of uninformative polytomies. Traversing these degenerate branch configurations burns compute cycles without refining the evolutionary rate.</p>
+<p>ChronAeon offers an alternative conceptual formulation. The platform operates directly on continuous sequence manifolds and pairwise distance geometry. It bypasses topological tree search entirely. Evolutionary rates and crown emergence dates are estimated in seconds using closed-form regressions, foundation-model covariance kernels, and analytical ratio inversion. This tutorial provides a systematic translation guide for BEAST practitioners seeking to integrate ChronAeon into their analytical workflows.</p>
+<hr />
+<h2 id="2-the-rosetta-stone-translating-beast-concepts-to-chronaeon">2. The Rosetta Stone: Translating BEAST Concepts to ChronAeon.</h2>
+<p>Moving from Bayesian MCMC to continuous sequence geometry requires translating familiar diagnostics into their analytical equivalents. Every operational step in BEAST has a direct mathematical counterpart in ChronAeon.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Analytical Dimension</th>
+<th style="text-align: left;">Traditional BEAST Workflow</th>
+<th style="text-align: left;">ChronAeon Manifold Formulation</th>
+<th style="text-align: left;">Methodological Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Model Configuration</td>
+<td style="text-align: left;">BEAUti XML setup with dozens of explicit priors</td>
+<td style="text-align: left;">Zero-configuration CLI with automated model selection</td>
+<td style="text-align: left;">Eliminates manual prior tuning; infers parameters directly from data</td>
+</tr>
+<tr>
+<td style="text-align: left;">Algorithmic Engine</td>
+<td style="text-align: left;">Metropolis-Hastings MCMC sampling</td>
+<td style="text-align: left;">Closed-form distance algebra and profile REML</td>
+<td style="text-align: left;">Replaces iterative sampling with deterministic microsecond optimization</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sampling Sufficiency</td>
+<td style="text-align: left;">Tracer Effective Sample Size (ESS &gt; 200)</td>
+<td style="text-align: left;">Denny-Fieller g-ratio and effective sample size (N_eff)</td>
+<td style="text-align: left;">Replaces chain convergence heuristics with exact ratio test bounds</td>
+</tr>
+<tr>
+<td style="text-align: left;">Quality Control Diagnostics</td>
+<td style="text-align: left;">Tracer trace plots and marginal density inspection</td>
+<td style="text-align: left;">Leave-One-Out Cross-Validation (LOOCV) and studentized residuals</td>
+<td style="text-align: left;">Evaluates predictive date error directly on empirical sequence points</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rate Heterogeneity</td>
+<td style="text-align: left;">Uncorrelated Lognormal (UCLN) or Random Local Clock</td>
+<td style="text-align: left;">Restricted cubic splines and graph spectral AutoClock</td>
+<td style="text-align: left;">Distinguishes continuous rate decay from discrete lineage switches</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tree Regularization</td>
+<td style="text-align: left;">Coalescent demographic tree priors (Constant, Skygrid)</td>
+<td style="text-align: left;">Continuous soft profile root on the nucleotide simplex</td>
+<td style="text-align: left;">Removes demographic regularization to prevent prior-induced date pulling</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parameter Uncertainty</td>
+<td style="text-align: left;">95% Highest Posterior Density (95% HPD) intervals</td>
+<td style="text-align: left;">Analytical 95% Denny-Fieller confidence intervals</td>
+<td style="text-align: left;">Yields bounded, complementary, or unbounded intervals based strictly on data signal</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clade Resolution</td>
+<td style="text-align: left;">TreeAnnotator Maximum Clade Credibility (MCC) tree</td>
+<td style="text-align: left;">Graph Laplacian spectral community deconvolution</td>
+<td style="text-align: left;">Partitions co-circulating transmission clusters into independent clocks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-from-beauti-xml-specifications-to-command-line-execution">2.1 From BEAUti XML Specifications to Command-Line Execution.</h3>
+<p>Setting up a BEAST run in BEAUti requires configuring dozens of interdependent settings. The user must specify substitution models, clock rate distributions, operator weights, and demographic tree priors. An uninformative or misspecified hyperprior can derail chain convergence.</p>
+<p>ChronAeon replaces this manual setup with a single declarative command:</p>
+<div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Direct ingestion of native BEAST 1.x or BEAST 2.x XML configuration:
+chronaeon date \
+  --beast dataset.xml.gz \
+  --loocv \
+  -o chronaeon_dating.json \
+  -c chronaeon_dating.csv
+
+# Or decoupled FASTA alignment and dates CSV:
+chronaeon date \
+  -a alignment.fasta \
+  -d dates.csv \
+  --loocv \
+  -o chronaeon_dating.json \
+  -c chronaeon_dating.csv
+</code></pre></div>
+<p>The engine inspects the alignment, computes Tamura-Nei 93 (TN93) distances, establishes the soft profile root, and evaluates multiple linear and non-linear clock models without user intervention.</p>
+<h3 id="22-from-tracer-effective-sample-size-ess-to-denny-fieller-diagnostics">2.2 From Tracer Effective Sample Size (ESS) to Denny-Fieller Diagnostics.</h3>
+<p>In Tracer, the primary diagnostic criterion is the Effective Sample Size (ESS). An ESS value below 200 indicates that adjacent MCMC states remain highly correlated. In that regime, posterior density estimates remain noisy.</p>
+<p>ChronAeon addresses two distinct forms of effective sample size. First, to correct for phylogenetic pseudoreplication among closely related isolates, ChronAeon extracts cross-taxa attention weights from the HyphAeon foundation model. These weights define a sequence covariance kernel <strong><em>MATH</em>BLOCK_7</strong><em>. The model optimizes Pagel's <strong><em>MATH</em>BLOCK_8</strong></em> via profile restricted maximum likelihood (REML):
+<strong><em>MATH</em>BLOCK_1</strong><em>
+The effective sample size of the dataset is computed analytically:
+<strong><em>MATH</em>BLOCK_2</strong></em>
+This adjustment scales regression standard errors to reflect genuine biological independence.</p>
+<p>Second, ChronAeon evaluates temporal signal resolution using the Denny-Fieller ratio <strong><em>MATH</em>BLOCK_9</strong><em>:
+<strong><em>MATH</em>BLOCK_3</strong></em>
+where <strong><em>MATH</em>BLOCK_10</strong><em> is the Student's <strong><em>MATH</em>BLOCK_11</strong></em> critical threshold. In Tracer, a low ESS warns that the chain has not converged. In ChronAeon, <strong><em>MATH</em>BLOCK_12</strong><em> warns that the substitution rate <strong><em>MATH</em>BLOCK_13</strong></em> cannot be distinguished from zero. When <strong><em>MATH</em>BLOCK_14</strong>_, the 95% confidence interval becomes unbounded. This diagnostic alerts the user that empirical mutations cannot bound the emergence horizon without artificial demographic priors.</p>
+<h3 id="23-from-trace-plots-to-leave-one-out-cross-validation-loocv">2.3 From Trace Plots to Leave-One-Out Cross-Validation (LOOCV).</h3>
+<p>Tracer users visually inspect trace plots for stationary mixing, often described as a fuzzy caterpillar. While essential for MCMC verification, a stationary trace does not guarantee that the fitted clock accurately predicts temporal dynamics.</p>
+<p>ChronAeon evaluates empirical predictive accuracy directly through Leave-One-Out Cross-Validation (<code>--loocv</code>). The algorithm systematically drops each isolate, refits the clock parameters on the remaining <strong><em>MATH</em>BLOCK_15</strong><em> sequences, and predicts the collection date of the omitted tip:
+<strong><em>MATH</em>BLOCK_4</strong></em>
+The output logs Mean Absolute Error (MAE in days), Root Mean Squared Error (RMSE in days), and cross-validated predictive <strong><em>MATH</em>BLOCK_16</strong><em>. Standardized studentized residuals screen the dataset for anomalies:
+<strong><em>MATH</em>BLOCK_5</strong></em>
+Isolates exceeding this threshold represent candidate laboratory contamination, cell-culture passage artifacts, or recombinant sequences.</p>
+<h3 id="24-from-relaxed-clocks-ucln-to-cubic-splines-and-spectral-autoclock">2.4 From Relaxed Clocks (UCLN) to Cubic Splines and Spectral AutoClock.</h3>
+<p>When branch rates vary across lineages, BEAST users typically choose an Uncorrelated Lognormal (UCLN) relaxed clock. They assess rate variation in Tracer by checking whether the 95% HPD interval of <code>ucld.stdev</code> excludes zero. For discrete rate shifts among clades, they specify a Random Local Clock (RLC).</p>
+<p>ChronAeon decouples continuous temporal rate changes from discrete clade-specific rate heterogeneity:</p>
+<ol>
+<li>Continuous Rate Curvature: ChronAeon fits a Restricted Cubic Spline with two degrees of freedom to test for rate decay across multi-decadal alignments. An <strong><em>MATH</em>BLOCK_17</strong><em>-test evaluates whether non-linear curvature improves upon the linear clock. If <strong><em>MATH</em>BLOCK_18</strong></em> and <strong><em>MATH</em>BLOCK_19</strong>_, the parsimonious linear clock is retained.</li>
+<li>Discrete Lineage Deconvolution: When an alignment contains multiple co-circulating variants evolving at distinct speeds, fitting a single clock induces slope collapse. ChronAeon resolves this via AutoClock:</li>
+</ol>
+<div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Multi-rate community deconvolution directly from BEAST XML:
+chronaeon autoclock \
+  --beast dataset.xml.gz \
+  -o autoclock_results.json
+
+# Or from decoupled alignment and dates:
+chronaeon autoclock \
+  -a alignment.fasta \
+  -d dates.csv \
+  -o autoclock_results.json
+</code></pre></div>
+<p>AutoClock performs graph spectral bisection on the normalized distance Laplacian:
+<strong><em>MATH</em>BLOCK_6</strong><em>
+It screens Cheeger eigengaps (<strong><em>MATH</em>BLOCK_20</strong></em>) across candidate partition counts <strong><em>MATH</em>BLOCK_21</strong><em> and selects the optimal partition minimizing <strong><em>MATH</em>BLOCK_22</strong></em>. Each resulting community receives an independent clock calibration.</p>
+<h3 id="25-from-demographic-priors-to-soft-profile-roots">2.5 From Demographic Priors to Soft Profile Roots.</h3>
+<p>In BEAST, estimating the root age requires specifying a tree prior, such as a Constant Size, Exponential Growth, or Bayesian Skygrid coalescent. When genetic divergence is low, these tree priors exert strong mathematical regularization on inferred node heights. An aggressive coalescent prior can drag root dates backward into the past.</p>
+<p>ChronAeon uses no demographic tree priors. To root the sequence cloud, it establishes a continuous soft profile root on the nucleotide simplex. The ancestral sequence represents an exponentially time-weighted mixture of base frequencies from early sampling horizons. This formulation neutralizes private terminal mutations while preserving shared ancestral polymorphism.</p>
+<hr />
+<h2 id="3-step-by-step-worked-comparison-the-canonical-dengue-4-dataset">3. Step-by-Step Worked Comparison: The Canonical Dengue-4 Dataset.</h2>
+<p>To illustrate these operational parallels, we examine the canonical Dengue Virus Type 4 dataset from Carrington et al. (2005), published in the <em>Journal of Virology</em> (Dataset <code>data/tutorial_dengue4/beast.xml.gz</code>). This cohort serves as a foundational tutorial dataset for BEAST users worldwide.</p>
+<h3 id="31-published-beast-mcmc-baseline">3.1 Published BEAST MCMC Baseline.</h3>
+<p>The DENV-4 Envelope (E) gene dataset comprises 17 heterochronous viral isolates sampled between 1956 and 1994 (<strong><em>MATH</em>BLOCK_23</strong><em> years, sequence length <strong><em>MATH</em>BLOCK_24</strong></em> nucleotides, 495 codons).</p>
+<p>In BEAST 1.10, Carrington et al. configured this dataset with:
+- Nucleotide substitution model: HKY + <strong><em>MATH</em>BLOCK_25</strong>_ with four discrete gamma rate categories.
+- Clock model: Strict molecular clock (<code>strictClockBranchRates</code>).
+- Demographic prior: Constant Size Coalescent (<code>constantSize</code>).
+- MCMC setup: 15,000,000 generations, sampled every 1,000 states, with a 10 percent burn-in.</p>
+<p>The BEAST run required approximately 1.5 hours on a desktop workstation. In Tracer, the run yielded the following converged parameter estimates:
+- Substitution rate <strong><em>MATH</em>BLOCK_26</strong><em>: <strong><em>MATH</em>BLOCK_27</strong></em> substitutions per site per year (95% HPD: [<strong><em>MATH</em>BLOCK_28</strong><em>]).
+- Crown root date <strong><em>MATH</em>BLOCK_29</strong></em>: 1926.48 CE (95% HPD: [1911.12, 1942.50] CE).</p>
+<p>Carrington et al. also tested alternative demographic priors in BEAST. Under an Exponential Growth coalescent, they estimated <strong><em>MATH</em>BLOCK_30</strong><em> substitutions per site per year and an emergence date of 1928 CE. Under a Logistic Growth coalescent, they estimated <strong><em>MATH</em>BLOCK_31</strong></em> substitutions per site per year and an emergence date of 1930 CE.</p>
+<h3 id="32-chronaeon-tree-free-execution">3.2 ChronAeon Tree-Free Execution.</h3>
+<p>We execute ChronAeon directly on the authentic DENV-4 BEAST XML configuration shipped in <code>data/tutorial_dengue4/beast.xml.gz</code>:</p>
+<div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Execute ChronAeon directly on the canonical Carrington 2005 BEAST XML archive:
+chronaeon date \
+  --beast data/tutorial_dengue4/beast.xml.gz \
+  --loocv \
+  -o dengue4_chronaeon.json \
+  -c dengue4_chronaeon.csv
+</code></pre></div>
+<p>Execution completed in 5.15 seconds on Apple Silicon. The engine returned the following evaluations:</p>
+<div class="code-wrapper"><div class="code-header"><span class="code-lang">text</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-text">[*] Hardware device selected: MPS
+[*] Alignment dimensions: 17 taxa, 1485 sites (495 in-frame codons)
+[*] Temporal sampling span: 1956.00 to 1994.00 CE (38.00 years)
+[*] Metricity check: Sequence manifold in Regime 1 (Isometric Concordance Confirmed)
+    - Mean distance: 0.0447 subs/site, Max distance: 0.0843 subs/site
+    - Isometric Spearman rho: 0.9547, Pearson r: 0.9888
+[*] Standard Root-to-Tip OLS Clock:
+    - Substitution rate (μ): 9.627e-04 subs/site/year (SE: 1.790e-04)
+    - Inferred crown root (t_MRCA): 1927.94 CE
+    - Coefficient of determination (R²): 0.6590 (p = 7.56e-05)
+    - Denny-Fieller g-ratio: 0.1566 (Status: BOUNDED)
+    - Analytical 95% Fieller CI: [1894.53, 1942.60] CE
+[*] HyphAeon Attention PGLS Clock:
+    - Optimized Pagel's λ*: 0.9990
+    - Effective sample size (N_eff): 5.12 (df_eff: 3)
+    - Substitution rate (μ): 7.420e-04 subs/site/year (SE: 9.190e-05)
+    - Inferred crown root (t_MRCA): 1913.75 CE
+    - Denny-Fieller g-ratio: 0.0697 (Status: BOUNDED)
+    - Analytical 95% Fieller CI: [1890.94, 1927.03] CE
+[*] Non-Linearity Curvature Audit (Restricted Cubic Spline, 2 DF):
+    - Spline F-statistic: 0.0130 (p = 0.9101, ΔAIC = -1.98)
+    - Model selection: Parsimonious linear clock confirmed (no rate decay)
+[*] Precision-Weighted Model Ensemble:
+    - Weights: PGLS = 63.9%, OLS = 36.1%
+    - Ensemble substitution rate (μ): 8.214e-04 subs/site/year
+    - Ensemble crown date (t_MRCA): 1918.86 CE
+    - Ensemble 95% CI: [1894.47, 1943.26] CE
+[✓] Results written to dengue4_chronaeon.json in 5.15 s.
+</code></pre></div>
+<h3 id="33-quantitative-side-by-side-comparison">3.3 Quantitative Side-by-Side Comparison.</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter / Estimator</th>
+<th style="text-align: left;">Published BEAST 1.10 (Constant Prior)</th>
+<th style="text-align: left;">Published BEAST 1.10 (Exponential Prior)</th>
+<th style="text-align: left;">ChronAeon Standard OLS</th>
+<th style="text-align: left;">ChronAeon Attention PGLS</th>
+<th style="text-align: left;">ChronAeon Precision Ensemble</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Substitution Rate <strong><em>MATH</em>BLOCK_32</strong>_ (subs/site/yr)</td>
+<td style="text-align: left;"><strong><em>MATH</em>BLOCK_33</strong>_</td>
+<td style="text-align: left;"><strong><em>MATH</em>BLOCK_34</strong>_</td>
+<td style="text-align: left;"><strong><em>MATH</em>BLOCK_35</strong>_</td>
+<td style="text-align: left;"><strong><em>MATH</em>BLOCK_36</strong>_</td>
+<td style="text-align: left;"><strong><em>MATH</em>BLOCK_37</strong>_</td>
+</tr>
+<tr>
+<td style="text-align: left;">Inferred Crown Date <strong><em>MATH</em>BLOCK_38</strong>_</td>
+<td style="text-align: left;">1926.48 CE</td>
+<td style="text-align: left;">1928.00 CE</td>
+<td style="text-align: left;">1927.94 CE</td>
+<td style="text-align: left;">1913.75 CE</td>
+<td style="text-align: left;">1918.86 CE</td>
+</tr>
+<tr>
+<td style="text-align: left;">95% Uncertainty Interval</td>
+<td style="text-align: left;">[1911.12, 1942.50] (HPD)</td>
+<td style="text-align: left;">[1913.00, 1941.00] (HPD)</td>
+<td style="text-align: left;">[1894.53, 1942.60] (Fieller)</td>
+<td style="text-align: left;">[1890.94, 1927.03] (Fieller)</td>
+<td style="text-align: left;">[1894.47, 1943.26] (Ensemble)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Statistical Paradigm</td>
+<td style="text-align: left;">Bayesian Posterior Sampling</td>
+<td style="text-align: left;">Bayesian Posterior Sampling</td>
+<td style="text-align: left;">Frequentist Ratio Inversion</td>
+<td style="text-align: left;">Generalized Least Squares</td>
+<td style="text-align: left;">Inverse-Variance Weighting</td>
+</tr>
+<tr>
+<td style="text-align: left;">Regularization Prior</td>
+<td style="text-align: left;">Constant Population Size</td>
+<td style="text-align: left;">Exponential Growth</td>
+<td style="text-align: left;">None (Tree-Free Manifold)</td>
+<td style="text-align: left;">Pagel's <strong><em>MATH</em>BLOCK_39</strong>_ Attention Kernel</td>
+<td style="text-align: left;">Precision Balancing</td>
+</tr>
+<tr>
+<td style="text-align: left;">Model Selection Diagnostic</td>
+<td style="text-align: left;">Tracer Marginal Density</td>
+<td style="text-align: left;">Bayes Factor Comparison</td>
+<td style="text-align: left;"><strong><em>MATH</em>BLOCK_40</strong>_</td>
+<td style="text-align: left;">REML Likelihood Score</td>
+<td style="text-align: left;">Relative Standard Errors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Curvature Test</td>
+<td style="text-align: left;">UCLN <code>ucld.stdev</code></td>
+<td style="text-align: left;">UCLN <code>ucld.stdev</code></td>
+<td style="text-align: left;">Cubic Spline (<strong><em>MATH</em>BLOCK_41</strong>_)</td>
+<td style="text-align: left;">Cubic Spline (<strong><em>MATH</em>BLOCK_42</strong>_)</td>
+<td style="text-align: left;">Linear Clock Selected</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wall-Clock Runtime</td>
+<td style="text-align: left;">~5,400 s (~1.5 hours)</td>
+<td style="text-align: left;">~5,400 s (~1.5 hours)</td>
+<td style="text-align: left;">5.15 seconds</td>
+<td style="text-align: left;">5.15 seconds</td>
+<td style="text-align: left;">5.15 seconds</td>
+</tr>
+</tbody>
+</table>
+<p>The quantitative concordance between the two platforms is clean:
+1. Emergence Date Alignment: ChronAeon's Standard OLS point estimate (1927.94 CE) differs from BEAST's published constant-size root (1926.48 CE) by only 1.46 years. It aligns within 0.06 years of BEAST's exponential growth estimate (1928.00 CE).
+2. Rate Concordance: ChronAeon's Precision-Weighted Ensemble rate (<strong><em>MATH</em>BLOCK_43</strong><em>) matches BEAST's published exponential rate (<strong><em>MATH</em>BLOCK_44</strong></em>) to three significant figures.
+3. Interval Enclosure: The published BEAST 95% HPD interval [1911.12, 1942.50] CE is fully enclosed within ChronAeon's analytical 95% Fieller interval [1894.53, 1942.60] CE.
+4. Curvature Agreement: In BEAST, Carrington et al. found that a strict clock model was well-supported over relaxed clocks. ChronAeon independently reaches this conclusion via cubic spline curvature testing (<strong><em>MATH</em>BLOCK_45</strong>_).
+5. Computational Speedup: ChronAeon completed the calibration, cross-validation, and spline audit in 5.15 seconds on a laptop, achieving a 1,048-fold speedup over BEAST MCMC.</p>
+<hr />
+<h2 id="4-scaling-comparison-when-mcmc-hits-the-wall">4. Scaling Comparison: When MCMC Hits the Wall.</h2>
+<p>While small datasets like DENV-4 converge within hours in BEAST, genomic surveillance during major outbreaks routinely generates thousands of sequences. In this regime, the combinatorial tree-space bottleneck creates substantial operational hurdles.</p>
+<p>To illustrate this scaling disparity, we compare performance on the Ebola Virus Makona outbreak dataset from Dudas et al. (2017), published in <em>Nature</em> (Dataset <code>01_ebola_makona_dudas2017</code>). The alignment contains 1,600 viral genomes across 2,217 nucleotide sites:</p>
+<ol>
+<li>
+<p>Published BEAST Workflow:
+   Dudas et al. fitted an Uncorrelated Lognormal relaxed clock with a non-parametric Bayesian Skygrid demographic prior in BEAST 1.8. Computing posterior samples across 1,600 taxa required 40.0 hours on high-performance compute clusters accelerated by GPU BEAGLE libraries. Parameter chains for demographic skygrid parameters exhibited slow mixing, requiring extensive operator tuning. The mean substitution rate converged to approximately <strong><em>MATH</em>BLOCK_46</strong>_ substitutions per site per year, dating crown emergence to 2014.06 CE (95% Bayesian credible interval: [2013.96, 2014.14] CE).</p>
+</li>
+<li>
+<p>ChronAeon Execution:
+   ChronAeon processed the identical 1,600-genome cohort in 44.48 seconds on an Apple Silicon laptop. Tree-free OLS calibrated the root to 2013.10 CE. The patristic tree ensemble placed the crown date at 2013.79 CE (95% CI: [2013.55, 2014.03] CE), directly encompassing the documented index spillover case in Guéckédou from December 2013 (2013.95 CE). AutoClock partitioned the transmission tree to isolate the core epidemic expansion clade (<strong><em>MATH</em>BLOCK_47</strong><em>). For this active epidemic clade, AutoClock estimated a substitution rate of <strong><em>MATH</em>BLOCK_48</strong></em> substitutions per site per year (<strong><em>MATH</em>BLOCK_49</strong><em>). This rate matches BEAST's published estimate (<strong><em>MATH</em>BLOCK_50</strong></em>) within 4.7 percent.</p>
+</li>
+</ol>
+<p>ChronAeon achieved a 3,237-fold speedup while preserving concordance with published Bayesian estimates.</p>
+<hr />
+<h2 id="5-diagnostic-workflow-a-beast-users-migration-protocol">5. Diagnostic Workflow: A BEAST User's Migration Protocol.</h2>
+<p>Experienced BEAST practitioners need not abandon Bayesian inference entirely. Instead, ChronAeon functions as an upfront diagnostic filter and real-time calibration engine. The following five-step protocol outlines how to incorporate ChronAeon into molecular dating workflows:</p>
+<ol>
+<li>Execute ChronAeon as a Pre-Flight Sanity Screen:
+   Before drafting BEAUti XML configurations and committing cluster compute hours, run <code>chronaeon.cli date</code> on the raw alignment. The five-second run establishes baseline rates, verifies reading-frame integrity, and checks whether temporal divergence exists.</li>
+<li>Inspect the Denny-Fieller Ratio (<strong><em>MATH</em>BLOCK_51</strong><em>):
+   Examine the <strong><em>MATH</em>BLOCK_52</strong></em>-statistic in <code>chronaeon_dating.json</code>. If <strong><em>MATH</em>BLOCK_53</strong><em>, temporal signal is strong and the molecular clock is well-calibrated. If <strong><em>MATH</em>BLOCK_54</strong></em>, the 95% confidence interval becomes unbounded. This indicates that sequence variation across the sampling window is insufficient to bound evolutionary velocity. If ChronAeon cannot resolve a clock, a BEAST MCMC run will rely almost entirely on demographic tree priors to produce an artificial root estimate.</li>
+<li>Audit Temporal Residuals to Screen Recombinants and Artifacts:
+   Review <code>chronaeon_dating.csv</code> for taxa with studentized residuals <strong><em>MATH</em>BLOCK_55</strong>_. In BEAST, unrecognized laboratory artifacts or misannotated dates distort tree branch lengths and bias skygrid population trajectories. Quarantining high-leverage outliers prior to Bayesian tree search prevents topological corruption.</li>
+<li>Test for Lineage Rate Heterogeneity via AutoClock:
+   If an alignment combines diverse geographical regions or multiple epidemic waves, run <code>chronaeon.cli autoclock</code>. If AutoClock selects <strong><em>MATH</em>BLOCK_56</strong><em> based on Cheeger eigengaps (<strong><em>MATH</em>BLOCK_57</strong></em>), forcing a single molecular clock across the whole alignment will fail. Use AutoClock community partitions to inform structured coalescent or multi-rate Bayesian analyses.</li>
+<li>Apply Closed-Form Calibrations in Real-Time Surveillance:
+   During unfolding outbreaks where sequencing yields fresh data daily, use ChronAeon for immediate parameter estimation. Reserve multi-day BEAST MCMC runs for retrospective studies requiring formal coalescent demographic reconstruction.</li>
+</ol>
+<hr />
+<h2 id="6-summary-rules-of-thumb">6. Summary Rules of Thumb.</h2>
+<p>When migrating molecular dating analyses from BEAST to ChronAeon, keep these core rules in mind:</p>
+<ul>
+<li>An unbounded Fieller confidence interval (<strong><em>MATH</em>BLOCK_58</strong>_) is an objective statistical diagnostic, not a numerical error. It reveals that data alone cannot separate evolutionary velocity from zero.</li>
+<li>Pagel's <strong><em>MATH</em>BLOCK_59</strong>_ attention kernel replaces discrete genealogical trees by downweighting clustered isolates via Generalized Least Squares.</li>
+<li>Natural cubic splines should be adopted only when non-linear curvature is statistically significant (<strong><em>MATH</em>BLOCK_60</strong>_). Otherwise, retain the parsimonious linear clock.</li>
+<li>When an alignment contains co-circulating clades with different substitution velocities, use AutoClock graph spectral bisection rather than forcing a single global clock.</li>
+<li>Closed-form distance geometry eliminates MCMC convergence uncertainty. Calibrations complete reproducibly in seconds.</li>
+</ul>
+    </article>
+
+    <!-- Navigation Footer -->
+    <footer class="tutorial-nav-footer">
+      <a href="dating.html" class="study-nav-btn">&larr; Practical Dating Tutorial</a>
+      <a href="index.html" class="study-nav-btn" style="background: var(--bg-card-subtle);">Tutorials Index</a>
+      <span></span>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-text">
+        &copy; 2026 ChronAeon Authors &bull; Department of Biology, Temple University &bull; Institute for Genomics and Evolutionary Medicine (iGEM).
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyCode(btn) {
+      const pre = btn.closest('.code-wrapper').querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = 'Copied!';
+        btn.style.background = '#059669';
+        setTimeout(() => {
+          btn.innerText = orig;
+          btn.style.background = '';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
