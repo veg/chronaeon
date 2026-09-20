@@ -22,401 +22,368 @@
 <body>
 
   <!-- Site Navigation -->
-  <header class="site-header">
-    <div class="nav-container">
-      <div class="brand-group">
-        <a href="index.html" class="brand-logo" style="text-decoration: none;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          ChronAeon
-        </a>
-        <span class="brand-badge">Tree-Free Phylodynamics</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#foundations">Foundations</a>
-        <a href="tutorials/index.html" style="color: var(--primary); font-weight: 600;">Tutorials &nearr;</a>
-        <a href="#grand-challenges">Grand Challenges</a>
+  <header class="rams-header">
+    <div class="rams-container rams-nav-flex">
+      <a href="index.html" class="rams-brand">
+        <span class="rams-brand-name">ChronAeon</span>
+        <span class="rams-brand-sep">/</span>
+        <span class="rams-brand-desc">Tree-Free Molecular Clock Dating</span>
+      </a>
+      <nav class="rams-nav">
+        <a href="#method">Method</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#surveillance">Surveillance</a>
         <a href="#benchmarks">42 BEAST Benchmarks</a>
-        <a href="AGENT.MD" style="font-weight: 500;">AGENT.md</a>
+        <a href="AGENT.MD">AGENT.md</a>
         <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
       </nav>
     </div>
   </header>
 
-  <main class="main-container">
+  <main>
 
-    <!-- Hero Introduction -->
-    <section class="hero-section" style="padding-bottom: 2rem;">
-      <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem;">
-        <span class="badge badge-pos-rna" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Open-Source Phylodynamics</span>
-        <span class="badge badge-concordant" style="font-size: 0.75rem;">v0.1.0 Certified</span>
-      </div>
-      <h1 class="hero-title" style="font-size: 2.5rem; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.75rem;">
-        Tree-Free Geometric Phylodynamics &amp; Real-Time Molecular Clock Calibration
-      </h1>
-      <p class="hero-subtitle" style="font-size: 1.12rem; line-height: 1.6; color: var(--text-secondary); max-width: 960px;">
-        ChronAeon translates pathogen nucleotide divergence directly into calendar time, evolutionary substitution rates, and co-circulating transmission tempos—bypassing the combinatorial bottleneck of bifurcating tree reconstruction and MCMC sampling. Built on continuous sequence manifolds, it delivers exact closed-form ancestral calibrations in seconds with certified parity against published Bayesian baselines.
-      </p>
-
-      <!-- Action Buttons -->
-      <div class="hero-actions">
-        <a href="tutorials/index.html" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-          Explore Tutorials &amp; Guides &rarr;
-        </a>
-        <a href="#benchmarks" class="btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          42 Empirical BEAST Benchmarks &darr;
-        </a>
-        <a href="#grand-challenges" class="btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-          Grand Challenges &nearr;
-        </a>
-      </div>
-
-      <!-- Hero Metrics Strip -->
-      <div class="hero-metrics-strip">
-        <div class="hero-metric-item">
-          <div class="hero-metric-num">42 Cohorts</div>
-          <div class="hero-metric-txt">14,285 empirical genomes (1882–2026) with certified exact BEAST alignment parity.</div>
-        </div>
-        <div class="hero-metric-item">
-          <div class="hero-metric-num">95.2%</div>
-          <div class="hero-metric-txt">Direct concordance with published BEAST 1.x / 2.x MCMC posterior root dates.</div>
-        </div>
-        <div class="hero-metric-item">
-          <div class="hero-metric-num">0.4s &ndash; 45s</div>
-          <div class="hero-metric-txt">Sub-minute runtime: 100&times; to 1,000&times; speedup vs. tree MCMC with zero synthetic filling.</div>
-        </div>
-        <div class="hero-metric-item">
-          <div class="hero-metric-num">Exact Fieller</div>
-          <div class="hero-metric-txt">Closed-form ratio confidence intervals ($g$-ratio) replacing heuristic delta methods.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Methodological Foundations -->
-    <section id="foundations" class="portal-section">
-      <div class="portal-section-header">
-        <span class="portal-section-tag">Methodological Foundations</span>
-        <h2 class="portal-section-title">The Geometry of Time: Why Calibrate Without Trees?</h2>
-        <p class="portal-section-desc">
-          Evaluating combinatorial tree topologies ($\mathcal{O}((2N-3)!!)$) and computing continuous branch likelihoods creates severe operational bottlenecks during pathogen emergencies. ChronAeon formulates molecular clock dating directly on continuous sequence manifolds.
+    <!-- Hero Section -->
+    <section class="rams-hero">
+      <div class="rams-container">
+        <div class="rams-eyebrow">RESEARCH COMPENDIUM &bull; TEMPLE UNIVERSITY iGEM</div>
+        <h1 class="rams-title">
+          Molecular clock calibration directly on sequence manifolds.
+        </h1>
+        <p class="rams-lede">
+          ChronAeon estimates nucleotide substitution rates, ancestral divergence dates, and lineage-specific clock regimes directly from pairwise genetic distance manifolds—eliminating phylogenetic tree reconstruction and Markov chain Monte Carlo sampling.
         </p>
-      </div>
 
-      <div class="foundations-grid">
-        <!-- Pillar 1: Tree-Free Manifold Dating -->
-        <div class="foundation-card">
-          <div>
-            <div class="foundation-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            </div>
-            <h3 class="foundation-title">Continuous Manifold Dating</h3>
-            <p class="foundation-text">
-              Embeds sequence cohorts onto an isometric genetic distance manifold via exact Tamura-Nei 93 (TN93) or neural attention representations. Soft profile roots establish ancestral origins without heuristic root-to-tip tree searches, evaluated under OLS and REML-regularized Attention PGLS.
-            </p>
+        <!-- Command-Line Usage Box -->
+        <div class="rams-cli-box">
+          <div class="rams-cli-header">
+            <span class="rams-cli-label">COMMAND-LINE USAGE</span>
+            <span style="font-size: 0.75rem; color: #888888;">Python 3.8+ &bull; Open Source</span>
           </div>
-          <div class="foundation-math-preview">
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-bottom: 0.25rem;">Exact Analytical Ratio Bounds:</div>
-            $$t_\mathrm{MRCA} = t_0 - \frac{\alpha}{\mu}, \quad g = \frac{t_\mathrm{crit}^2 \operatorname{Var}(\hat{\mu})}{\hat{\mu}^2} < 1$$
+          <div class="rams-cli-code">
+            <code>chronaeon date --beast dataset.xml.gz --loocv</code>
+          </div>
+          <div class="rams-cli-note">
+            Ingests compressed BEAST XML configs or FASTA + CSV dates directly. Computes closed-form Denny-Fieller confidence intervals and leave-one-out cross-validation in seconds.
           </div>
         </div>
 
-        <!-- Pillar 2: Spectral AutoClock -->
-        <div class="foundation-card">
-          <div>
-            <div class="foundation-icon" style="background: #fef3c7; color: #b45309;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-            </div>
-            <h3 class="foundation-title">Spectral AutoClock Deconvolution</h3>
-            <p class="foundation-text">
-              Natural epidemics frequently exhibit co-circulating transmission lineages, animal reservoir jumps, and localized outbreaks with distinct substitution velocities. AutoClock performs graph spectral bisection on the normalized Laplacian $\mathbf{L}_\mathrm{sym}$ to deconvolve multiple clock communities ($K^*$) with zero metadata priors.
-            </p>
+        <!-- Technical Specification Grid -->
+        <div class="rams-specs-table">
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Representation</div>
+            <div class="rams-spec-val">Continuous pairwise sequence manifold via exact Tamura-Nei 93 (TN93) or neural representations; soft profile root defines ancestral origin without tree traversal.</div>
           </div>
-          <div class="foundation-math-preview">
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #b45309; font-weight: 600; margin-bottom: 0.25rem;">Cheeger Graph Spectral Partition:</div>
-            $$\mathbf{L}_\mathrm{sym} = \mathbf{I} - \mathbf{D}^{-1/2} \mathbf{A} \mathbf{D}^{-1/2}, \quad K^* = \operatorname{argmax}_k \Delta \lambda_k$$
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Inference Model</div>
+            <div class="rams-spec-val">Closed-form ratio calibration ($t_\mathrm{MRCA} = t_0 - \alpha/\mu$) with exact Denny-Fieller confidence intervals ($g < 1$); evaluates OLS, Attention PGLS, and restricted natural splines.</div>
           </div>
-        </div>
-
-        <!-- Pillar 3: Streaming Sieve -->
-        <div class="foundation-card">
-          <div>
-            <div class="foundation-icon" style="background: #ecfdf5; color: #059669;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-            </div>
-            <h3 class="foundation-title">Planetary-Scale Streaming Sieve</h3>
-            <p class="foundation-text">
-              Real-time public health surveillance demands screening thousands of uncurated genomes without failing on chimeras or missing data. Combines minimap2 multi-block alignment and continuous sequence anomaly scoring at 400+ sequences/second to quarantine defective isolates before dating.
-            </p>
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Multi-Lineage Clock</div>
+            <div class="rams-spec-val">Spectral AutoClock graph bisection on the normalized Laplacian ($\mathbf{L}_\mathrm{sym}$) to deconvolve co-circulating transmission tempos ($K^*$) without metadata priors.</div>
           </div>
-          <div class="foundation-math-preview">
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #059669; font-weight: 600; margin-bottom: 0.25rem;">High-Throughput Streaming QC:</div>
-            $$\text{Throughput: } 414 \text{ seq/s} \quad\&bull;\quad 0 \text{ False Inclusions}$$
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Quality Sieve</div>
+            <div class="rams-spec-val">Streaming multi-block alignment and continuous sequence anomaly scoring at 400+ sequences/second to quarantine chimeras and sequencing artifacts.</div>
+          </div>
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Empirical Validation</div>
+            <div class="rams-spec-val">42 published empirical BEAST cohorts (14,285 taxa; 1882–2026) with certified exact BEAST alignment parity, plus NextStrain (3,221 taxa) and BV-BRC (10,000 taxa) surveillance streams.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tutorials & Practitioner Guides -->
-    <section id="tutorials" class="portal-section">
-      <div class="portal-section-header">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+    <!-- Methodological Principles -->
+    <section id="method" class="rams-section">
+      <div class="rams-container">
+        <div class="rams-section-header">
+          <div class="rams-section-num">01</div>
           <div>
-            <span class="portal-section-tag">Documentation &amp; Tutorials</span>
-            <h2 class="portal-section-title">Practitioner Guides &amp; Tutorials</h2>
-            <p class="portal-section-desc">
-              Step-by-step operational guides for calibrating molecular clocks, interpreting Denny-Fieller confidence bounds, and translating Bayesian MCMC workflows into ChronAeon's geometric framework.
+            <h2 class="rams-section-title">Methodological Principles</h2>
+            <p class="rams-section-desc">
+              Formulating molecular clock inference as an isometric manifold regression replaces the $\mathcal{O}((2N-3)!!)$ tree search space with closed-form linear algebra.
             </p>
-          </div>
-          <a href="tutorials/index.html" class="btn-secondary" style="font-size: 0.85rem; padding: 0.45rem 0.9rem;">View All Tutorials &rarr;</a>
-        </div>
-      </div>
-
-      <div class="tutorials-showcase-grid">
-        <!-- Tutorial 1 Card -->
-        <div class="tutorial-portal-card">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span class="badge badge-pos-rna">Tutorial 01</span>
-              <span style="font-size: 0.78rem; color: var(--text-muted);">20 min read</span>
-            </div>
-            <h3 class="tutorial-portal-title">
-              <a href="tutorials/dating.html" style="color: inherit; text-decoration: none;">Practical Molecular Clock Calibration &amp; Emergence Dating &rarr;</a>
-            </h3>
-            <p class="tutorial-portal-desc">
-              Comprehensive operational guide for single-clock calibration. Covers sequence data hygiene, reading-frame verification, Denny-Fieller ratio bounds, LOOCV predictive accuracy, and a worked example replicating published Cuban Zika virus findings in 8.6 seconds.
-            </p>
-            <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.65rem 0.85rem; font-family: var(--font-mono); font-size: 0.8rem; color: #1e293b; margin-bottom: 1rem; overflow-x: auto;">
-              chronaeon date --beast data/06_zika_cuba_grubaugh2019/beast.xml.gz --loocv
-            </div>
-          </div>
-          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-            <a href="tutorials/dating.html" class="dossier-view-btn" style="padding: 0.45rem 1rem;">Read Tutorial &rarr;</a>
-            <a href="tutorials/CHRONAEON_DATING_TUTORIAL.md" download style="font-size: 0.82rem; color: var(--text-muted);">Markdown (.md) &darr;</a>
           </div>
         </div>
 
-        <!-- Tutorial 2 Card -->
-        <div class="tutorial-portal-card">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span class="badge badge-concordant">Tutorial 02</span>
-              <span style="font-size: 0.78rem; color: var(--text-muted);">25 min read</span>
+        <div class="rams-pillars-grid">
+          <!-- Continuous Manifold -->
+          <div class="rams-pillar">
+            <div>
+              <div class="rams-pillar-num">A</div>
+              <h3 class="rams-pillar-title">Continuous Manifold Dating</h3>
+              <p class="rams-pillar-text">
+                Aligned sequences are projected onto a continuous genetic distance manifold. Root-to-sample divergence is measured relative to an imputed soft profile root, avoiding heuristic root-to-tip searches.
+              </p>
             </div>
-            <h3 class="tutorial-portal-title">
-              <a href="tutorials/beast.html" style="color: inherit; text-decoration: none;">ChronAeon for BEAST Users: The Rosetta Stone &rarr;</a>
-            </h3>
-            <p class="tutorial-portal-desc">
-              Direct translation guide for Bayesian phylogeneticists. Maps priors, Tracer ESS, UCLN relaxed clocks, and XML configs to ChronAeon's geometric counterparts. Features native <code>beast.xml.gz</code> ingestion and exact Carrington 2005 Dengue-4 replication in 0.14 seconds.
-            </p>
-            <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.65rem 0.85rem; font-family: var(--font-mono); font-size: 0.8rem; color: #1e293b; margin-bottom: 1rem; overflow-x: auto;">
-              chronaeon date --beast data/tutorial_dengue4/beast.xml.gz --loocv
+            <div class="rams-pillar-math">
+              $$t_\mathrm{MRCA} = t_0 - \frac{\alpha}{\mu}, \quad g = \frac{t_\mathrm{crit}^2 \operatorname{Var}(\hat{\mu})}{\hat{\mu}^2} < 1$$
             </div>
           </div>
-          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-            <a href="tutorials/beast.html" class="dossier-view-btn" style="padding: 0.45rem 1rem;">Read Tutorial &rarr;</a>
-            <a href="tutorials/CHRONAEON_FOR_BEAST_USERS.md" download style="font-size: 0.82rem; color: var(--text-muted);">Markdown (.md) &darr;</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Quickstart Box -->
-      <div class="quickstart-box-portal">
-        <div class="quickstart-header-portal">
-          <div class="quickstart-title-portal">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-            Command-Line Quickstart
+          <!-- Spectral AutoClock -->
+          <div class="rams-pillar">
+            <div>
+              <div class="rams-pillar-num">B</div>
+              <h3 class="rams-pillar-title">Spectral AutoClock</h3>
+              <p class="rams-pillar-text">
+                Natural epidemics often involve multi-host jumps or lineage replacements with varying evolutionary rates. AutoClock applies graph spectral bisection on the sequence similarity graph to identify distinct clock regimes ($K^*$).
+              </p>
+            </div>
+            <div class="rams-pillar-math">
+              $$\mathbf{L}_\mathrm{sym} = \mathbf{I} - \mathbf{D}^{-1/2} \mathbf{A} \mathbf{D}^{-1/2}, \quad K^* = \operatorname{argmax}_k \Delta \lambda_k$$
+            </div>
           </div>
-          <span style="font-size: 0.75rem; color: #64748b;">Python 3.8+ &bull; macOS / Linux</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem;">
-          <div>
-            <div style="font-size: 0.78rem; color: #38bdf8; font-weight: 600; margin-bottom: 0.35rem;">Installation via pip:</div>
-            <pre style="margin: 0; background: #020617; padding: 0.65rem 0.85rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.82rem; color: #f8fafc; overflow-x: auto;">pip install chronaeon</pre>
-          </div>
-          <div>
-            <div style="font-size: 0.78rem; color: #38bdf8; font-weight: 600; margin-bottom: 0.35rem;">Date directly from shipped BEAST XML:</div>
-            <pre style="margin: 0; background: #020617; padding: 0.65rem 0.85rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.82rem; color: #f8fafc; overflow-x: auto;">chronaeon date --beast dataset.xml.gz --loocv</pre>
+
+          <!-- Streaming Sieve -->
+          <div class="rams-pillar">
+            <div>
+              <div class="rams-pillar-num">C</div>
+              <h3 class="rams-pillar-title">High-Throughput Streaming Sieve</h3>
+              <p class="rams-pillar-text">
+                Surveillance databases contain unverified sequences, frame shifts, and chimeric amplicons. A high-throughput streaming sieve filters isolates at 400+ sequences/second prior to downstream dating.
+              </p>
+            </div>
+            <div class="rams-pillar-math">
+              $$\text{Throughput: } 414\text{ seq/s} \quad\&bull;\quad 0\text{ false inclusions}$$
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Planetary Surveillance & Real-Time Grand Challenges -->
-    <section id="grand-challenges" class="portal-section">
-      <div class="portal-section-header">
-        <span class="portal-section-tag">Real-Time Validation</span>
-        <h2 class="portal-section-title">Planetary Scale &amp; Real-Time Surveillance Grand Challenges</h2>
-        <p class="portal-section-desc">
-          Beyond curated benchmarks: high-throughput streaming ingestion, outlier sieving, and multi-clock community deconvolution across global epidemiological platforms.
-        </p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem;">
-        <!-- NextStrain Card -->
-        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+    <!-- Practitioner Tutorials -->
+    <section id="tutorials" class="rams-section">
+      <div class="rams-container">
+        <div class="rams-section-header">
+          <div class="rams-section-num">02</div>
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="badge badge-pos-rna">NextStrain Streaming Feed</span>
-              <span class="badge badge-concordant">100% TreeTime Match</span>
-            </div>
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-heading); margin: 0 0 0.5rem 0;">
-              <a href="surveillance/nextstrain/index.html" style="color: inherit; text-decoration: none;">The NextStrain Grand Challenge: Tree-Free Manifold Dating &amp; AutoClock vs. TreeTime &nearr;</a>
-            </h3>
-            <p style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5; margin-bottom: 1rem;">
-              Live streaming ingestion from official NextStrain Auspice feeds (Influenza A/H3N2 &amp; H1N1pdm 12-Year Feeds, 3,221 taxa). ChronAeon replicates TreeTime's exact root dates (H1N1pdm: 2009.26 vs 2009.27) in 25.5s without a tree, while AutoClock ($K^*=2$) achieves 100% discrete biological separation of post-lockdown clade replacement sweeps.
+            <h2 class="rams-section-title">Tutorials &amp; Practitioner Documentation</h2>
+            <p class="rams-section-desc">
+              Operational step-by-step guides with runnable commands, reproducible datasets, and translation references.
             </p>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-              <span><strong>Throughput:</strong> 25.5 s wall-clock</span> &bull;
-              <span><strong>Taxa:</strong> 3,221 genomes</span> &bull;
-              <span><strong>Topology:</strong> Tree-Free Manifold</span>
-            </div>
-          </div>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="surveillance/nextstrain/index.html" class="btn" style="background: var(--primary); color: #ffffff; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">View NextStrain Dossier &nearr;</a>
-            <a href="data/surveillance_nextstrain_reproducibility.tar.gz" download style="color: #059669; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.45rem 0.5rem;">Package (.tar.gz) &darr;</a>
           </div>
         </div>
 
-        <!-- BV-BRC Card -->
-        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="rams-tutorial-list">
+          <!-- Tutorial 1 -->
+          <div class="rams-tutorial-item">
+            <div class="rams-tutorial-meta">
+              <span class="rams-tutorial-tag">TUTORIAL 01</span>
+              <span class="rams-tutorial-time">20 min read</span>
+            </div>
+            <div class="rams-tutorial-content">
+              <h3 class="rams-tutorial-heading">
+                <a href="tutorials/dating.html">Practical Molecular Clock Calibration &amp; Emergence Dating &rarr;</a>
+              </h3>
+              <p class="rams-tutorial-summary">
+                Single-clock calibration protocol: sequence quality hygiene, codon reading frames, Denny-Fieller confidence bounds, and leave-one-out cross-validation (LOOCV). Replicates 2014 Cuban Zika virus emergence in 8.6 seconds.
+              </p>
+              <div class="rams-tutorial-code">
+                <code>chronaeon date --beast data/06_zika_cuba_grubaugh2019/beast.xml.gz --loocv</code>
+              </div>
+            </div>
+            <div class="rams-tutorial-actions">
+              <a href="tutorials/dating.html" class="rams-btn-link">Read Tutorial &rarr;</a>
+              <a href="tutorials/CHRONAEON_DATING_TUTORIAL.md" download class="rams-btn-subtle">Markdown (.md)</a>
+            </div>
+          </div>
+
+          <!-- Tutorial 2 -->
+          <div class="rams-tutorial-item">
+            <div class="rams-tutorial-meta">
+              <span class="rams-tutorial-tag">TUTORIAL 02</span>
+              <span class="rams-tutorial-time">25 min read</span>
+            </div>
+            <div class="rams-tutorial-content">
+              <h3 class="rams-tutorial-heading">
+                <a href="tutorials/beast.html">ChronAeon for BEAST Users: A Translation Guide &rarr;</a>
+              </h3>
+              <p class="rams-tutorial-summary">
+                Direct mapping between Bayesian MCMC concepts (priors, Tracer ESS, tree operators, UCLN relaxed clocks) and continuous manifold inference. Ingests shipped BEAST XML archives directly; replicates Carrington 2005 Dengue-4 in 0.14 seconds.
+              </p>
+              <div class="rams-tutorial-code">
+                <code>chronaeon date --beast data/tutorial_dengue4/beast.xml.gz --loocv</code>
+              </div>
+            </div>
+            <div class="rams-tutorial-actions">
+              <a href="tutorials/beast.html" class="rams-btn-link">Read Tutorial &rarr;</a>
+              <a href="tutorials/CHRONAEON_FOR_BEAST_USERS.md" download class="rams-btn-subtle">Markdown (.md)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surveillance Validation -->
+    <section id="surveillance" class="rams-section">
+      <div class="rams-container">
+        <div class="rams-section-header">
+          <div class="rams-section-num">03</div>
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="badge badge-pos-rna">BV-BRC Planetary Sieve</span>
-              <span class="badge badge-concordant">10,000-Taxon Scale</span>
-            </div>
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-heading); margin: 0 0 0.5rem 0;">
-              <a href="surveillance/bvbrc/index.html" style="color: inherit; text-decoration: none;">The BV-BRC Grand Challenge: Streaming Sieve &amp; Multi-Clock Deconvolution of 10,000 Genomes &nearr;</a>
-            </h3>
-            <p style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5; margin-bottom: 1rem;">
-              Scaling tree-free molecular clock dating to 58 years of Influenza A/H3N2 (1968–2026). In 49.58 seconds, ChronAeon's streaming sieve triages 10,000 genomes (414 seq/s, quarantining severe contaminants/chimeras) and AutoClock deconvolves $K^*=7$ clock regimes, autonomously isolating wild waterfowl (2.7x clock acceleration) and swine reservoirs with zero metadata priors.
+            <h2 class="rams-section-title">Real-Time Surveillance Validation</h2>
+            <p class="rams-section-desc">
+              Validation on uncurated epidemiological surveillance streams spanning thousands of viral genomes.
             </p>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-              <span><strong>Runtime:</strong> 49.58 s total</span> &bull;
-              <span><strong>Sieve Speed:</strong> 414 seq/s</span> &bull;
-              <span><strong>Taxon Scale:</strong> 10,000 isolates</span>
+          </div>
+        </div>
+
+        <div class="rams-surveillance-grid">
+          <!-- NextStrain -->
+          <div class="rams-surveillance-card">
+            <div>
+              <div class="rams-surveillance-head">
+                <span class="rams-surveillance-tag">NEXTSTRAIN STREAMING FEED</span>
+                <span class="rams-surveillance-stat">3,221 genomes &bull; 25.5s</span>
+              </div>
+              <h3 class="rams-surveillance-title">
+                <a href="surveillance/nextstrain/index.html">NextStrain Influenza Feeds: Manifold Dating vs. TreeTime &rarr;</a>
+              </h3>
+              <p class="rams-surveillance-desc">
+                Live streaming ingestion from NextStrain Auspice feeds (Influenza A/H3N2 &amp; H1N1pdm 12-year feeds). ChronAeon replicates TreeTime root calibrations (H1N1pdm: 2009.26 vs. 2009.27) without phylogenetic trees, while AutoClock ($K^*=2$) isolates post-lockdown clade replacement sweeps.
+              </p>
+            </div>
+            <div class="rams-surveillance-links">
+              <a href="surveillance/nextstrain/index.html" class="rams-btn-link">View Dossier &rarr;</a>
+              <a href="data/surveillance_nextstrain_reproducibility.tar.gz" download class="rams-btn-subtle">Package (.tar.gz)</a>
             </div>
           </div>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="surveillance/bvbrc/index.html" class="btn" style="background: #059669; color: #ffffff; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">View BV-BRC Dossier &nearr;</a>
-            <a href="data/surveillance_bvbrc_reproducibility.tar.gz" download style="color: #059669; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.45rem 0.5rem;">Package (.tar.gz) &darr;</a>
+
+          <!-- BV-BRC -->
+          <div class="rams-surveillance-card">
+            <div>
+              <div class="rams-surveillance-head">
+                <span class="rams-surveillance-tag">BV-BRC PLANETARY DATABASE</span>
+                <span class="rams-surveillance-stat">10,000 genomes &bull; 49.6s</span>
+              </div>
+              <h3 class="rams-surveillance-title">
+                <a href="surveillance/bvbrc/index.html">BV-BRC Influenza A/H3N2: Streaming Sieve &amp; Multi-Clock Deconvolution &rarr;</a>
+              </h3>
+              <p class="rams-surveillance-desc">
+                Scaling to 58 years of Influenza A/H3N2 (1968–2026). The streaming sieve processes 10,000 isolates at 414 seq/s, filtering chimeric sequences and missing loci. AutoClock resolves $K^*=7$ clock regimes, separating accelerated wild waterfowl and swine reservoirs without metadata labels.
+              </p>
+            </div>
+            <div class="rams-surveillance-links">
+              <a href="surveillance/bvbrc/index.html" class="rams-btn-link">View Dossier &rarr;</a>
+              <a href="data/surveillance_bvbrc_reproducibility.tar.gz" download class="rams-btn-subtle">Package (.tar.gz)</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Empirical Concordance Compendium -->
-    <section id="benchmarks" class="portal-section">
-      <div class="portal-section-header">
-        <span class="portal-section-tag">Empirical Validation Compendium</span>
-        <h2 class="portal-section-title">42 Curated Empirical BEAST Benchmarks</h2>
-        <p class="portal-section-desc">
-          Rigorous, tree-free geometric phylodynamic evaluation versus published Bayesian MCMC (BEAST 1.x / 2.x) across <strong>42 author-deposited empirical cohorts</strong> spanning <strong>14,285 taxa</strong> (1882–2026). Zero synthetic base filling, zero simplex probability imputation, and certified exact BEAST alignment parity.
-        </p>
-      </div>
-
-      <!-- Global Scorecards -->
-      <div class="scorecard-grid">
-        <div class="scorecard-card">
-          <div class="scorecard-label">Curated Studies</div>
-          <div class="scorecard-value">42</div>
-          <div class="scorecard-meta">100% Author-Deposited Repositories</div>
+    <!-- Empirical Validation Compendium -->
+    <section id="benchmarks" class="rams-section">
+      <div class="rams-container">
+        <div class="rams-section-header">
+          <div class="rams-section-num">04</div>
+          <div>
+            <h2 class="rams-section-title">Empirical Concordance Compendium (42 Cohorts)</h2>
+            <p class="rams-section-desc">
+              Tree-free manifold dating evaluated against published Bayesian MCMC (BEAST 1.x / 2.x) across 42 author-deposited empirical cohorts spanning 14,285 sequences (1882–2026). Ingests author-deposited BEAST XML configurations directly.
+            </p>
+          </div>
         </div>
-        <div class="scorecard-card">
-          <div class="scorecard-label">Total Sequences</div>
-          <div class="scorecard-value">14,285</div>
-          <div class="scorecard-meta">Full genomes &amp; verified CDS</div>
+
+        <!-- Technical Summary Strip -->
+        <div class="rams-summary-strip">
+          <div class="rams-summary-item">
+            <div class="rams-summary-label">Empirical Cohorts</div>
+            <div class="rams-summary-value">42 Studies</div>
+            <div class="rams-summary-sub">Author-deposited BEAST archives</div>
+          </div>
+          <div class="rams-summary-item">
+            <div class="rams-summary-label">Sequence Scale</div>
+            <div class="rams-summary-value">14,285 Taxa</div>
+            <div class="rams-summary-sub">Full genomes &amp; verified CDS</div>
+          </div>
+          <div class="rams-summary-item">
+            <div class="rams-summary-label">Topology Requirement</div>
+            <div class="rams-summary-value">Tree-Free</div>
+            <div class="rams-summary-sub">Continuous distance manifolds</div>
+          </div>
+          <div class="rams-summary-item">
+            <div class="rams-summary-label">Clock Formulations</div>
+            <div class="rams-summary-value">6 Model Classes</div>
+            <div class="rams-summary-sub">OLS, PGLS, Spline, Crash, Exp, Epoch</div>
+          </div>
+          <div class="rams-summary-item">
+            <div class="rams-summary-label">Execution Latency</div>
+            <div class="rams-summary-value">0.4s &ndash; 314s</div>
+            <div class="rams-summary-sub">Sub-minute analytical dating</div>
+          </div>
         </div>
-        <div class="scorecard-card">
-          <div class="scorecard-label">Phylogenetic Tree Requirement</div>
-          <div class="scorecard-value">Tree-Free</div>
-          <div class="scorecard-meta">Continuous Distance Manifold</div>
+
+        <!-- Interactive Concordance Plot -->
+        <div class="plot-card" style="box-shadow: none; border: 1px solid #e5e5e5; margin-bottom: 2rem;">
+          <div class="plot-header">
+            <div>
+              <h2 class="plot-title">Empirical Concordance: Published BEAST MCMC vs. ChronAeon Geometric Manifold</h2>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">
+                Estimated time of most recent common ancestor ($t_\mathrm{MRCA}$) across empirical viral benchmarks (1850–2026 CE). Dashed diagonal represents identity ($y = x$). Hover to inspect study metrics; click to open full study dossier.
+              </p>
+            </div>
+          </div>
+          <div id="concordance-plot-container" class="plot-svg-container"></div>
         </div>
-        <div class="scorecard-card">
-          <div class="scorecard-label">Execution Latency</div>
-          <div class="scorecard-value">0.4s &ndash; 314s</div>
-          <div class="scorecard-meta">Sub-Minute Tree-Free Manifold Dating</div>
+
+        <!-- Multi-Faceted Filter & Search Bar -->
+        <div class="filter-bar" style="box-shadow: none; border: 1px solid #e5e5e5; margin-bottom: 1.5rem;">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-taxonomy="all">All Taxonomy (42)</button>
+            <button class="filter-btn" data-taxonomy="Negative-Sense RNA">Negative-Sense RNA (14)</button>
+            <button class="filter-btn" data-taxonomy="Positive-Sense RNA">Positive-Sense RNA (21)</button>
+            <button class="filter-btn" data-taxonomy="Retroviruses">Retroviruses (3)</button>
+            <button class="filter-btn" data-taxonomy="DNA Viruses">DNA Viruses (2)</button>
+            <button class="filter-btn" data-taxonomy="Bacteria &amp; Ancient DNA">Bacteria &amp; Ancient DNA (2)</button>
+          </div>
+
+          <div class="filter-pills" style="margin-top: 0.5rem;">
+            <button class="filter-btn active" data-clock="all">All Clock Models (42)</button>
+            <button class="filter-btn" data-clock="ols">Linear OLS (20)</button>
+            <button class="filter-btn" data-clock="pgls">Attention PGLS (9)</button>
+            <button class="filter-btn" data-clock="spline">Restricted Natural Spline (13)</button>
+          </div>
+
+          <div class="filter-pills" style="margin-top: 0.5rem;">
+            <button class="filter-btn active" data-concordance="all">All Statuses (42)</button>
+            <button class="filter-btn" data-concordance="concordant">Direct Concordance (20)</button>
+            <button class="filter-btn" data-concordance="reconciled">Reconciled via AutoClock (7)</button>
+            <button class="filter-btn" data-concordance="nonlinear">Non-Linear Spline (5)</button>
+            <button class="filter-btn" data-concordance="contrast">Methodological Contrast (10)</button>
+          </div>
+
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="study-search" placeholder="Search by pathogen, first author, DOI, or locus...">
+            <span id="filter-count" style="font-size: 0.8rem; color: var(--text-muted); margin-left: auto;">42 of 42 studies shown</span>
+          </div>
         </div>
-        <div class="scorecard-card">
-          <div class="scorecard-label">Extended Models Suite</div>
-          <div class="scorecard-value">6 Model Classes</div>
-          <div class="scorecard-meta">OLS, PGLS, Spline, Crash, Exp, Epoch</div>
-        </div>
-      </div>
 
-    <!-- Interactive Concordance Plot -->
-    <section class="plot-card">
-      <div class="plot-header">
-        <div>
-          <h2 class="plot-title">Empirical Concordance: Published BEAST MCMC vs. ChronAeon Geometric Manifold</h2>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">
-            Estimated time of most recent common ancestor ($t_\mathrm{MRCA}$) across empirical viral benchmarks (1850–2026 CE). Dashed diagonal represents identity ($y = x$). Hover to inspect study metrics; click to open full study dossier.
-          </p>
-        </div>
-      </div>
-      <div id="concordance-plot-container" class="plot-svg-container"></div>
-    </section>
-
-    <!-- Multi-Faceted Filter & Search Bar -->
-    <section class="filter-bar">
-      <div class="filter-pills">
-        <button class="filter-btn active" data-taxonomy="all">All Taxonomy (42)</button>
-        <button class="filter-btn" data-taxonomy="Negative-Sense RNA">Negative-Sense RNA (14)</button>
-        <button class="filter-btn" data-taxonomy="Positive-Sense RNA">Positive-Sense RNA (21)</button>
-        <button class="filter-btn" data-taxonomy="Retroviruses">Retroviruses (3)</button>
-        <button class="filter-btn" data-taxonomy="DNA Viruses">DNA Viruses (2)</button>
-        <button class="filter-btn" data-taxonomy="Bacteria &amp; Ancient DNA">Bacteria &amp; Ancient DNA (2)</button>
-      </div>
-
-      <div class="filter-pills" style="margin-top: 0.5rem;">
-        <button class="filter-btn active" data-clock="all">All Clock Models (42)</button>
-        <button class="filter-btn" data-clock="ols">Linear OLS (20)</button>
-        <button class="filter-btn" data-clock="pgls">Attention PGLS (9)</button>
-        <button class="filter-btn" data-clock="spline">Restricted Natural Spline (13)</button>
-      </div>
-
-      <div class="filter-pills" style="margin-top: 0.5rem;">
-        <button class="filter-btn active" data-concordance="all">All Statuses (42)</button>
-        <button class="filter-btn" data-concordance="concordant">Direct Concordance (20)</button>
-        <button class="filter-btn" data-concordance="reconciled">Reconciled via AutoClock (7)</button>
-        <button class="filter-btn" data-concordance="nonlinear">Non-Linear Spline (5)</button>
-        <button class="filter-btn" data-concordance="contrast">Methodological Contrast (10)</button>
-      </div>
-
-      <div class="search-box">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="study-search" placeholder="Search by pathogen, first author, DOI, or locus...">
-        <span id="filter-count" style="font-size: 0.8rem; color: var(--text-muted); margin-left: auto;">42 of 42 studies shown</span>
-      </div>
-    </section>
-
-    <!-- Benchmarks Master Data Table -->
-    <section class="content-card" style="padding: 0; overflow: hidden;">
-      <div class="table-responsive">
-        <table class="data-table" id="benchmarks-table">
-          <thead>
-            <tr>
-              <th style="width: 40px;">#</th>
-              <th>Cohort &amp; Primary Reference</th>
-              <th>Taxonomy</th>
-              <th style="text-align: right;">Taxa ($N$)</th>
-              <th style="text-align: right;">Sites ($L$)</th>
-              <th style="text-align: right;">Timespan</th>
-              <th>Published BEAST Baseline</th>
-              <th>ChronAeon Inferred</th>
-              <th>AutoClock</th>
-              <th style="text-align: right;">Duration</th>
-              <th>Concordance</th>
-              <th style="text-align: center;">Dossier</th>
-            </tr>
-          </thead>
-          <tbody>
+        <!-- Benchmarks Master Data Table -->
+        <div class="content-card" style="box-shadow: none; border: 1px solid #e5e5e5; padding: 0; overflow: hidden;">
+          <div class="table-responsive">
+            <table class="data-table" id="benchmarks-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px;">#</th>
+                  <th>Cohort &amp; Primary Reference</th>
+                  <th>Taxonomy</th>
+                  <th style="text-align: right;">Taxa ($N$)</th>
+                  <th style="text-align: right;">Sites ($L$)</th>
+                  <th style="text-align: right;">Timespan</th>
+                  <th>Published BEAST Baseline</th>
+                  <th>ChronAeon Inferred</th>
+                  <th>AutoClock</th>
+                  <th style="text-align: right;">Duration</th>
+                  <th>Concordance</th>
+                  <th style="text-align: center;">Dossier</th>
+                </tr>
+              </thead>
+              <tbody>
             <tr data-taxonomy="Negative-Sense RNA" data-clock="ols" data-concordance="concordant" onclick="window.location.href='studies/00_ebola_sierraleone_gire2014/index.html'" style="cursor: pointer;">
               <td class="code-mono" style="color: var(--text-muted);">01</td>
               <td>
@@ -1131,18 +1098,23 @@
               <td><span class="badge badge-concordant" title="Direct statistical concordance: ChronAeon inferred tMRCA (2014.23 CE, 95% CI [2014.17, 2014.27]) falls squarely within the published BEAST 1.10 Skygrid 95% HPD interval [2014.10, 2014.30] CE (mean 2014.20 CE) for the Sierra Leone Ebolavirus epidemic.">CONCORDANT</span></td>
               <td style="text-align: center;"><a href="studies/41_skygrid_rabies_gill2020/index.html" class="dossier-view-btn" onclick="event.stopPropagation();">View &rarr;</a></td>
             </tr>
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    </section>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="nav-container" style="justify-content: center; flex-direction: column; gap: 0.5rem;">
-      <p><strong>ChronAeon Benchmark Compendium</strong> &mdash; Authoritative Tree-Free Geometric Phylodynamics</p>
-      <p style="font-size: 0.8rem;">Institute for Genomics and Evolutionary Medicine (iGEM) &bull; Temple University &bull; Sergei L. Kosakovsky Pond</p>
+  <footer style="background: #ffffff; border-top: 1px solid #e5e5e5; padding: 2.5rem 0; margin-top: 2rem;">
+    <div class="rams-container" style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: #777777;">
+      <div>
+        <strong style="color: #111111;">ChronAeon</strong> &mdash; Tree-Free Molecular Clock Dating on Sequence Manifolds
+      </div>
+      <div>
+        Institute for Genomics and Evolutionary Medicine (iGEM) &bull; Temple University &bull; Sergei L. Kosakovsky Pond
+      </div>
     </div>
   </footer>
 
