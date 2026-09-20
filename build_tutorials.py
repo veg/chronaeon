@@ -14,20 +14,36 @@ TUTORIALS_DIR = os.path.join(PORTAL_DIR, "tutorials")
 os.makedirs(TUTORIALS_DIR, exist_ok=True)
 
 def render_markdown(text):
+    # 1. Protect fenced code blocks (``` ... ```) and inline code (` ... `)
+    code_blocks = []
+    def save_code(m):
+        idx = len(code_blocks)
+        code_blocks.append(m.group(0))
+        return f"CHRONAEONCODEPH{idx}X"
+
+    text_prot = re.sub(r"```[a-zA-Z0-9_-]*\n.*?```", save_code, text, flags=re.DOTALL)
+    text_prot = re.sub(r"`[^`\n]+`", save_code, text_prot)
+
+    # 2. Protect display math ($$ ... $$) and inline math ($ ... $)
     math_placeholders = []
     def save_math(m):
         idx = len(math_placeholders)
         math_placeholders.append(m.group(0))
-        return f"___MATH_BLOCK_{idx}___"
+        return f"CHRONAEONMATHPH{idx}X"
 
-    # Protect display math first, then inline math
-    text_prot = re.sub(r"\$\$(.*?)\$\$", save_math, text, flags=re.DOTALL)
+    text_prot = re.sub(r"\$\$(.*?)\$\$", save_math, text_prot, flags=re.DOTALL)
     text_prot = re.sub(r"(?<!\\)\$([^\$\n]+?)\$", save_math, text_prot)
 
+    # 3. Restore code blocks so python-markdown can format them properly
+    for idx, raw_code in enumerate(code_blocks):
+        text_prot = text_prot.replace(f"CHRONAEONCODEPH{idx}X", raw_code)
+
+    # 4. Render markdown to HTML
     html = markdown.markdown(text_prot, extensions=["fenced_code", "tables", "toc"])
 
+    # 5. Restore math blocks
     for idx, raw_math in enumerate(math_placeholders):
-        html = html.replace(f"___MATH_BLOCK_{idx}___", raw_math)
+        html = html.replace(f"CHRONAEONMATHPH{idx}X", raw_math)
 
     return html
 

@@ -215,7 +215,7 @@ Target Audience: Computational virologists, genomic epidemiologists, and phyloge
 <hr />
 <h2 id="1-the-geometry-of-time-why-calibrate-without-trees">1. The Geometry of Time: Why Calibrate Without Trees?</h2>
 <p>Molecular clock dating translates nucleotide divergence into calendar time. In viral epidemiology, this calibration establishes the temporal horizon of zoonotic spillover, bounds the duration of cryptic community transmission, and quantifies substitution velocities during explosive epidemics. For four decades, the field has treated divergence-time estimation as inseparable from discrete bifurcating tree reconstruction. Practitioners first infer a genealogy under maximum likelihood or sample topologies across Markov chain Monte Carlo (MCMC) mixtures. They then scale internal branch lengths against tip sampling dates. Bayesian frameworks like BEAST couple substitution models, relaxed branch clocks, and coalescent demographic priors into a joint posterior density. This generative formulation is mathematically rigorous, but it scales non-linearly with taxon count.</p>
-<p>The tree-space bottleneck creates severe operational friction during public health emergencies. Evaluating combinatorial tree topologies (<strong><em>MATH</em>BLOCK_11</strong>_) and computing continuous branch likelihoods via Felsenstein pruning demands substantial computing time. When an outbreak generates thousands of pathogen genomes within weeks, MCMC samplers require days or weeks on compute clusters to achieve acceptable convergence. Faced with this computational ceiling, surveillance teams routinely discard more than ninety percent of sequenced genomes through aggressive downsampling. This selection purges rare geographic links and injects sampling bias into inferred emergence dates. Furthermore, when sequences differ by only a handful of mutations, mutational sparsity creates vast polytomies. Traversing these uninformative bifurcations consumes compute cycles without adding temporal signal.</p>
+<p>The tree-space bottleneck creates severe operational friction during public health emergencies. Evaluating combinatorial tree topologies ($\mathcal{O}((2N-3)!!)$) and computing continuous branch likelihoods via Felsenstein pruning demands substantial computing time. When an outbreak generates thousands of pathogen genomes within weeks, MCMC samplers require days or weeks on compute clusters to achieve acceptable convergence. Faced with this computational ceiling, surveillance teams routinely discard more than ninety percent of sequenced genomes through aggressive downsampling. This selection purges rare geographic links and injects sampling bias into inferred emergence dates. Furthermore, when sequences differ by only a handful of mutations, mutational sparsity creates vast polytomies. Traversing these uninformative bifurcations consumes compute cycles without adding temporal signal.</p>
 <p>ChronAeon resolves this bottleneck by formulating molecular dating directly on continuous sequence manifolds. Rather than searching across tree graphs, the engine operates on pairwise distance geometry and cross-taxa attention matrices. Pairwise genetic distances are computed in microsecond closed form using the Tamura-Nei 93 (TN93) metric. Shared phylogenetic ancestry is parameterized through an axial foundation transformer (HyphAeon) that evaluates lineage affinities directly from sequence alignments. In this continuous representation, ChronAeon completes temporal calibration, model selection, outlier diagnostics, and emergence dating in seconds on a standard laptop. This tutorial provides a practical, step-by-step operational guide to running ChronAeon on empirical sequence data according to the standardized benchmark protocol.</p>
 <hr />
 <h2 id="2-data-hygiene-and-quality-control-preparing-raw-sequences">2. Data Hygiene and Quality Control: Preparing Raw Sequences</h2>
@@ -227,20 +227,20 @@ Target Audience: Computational virologists, genomic epidemiologists, and phyloge
 <li>Align the translated protein sequences using a profile aligner such as MAFFT or MUSCLE.</li>
 <li>Project nucleotide triplets back onto the aligned amino acid coordinates.</li>
 </ol>
-<p>Each aligned codon occupies exactly three nucleotide columns. Gaps appear exclusively as full triplet deletions (<code>---</code>). Aligned sequence length <strong><em>MATH</em>BLOCK_12</strong><em> must satisfy <strong><em>MATH</em>BLOCK_13</strong></em>. Terminal stop codons must be trimmed uniformly across all taxa to prevent artificial mismatch penalties against incomplete coding sequences.</p>
+<p>Each aligned codon occupies exactly three nucleotide columns. Gaps appear exclusively as full triplet deletions (<code>---</code>). Aligned sequence length $L$ must satisfy $L \pmod 3 == 0$. Terminal stop codons must be trimmed uniformly across all taxa to prevent artificial mismatch penalties against incomplete coding sequences.</p>
 <h3 id="22-the-zero-imputation-policy">2.2 The Zero-Imputation Policy</h3>
 <p>A core imperative of the protocol is absolute sequence authenticity. Researchers must never perform simplex probability imputation or synthetic base filling on ambiguous characters. Ambiguous IUPAC characters (<code>R</code>, <code>Y</code>, <code>S</code>, <code>W</code>, <code>K</code>, <code>M</code>, <code>B</code>, <code>D</code>, <code>H</code>, <code>V</code>, <code>N</code>) and alignment gaps (<code>-</code>) must remain untouched, exactly as they appear in primary public repositories.</p>
 <p>Artificially filling undetermined bases with background frequencies alters the empirical variance structure of the alignment. Imputation modifies pairwise distances unpredictably and invalidates direct comparisons against published Bayesian baselines. ChronAeon processes authentic IUPAC characters directly through pairwise transition-transversion corrections without synthetic alterations.</p>
 <h3 id="23-continuous-decimal-date-harmonization">2.3 Continuous Decimal Date Harmonization</h3>
-<p>Sampling dates must be harmonized into continuous astronomical decimal years (<strong><em>MATH</em>BLOCK_14</strong>_). Disparate reporting formats introduce temporal noise if converted naively:</p>
+<p>Sampling dates must be harmonized into continuous astronomical decimal years ($t_i \in \mathbb{R}$). Disparate reporting formats introduce temporal noise if converted naively:</p>
 <ul>
 <li>Exact calendar dates (<code>YYYY-MM-DD</code>):
-  <strong><em>MATH</em>BLOCK_0</strong><em>
-  where <strong><em>MATH</em>BLOCK_15</strong></em> is 366 in leap years and 365 otherwise.</li>
+  $$t_i = \text{year} + \frac{\text{day\_of\_year} - 0.5}{\text{days\_in\_year}}$$
+  where $\text{days\_in\_year}$ is 366 in leap years and 365 otherwise.</li>
 <li>Month-only records (<code>YYYY-MM</code>):
-  <strong><em>MATH</em>BLOCK_1</strong>_</li>
+  $$t_i = \text{year} + \frac{\text{month} - 0.5}{12}$$</li>
 <li>Year-only records (<code>YYYY</code>):
-  <strong><em>MATH</em>BLOCK_2</strong>_</li>
+  $$t_i = \text{year} + 0.5000$$</li>
 </ul>
 <p>All identifiers in the metadata file (<code>dates.csv</code>) must match the sequence headers in the FASTA alignment exactly. Sequences lacking verifiable collection dates must be excluded before temporal calibration.</p>
 <hr />
@@ -263,28 +263,28 @@ chronaeon date \
 </code></pre></div>
 <h3 id="31-ordinary-least-squares-ols-baseline">3.1 Ordinary Least Squares (OLS) Baseline</h3>
 <p>The foundational estimator measures root divergence against sampling horizons:
-<strong><em>MATH</em>BLOCK_3</strong><em>
-The slope of this regression defines the substitution rate <strong><em>MATH</em>BLOCK_16</strong></em> (substitutions per site per year). The horizontal intercept defines the founding crown ancestor date <strong><em>MATH</em>BLOCK_17</strong>_. In standard root-to-tip regression, ancestral references often rely on the earliest sampled isolate. When that early isolate contains private mutations, its distance collapses to zero while sister lineages show inflated divergence, flattening the clock slope. ChronAeon overcomes this fragility by constructing a continuous soft profile root on the nucleotide simplex. The ancestor represents an exponentially time-weighted mixture of base frequencies across early sampling horizons, filtering terminal sequencing noise while preserving shared ancestral polymorphism.</p>
+$$d_i = \mu (t_i - t_0) + \varepsilon_i$$
+The slope of this regression defines the substitution rate $\mu$ (substitutions per site per year). The horizontal intercept defines the founding crown ancestor date $t_{\mathrm{MRCA}}$. In standard root-to-tip regression, ancestral references often rely on the earliest sampled isolate. When that early isolate contains private mutations, its distance collapses to zero while sister lineages show inflated divergence, flattening the clock slope. ChronAeon overcomes this fragility by constructing a continuous soft profile root on the nucleotide simplex. The ancestor represents an exponentially time-weighted mixture of base frequencies across early sampling horizons, filtering terminal sequencing noise while preserving shared ancestral polymorphism.</p>
 <h3 id="32-hyphaeon-attention-pgls">3.2 HyphAeon Attention PGLS</h3>
-<p>Patients sampled within the same transmission chain share evolutionary history. Treating these clustered isolates as independent data points creates phylogenetic pseudoreplication, which artificially deflates standard errors. To penalize shared ancestry without building trees, ChronAeon extracts cross-taxa attention weights from the HyphAeon foundation model. The network outputs an empirical phylogenetic covariance kernel <strong><em>MATH</em>BLOCK_18</strong><em>. Pagel's <strong><em>MATH</em>BLOCK_19</strong></em> is optimized via profile restricted maximum likelihood:
-<strong><em>MATH</em>BLOCK_4</strong><em>
-When lineages evolve independently, <strong><em>MATH</em>BLOCK_20</strong></em> and the model collapses to OLS. When shared ancestry dominates, <strong><em>MATH</em>BLOCK_21</strong><em> and the estimator downweights redundant transmission clusters via Generalized Least Squares. The effective sample size adjusts accordingly:
-<strong><em>MATH</em>BLOCK_5</strong></em></p>
+<p>Patients sampled within the same transmission chain share evolutionary history. Treating these clustered isolates as independent data points creates phylogenetic pseudoreplication, which artificially deflates standard errors. To penalize shared ancestry without building trees, ChronAeon extracts cross-taxa attention weights from the HyphAeon foundation model. The network outputs an empirical phylogenetic covariance kernel $\mathbf{K}$. Pagel's $\lambda^*$ is optimized via profile restricted maximum likelihood:
+$$\mathbf{C}(\lambda^*) = \lambda^* \mathbf{K} + (1 - \lambda^*) \mathbf{I}$$
+When lineages evolve independently, $\lambda^* \to 0$ and the model collapses to OLS. When shared ancestry dominates, $\lambda^* \to 1$ and the estimator downweights redundant transmission clusters via Generalized Least Squares. The effective sample size adjusts accordingly:
+$$N_{\mathrm{eff}} = \mathbf{1}^T \mathbf{C}^{-1} \mathbf{1}, \quad \mathrm{df}_{\mathrm{eff}} = \max(1, \operatorname{round}(N_{\mathrm{eff}} - 2))$$</p>
 <h3 id="33-exact-analytical-fieller-confidence-intervals">3.3 Exact Analytical Fieller Confidence Intervals</h3>
 <p>Bayesian MCMC constructs credible intervals by sampling branch heights under demographic coalescent priors. When sequence variation provides weak temporal signal, these coalescent priors exert substantial influence on inferred node heights. ChronAeon rejects demographic regularization, evaluating parameter uncertainty directly through Fieller's theorem for ratio estimators:
-<strong><em>MATH</em>BLOCK_6</strong><em>
+$$t_{\mathrm{MRCA}} = \bar{t} - \frac{\bar{d}}{\hat{\mu}} = \frac{\hat{\beta}_0}{\hat{\mu}}$$
 Fieller's inversion tests the null hypothesis that evolutionary velocity cannot be separated from zero:
-<strong><em>MATH</em>BLOCK_7</strong></em>
-where <strong><em>MATH</em>BLOCK_22</strong><em> is the Student's <strong><em>MATH</em>BLOCK_23</strong></em> critical value with <strong><em>MATH</em>BLOCK_24</strong><em> degrees of freedom. ChronAeon evaluates four distinct topological regimes:
-1. Bounded interval (<strong><em>MATH</em>BLOCK_25</strong></em>): The substitution rate is well-resolved and separated from zero. The 95% confidence interval is compact and finite.
-2. Complementary interval (<strong><em>MATH</em>BLOCK_26</strong><em> with positive discriminant): The rate estimate is marginally noisy. The confidence region forms the union of two semi-infinite intervals <strong><em>MATH</em>BLOCK_27</strong></em>.
-3. Unbounded interval (<strong><em>MATH</em>BLOCK_28</strong><em> with negative discriminant): Empirical substitutions contain insufficient longitudinal signal to distinguish evolutionary velocity from zero. The confidence interval expands to the real line <strong><em>MATH</em>BLOCK_29</strong></em>.
-4. Linear Taylor approximation: High-sample approximations used when <strong><em>MATH</em>BLOCK_30</strong>_.</p>
+$$g = \frac{t_{\mathrm{crit}}^2 \operatorname{Var}(\hat{\mu})}{\hat{\mu}^2}$$
+where $t_{\mathrm{crit}}$ is the Student's $t$ critical value with $\mathrm{df}_{\mathrm{eff}}$ degrees of freedom. ChronAeon evaluates four distinct topological regimes:
+1. Bounded interval ($g < 1$): The substitution rate is well-resolved and separated from zero. The 95% confidence interval is compact and finite.
+2. Complementary interval ($g \ge 1$ with positive discriminant): The rate estimate is marginally noisy. The confidence region forms the union of two semi-infinite intervals $(-\infty, t_1] \cup [t_2, \infty)$.
+3. Unbounded interval ($g \ge 1$ with negative discriminant): Empirical substitutions contain insufficient longitudinal signal to distinguish evolutionary velocity from zero. The confidence interval expands to the real line $(-\infty, \infty)$.
+4. Linear Taylor approximation: High-sample approximations used when $g \ll 0.05$.</p>
 <p>An unbounded interval is not a software defect. It is an objective statistical diagnostic indicating that empirical mutations alone cannot bound emergence without subjective demographic tree priors.</p>
 <h3 id="34-leave-one-out-cross-validation-loocv">3.4 Leave-One-Out Cross-Validation (LOOCV)</h3>
 <p>When invoked with <code>--loocv</code>, ChronAeon evaluates predictive fidelity by systematically dropping each sequence, refitting the clock, and predicting the omitted isolate's sampling date:
-<strong><em>MATH</em>BLOCK_8</strong><em>
-The output reports Mean Absolute Error (MAE in days), Root Mean Squared Error (RMSE in days), and cross-validated predictive <strong><em>MATH</em>BLOCK_31</strong></em>. Standardized studentized residuals (<strong><em>MATH</em>BLOCK_32</strong><em>) screen the alignment for high-leverage outliers (<strong><em>MATH</em>BLOCK_33</strong></em>).</p>
+$$\hat{t}_{(-i)} = \frac{d_i - \hat{\beta}_{0, (-i)}}{\hat{\mu}_{(-i)}}$$
+The output reports Mean Absolute Error (MAE in days), Root Mean Squared Error (RMSE in days), and cross-validated predictive $R^2$. Standardized studentized residuals ($Z_i$) screen the alignment for high-leverage outliers ($|Z_i| \ge 2.50$).</p>
 <hr />
 <h2 id="4-multi-rate-deconvolution-dissecting-lineage-tempos-via-autoclock">4. Multi-Rate Deconvolution: Dissecting Lineage Tempos via AutoClock</h2>
 <p>A single molecular clock fails when applied to large-scale pathogen surveillance feeds. Co-circulating viral subtypes, distinct animal reservoirs, and localized clonal bursts evolve at disparate substitution velocities. Fitting a single regression line across such mixtures triggers mathematical collapse: slow lineages flatten the fitted slope, destroying temporal correlation. Resolving these dynamics requires unsupervised rate deconvolution.</p>
@@ -300,21 +300,21 @@ chronaeon autoclock \
   -o autoclock_results.json 2&gt;&amp;1 | tee chronaeon_autoclock.log
 </code></pre></div>
 <p>AutoClock partitions sequence alignments using graph spectral bisection on the normalized distance Laplacian:
-<strong><em>MATH</em>BLOCK_9</strong><em>
-The algorithm identifies structural bottlenecks in the genetic distance network by evaluating Cheeger eigengaps (<strong><em>MATH</em>BLOCK_34</strong></em>). It searches across candidate community counts <strong><em>MATH</em>BLOCK_35</strong><em>, selecting the optimal partition <strong><em>MATH</em>BLOCK_36</strong></em> that maximizes spectral modularity and minimizes the sample-size-corrected Akaike Information Criterion (<strong><em>MATH</em>BLOCK_37</strong>_).</p>
+$$\mathbf{L}_{\mathrm{sym}} = \mathbf{I} - \mathbf{D}^{-1/2} \mathbf{A} \mathbf{D}^{-1/2}$$
+The algorithm identifies structural bottlenecks in the genetic distance network by evaluating Cheeger eigengaps ($\Delta \lambda_k = \lambda_{k+1} - \lambda_k$). It searches across candidate community counts $K \in \{1, \dots, K_{\max}\}$, selecting the optimal partition $K^*$ that maximizes spectral modularity and minimizes the sample-size-corrected Akaike Information Criterion ($\mathrm{AIC}_c$).</p>
 <p>AutoClock enforces five invariant biological stopping criteria to avoid over-partitioning continuous epidemic waves:
-- Sample size floor: Partitions must satisfy <strong><em>MATH</em>BLOCK_38</strong><em> (default <strong><em>MATH</em>BLOCK_39</strong></em>).
-- Timespan floor: Sampling window must span at least 1.0 year (<strong><em>MATH</em>BLOCK_40</strong><em>).
-- Parsimony threshold: Community splitting requires an improvement of <strong><em>MATH</em>BLOCK_41</strong></em>.
-- Spectral bottleneck threshold: Normalized Laplacian eigengap must exceed <strong><em>MATH</em>BLOCK_42</strong>_.
+- Sample size floor: Partitions must satisfy $|\mathcal{C}| \ge 2 N_{\min}$ (default $N_{\min} = 25$).
+- Timespan floor: Sampling window must span at least 1.0 year ($\Delta t \ge 1.0$).
+- Parsimony threshold: Community splitting requires an improvement of $\Delta\mathrm{AIC}_c \ge 15.0$.
+- Spectral bottleneck threshold: Normalized Laplacian eigengap must exceed $\varepsilon_{\lambda}$.
 - Rate homogeneity: If sublineage rates differ by less than 15%, recursion halts to preserve a unified clock.</p>
-<p>Each inferred community receives an independent molecular clock regression, rate estimate <strong><em>MATH</em>BLOCK_43</strong><em>, and crown emergence date <strong><em>MATH</em>BLOCK_44</strong></em>. High-leverage anomalous sequences are quarantined autonomously via rank-1 Sherman-Morrison updates.</p>
+<p>Each inferred community receives an independent molecular clock regression, rate estimate $\mu_k$, and crown emergence date $t_{\mathrm{MRCA}, k}$. High-leverage anomalous sequences are quarantined autonomously via rank-1 Sherman-Morrison updates.</p>
 <hr />
 <h2 id="5-step-by-step-worked-example-the-2019-cuban-zika-outbreak">5. Step-by-Step Worked Example: The 2019 Cuban Zika Outbreak</h2>
 <p>To demonstrate this operational pipeline, we examine the landmark 2019 Cuban Zika virus surveillance study by Grubaugh et al., published in <em>Cell</em> (Dataset <code>06_zika_cuba_grubaugh2019</code> in <code>data/06_zika_cuba_grubaugh2019/beast.xml.gz</code>).</p>
 <h3 id="51-biological-and-literature-context">5.1 Biological and Literature Context</h3>
 <p>During the 2015-2016 continental Zika epidemic in the Americas, reported cases peaked and then declined steeply across Latin America. In 2017, routine travel surveillance in Florida detected a cluster of unannounced Zika infections in travelers returning from Cuba. Grubaugh et al. sequenced complete viral genomes from infected travelers and local mosquitoes to determine whether these cases represented ongoing cryptic transmission.</p>
-<p>Their published analysis integrated 283 complete open reading frames (10,269 nt, 3,423 codons) sampled between late 2013 and early 2018 (<strong><em>MATH</em>BLOCK_45</strong><em> years). In BEAST v1.10.4, evaluating this cohort under an uncorrelated lognormal relaxed clock and a Bayesian skygrid demographic prior required 1,000,000,000 MCMC states (one billion iterations) accelerated by BEAGLE on compute clusters. Their MCMC runs estimated a mean branch substitution rate of <strong><em>MATH</em>BLOCK_46</strong></em> substitutions per site per year and dated the crown ancestor of the outbreak to 2013.37 CE (95% Bayesian credible interval: [2013.16, 2013.56] CE).</p>
+<p>Their published analysis integrated 283 complete open reading frames (10,269 nt, 3,423 codons) sampled between late 2013 and early 2018 ($\Delta T = 4.23$ years). In BEAST v1.10.4, evaluating this cohort under an uncorrelated lognormal relaxed clock and a Bayesian skygrid demographic prior required 1,000,000,000 MCMC states (one billion iterations) accelerated by BEAGLE on compute clusters. Their MCMC runs estimated a mean branch substitution rate of $1.095 \times 10^{-3}$ substitutions per site per year and dated the crown ancestor of the outbreak to 2013.37 CE (95% Bayesian credible interval: [2013.16, 2013.56] CE).</p>
 <h3 id="52-chronaeon-single-clock-execution">5.2 ChronAeon Single-Clock Execution</h3>
 <p>We run single-clock dating directly on the authentic shipped BEAST XML configuration (<code>data/06_zika_cuba_grubaugh2019/beast.xml.gz</code>, 283 taxa, 10,269 bp, 3,423 codons):</p>
 <div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Direct ingestion from the shipped compressed BEAST XML archive:
@@ -357,7 +357,7 @@ chronaeon date \
     - Predictive R²: 0.4412
 [✓] Results written to chronaeon_dating.json in 8.65 s.
 </code></pre></div>
-<p>The linear clock was confirmed as parsimonious (<strong><em>MATH</em>BLOCK_47</strong><em>). The global OLS regression estimated a substitution rate of <strong><em>MATH</em>BLOCK_48</strong></em> substitutions per site per year and an emergence date of 2012.58 CE. However, examining the global PGLS slope shows that downweighting close transmission clusters pulled the intercept backward to 2011.60 CE. This backward shift occurred because the dataset contains two distinct epidemiological regimes: a deeply divergent continental background from Brazil and Colombia, alongside an acute outbreak expansion within Cuba.</p>
+<p>The linear clock was confirmed as parsimonious ($p = 0.2037$). The global OLS regression estimated a substitution rate of $8.64 \times 10^{-4}$ substitutions per site per year and an emergence date of 2012.58 CE. However, examining the global PGLS slope shows that downweighting close transmission clusters pulled the intercept backward to 2011.60 CE. This backward shift occurred because the dataset contains two distinct epidemiological regimes: a deeply divergent continental background from Brazil and Colombia, alongside an acute outbreak expansion within Cuba.</p>
 <h3 id="53-autoclock-deconvolution">5.3 AutoClock Deconvolution</h3>
 <p>To separate these distinct evolutionary tempos, we execute AutoClock:</p>
 <div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Execute AutoClock multi-rate deconvolution directly on the BEAST XML:
@@ -384,15 +384,15 @@ chronaeon autoclock \
       - Clock fit: R² = 0.7914, Pagel's λ* = 0.0010
 [✓] Deconvolution completed in 18.12 s.
 </code></pre></div>
-<p>AutoClock bisected the alignment into two coherent evolutionary communities (<strong><em>MATH</em>BLOCK_49</strong><em>). Community 0 isolates the broader American reservoir. Community 1 isolates the sixty-two genomes representing the Cuban transmission wave and returning travelers. Within Community 1, tree-free regression estimates:
-<strong><em>MATH</em>BLOCK_10</strong></em></p>
+<p>AutoClock bisected the alignment into two coherent evolutionary communities ($K^* = 2, \Delta\mathrm{AIC}_c = 144.4$). Community 0 isolates the broader American reservoir. Community 1 isolates the sixty-two genomes representing the Cuban transmission wave and returning travelers. Within Community 1, tree-free regression estimates:
+$$\mu = 9.71 \times 10^{-4} \text{ substitutions/site/year}, \quad t_{\mathrm{MRCA}} = 2013.45 \text{ CE} \quad [2012.57, 2013.83]$$</p>
 <h3 id="54-quantitative-comparison-against-published-beast-mcmc">5.4 Quantitative Comparison Against Published BEAST MCMC</h3>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Method / Platform</th>
-<th style="text-align: left;">Substitution Rate <strong><em>MATH</em>BLOCK_50</strong>_ (subs/site/yr)</th>
-<th style="text-align: left;">Crown <strong><em>MATH</em>BLOCK_51</strong>_</th>
+<th style="text-align: left;">Substitution Rate $\mu$ (subs/site/yr)</th>
+<th style="text-align: left;">Crown $t_{\mathrm{MRCA}}$</th>
 <th style="text-align: left;">95% Uncertainty Interval</th>
 <th style="text-align: left;">MCMC State Count</th>
 <th style="text-align: left;">Wall-Clock Runtime</th>
@@ -401,7 +401,7 @@ chronaeon autoclock \
 <tbody>
 <tr>
 <td style="text-align: left;">BEAST v1.10.4 (Published Baseline)</td>
-<td style="text-align: left;"><strong><em>MATH</em>BLOCK_52</strong>_</td>
+<td style="text-align: left;">$1.095 \times 10^{-3}$</td>
 <td style="text-align: left;">2013.37 CE</td>
 <td style="text-align: left;">[2013.16, 2013.56] (HPD)</td>
 <td style="text-align: left;">1,000,000,000</td>
@@ -409,7 +409,7 @@ chronaeon autoclock \
 </tr>
 <tr>
 <td style="text-align: left;">ChronAeon Global OLS</td>
-<td style="text-align: left;"><strong><em>MATH</em>BLOCK_53</strong>_</td>
+<td style="text-align: left;">$8.641 \times 10^{-4}$</td>
 <td style="text-align: left;">2012.58 CE</td>
 <td style="text-align: left;">[2012.31, 2012.82] (Fieller)</td>
 <td style="text-align: left;">Tree-Free</td>
@@ -417,7 +417,7 @@ chronaeon autoclock \
 </tr>
 <tr>
 <td style="text-align: left;">ChronAeon AutoClock Community 1</td>
-<td style="text-align: left;"><strong><em>MATH</em>BLOCK_54</strong>_</td>
+<td style="text-align: left;">$9.710 \times 10^{-4}$</td>
 <td style="text-align: left;">2013.45 CE</td>
 <td style="text-align: left;">[2012.57, 2013.83] (Fieller)</td>
 <td style="text-align: left;">Tree-Free</td>
@@ -426,21 +426,21 @@ chronaeon autoclock \
 </tbody>
 </table>
 <p>The analytical concordance between AutoClock Community 1 and published BEAST MCMC is striking:
-1. Emergence date concordance: ChronAeon infers the crown ancestor at 2013.45 CE. Grubaugh et al. inferred 2013.37 CE. The difference is only 29 days (<strong><em>MATH</em>BLOCK_55</strong><em> years).
-2. Substitution rate concordance: ChronAeon estimates <strong><em>MATH</em>BLOCK_56</strong></em> substitutions per site per year, closely matching BEAST's mean rate of <strong><em>MATH</em>BLOCK_57</strong>_.
+1. Emergence date concordance: ChronAeon infers the crown ancestor at 2013.45 CE. Grubaugh et al. inferred 2013.37 CE. The difference is only 29 days ($\Delta t = 0.08$ years).
+2. Substitution rate concordance: ChronAeon estimates $9.71 \times 10^{-4}$ substitutions per site per year, closely matching BEAST's mean rate of $1.095 \times 10^{-3}$.
 3. Computational throughput: Evaluating one billion MCMC states in BEAST requires high-performance cluster hours. ChronAeon completed the entire deconvolution and calibration in 18.12 seconds on a single laptop. The empirical speedup exceeds 100,000-fold.</p>
 <hr />
 <h2 id="6-pragmatic-rules-of-thumb-for-practitioners">6. Pragmatic Rules of Thumb for Practitioners</h2>
 <p>When applying ChronAeon to real-world pathogen surveillance, practitioners should adopt the following operational heuristics:</p>
 <ol>
-<li>Always Inspect the Denny-Fieller <strong><em>MATH</em>BLOCK_58</strong><em>-Statistic:
-   If <strong><em>MATH</em>BLOCK_59</strong></em>, the clock slope is well-separated from zero and the emergence horizon is tightly bounded. If <strong><em>MATH</em>BLOCK_60</strong><em>, the 95% confidence interval becomes unbounded. Do not force an artificial date when <strong><em>MATH</em>BLOCK_61</strong></em>. An unbounded Fieller interval indicates that sampling span or mutational accumulation is insufficient to support an autonomous molecular clock.</li>
-<li>Rely on Splines Only When <strong><em>MATH</em>BLOCK_62</strong><em>:
-   ChronAeon tests for rate deceleration across multi-decadal alignments via restricted cubic splines. If the curvature test yields <strong><em>MATH</em>BLOCK_63</strong></em> or <strong><em>MATH</em>BLOCK_64</strong>_, default to the linear clock. Natural splines should be reserved for datasets with genuine multi-epoch rate decay, such as ancient DNA or long-term retroviral radiations.</li>
+<li>Always Inspect the Denny-Fieller $g$-Statistic:
+   If $g < 0.10$, the clock slope is well-separated from zero and the emergence horizon is tightly bounded. If $g \ge 1.0$, the 95% confidence interval becomes unbounded. Do not force an artificial date when $g \ge 1.0$. An unbounded Fieller interval indicates that sampling span or mutational accumulation is insufficient to support an autonomous molecular clock.</li>
+<li>Rely on Splines Only When $\Delta\mathrm{AIC} \ge 10.0$:
+   ChronAeon tests for rate deceleration across multi-decadal alignments via restricted cubic splines. If the curvature test yields $p > 0.05$ or $\Delta\mathrm{AIC} < 10.0$, default to the linear clock. Natural splines should be reserved for datasets with genuine multi-epoch rate decay, such as ancient DNA or long-term retroviral radiations.</li>
 <li>Run AutoClock Whenever Alignments Span Multiple Outbreaks:
-   When analyzing mixed surveillance feeds that combine distinct geographical regions or multi-year transmission waves, do not force a single clock across the cohort. Run <code>chronaeon autoclock</code> to test for Cheeger eigengap cliffs. If <strong><em>MATH</em>BLOCK_65</strong>_, report clade-specific rates and community radiation dates.</li>
+   When analyzing mixed surveillance feeds that combine distinct geographical regions or multi-year transmission waves, do not force a single clock across the cohort. Run <code>chronaeon autoclock</code> to test for Cheeger eigengap cliffs. If $\Delta\mathrm{AIC}_c \ge 15.0$, report clade-specific rates and community radiation dates.</li>
 <li>Audit Residual Outliers Before Final Reporting:
-   Examine <code>chronaeon_dating.csv</code> for taxa with studentized residuals <strong><em>MATH</em>BLOCK_66</strong>_. Verify collection dates in primary laboratory logs for flagged outliers. Cell-culture passaging, hypermutation, and retroviral latent reservoir persistence routinely manifest as significant temporal residuals. Quarantining confirmed anomalies stabilizes slope estimation.</li>
+   Examine <code>chronaeon_dating.csv</code> for taxa with studentized residuals $|Z_i| \ge 2.50$. Verify collection dates in primary laboratory logs for flagged outliers. Cell-culture passaging, hypermutation, and retroviral latent reservoir persistence routinely manifest as significant temporal residuals. Quarantining confirmed anomalies stabilizes slope estimation.</li>
 <li>Standardize Hardware Device Execution:
    ChronAeon auto-selects Apple Metal (MPS) on macOS and NVIDIA CUDA on Linux. To enforce CPU-only execution on headless server nodes lacking GPU drivers, supply the <code>--cpu</code> flag.</li>
 </ol>
