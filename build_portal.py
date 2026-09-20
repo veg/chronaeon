@@ -1452,7 +1452,7 @@ def generate_index_html(records):
     <!-- Hero Section -->
     <section class="rams-hero">
       <div class="rams-container">
-        <div class="rams-eyebrow">RESEARCH COMPENDIUM &bull; OPEN REPRODUCIBILITY</div>
+        <div class="rams-eyebrow">RESEARCH COMPENDIUM &bull; FUNDED BY BRC-ANALYTICS (NIAID)</div>
         <h1 class="rams-title">
           Tree-free molecular clock dating from sequence divergence.
         </h1>
@@ -1465,17 +1465,17 @@ def generate_index_html(records):
           </p>
         </div>
 
-        <!-- Command-Line & Cloud Usage Box -->
+        <!-- Command-Line Interface Box -->
         <div class="rams-cli-box">
           <div class="rams-cli-header">
-            <span class="rams-cli-label">EXECUTION MODES</span>
-            <span style="font-size: 0.75rem; color: #888888;">CLI &bull; Python Package &bull; BRC-Analytics Cloud</span>
+            <span class="rams-cli-label">COMMAND-LINE INTERFACE</span>
+            <span style="font-size: 0.75rem; color: #888888;">Python 3.8+ &bull; Open Source</span>
           </div>
           <div class="rams-cli-code">
             <code>chronaeon date --beast dataset.xml.gz --loocv</code>
           </div>
           <div class="rams-cli-note">
-            Run locally via command line or Python, or execute in the cloud via zero-install workflows on <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit; font-weight: 500;">BRC-Analytics</a>. Ingests compressed BEAST XML configs or FASTA + CSV dates directly.
+            Ingests compressed BEAST XML configs or FASTA + CSV dates directly. Computes closed-form Denny-Fieller confidence intervals and leave-one-out cross-validation in seconds.
           </div>
         </div>
 
@@ -1593,10 +1593,6 @@ def generate_index_html(records):
           <div class="rams-spec-row">
             <div class="rams-spec-label">Empirical Validation</div>
             <div class="rams-spec-val">42 published empirical BEAST cohorts ({total_taxa:,} taxa; 1882–2026) evaluated using original author alignments and dates, alongside NextStrain (3,221 taxa) and BV-BRC (10,000 taxa) surveillance datasets.</div>
-          </div>
-          <div class="rams-spec-row">
-            <div class="rams-spec-label">Cloud Platform</div>
-            <div class="rams-spec-val">Integrated into <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">BRC-Analytics</a> (NIAID / Galaxy) for zero-install web execution directly connected to planetary pathogen streams.</div>
           </div>
         </div>
       </div>
@@ -1730,9 +1726,9 @@ def generate_index_html(records):
         <div class="rams-section-header">
           <div class="rams-section-num">03</div>
           <div>
-            <h2 class="rams-section-title">Surveillance Validation &amp; Cloud Workflows</h2>
+            <h2 class="rams-section-title">Real-Time Surveillance Validation</h2>
             <p class="rams-section-desc">
-              Validation on uncurated epidemiological surveillance streams spanning thousands of viral genomes, supported by BRC-Analytics web workflows.
+              Validation on uncurated epidemiological surveillance streams spanning thousands of viral genomes.
             </p>
           </div>
         </div>
@@ -1775,26 +1771,6 @@ def generate_index_html(records):
             <div class="rams-surveillance-links">
               <a href="surveillance/bvbrc/index.html" class="rams-btn-link">View Dossier &rarr;</a>
               <a href="data/surveillance_bvbrc_reproducibility.tar.gz" download class="rams-btn-subtle">Package (.tar.gz)</a>
-            </div>
-          </div>
-
-          <!-- BRC-Analytics -->
-          <div class="rams-surveillance-card">
-            <div>
-              <div class="rams-surveillance-head">
-                <span class="rams-surveillance-tag">BRC-ANALYTICS CLOUD PLATFORM</span>
-                <span class="rams-surveillance-stat">Zero-Install &bull; NIAID / Galaxy</span>
-              </div>
-              <h3 class="rams-surveillance-title">
-                <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics: Web-Based Pathogen Surveillance &amp; Dating &rarr;</a>
-              </h3>
-              <p class="rams-surveillance-desc">
-                Hosted analytical workspace for NIAID pathogen resources. Bridges BV-BRC repositories, HyPhy selection analyses, and ChronAeon manifold dating into browser-executable workflows without local compute clusters or environment setup.
-              </p>
-            </div>
-            <div class="rams-surveillance-links">
-              <a href="https://brc-analytics.org" target="_blank" rel="noopener" class="rams-btn-link">Launch BRC-Analytics &nearr;</a>
-              <a href="https://brc-analytics.org" target="_blank" rel="noopener" class="rams-btn-subtle">brc-analytics.org &nearr;</a>
             </div>
           </div>
         </div>
