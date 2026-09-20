@@ -246,8 +246,9 @@ def build_tutorial_html(title, subtitle, badge_text, md_file, out_file, prev_lin
       <nav class="nav-links">
         <a href="../index.html">&larr; Home</a>
         <a href="index.html" style="color: var(--primary); font-weight: 600;">Tutorials Hub</a>
+        <a href="../index.html#surveillance">Surveillance</a>
         <a href="../index.html#benchmarks">42 BEAST Benchmarks</a>
-        <a href="../index.html#grand-challenges">Grand Challenges</a>
+        <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics &nearr;</a>
         <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
       </nav>
     </div>
@@ -425,8 +426,9 @@ def build_tutorials_hub():
       </div>
       <nav class="nav-links">
         <a href="../index.html">&larr; Main Portal</a>
+        <a href="../index.html#surveillance">Surveillance</a>
         <a href="../index.html#benchmarks">42 BEAST Benchmarks</a>
-        <a href="../index.html#grand-challenges">Grand Challenges</a>
+        <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics &nearr;</a>
         <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
       </nav>
     </div>

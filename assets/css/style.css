@@ -1175,9 +1175,10 @@ html {
 
 .rams-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
+  flex-wrap: wrap;
 }
 
 .rams-nav a {
@@ -1690,7 +1691,7 @@ html {
 /* Surveillance Grid */
 .rams-surveillance-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -1804,7 +1805,7 @@ html {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .rams-pillars-grid {
     grid-template-columns: 1fr;
   }
