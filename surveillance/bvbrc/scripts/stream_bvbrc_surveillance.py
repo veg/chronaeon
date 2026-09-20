@@ -3,8 +3,7 @@
 stream_bvbrc_surveillance.py
 ============================
 BV-BRC Live Streaming Ingestion, Sieve Triage, and Multi-Clock Pipeline
-Author: Sergei L. Kosakovsky Pond & DeepMind Antigravity Pair Programmer
-ChronAeon Project | Institute for Genomics and Evolutionary Medicine (iGEM)
+ChronAeon Project | ChronAeon Research Consortium
 
 Capabilities:
 1. Live REST API streaming: Direct HTTP ingestion from the BV-BRC API

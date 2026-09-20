@@ -75,6 +75,9 @@ def build_tutorial_html(title, subtitle, badge_text, md_file, out_file, prev_lin
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | ChronAeon Tutorial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script>
     window.MathJax = {{
@@ -290,10 +293,10 @@ def build_tutorial_html(title, subtitle, badge_text, md_file, out_file, prev_lin
     </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-container">
+  <footer class="site-footer" style="background: var(--palette-smoke-light); border-top: 1px solid var(--palette-smoke-main); padding: 2rem 0; margin-top: 3rem;">
+    <div class="footer-container" style="max-width: 960px; margin: 0 auto; text-align: center; color: var(--palette-ink-light); font-size: 0.85rem;">
       <div class="footer-text">
-        &copy; 2026 ChronAeon Authors &bull; Department of Biology, Temple University &bull; Institute for Genomics and Evolutionary Medicine (iGEM).
+        &copy; 2026 ChronAeon Authors &bull; Supported by <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="color: var(--palette-primary-main);">BRC-Analytics (NIAID)</a>.
       </div>
     </div>
   </footer>
@@ -326,6 +329,9 @@ def build_tutorials_hub():
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutorials & Guides | ChronAeon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
     .hub-container {
@@ -553,10 +559,10 @@ def build_tutorials_hub():
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-container">
+  <footer class="site-footer" style="background: var(--palette-smoke-light); border-top: 1px solid var(--palette-smoke-main); padding: 2rem 0; margin-top: 3rem;">
+    <div class="footer-container" style="max-width: 1040px; margin: 0 auto; text-align: center; color: var(--palette-ink-light); font-size: 0.85rem;">
       <div class="footer-text">
-        &copy; 2026 ChronAeon Authors &bull; Department of Biology, Temple University &bull; Institute for Genomics and Evolutionary Medicine (iGEM).
+        &copy; 2026 ChronAeon Authors &bull; Supported by <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="color: var(--palette-primary-main);">BRC-Analytics (NIAID)</a>.
       </div>
     </div>
   </footer>

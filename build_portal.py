@@ -1407,6 +1407,9 @@ def generate_index_html(records):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChronAeon Benchmark Compendium | 42 Curated Empirical Cohorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
     window.MathJax = {{
@@ -1437,7 +1440,7 @@ def generate_index_html(records):
         <a href="#tutorials">Tutorials</a>
         <a href="#surveillance">Surveillance</a>
         <a href="#benchmarks">42 BEAST Benchmarks</a>
-        <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics &nearr;</a>
+        <a href="https://brc-analytics.org" target="_blank" rel="noopener" class="rams-nav-chip">BRC-Analytics &nearr;</a>
         <a href="AGENT.MD">AGENT.md</a>
         <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
       </nav>
@@ -1449,7 +1452,7 @@ def generate_index_html(records):
     <!-- Hero Section -->
     <section class="rams-hero">
       <div class="rams-container">
-        <div class="rams-eyebrow">RESEARCH COMPENDIUM &bull; TEMPLE UNIVERSITY iGEM</div>
+        <div class="rams-eyebrow">RESEARCH COMPENDIUM &bull; OPEN REPRODUCIBILITY</div>
         <h1 class="rams-title">
           Tree-free molecular clock dating from sequence divergence.
         </h1>
@@ -1593,7 +1596,7 @@ def generate_index_html(records):
           </div>
           <div class="rams-spec-row">
             <div class="rams-spec-label">Cloud Platform</div>
-            <div class="rams-spec-val">Integrated into <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">BRC-Analytics</a> (NIAID / Galaxy / iGEM) for zero-install web execution directly connected to planetary pathogen streams.</div>
+            <div class="rams-spec-val">Integrated into <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">BRC-Analytics</a> (NIAID / Galaxy) for zero-install web execution directly connected to planetary pathogen streams.</div>
           </div>
         </div>
       </div>
@@ -1920,13 +1923,26 @@ def generate_index_html(records):
 
   </main>
 
-  <footer style="background: #ffffff; border-top: 1px solid #e5e5e5; padding: 2.5rem 0; margin-top: 2rem;">
-    <div class="rams-container" style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: #777777;">
-      <div>
-        <strong style="color: #111111;">ChronAeon</strong> &mdash; Tree-Free Molecular Clock Dating on Sequence Manifolds
-      </div>
-      <div>
-        Institute for Genomics and Evolutionary Medicine (iGEM) &bull; Temple University &bull; Supported by <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">BRC-Analytics (NIAID)</a>
+  <footer class="rams-footer">
+    <div class="rams-container">
+      <div class="rams-footer-main">
+        <div>
+          <div class="rams-footer-brand">
+            <strong style="color: var(--palette-primary-main); font-size: 1rem;">ChronAeon</strong>
+            <span style="color: var(--palette-smoke-dark);">/</span>
+            <span style="color: var(--palette-ink-light); font-size: 0.88rem;">Tree-Free Molecular Clock Dating</span>
+          </div>
+          <p class="rams-footer-copy">
+            ChronAeon Research Consortium &bull; Supported by <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics</a> and <a href="https://www.niaid.nih.gov/" target="_blank" rel="noopener">NIAID</a>
+          </p>
+        </div>
+        <div class="rams-footer-links">
+          <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics &nearr;</a>
+          <a href="https://www.bv-brc.org/" target="_blank" rel="noopener">BV-BRC &nearr;</a>
+          <a href="https://galaxyproject.org/" target="_blank" rel="noopener">Galaxy Project &nearr;</a>
+          <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
+          <span class="rams-chip">v1.0.0-rc</span>
+        </div>
       </div>
     </div>
   </footer>
@@ -2462,6 +2478,9 @@ def generate_study_page(rec, prev_rec, next_rec):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{html.escape(rec['pathogen'])} ({html.escape(rec['citation'])}) | ChronAeon Empirical Benchmark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script>
     window.MathJax = {{
@@ -2651,10 +2670,10 @@ def generate_study_page(rec, prev_rec, next_rec):
 
   </main>
 
-  <footer class="footer">
-    <div class="nav-container" style="justify-content: center; flex-direction: column; gap: 0.5rem;">
-      <p><strong>ChronAeon Benchmark Compendium</strong> &mdash; Open-Source Tree-Free Molecular Clock Inference</p>
-      <p style="font-size: 0.8rem;">Developed by the Kosakovsky Pond Laboratory &bull; Institute for Genomics and Evolutionary Medicine (iGEM) &bull; Temple University</p>
+  <footer class="footer" style="background: var(--palette-smoke-light); border-top: 1px solid var(--palette-smoke-main); padding: 2rem 0; margin-top: 3rem;">
+    <div class="nav-container" style="justify-content: center; flex-direction: column; gap: 0.5rem; text-align: center;">
+      <p style="color: var(--palette-text-primary);"><strong>ChronAeon Benchmark Compendium</strong> &mdash; Open-Source Tree-Free Molecular Clock Inference</p>
+      <p style="font-size: 0.8rem; color: var(--palette-ink-light);">ChronAeon Research Consortium &bull; Supported by <a href="https://brc-analytics.org" target="_blank" rel="noopener" style="color: var(--palette-primary-main);">BRC-Analytics (NIAID)</a></p>
     </div>
   </footer>
 
@@ -2924,7 +2943,7 @@ def update_readme(records):
 This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** ({total_taxa:,} taxa, 1882–2026) evaluated in the **ChronAeon** manuscript:
 
 > **"Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning"**  
-> *Sergei L. Kosakovsky Pond et al., Institute for Genomics and Evolutionary Medicine (iGEM), Temple University.*
+> *ChronAeon Research Consortium.*
 
 ---
 

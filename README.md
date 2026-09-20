@@ -3,7 +3,7 @@
 This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** (14,285 taxa, 1882–2026) evaluated in the **ChronAeon** manuscript:
 
 > **"Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning"**  
-> *Sergei L. Kosakovsky Pond et al., Institute for Genomics and Evolutionary Medicine (iGEM), Temple University.*
+> *ChronAeon Research Consortium.*
 
 ---
 
