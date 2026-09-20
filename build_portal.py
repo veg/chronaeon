@@ -1440,7 +1440,7 @@ def generate_index_html(records):
         <a href="#tutorials">Tutorials</a>
         <a href="#surveillance">Surveillance</a>
         <a href="#benchmarks">42 BEAST Benchmarks</a>
-        <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-nav-chip" style="background: var(--palette-primary-main); color: #ffffff; border-color: var(--palette-primary-main);">Online App &nearr;</a>
+        <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-nav-chip">Web App &nearr;</a>
         <a href="https://brc-analytics.org" target="_blank" rel="noopener" class="rams-nav-chip">BRC-Analytics &nearr;</a>
         <a href="AGENT.MD">AGENT.md</a>
         <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
@@ -1462,60 +1462,33 @@ def generate_index_html(records):
         </p>
         <div class="rams-narrative">
           <p>
-            Standard molecular clock tools like BEAST infer outbreak origins by exploring millions of branching topologies via Markov chain Monte Carlo (MCMC) sampling. In active epidemics with hundreds or thousands of sequenced genomes, this tree search becomes a computational bottleneck. ChronAeon models temporal divergence directly as the accumulation of genetic distance from an ancestral profile, solving substitution rates and origin dates ($t_\mathrm{{MRCA}}$) in seconds via closed-form statistical regressions.
+            Standard molecular clock tools like BEAST infer outbreak origins by exploring millions of branching topologies via Markov chain Monte Carlo (MCMC) sampling. In active epidemics with hundreds or thousands of sequenced genomes, this tree search becomes a computational bottleneck. ChronAeon models temporal divergence directly as the accumulation of genetic distance from an ancestral profile, solving substitution rates and origin dates (<em>t</em><sub>MRCA</sub>) in seconds via closed-form statistical regressions.
           </p>
         </div>
 
         <!-- Software Access & Deployment: CLI / HyphAeon Ecosystem & Online Implementation -->
-        <div class="rams-access-grid">
-          <!-- Card 1: Installation & HyphAeon Ecosystem -->
-          <div class="rams-access-card">
-            <div>
-              <div class="rams-access-header">
-                <span class="rams-access-tag">PYTHON PACKAGE &bull; HYPHAEON ECOSYSTEM</span>
-                <span class="rams-access-badge">Python 3.9+</span>
-              </div>
-              <h3 class="rams-access-title">Install ChronAeon CLI &amp; Python Engine</h3>
-              <p class="rams-access-desc">
-                ChronAeon is the molecular clock dating and phylodynamic engine of the <strong><a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">HyphAeon</a></strong> evolutionary foundation ecosystem. Install standalone via PyPI or clone the monorepo:
-              </p>
-              <div class="rams-access-code">
-                <div><span style="color: #888888;"># Install lightweight CLI &amp; Python package</span></div>
-                <div><span style="color: #222222; font-weight: 600;">pip install chronaeon</span></div>
-                <div style="margin-top: 0.45rem;"><span style="color: #888888;"># Date BEAST XML or FASTA + dates with LOOCV</span></div>
-                <div><span style="color: #222222; font-weight: 600;">chronaeon date --beast dataset.xml.gz --loocv</span></div>
-              </div>
-              <p class="rams-access-desc" style="font-size: 0.8rem; margin-bottom: 0;">
-                Subcommands include <code>date</code>, <code>autoclock</code> (multi-rate deconvolution), <code>triage</code> (outlier screening), and <code>--export-beast</code>. For developers, editable installs are supported via <code>pip install -e HyphAeon/chronaeon</code>.
-              </p>
+        <div class="rams-access-strip">
+          <div class="rams-access-cell">
+            <div class="rams-access-label">CLI &bull; HyphAeon Ecosystem</div>
+            <div class="rams-access-terminal">
+              <span class="rams-prompt">$</span>
+              <code>pip install chronaeon</code>
+              <button class="rams-copy-pill" onclick="navigator.clipboard.writeText('pip install chronaeon'); this.innerText='COPIED'; setTimeout(() => this.innerText='COPY', 2000);">COPY</button>
             </div>
-            <div class="rams-access-actions">
-              <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener" class="rams-btn-subtle">GitHub: veg/chronaeon &nearr;</a>
-              <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener" class="rams-btn-subtle">HyphAeon Monorepo &nearr;</a>
-              <a href="#tutorials" class="rams-btn-subtle">Tutorials &rarr;</a>
-            </div>
+            <p class="rams-access-sub">
+              Part of the <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener">HyphAeon</a> evolutionary foundation ecosystem &bull; <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">veg/chronaeon &nearr;</a>
+            </p>
           </div>
-
-          <!-- Card 2: Online In-Browser Implementation (PrimAeon Time) -->
-          <div class="rams-access-card">
-            <div>
-              <div class="rams-access-header">
-                <span class="rams-access-tag">ONLINE IN-BROWSER APPLICATION</span>
-                <span class="rams-access-badge">WebAssembly &amp; WebGPU</span>
-              </div>
-              <h3 class="rams-access-title">PrimAeon Time: Zero-Transmission Web Dating</h3>
-              <p class="rams-access-desc">
-                An interactive client-side web application executing closed-form distance geometry and manifold regressions directly in your web browser:
-              </p>
-              <ul style="margin: 0 0 0.85rem 1.15rem; padding: 0; font-size: 0.82rem; color: var(--palette-ink-light); line-height: 1.5;">
-                <li><strong>Zero Server Transmission:</strong> Sequence computation runs strictly client-side via WebAssembly/WebGPU. Genomic data never leave local memory, ensuring strict compliance with HIPAA, GDPR, and pathogen data sovereignty regulations.</li>
-                <li><strong>Frontline Surveillance:</strong> Drag and drop raw FASTA sequences to estimate substitution rates, calibrate $t_\mathrm{{MRCA}}$, inspect Manhattan diagnostic plots, and export Auspice-compatible timetree JSONs.</li>
-              </ul>
-            </div>
-            <div class="rams-access-actions">
-              <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-btn-link">Launch PrimAeon Time &nearr;</a>
-              <a href="http://primaeon.org/time/" target="_blank" rel="noopener" class="rams-btn-subtle">primaeon.org/time &nearr;</a>
-            </div>
+          <div class="rams-access-divider"></div>
+          <div class="rams-access-cell">
+            <div class="rams-access-label">In-Browser Engine &bull; Zero Server Transmission</div>
+            <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-access-btn">
+              <span>Launch PrimAeon Time</span>
+              <span>&nearr;</span>
+            </a>
+            <p class="rams-access-sub">
+              Client-side WebAssembly/WebGPU &bull; Sequence data never leave local memory (<a href="http://primaeon.org/time/" target="_blank" rel="noopener">primaeon.org/time</a>)
+            </p>
           </div>
         </div>
 
@@ -1547,19 +1520,19 @@ def generate_index_html(records):
               <div class="rams-stat-sub">Closed-form linear algebra vs. 100M BEAST MCMC states</div>
             </div>
             <div class="rams-stat-item">
-              <div class="rams-stat-label">Origin ($t_\mathrm{{MRCA}}$)</div>
+              <div class="rams-stat-label">Origin (<em>t</em><sub>MRCA</sub>)</div>
               <div class="rams-stat-val">1964.3 CE <span class="rams-stat-comp">(BEAST: 1972.4)</span></div>
               <div class="rams-stat-sub">Fieller 95% CI: [1952.0, 1971.4] vs. BEAST HPD: [1967.6, 1976.8]</div>
             </div>
             <div class="rams-stat-item">
-              <div class="rams-stat-label">Substitution Rate ($\mu$)</div>
-              <div class="rams-stat-val">$1.98 \\times 10^{{-4}}$ <span class="rams-stat-comp">(BEAST: $2.40 \\times 10^{{-4}}$)</span></div>
-              <div class="rams-stat-sub">Temporal signal $R^2 = 0.67$ ($p < 10^{{-15}}$)</div>
+              <div class="rams-stat-label">Substitution Rate (&mu;)</div>
+              <div class="rams-stat-val">1.98 &times; 10<sup>&minus;4</sup> <span class="rams-stat-comp">(BEAST: 2.40 &times; 10<sup>&minus;4</sup>)</span></div>
+              <div class="rams-stat-sub">Temporal signal <em>R</em><sup>2</sup> = 0.67 (<em>p</em> &lt; 10<sup>&minus;15</sup>)</div>
             </div>
             <div class="rams-stat-item">
               <div class="rams-stat-label">AutoClock Regimes</div>
-              <div class="rams-stat-val">$K^* = 3$ Transmission Waves</div>
-              <div class="rams-stat-sub">Distinct rates: $1.64 \\times 10^{{-4}}$ to $2.42 \\times 10^{{-4}}$ subs/site/yr</div>
+              <div class="rams-stat-val"><em>K</em>* = 3 Transmission Waves</div>
+              <div class="rams-stat-sub">Distinct rates: 1.64 &times; 10<sup>&minus;4</sup> to 2.42 &times; 10<sup>&minus;4</sup> subs/site/yr</div>
             </div>
           </div>
 
@@ -1570,7 +1543,7 @@ def generate_index_html(records):
             </a>
             <div class="rams-figure-caption">
               <strong>Figure: Continuous Manifold Alluvial Phylogeny &amp; Unsupervised Multi-Rate Deconvolution.</strong>
-              <strong>(A)</strong> Streamlines trace each sequenced isolate back to the common founder origin ($t_\\mathrm{{MRCA}} = 1964.3$ CE, blue diamond), illustrating how continuous distance geometry tracks lineage divergence over calendar time without inferring discrete branching topologies. Blue shaded band indicates ChronAeon 95% Fieller CI; yellow band indicates published BEAST 95% HPD.
+              <strong>(A)</strong> Streamlines trace each sequenced isolate back to the common founder origin (<em>t</em><sub>MRCA</sub> = 1964.3 CE, blue diamond), illustrating how continuous distance geometry tracks lineage divergence over calendar time without inferring discrete branching topologies. Blue shaded band indicates ChronAeon 95% Fieller CI; yellow band indicates published BEAST 95% HPD.
               <strong>(B)</strong> Direct linear regression through each community's observed sequence points confirms three distinct evolutionary tempos, deconvolved without geographic or lineage priors.
             </div>
 
@@ -1584,7 +1557,7 @@ def generate_index_html(records):
                     <span class="rams-comm-meta">Wave 0 &bull; N = 10</span>
                   </div>
                   <p>
-                    Established transmission spanning MD, PA, NJ, and northern WV along the Delaware and Chesapeake river basins ($\mu = 1.73 \\times 10^{{-4}}$ subs/site/yr, $R^2 = 0.65$).
+                    Established transmission spanning MD, PA, NJ, and northern WV along the Delaware and Chesapeake river basins (&mu; = 1.73 &times; 10<sup>&minus;4</sup> subs/site/yr, <em>R</em><sup>2</sup> = 0.65).
                   </p>
                 </div>
                 <div class="rams-comm-card">
@@ -1594,7 +1567,7 @@ def generate_index_html(records):
                     <span class="rams-comm-meta">Wave 1 &bull; N = 23</span>
                   </div>
                   <p>
-                    The 1990s epidemic wavefront spreading rapidly through immunologically naïve raccoon populations across New York, New England (MA, NH, VT), and eastern Ohio ($\mu = 2.42 \\times 10^{{-4}}$ subs/site/yr, $R^2 = 0.80$).
+                    The 1990s epidemic wavefront spreading rapidly through immunologically naïve raccoon populations across New York, New England (MA, NH, VT), and eastern Ohio (&mu; = 2.42 &times; 10<sup>&minus;4</sup> subs/site/yr, <em>R</em><sup>2</sup> = 0.80).
                   </p>
                 </div>
                 <div class="rams-comm-card">
@@ -1604,7 +1577,7 @@ def generate_index_html(records):
                     <span class="rams-comm-meta">Wave 2 &bull; N = 14</span>
                   </div>
                   <p>
-                    The historical translocation epicenter in Virginia, harboring basal isolates from the early 1980s and slower endemic circulation across VA, southern WV, NC, and TN ($\mu = 1.64 \\times 10^{{-4}}$ subs/site/yr, $R^2 = 0.53$).
+                    The historical translocation epicenter in Virginia, harboring basal isolates from the early 1980s and slower endemic circulation across VA, southern WV, NC, and TN (&mu; = 1.64 &times; 10<sup>&minus;4</sup> subs/site/yr, <em>R</em><sup>2</sup> = 0.53).
                   </p>
                 </div>
               </div>
@@ -1620,11 +1593,11 @@ def generate_index_html(records):
           </div>
           <div class="rams-spec-row">
             <div class="rams-spec-label">Inference Model</div>
-            <div class="rams-spec-val">Closed-form ratio calibration ($t_\\mathrm{{MRCA}} = t_0 - \\alpha/\\mu$) with exact Denny-Fieller confidence intervals ($g < 1$); evaluates OLS, Attention PGLS, and restricted natural splines.</div>
+            <div class="rams-spec-val">Closed-form ratio calibration (<em>t</em><sub>MRCA</sub> = <em>t</em><sub>0</sub> &minus; &alpha;/&mu;) with exact Denny-Fieller confidence intervals (<em>g</em> &lt; 1); evaluates OLS, Attention PGLS, and restricted natural splines.</div>
           </div>
           <div class="rams-spec-row">
             <div class="rams-spec-label">Multi-Lineage Clock</div>
-            <div class="rams-spec-val">Spectral AutoClock graph bisection on the normalized Laplacian ($\\mathbf{{L}}_\\mathrm{{sym}}$) to deconvolve co-circulating transmission tempos ($K^*$) without metadata priors.</div>
+            <div class="rams-spec-val">Spectral AutoClock graph bisection on the normalized Laplacian (<strong>L</strong><sub>sym</sub>) to deconvolve co-circulating transmission tempos (<em>K</em>*) without metadata priors.</div>
           </div>
           <div class="rams-spec-row">
             <div class="rams-spec-label">Quality Sieve</div>
@@ -1925,8 +1898,8 @@ def generate_index_html(records):
                   <th style="width: 40px;">#</th>
                   <th>Cohort &amp; Primary Reference</th>
                   <th>Taxonomy</th>
-                  <th style="text-align: right;">Taxa ($N$)</th>
-                  <th style="text-align: right;">Sites ($L$)</th>
+                  <th style="text-align: right;">Taxa (<em>N</em>)</th>
+                  <th style="text-align: right;">Sites (<em>L</em>)</th>
                   <th style="text-align: right;">Timespan</th>
                   <th>Published BEAST Baseline</th>
                   <th>ChronAeon Inferred</th>
@@ -2059,10 +2032,10 @@ def generate_study_page(rec, prev_rec, next_rec):
             <thead>
               <tr>
                 <th>Spectral Community</th>
-                <th style="text-align: right;">Taxa ($N$)</th>
-                <th style="text-align: right;">Within-Lineage Rate $\\mu_k$</th>
-                <th>Calibrated Root $t_{{\\mathrm{{MRCA}}}}$</th>
-                <th style="text-align: right;">Variance Explained ($R^2$)</th>
+                <th style="text-align: right;">Taxa (<em>N</em>)</th>
+                <th style="text-align: right;">Within-Lineage Rate &mu;<sub><em>k</em></sub></th>
+                <th>Calibrated Root (<em>t</em><sub>MRCA</sub>)</th>
+                <th style="text-align: right;">Variance Explained (<em>R</em><sup>2</sup>)</th>
               </tr>
             </thead>
             <tbody>
@@ -2128,7 +2101,7 @@ def generate_study_page(rec, prev_rec, next_rec):
 
     chron_tmrca_display = rec['chronaeon_tmrca']
     chron_meta_display = f"95% Fieller CI: {html.escape(rec['chronaeon_ci'])}"
-    chron_label_display = "ChronAeon Inferred $t_{\\mathrm{MRCA}}$"
+    chron_label_display = "ChronAeon Inferred <em>t</em><sub>MRCA</sub>"
     chron_card_style = ""
     root_qualifier_html = ""
     table_reconciliation_note_html = ""
@@ -2138,18 +2111,18 @@ def generate_study_page(rec, prev_rec, next_rec):
     c_tmrca_disp = f"{rec['chronaeon_tmrca']} CE" if not any(x in str(rec['chronaeon_tmrca']) for x in ["CE", "BCE"]) else str(rec['chronaeon_tmrca'])
 
     if rec['concordance_type'] == 'AUTOCLOCK_RECONCILED':
-        chron_label_display = "ChronAeon Crown $t_{\\mathrm{MRCA}}$ (AutoClock Reconciled)"
+        chron_label_display = "ChronAeon Crown <em>t</em><sub>MRCA</sub> (AutoClock Reconciled)"
         chron_tmrca_display = f"{rec['chronaeon_tmrca']} <span style=\"font-size: 0.72rem; font-weight: 700; color: #6d28d9; vertical-align: middle;\">(Crown)</span>"
-        chron_meta_display = f"Concordant only after AutoClock ($K^* = {rec['k_star']}$ communities)"
+        chron_meta_display = f"Concordant only after AutoClock (<em>K</em>* = {rec['k_star']} communities)"
         chron_card_style = 'style="border-top: 3px solid #7c3aed;"'
         root_qualifier_html = '<span style="font-size: 0.78rem; font-weight: 700; color: #6d28d9;">(Unpartitioned Crown)</span>'
-        table_reconciliation_note_html = f'<div style="font-size: 0.78rem; color: #6d28d9; line-height: 1.35; background: #faf5ff; padding: 0.35rem 0.5rem; border-radius: 4px; border: 1px solid #d8b4fe;"><strong>Reconciliation Note:</strong> Naive unpartitioned single clock fits only contemporary sampling crown. AutoClock spectral deconvolution ($K^* = {rec["k_star"]}$) resolves the multi-rate community substructure, achieving concordance with published BEAST history.</div>'
+        table_reconciliation_note_html = f'<div style="font-size: 0.78rem; color: #6d28d9; line-height: 1.35; background: #faf5ff; padding: 0.35rem 0.5rem; border-radius: 4px; border: 1px solid #d8b4fe;"><strong>Reconciliation Note:</strong> Naive unpartitioned single clock fits only contemporary sampling crown. AutoClock spectral deconvolution (<em>K</em>* = {rec["k_star"]}) resolves the multi-rate community substructure, achieving concordance with published BEAST history.</div>'
         top_reconciliation_banner_html = f"""    <!-- Prominent Top AutoClock Reconciliation Banner -->
     <div class=\"banner-reconciled\" style=\"margin-bottom: 1.5rem; padding: 1rem 1.25rem; border-radius: 8px; border-left: 5px solid #7c3aed; background: #faf5ff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);\">
       <div style=\"display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem;\">
         <div style=\"display: flex; align-items: center; gap: 0.6rem;\">
           <span class=\"badge badge-reconciled\" style=\"font-size: 0.82rem; padding: 0.3rem 0.65rem;\">CONCORDANT ONLY AFTER COMMUNITY RECONCILIATION</span>
-          <span style=\"font-weight: 700; font-size: 0.95rem; color: #6d28d9;\">AutoClock Multi-Rate Community Deconvolution ($K^* = {rec['k_star']}$)</span>
+          <span style=\"font-weight: 700; font-size: 0.95rem; color: #6d28d9;\">AutoClock Multi-Rate Community Deconvolution (<em>K</em>* = {rec['k_star']})</span>
         </div>
         <span style=\"font-size: 0.8rem; font-weight: 600; color: #7c3aed;\">BEAST: {b_tmrca_display} &bull; ChronAeon Crown: {c_tmrca_disp}</span>
       </div>
@@ -2158,7 +2131,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       </div>
     </div>"""
     elif rec['concordance_type'] == 'STEM_VS_CROWN':
-        chron_label_display = "ChronAeon Stem $t_{\\mathrm{MRCA}}$ (Ancestral Introduction)"
+        chron_label_display = "ChronAeon Stem <em>t</em><sub>MRCA</sub> (Ancestral Introduction)"
         chron_tmrca_display = f"{rec['chronaeon_tmrca']} <span style=\"font-size: 0.72rem; font-weight: 700; color: #b45309; vertical-align: middle;\">(Stem)</span>"
         chron_meta_display = f"Ancestral stem (95% CI: {html.escape(rec['chronaeon_ci'])})"
         chron_card_style = 'style="border-top: 3px solid #d97706;"'
@@ -2178,7 +2151,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       </div>
     </div>"""
     elif rec['concordance_type'] == 'SUBTYPE_MIXTURE':
-        chron_label_display = "ChronAeon Pooled $t_{\\mathrm{MRCA}}$ (Subtype Mixture)"
+        chron_label_display = "ChronAeon Pooled <em>t</em><sub>MRCA</sub> (Subtype Mixture)"
         chron_tmrca_display = f"{rec['chronaeon_tmrca']} <span style=\"font-size: 0.72rem; font-weight: 700; color: #b45309; vertical-align: middle;\">(Subtype Mixture)</span>"
         chron_meta_display = f"Pooled regression (95% CI: {html.escape(rec['chronaeon_ci'])})"
         chron_card_style = 'style="border-top: 3px solid #d97706;"'
@@ -2198,7 +2171,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       </div>
     </div>"""
     elif rec['concordance_type'] == 'NON_LINEAR_SPLINE':
-        chron_label_display = "ChronAeon $t_{\\mathrm{MRCA}}$ (Restricted Spline)"
+        chron_label_display = "ChronAeon <em>t</em><sub>MRCA</sub> (Restricted Spline)"
         chron_meta_display = f"Restricted Spline (95% CI: {html.escape(rec['chronaeon_ci'])})"
         chron_card_style = 'style="border-top: 3px solid #0284c7;"'
         root_qualifier_html = '<span style="font-size: 0.78rem; font-weight: 700; color: #0369a1;">(Restricted Spline)</span>'
@@ -2217,7 +2190,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       </div>
     </div>"""
     else:
-        chron_label_display = "ChronAeon Inferred $t_{\\mathrm{MRCA}}$"
+        chron_label_display = "ChronAeon Inferred <em>t</em><sub>MRCA</sub>"
         chron_card_style = 'style="border-top: 3px solid #16a34a;"'
         top_reconciliation_banner_html = ""
 
@@ -2367,7 +2340,7 @@ def generate_study_page(rec, prev_rec, next_rec):
                 </td>
               </tr>
               <tr>
-                <td><strong>Calibrated Root Date ($t_{{\\mathrm{{MRCA}}}}$)</strong></td>
+                <td><strong>Calibrated Root Date (<em>t</em><sub>MRCA</sub>)</strong></td>
                 <td>
                   <span class="code-mono" style="font-weight: 700; font-size: 1.05rem;">{rec['beast_tmrca']} CE</span>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">95% Posterior HPD: <code style="font-weight: 600;">{html.escape(rec['beast_ci'])}</code></div>
@@ -2385,7 +2358,7 @@ def generate_study_page(rec, prev_rec, next_rec):
                 </td>
               </tr>
               <tr>
-                <td><strong>Evolutionary Substitution Rate ($\\mu$)</strong></td>
+                <td><strong>Evolutionary Substitution Rate (&mu;)</strong></td>
                 <td>
                   <span class="code-mono" style="font-weight: 600;">{html.escape(b_rate_str)}</span><span style="font-size: 0.8rem; color: var(--text-muted);">{b_rate_unit}</span>
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Mean / median branch substitution rate under relaxed molecular clock prior.</div>
@@ -2402,7 +2375,7 @@ def generate_study_page(rec, prev_rec, next_rec):
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Prior: {render_markdown(rec['beast_model'])}</div>
                 </td>
                 <td>
-                  <strong>AutoClock Spectral Partitioning</strong>: normalized graph Laplacian $L_{{\\mathrm{{sym}}}}$ identifies <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.72rem;">K* = {rec['k_star']}</span> distinct evolutionary communities with within-lineage rates $\\mu_k$.
+                  <strong>AutoClock Spectral Partitioning</strong>: normalized graph Laplacian $L_{{\\mathrm{{sym}}}}$ identifies <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.72rem;"><em>K</em>* = {rec['k_star']}</span> distinct evolutionary communities with within-lineage rates &mu;<sub><em>k</em></sub>.
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Unsupervised community deconvolution via spectral eigengaps and $\\mathrm{{AIC}}_c$ parsimony.</div>
                 </td>
               </tr>
@@ -2421,7 +2394,7 @@ def generate_study_page(rec, prev_rec, next_rec):
                   Subjective manual sequence exclusion or external TempEst pre-screening; cannot evaluate out-of-sample predictive tip generalization.
                 </td>
                 <td>
-                  Automated <strong>High-Leverage Outlier Sieve (LOOCV)</strong> with standardized studentized residuals ($|Z_i| \\ge 2.50$, {rec['total_outliers_flagged']} flagged). Out-of-sample tip generalization: $R^2_{{\\mathrm{{pred}}}} = {r2_pred_str}$, MAE = {mae_days_str} days &bull; RMSE = {rmse_days_str} days.
+                  Automated <strong>High-Leverage Outlier Sieve (LOOCV)</strong> with standardized studentized residuals ($|Z_i| \\ge 2.50$, {rec['total_outliers_flagged']} flagged). Out-of-sample tip generalization: <em>R</em><sup>2</sup><sub>pred</sub> = {r2_pred_str}, MAE = {mae_days_str} days &bull; RMSE = {rmse_days_str} days.
                 </td>
               </tr>
               <tr>
@@ -2585,7 +2558,7 @@ def generate_study_page(rec, prev_rec, next_rec):
     <!-- Topline Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST $t_{{\\mathrm{{MRCA}}}}$</div>
+        <div class="scorecard-label">Published BEAST <em>t</em><sub>MRCA</sub></div>
         <div class="scorecard-value">{rec['beast_tmrca']}</div>
         <div class="scorecard-meta">95% HPD: {html.escape(rec['beast_ci'])}</div>
       </div>
@@ -2605,7 +2578,7 @@ def generate_study_page(rec, prev_rec, next_rec):
         <div class="scorecard-meta">Closed-form Tree-Free Manifold</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">Inferred Rate $\\mu$</div>
+        <div class="scorecard-label">Inferred Rate &mu;</div>
         <div class="scorecard-value" style="font-size: 1.15rem;">{rec['chronaeon_rate']}</div>
         <div class="scorecard-meta">subs/site/year</div>
       </div>

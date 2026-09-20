@@ -97,12 +97,12 @@
     <!-- Topline Scorecards -->
     <section class="scorecard-grid">
       <div class="scorecard-card">
-        <div class="scorecard-label">Published BEAST $t_{\mathrm{MRCA}}$</div>
+        <div class="scorecard-label">Published BEAST <em>t</em><sub>MRCA</sub></div>
         <div class="scorecard-value">2014.60</div>
         <div class="scorecard-meta">95% HPD: [2013.90, 2015.20]</div>
       </div>
       <div class="scorecard-card" style="border-top: 3px solid #d97706;">
-        <div class="scorecard-label">ChronAeon Stem $t_{\mathrm{MRCA}}$ (Ancestral Introduction)</div>
+        <div class="scorecard-label">ChronAeon Stem <em>t</em><sub>MRCA</sub> (Ancestral Introduction)</div>
         <div class="scorecard-value" style="color: var(--primary);">1929.72 <span style="font-size: 0.72rem; font-weight: 700; color: #b45309; vertical-align: middle;">(Stem)</span></div>
         <div class="scorecard-meta">Ancestral stem (95% CI: [1883.89, 1946.49])</div>
       </div>
@@ -117,7 +117,7 @@
         <div class="scorecard-meta">Closed-form Tree-Free Manifold</div>
       </div>
       <div class="scorecard-card">
-        <div class="scorecard-label">Inferred Rate $\mu$</div>
+        <div class="scorecard-label">Inferred Rate &mu;</div>
         <div class="scorecard-value" style="font-size: 1.15rem;">1.28e-03</div>
         <div class="scorecard-meta">subs/site/year</div>
       </div>
@@ -258,7 +258,7 @@
                 </td>
               </tr>
               <tr>
-                <td><strong>Calibrated Root Date ($t_{\mathrm{MRCA}}$)</strong></td>
+                <td><strong>Calibrated Root Date (<em>t</em><sub>MRCA</sub>)</strong></td>
                 <td>
                   <span class="code-mono" style="font-weight: 700; font-size: 1.05rem;">2014.60 CE</span>
                   <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">95% Posterior HPD: <code style="font-weight: 600;">[2013.90, 2015.20]</code></div>
@@ -276,7 +276,7 @@
                 </td>
               </tr>
               <tr>
-                <td><strong>Evolutionary Substitution Rate ($\mu$)</strong></td>
+                <td><strong>Evolutionary Substitution Rate (&mu;)</strong></td>
                 <td>
                   <span class="code-mono" style="font-weight: 600;">0.00089 subs/site/yr</span><span style="font-size: 0.8rem; color: var(--text-muted);"></span>
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Mean / median branch substitution rate under relaxed molecular clock prior.</div>
@@ -293,7 +293,7 @@
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Prior: GTR + Gamma, Uncorrelated Lognormal Relaxed Clock (UCLD), Bayesian Skyline Plot</div>
                 </td>
                 <td>
-                  <strong>AutoClock Spectral Partitioning</strong>: normalized graph Laplacian $L_{\mathrm{sym}}$ identifies <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.72rem;">K* = 4</span> distinct evolutionary communities with within-lineage rates $\mu_k$.
+                  <strong>AutoClock Spectral Partitioning</strong>: normalized graph Laplacian $L_{\mathrm{sym}}$ identifies <span class="badge badge-neutral" style="font-weight: 700; font-size: 0.72rem;"><em>K</em>* = 4</span> distinct evolutionary communities with within-lineage rates &mu;<sub><em>k</em></sub>.
                   <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Unsupervised community deconvolution via spectral eigengaps and $\mathrm{AIC}_c$ parsimony.</div>
                 </td>
               </tr>
@@ -312,7 +312,7 @@
                   Subjective manual sequence exclusion or external TempEst pre-screening; cannot evaluate out-of-sample predictive tip generalization.
                 </td>
                 <td>
-                  Automated <strong>High-Leverage Outlier Sieve (LOOCV)</strong> with standardized studentized residuals ($|Z_i| \ge 2.50$, 0 flagged). Out-of-sample tip generalization: $R^2_{\mathrm{pred}} = -8.16$, MAE = 1725.1 days &bull; RMSE = 7103.5 days.
+                  Automated <strong>High-Leverage Outlier Sieve (LOOCV)</strong> with standardized studentized residuals ($|Z_i| \ge 2.50$, 0 flagged). Out-of-sample tip generalization: <em>R</em><sup>2</sup><sub>pred</sub> = -8.16, MAE = 1725.1 days &bull; RMSE = 7103.5 days.
                 </td>
               </tr>
               <tr>
@@ -439,10 +439,10 @@
             <thead>
               <tr>
                 <th>Spectral Community</th>
-                <th style="text-align: right;">Taxa ($N$)</th>
-                <th style="text-align: right;">Within-Lineage Rate $\mu_k$</th>
-                <th>Calibrated Root $t_{\mathrm{MRCA}}$</th>
-                <th style="text-align: right;">Variance Explained ($R^2$)</th>
+                <th style="text-align: right;">Taxa (<em>N</em>)</th>
+                <th style="text-align: right;">Within-Lineage Rate &mu;<sub><em>k</em></sub></th>
+                <th>Calibrated Root (<em>t</em><sub>MRCA</sub>)</th>
+                <th style="text-align: right;">Variance Explained (<em>R</em><sup>2</sup>)</th>
               </tr>
             </thead>
             <tbody>
