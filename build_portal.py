@@ -1457,16 +1457,7 @@ def generate_index_html(records):
         </p>
         <div class="rams-narrative">
           <p>
-            When an infectious pathogen spreads through a population, mutations accumulate across its genome over calendar time. Tracking this molecular clock allows epidemiologists to determine when an outbreak began (the time to most recent common ancestor, or $t_\mathrm{{MRCA}}$) and how rapidly the pathogen is evolving.
-          </p>
-          <p>
-            For decades, standard molecular clock tools like BEAST have required reconstructing the pathogen's genealogical tree and exploring millions of possible branching patterns using MCMC. During an ongoing epidemic with thousands of sequenced genomes, this tree search quickly becomes a computational bottleneck: analyses take days or weeks, forcing researchers to downsample their data and discard the majority of collected sequences.
-          </p>
-          <p>
-            ChronAeon reconsiders this premise: is a phylogenetic tree strictly necessary to read the molecular clock? Because temporal divergence is fundamentally captured by the accumulation of genetic differences from an ancestral origin, ChronAeon reconstructs an ancestral sequence profile and measures genetic distance directly across sampling dates using continuous distance geometry. By replacing combinatorial tree search with closed-form statistical estimation, ChronAeon computes substitution rates and origin dates rapidly, yielding estimates that closely align with published Bayesian models.
-          </p>
-          <p>
-            When an outbreak involves multiple transmission waves, animal spillovers, or co-circulating variants mutating at different speeds, ChronAeon's spectral clustering algorithm automatically detects and isolates these distinct evolutionary tempos, without requiring pre-assigned lineages or prior metadata.
+            Standard molecular clock tools like BEAST infer outbreak origins by exploring millions of branching topologies via Markov chain Monte Carlo (MCMC) sampling. In active epidemics with hundreds or thousands of sequenced genomes, this tree search becomes a computational bottleneck. ChronAeon models temporal divergence directly as the accumulation of genetic distance from an ancestral profile, solving substitution rates and origin dates ($t_\mathrm{{MRCA}}$) in seconds via closed-form statistical regressions.
           </p>
         </div>
 
@@ -1481,6 +1472,63 @@ def generate_index_html(records):
           </div>
           <div class="rams-cli-note">
             Ingests compressed BEAST XML configs or FASTA + CSV dates directly. Computes closed-form Denny-Fieller confidence intervals and leave-one-out cross-validation in seconds.
+          </div>
+        </div>
+
+        <!-- Walkthrough: Canonical BEAST Empirical Benchmark (Rabies) -->
+        <div class="rams-walkthrough-card">
+          <div class="rams-walkthrough-header">
+            <div>
+              <div class="rams-walkthrough-tag">CANONICAL BEAST BENCHMARK WALKTHROUGH</div>
+              <h2 class="rams-walkthrough-title">North American Raccoon Rabies: Emergence Dating &amp; Multi-Rate Deconvolution in 0.57s</h2>
+              <p class="rams-walkthrough-sub">
+                Biek et al. (2007) <em>PNAS</em> &bull; Direct execution on author-deposited BEAST XML (<code>data/16_rabies_northamerica_biek2007/beast.xml.gz</code>)
+              </p>
+            </div>
+            <div class="rams-walkthrough-link">
+              <a href="studies/16_rabies_northamerica_biek2007/index.html" class="rams-btn-subtle">View Complete Study Dossier &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Walkthrough Metrics Strip -->
+          <div class="rams-walkthrough-stats">
+            <div class="rams-stat-item">
+              <div class="rams-stat-label">Dataset Scale</div>
+              <div class="rams-stat-val">47 genomes &bull; 2,814 sites</div>
+              <div class="rams-stat-sub">Complete N &amp; G gene CDS (1982–2004 CE)</div>
+            </div>
+            <div class="rams-stat-item">
+              <div class="rams-stat-label">Execution Latency</div>
+              <div class="rams-stat-val">0.57 seconds</div>
+              <div class="rams-stat-sub">Closed-form linear algebra vs. 100M BEAST MCMC states</div>
+            </div>
+            <div class="rams-stat-item">
+              <div class="rams-stat-label">Origin ($t_\mathrm{{MRCA}}$)</div>
+              <div class="rams-stat-val">1964.3 CE <span class="rams-stat-comp">(BEAST: 1972.4)</span></div>
+              <div class="rams-stat-sub">Fieller 95% CI: [1952.0, 1971.4] vs. BEAST HPD: [1967.6, 1976.8]</div>
+            </div>
+            <div class="rams-stat-item">
+              <div class="rams-stat-label">Substitution Rate ($\mu$)</div>
+              <div class="rams-stat-val">$1.98 \\times 10^{{-4}}$ <span class="rams-stat-comp">(BEAST: $2.40 \\times 10^{{-4}}$)</span></div>
+              <div class="rams-stat-sub">Temporal signal $R^2 = 0.67$ ($p < 10^{{-15}}$)</div>
+            </div>
+            <div class="rams-stat-item">
+              <div class="rams-stat-label">AutoClock Regimes</div>
+              <div class="rams-stat-val">$K^* = 3$ Transmission Waves</div>
+              <div class="rams-stat-sub">Distinct rates: $1.73 \\times 10^{{-4}}$ to $2.90 \\times 10^{{-4}}$ subs/site/yr</div>
+            </div>
+          </div>
+
+          <!-- Alluvial Figure Container -->
+          <div class="rams-walkthrough-figure">
+            <a href="assets/img/walkthrough_rabies_alluvial.png" target="_blank" rel="noopener">
+              <img src="assets/img/walkthrough_rabies_alluvial.png" alt="North American Raccoon Rabies Continuous Manifold Alluvial Phylogeny and AutoClock Multi-Rate Deconvolution" loading="lazy">
+            </a>
+            <div class="rams-figure-caption">
+              <strong>Figure: Continuous Manifold Alluvial Phylogeny &amp; Unsupervised Multi-Rate Deconvolution.</strong>
+              <strong>(A)</strong> Streamlines trace each sequenced isolate back to the common founder origin ($t_\mathrm{{MRCA}} = 1964.3$ CE, blue diamond), illustrating how continuous distance geometry tracks lineage divergence over calendar time without inferring discrete branching topologies. Blue shaded band indicates ChronAeon 95% Fieller CI; yellow band indicates published BEAST 95% HPD.
+              <strong>(B)</strong> Spectral graph bisection on the normalized Laplacian automatically separates the 3 co-circulating transmission waves without metadata labels: the Virginia translocation epicenter (Wave 0, blue, $\mu = 2.20 \times 10^{{-4}}$), the Northern Appalachian wave (Wave 1, green, $\mu = 1.73 \times 10^{{-4}}$), and the Western Pennsylvania/Ohio epidemic frontier (Wave 2, amber, $\mu = 2.90 \times 10^{{-4}}$).
+            </div>
           </div>
         </div>
 
