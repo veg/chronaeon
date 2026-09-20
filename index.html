@@ -47,11 +47,25 @@
       <div class="rams-container">
         <div class="rams-eyebrow">RESEARCH COMPENDIUM &bull; TEMPLE UNIVERSITY iGEM</div>
         <h1 class="rams-title">
-          Molecular clock calibration directly on sequence manifolds.
+          Tree-free molecular clock dating from sequence divergence.
         </h1>
         <p class="rams-lede">
-          ChronAeon estimates nucleotide substitution rates, ancestral divergence dates, and lineage-specific clock regimes directly from pairwise genetic distance manifolds—eliminating phylogenetic tree reconstruction and Markov chain Monte Carlo sampling.
+          ChronAeon is an open-source framework for estimating evolutionary rates and dating viral outbreaks directly from nucleotide sequences—without reconstructing phylogenetic trees or running Markov chain Monte Carlo (MCMC) simulations.
         </p>
+        <div class="rams-narrative">
+          <p>
+            When an infectious pathogen spreads through a population, mutations accumulate across its genome over calendar time. Tracking this molecular clock allows epidemiologists to determine when an outbreak began (the time to most recent common ancestor, or $t_\mathrm{MRCA}$) and how rapidly the pathogen is evolving.
+          </p>
+          <p>
+            For decades, standard molecular clock tools like BEAST have required reconstructing the pathogen's genealogical tree and exploring millions of possible branching patterns using MCMC. During an ongoing epidemic with thousands of sequenced genomes, this tree search quickly becomes a computational bottleneck: analyses take days or weeks, forcing researchers to downsample their data and discard the majority of collected sequences.
+          </p>
+          <p>
+            ChronAeon reconsiders this premise: is a phylogenetic tree strictly necessary to read the molecular clock? Because temporal divergence is fundamentally captured by the accumulation of genetic differences from an ancestral origin, ChronAeon reconstructs an ancestral sequence profile and measures genetic distance directly across sampling dates using continuous distance geometry. By replacing combinatorial tree search with closed-form statistical estimation, ChronAeon computes substitution rates and origin dates across tens of thousands of genomes in seconds on a standard laptop—with certified parity to published Bayesian results.
+          </p>
+          <p>
+            When an outbreak involves multiple transmission waves, animal spillovers, or co-circulating variants mutating at different speeds, ChronAeon's spectral clustering algorithm automatically detects and isolates these distinct evolutionary tempos, without requiring pre-assigned lineages or prior metadata.
+          </p>
+        </div>
 
         <!-- Command-Line Usage Box -->
         <div class="rams-cli-box">

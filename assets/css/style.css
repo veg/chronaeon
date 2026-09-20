@@ -1219,11 +1219,28 @@ html {
 }
 
 .rams-lede {
-  font-size: 1.1rem;
-  line-height: 1.65;
+  font-size: 1.18rem;
+  line-height: 1.6;
+  color: #111111;
+  max-width: 920px;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.rams-narrative {
+  max-width: 920px;
+  margin-bottom: 2.25rem;
+}
+
+.rams-narrative p {
+  font-size: 1.02rem;
+  line-height: 1.7;
   color: #444444;
-  max-width: 880px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.rams-narrative p:last-child {
+  margin-bottom: 0;
 }
 
 /* CLI Quick Box */
