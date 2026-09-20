@@ -1440,6 +1440,7 @@ def generate_index_html(records):
         <a href="#tutorials">Tutorials</a>
         <a href="#surveillance">Surveillance</a>
         <a href="#benchmarks">42 BEAST Benchmarks</a>
+        <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-nav-chip" style="background: var(--palette-primary-main); color: #ffffff; border-color: var(--palette-primary-main);">Online App &nearr;</a>
         <a href="https://brc-analytics.org" target="_blank" rel="noopener" class="rams-nav-chip">BRC-Analytics &nearr;</a>
         <a href="AGENT.MD">AGENT.md</a>
         <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">GitHub &nearr;</a>
@@ -1465,17 +1466,56 @@ def generate_index_html(records):
           </p>
         </div>
 
-        <!-- Command-Line Interface Box -->
-        <div class="rams-cli-box">
-          <div class="rams-cli-header">
-            <span class="rams-cli-label">COMMAND-LINE INTERFACE</span>
-            <span style="font-size: 0.75rem; color: #888888;">Python 3.8+ &bull; Open Source</span>
+        <!-- Software Access & Deployment: CLI / HyphAeon Ecosystem & Online Implementation -->
+        <div class="rams-access-grid">
+          <!-- Card 1: Installation & HyphAeon Ecosystem -->
+          <div class="rams-access-card">
+            <div>
+              <div class="rams-access-header">
+                <span class="rams-access-tag">PYTHON PACKAGE &bull; HYPHAEON ECOSYSTEM</span>
+                <span class="rams-access-badge">Python 3.9+</span>
+              </div>
+              <h3 class="rams-access-title">Install ChronAeon CLI &amp; Python Engine</h3>
+              <p class="rams-access-desc">
+                ChronAeon is the molecular clock dating and phylodynamic engine of the <strong><a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">HyphAeon</a></strong> evolutionary foundation ecosystem. Install standalone via PyPI or clone the monorepo:
+              </p>
+              <div class="rams-access-code">
+                <div><span style="color: #888888;"># Install lightweight CLI &amp; Python package</span></div>
+                <div><span style="color: #222222; font-weight: 600;">pip install chronaeon</span></div>
+                <div style="margin-top: 0.45rem;"><span style="color: #888888;"># Date BEAST XML or FASTA + dates with LOOCV</span></div>
+                <div><span style="color: #222222; font-weight: 600;">chronaeon date --beast dataset.xml.gz --loocv</span></div>
+              </div>
+              <p class="rams-access-desc" style="font-size: 0.8rem; margin-bottom: 0;">
+                Subcommands include <code>date</code>, <code>autoclock</code> (multi-rate deconvolution), <code>triage</code> (outlier screening), and <code>--export-beast</code>. For developers, editable installs are supported via <code>pip install -e HyphAeon/chronaeon</code>.
+              </p>
+            </div>
+            <div class="rams-access-actions">
+              <a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener" class="rams-btn-subtle">GitHub: veg/chronaeon &nearr;</a>
+              <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener" class="rams-btn-subtle">HyphAeon Monorepo &nearr;</a>
+              <a href="#tutorials" class="rams-btn-subtle">Tutorials &rarr;</a>
+            </div>
           </div>
-          <div class="rams-cli-code">
-            <code>chronaeon date --beast dataset.xml.gz --loocv</code>
-          </div>
-          <div class="rams-cli-note">
-            Ingests compressed BEAST XML configs or FASTA + CSV dates directly. Computes closed-form Denny-Fieller confidence intervals and leave-one-out cross-validation in seconds.
+
+          <!-- Card 2: Online In-Browser Implementation (PrimAeon Time) -->
+          <div class="rams-access-card">
+            <div>
+              <div class="rams-access-header">
+                <span class="rams-access-tag">ONLINE IN-BROWSER APPLICATION</span>
+                <span class="rams-access-badge">WebAssembly &amp; WebGPU</span>
+              </div>
+              <h3 class="rams-access-title">PrimAeon Time: Zero-Transmission Web Dating</h3>
+              <p class="rams-access-desc">
+                An interactive client-side web application executing closed-form distance geometry and manifold regressions directly in your web browser:
+              </p>
+              <ul style="margin: 0 0 0.85rem 1.15rem; padding: 0; font-size: 0.82rem; color: var(--palette-ink-light); line-height: 1.5;">
+                <li><strong>Zero Server Transmission:</strong> Sequence computation runs strictly client-side via WebAssembly/WebGPU. Genomic data never leave local memory, ensuring strict compliance with HIPAA, GDPR, and pathogen data sovereignty regulations.</li>
+                <li><strong>Frontline Surveillance:</strong> Drag and drop raw FASTA sequences to estimate substitution rates, calibrate $t_\mathrm{{MRCA}}$, inspect Manhattan diagnostic plots, and export Auspice-compatible timetree JSONs.</li>
+              </ul>
+            </div>
+            <div class="rams-access-actions">
+              <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-btn-link">Launch PrimAeon Time &nearr;</a>
+              <a href="http://primaeon.org/time/" target="_blank" rel="noopener" class="rams-btn-subtle">primaeon.org/time &nearr;</a>
+            </div>
           </div>
         </div>
 
@@ -1593,6 +1633,14 @@ def generate_index_html(records):
           <div class="rams-spec-row">
             <div class="rams-spec-label">Empirical Validation</div>
             <div class="rams-spec-val">42 published empirical BEAST cohorts ({total_taxa:,} taxa; 1882–2026) evaluated using original author alignments and dates, alongside NextStrain (3,221 taxa) and BV-BRC (10,000 taxa) surveillance datasets.</div>
+          </div>
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Ecosystem &amp; Install</div>
+            <div class="rams-spec-val">Part of the <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener">HyphAeon</a> evolutionary foundation model ecosystem. Distributed via PyPI (<code>pip install chronaeon</code>) and source (<a href="https://github.com/veg/chronaeon" target="_blank" rel="noopener">veg/chronaeon</a>).</div>
+          </div>
+          <div class="rams-spec-row">
+            <div class="rams-spec-label">Online Implementation</div>
+            <div class="rams-spec-val">Client-side zero-transmission web application at <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener">primaeon.org/time</a> (WebAssembly &amp; WebGPU). Ingests FASTA files locally; sequences never leave client memory, ensuring HIPAA/GDPR data sovereignty.</div>
           </div>
         </div>
       </div>
@@ -1913,6 +1961,8 @@ def generate_index_html(records):
           </p>
         </div>
         <div class="rams-footer-links">
+          <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener">PrimAeon Time (Web) &nearr;</a>
+          <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener">HyphAeon Ecosystem &nearr;</a>
           <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics &nearr;</a>
           <a href="https://www.bv-brc.org/" target="_blank" rel="noopener">BV-BRC &nearr;</a>
           <a href="https://galaxyproject.org/" target="_blank" rel="noopener">Galaxy Project &nearr;</a>

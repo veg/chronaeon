@@ -287,9 +287,21 @@ Evaluating likelihoods across candidate trees requires Felsenstein pruning acros
 </tr>
 </tbody>
 </table>
-<h3 id="21-from-beauti-xml-specifications-to-command-line-execution">2.1 From BEAUti XML Specifications to Command-Line Execution.</h3>
+<h3 id="21-from-beauti-xml-specifications-to-command-line-execution-web-dating">2.1 From BEAUti XML Specifications to Command-Line Execution &amp; Web Dating.</h3>
 <p>Setting up a BEAST run in BEAUti requires configuring dozens of interdependent settings. The user must specify substitution models, clock rate distributions, operator weights, and demographic tree priors. An uninformative or misspecified hyperprior can derail chain convergence.</p>
-<p>ChronAeon replaces this manual setup with a single declarative command:</p>
+<p>ChronAeon replaces this manual setup with a single declarative command or an instant browser execution.</p>
+<p><strong>Software Installation (HyphAeon Ecosystem):</strong>
+ChronAeon is part of the <strong>HyphAeon</strong> evolutionary foundation model ecosystem (<code>https://github.com/veg/HyphAeon</code>). Install via PyPI or clone the monorepo:</p>
+<div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Lightweight CLI and Python engine
+pip install chronaeon
+
+# Or clone from HyphAeon monorepo:
+git clone https://github.com/veg/HyphAeon.git
+pip install -e HyphAeon/chronaeon
+</code></pre></div>
+<p><strong>Online Implementation (PrimAeon Time):</strong>
+Bayesian practitioners can also test alignments instantly in the browser without installing software via <strong><a href="https://veg.github.io/primaeon/time/">PrimAeon Time</a></strong> (or <a href="http://primaeon.org/time/">primaeon.org/time</a>). Computation runs strictly client-side via WebAssembly/WebGPU; sequence data never leave local memory, preserving HIPAA/GDPR data privacy.</p>
+<p><strong>Command-Line Execution:</strong></p>
 <div class="code-wrapper"><div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><pre><code class="language-bash"># Direct ingestion of native BEAST 1.x or BEAST 2.x XML configuration:
 chronaeon date \
   --beast dataset.xml.gz \

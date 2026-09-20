@@ -17,7 +17,31 @@ ChronAeon resolves this bottleneck by formulating molecular dating directly on c
 
 ---
 
-## 2. Data Hygiene and Quality Control: Preparing Raw Sequences
+## 2. Software Installation & Deployment Modes (HyphAeon Ecosystem)
+
+ChronAeon is distributed both as a command-line tool / Python package within the **HyphAeon** evolutionary foundation ecosystem, and as a zero-transmission client-side browser application.
+
+### 2.1 Python Package & CLI Installation
+Install ChronAeon via PyPI:
+```bash
+# Lightweight standalone CLI and Python library
+pip install chronaeon
+
+# Or install from the HyphAeon foundation model monorepo:
+git clone https://github.com/veg/HyphAeon.git
+cd HyphAeon
+pip install -e chronaeon
+```
+*Prerequisites:* Python $\ge$ 3.9, `numpy`, `scipy`, `matplotlib`.
+
+### 2.2 Online In-Browser Implementation (PrimAeon Time)
+For exploratory analysis without local software installation, ChronAeon provides an online browser implementation at **[PrimAeon Time](https://veg.github.io/primaeon/time/)** (or [primaeon.org/time](http://primaeon.org/time/)):
+- **Zero Server Transmission:** Sequence data are processed entirely client-side in browser memory via WebAssembly and WebGPU. No sequences are ever transmitted across networks, ensuring strict HIPAA, GDPR, and pathogen data sovereignty compliance.
+- **Frontline Outbreak Dating:** Drag and drop raw FASTA sequence files to estimate substitution rates, compute $t_{\mathrm{MRCA}}$, inspect interactive Manhattan diagnostic plots, and export Auspice-compatible JSON timetrees.
+
+---
+
+## 3. Data Hygiene and Quality Control: Preparing Raw Sequences
 
 Mathematical rigor downstream requires strict data hygiene upstream. Gaps, frameshifts, and misannotated calendar dates distort pairwise distance metrics and corrupt slope estimation. The benchmark protocol formalizes a six-step preparation pipeline that must be executed prior to clock inference.
 
@@ -50,7 +74,7 @@ All identifiers in the metadata file (`dates.csv`) must match the sequence heade
 
 ---
 
-## 3. Single-Clock Calibration: OLS, Foundation PGLS, and Fieller Inversion
+## 4. Single-Clock Calibration: OLS, Foundation PGLS, and Fieller Inversion
 
 With an aligned FASTA file and harmonized dates in hand, ChronAeon executes single-clock temporal regression via the `date` subcommand. The framework evaluates two primary linear estimators alongside a non-linear spline.
 
@@ -71,18 +95,18 @@ chronaeon date \
   -c chronaeon_dating.csv 2>&1 | tee chronaeon_dating.log
 ```
 
-### 3.1 Ordinary Least Squares (OLS) Baseline
+### 4.1 Ordinary Least Squares (OLS) Baseline
 The foundational estimator measures root divergence against sampling horizons:
 $$d_i = \mu (t_i - t_0) + \varepsilon_i$$
 The slope of this regression defines the substitution rate $\mu$ (substitutions per site per year). The horizontal intercept defines the founding crown ancestor date $t_{\mathrm{MRCA}}$. In standard root-to-tip regression, ancestral references often rely on the earliest sampled isolate. When that early isolate contains private mutations, its distance collapses to zero while sister lineages show inflated divergence, flattening the clock slope. ChronAeon overcomes this fragility by constructing a continuous soft profile root on the nucleotide simplex. The ancestor represents an exponentially time-weighted mixture of base frequencies across early sampling horizons, filtering terminal sequencing noise while preserving shared ancestral polymorphism.
 
-### 3.2 HyphAeon Attention PGLS
+### 4.2 HyphAeon Attention PGLS
 Patients sampled within the same transmission chain share evolutionary history. Treating these clustered isolates as independent data points creates phylogenetic pseudoreplication, which artificially deflates standard errors. To penalize shared ancestry without building trees, ChronAeon extracts cross-taxa attention weights from the HyphAeon foundation model. The network outputs an empirical phylogenetic covariance kernel $\mathbf{K}$. Pagel's $\lambda^*$ is optimized via profile restricted maximum likelihood:
 $$\mathbf{C}(\lambda^*) = \lambda^* \mathbf{K} + (1 - \lambda^*) \mathbf{I}$$
 When lineages evolve independently, $\lambda^* \to 0$ and the model collapses to OLS. When shared ancestry dominates, $\lambda^* \to 1$ and the estimator downweights redundant transmission clusters via Generalized Least Squares. The effective sample size adjusts accordingly:
 $$N_{\mathrm{eff}} = \mathbf{1}^T \mathbf{C}^{-1} \mathbf{1}, \quad \mathrm{df}_{\mathrm{eff}} = \max(1, \operatorname{round}(N_{\mathrm{eff}} - 2))$$
 
-### 3.3 Exact Analytical Fieller Confidence Intervals
+### 4.3 Exact Analytical Fieller Confidence Intervals
 Bayesian MCMC constructs credible intervals by sampling branch heights under demographic coalescent priors. When sequence variation provides weak temporal signal, these coalescent priors exert substantial influence on inferred node heights. ChronAeon rejects demographic regularization, evaluating parameter uncertainty directly through Fieller's theorem for ratio estimators:
 $$t_{\mathrm{MRCA}} = \bar{t} - \frac{\bar{d}}{\hat{\mu}} = \frac{\hat{\beta}_0}{\hat{\mu}}$$
 Fieller's inversion tests the null hypothesis that evolutionary velocity cannot be separated from zero:
@@ -95,14 +119,14 @@ where $t_{\mathrm{crit}}$ is the Student's $t$ critical value with $\mathrm{df}_
 
 An unbounded interval is not a software defect. It is an objective statistical diagnostic indicating that empirical mutations alone cannot bound emergence without subjective demographic tree priors.
 
-### 3.4 Leave-One-Out Cross-Validation (LOOCV)
+### 4.4 Leave-One-Out Cross-Validation (LOOCV)
 When invoked with `--loocv`, ChronAeon evaluates predictive fidelity by systematically dropping each sequence, refitting the clock, and predicting the omitted isolate's sampling date:
 $$\hat{t}_{(-i)} = \frac{d_i - \hat{\beta}_{0, (-i)}}{\hat{\mu}_{(-i)}}$$
 The output reports Mean Absolute Error (MAE in days), Root Mean Squared Error (RMSE in days), and cross-validated predictive $R^2$. Standardized studentized residuals ($Z_i$) screen the alignment for high-leverage outliers ($|Z_i| \ge 2.50$).
 
 ---
 
-## 4. Multi-Rate Deconvolution: Dissecting Lineage Tempos via AutoClock
+## 5. Multi-Rate Deconvolution: Dissecting Lineage Tempos via AutoClock
 
 A single molecular clock fails when applied to large-scale pathogen surveillance feeds. Co-circulating viral subtypes, distinct animal reservoirs, and localized clonal bursts evolve at disparate substitution velocities. Fitting a single regression line across such mixtures triggers mathematical collapse: slow lineages flatten the fitted slope, destroying temporal correlation. Resolving these dynamics requires unsupervised rate deconvolution.
 
@@ -134,16 +158,16 @@ Each inferred community receives an independent molecular clock regression, rate
 
 ---
 
-## 5. Step-by-Step Worked Example: The 2019 Cuban Zika Outbreak
+## 6. Step-by-Step Worked Example: The 2019 Cuban Zika Outbreak
 
 To demonstrate this operational pipeline, we examine the landmark 2019 Cuban Zika virus surveillance study by Grubaugh et al., published in *Cell* (Dataset `06_zika_cuba_grubaugh2019` in `data/06_zika_cuba_grubaugh2019/beast.xml.gz`).
 
-### 5.1 Biological and Literature Context
+### 6.1 Biological and Literature Context
 During the 2015-2016 continental Zika epidemic in the Americas, reported cases peaked and then declined steeply across Latin America. In 2017, routine travel surveillance in Florida detected a cluster of unannounced Zika infections in travelers returning from Cuba. Grubaugh et al. sequenced complete viral genomes from infected travelers and local mosquitoes to determine whether these cases represented ongoing cryptic transmission.
 
 Their published analysis integrated 283 complete open reading frames (10,269 nt, 3,423 codons) sampled between late 2013 and early 2018 ($\Delta T = 4.23$ years). In BEAST v1.10.4, evaluating this cohort under an uncorrelated lognormal relaxed clock and a Bayesian skygrid demographic prior required 1,000,000,000 MCMC states (one billion iterations) accelerated by BEAGLE on compute clusters. Their MCMC runs estimated a mean branch substitution rate of $1.095 \times 10^{-3}$ substitutions per site per year and dated the crown ancestor of the outbreak to 2013.37 CE (95% Bayesian credible interval: [2013.16, 2013.56] CE).
 
-### 5.2 ChronAeon Single-Clock Execution
+### 6.2 ChronAeon Single-Clock Execution
 We run single-clock dating directly on the authentic shipped BEAST XML configuration (`data/06_zika_cuba_grubaugh2019/beast.xml.gz`, 283 taxa, 10,269 bp, 3,423 codons):
 
 ```bash
@@ -193,7 +217,7 @@ Execution completed in 8.65 seconds on an Apple Silicon M-series processor. The 
 
 The linear clock was confirmed as parsimonious ($p = 0.2037$). The global OLS regression estimated a substitution rate of $8.64 \times 10^{-4}$ substitutions per site per year and an emergence date of 2012.58 CE. However, examining the global PGLS slope shows that downweighting close transmission clusters pulled the intercept backward to 2011.60 CE. This backward shift occurred because the dataset contains two distinct epidemiological regimes: a deeply divergent continental background from Brazil and Colombia, alongside an acute outbreak expansion within Cuba.
 
-### 5.3 AutoClock Deconvolution
+### 6.3 AutoClock Deconvolution
 To separate these distinct evolutionary tempos, we execute AutoClock:
 
 ```bash
@@ -228,7 +252,7 @@ AutoClock analyzed the distance graph Laplacian, evaluated spectral eigengaps, a
 AutoClock bisected the alignment into two coherent evolutionary communities ($K^* = 2, \Delta\mathrm{AIC}_c = 144.4$). Community 0 isolates the broader American reservoir. Community 1 isolates the sixty-two genomes representing the Cuban transmission wave and returning travelers. Within Community 1, tree-free regression estimates:
 $$\mu = 9.71 \times 10^{-4} \text{ substitutions/site/year}, \quad t_{\mathrm{MRCA}} = 2013.45 \text{ CE} \quad [2012.57, 2013.83]$$
 
-### 5.4 Quantitative Comparison Against Published BEAST MCMC
+### 6.4 Quantitative Comparison Against Published BEAST MCMC
 
 | Method / Platform | Substitution Rate $\mu$ (subs/site/yr) | Crown $t_{\mathrm{MRCA}}$ | 95% Uncertainty Interval | MCMC State Count | Wall-Clock Runtime |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -243,7 +267,7 @@ The analytical concordance between AutoClock Community 1 and published BEAST MCM
 
 ---
 
-## 6. Pragmatic Rules of Thumb for Practitioners
+## 7. Pragmatic Rules of Thumb for Practitioners
 
 When applying ChronAeon to real-world pathogen surveillance, practitioners should adopt the following operational heuristics:
 

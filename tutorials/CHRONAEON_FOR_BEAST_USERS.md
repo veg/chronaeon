@@ -36,11 +36,26 @@ Moving from Bayesian MCMC to continuous sequence geometry requires translating f
 | Parameter Uncertainty | 95% Highest Posterior Density (95% HPD) intervals | Analytical 95% Denny-Fieller confidence intervals | Yields bounded, complementary, or unbounded intervals based strictly on data signal |
 | Clade Resolution | TreeAnnotator Maximum Clade Credibility (MCC) tree | Graph Laplacian spectral community deconvolution | Partitions co-circulating transmission clusters into independent clocks |
 
-### 2.1 From BEAUti XML Specifications to Command-Line Execution.
+### 2.1 From BEAUti XML Specifications to Command-Line Execution & Web Dating.
 Setting up a BEAST run in BEAUti requires configuring dozens of interdependent settings. The user must specify substitution models, clock rate distributions, operator weights, and demographic tree priors. An uninformative or misspecified hyperprior can derail chain convergence.
 
-ChronAeon replaces this manual setup with a single declarative command:
+ChronAeon replaces this manual setup with a single declarative command or an instant browser execution.
 
+**Software Installation (HyphAeon Ecosystem):**
+ChronAeon is part of the **HyphAeon** evolutionary foundation model ecosystem (`https://github.com/veg/HyphAeon`). Install via PyPI or clone the monorepo:
+```bash
+# Lightweight CLI and Python engine
+pip install chronaeon
+
+# Or clone from HyphAeon monorepo:
+git clone https://github.com/veg/HyphAeon.git
+pip install -e HyphAeon/chronaeon
+```
+
+**Online Implementation (PrimAeon Time):**
+Bayesian practitioners can also test alignments instantly in the browser without installing software via **[PrimAeon Time](https://veg.github.io/primaeon/time/)** (or [primaeon.org/time](http://primaeon.org/time/)). Computation runs strictly client-side via WebAssembly/WebGPU; sequence data never leave local memory, preserving HIPAA/GDPR data privacy.
+
+**Command-Line Execution:**
 ```bash
 # Direct ingestion of native BEAST 1.x or BEAST 2.x XML configuration:
 chronaeon date \

@@ -1299,6 +1299,94 @@ html {
   margin-bottom: 0;
 }
 
+/* Access & Deployment Grid (CLI / HyphAeon Ecosystem & Online App) */
+.rams-access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.rams-access-card {
+  background: #ffffff;
+  border: 1px solid var(--palette-smoke-main);
+  border-radius: 6px;
+  padding: 1.5rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.rams-access-card:hover {
+  border-color: var(--palette-smoke-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.rams-access-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.rams-access-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--palette-primary-main);
+}
+
+.rams-access-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--palette-smoke-light);
+  border: 1px solid var(--palette-smoke-main);
+  color: var(--palette-ink-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.rams-access-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--palette-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.rams-access-desc {
+  font-size: 0.84rem;
+  color: var(--palette-ink-light);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+}
+
+.rams-access-code {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--palette-primary-main);
+  background: var(--palette-smoke-light);
+  border: 1px solid var(--palette-smoke-main);
+  border-radius: 4px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.85rem;
+  overflow-x: auto;
+  line-height: 1.45;
+}
+
+.rams-access-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
 /* CLI Quick Box */
 .rams-cli-box {
   background: var(--palette-smoke-light);
@@ -1985,6 +2073,9 @@ html {
 
 /* Responsive */
 @media (max-width: 980px) {
+  .rams-access-grid {
+    grid-template-columns: 1fr;
+  }
   .rams-pillars-grid {
     grid-template-columns: 1fr;
   }
