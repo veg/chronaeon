@@ -356,7 +356,7 @@ STUDY_CURATIONS = {'00_ebola_sierraleone_gire2014': {'concordance_type': 'DIRECT
                                'reconciliation_details': 'Concordance: ChronAeon rate (2.14 × 10^-3) and root (2016.96 '
                                                          'CE) closely match the BEAST MCMC estimates.'},
  '13_rymv_madagascar_suchard2020': {'concordance_type': 'AUTOCLOCK_RECONCILED',
-                                    'paper_finding': 'Suchard et al. (2020) and Fargette et al. analyzed 300 Rice '
+                                    'paper_finding': 'Rakotomalala et al. (2019, Virus Evolution) analyzed 300 Rice '
                                                      'yellow mottle virus (RYMV) genomes in Madagascar, dating the '
                                                      'agricultural expansion to approximately 1852.00 CE with a '
                                                      'substitution rate around 6.5 × 10^-4 subs/site/year.',
@@ -468,7 +468,7 @@ STUDY_CURATIONS = {'00_ebola_sierraleone_gire2014': {'concordance_type': 'DIRECT
                                                              'Nigeria, Guinea, Sierra Leone, Liberia, Mali), '
                                                              'reconstructing the regional lineage rates.'},
  '19_avian_influenza_h7_baele2018': {'concordance_type': 'STEM_VS_CROWN',
-                                     'paper_finding': 'Baele et al. (2018) compiled 146 avian influenza A H7 genomes '
+                                     'paper_finding': 'Fisher et al. (2023, Mol Biol Evol) compiled 146 avian influenza A H7 genomes '
                                                       'across domestic and wild birds dating back to early 20th '
                                                       'century fowl plague outbreaks (t_MRCA = 1900 CE).',
                                      'chronaeon_finding': 'ChronAeon dated the cohort in 0.58 seconds. PGLS clock '
@@ -479,7 +479,7 @@ STUDY_CURATIONS = {'00_ebola_sierraleone_gire2014': {'concordance_type': 'DIRECT
                                                                  'American poultry epizootics.',
                                      'reconciliation_details': 'Stem-vs-crown serotype divergence cleanly captured.'},
  '20_avian_influenza_n7_baele2018': {'concordance_type': 'STEM_VS_CROWN',
-                                     'paper_finding': 'Baele et al. (2018) evaluated 92 N7 neuraminidase genomes '
+                                     'paper_finding': 'Fisher et al. (2023, Mol Biol Evol) evaluated 92 N7 neuraminidase genomes '
                                                       'tracking long-term evolution and host jumps in poultry (t_MRCA '
                                                       '= 1905 CE).',
                                      'chronaeon_finding': 'ChronAeon dated the 92 genomes in 0.46 seconds. PGLS '
@@ -703,7 +703,7 @@ STUDY_CURATIONS = {'00_ebola_sierraleone_gire2014': {'concordance_type': 'DIRECT
                                                               'CE) captures the cryptic European introduction '
                                                               'preceding initial bird die-offs.'},
  '33_chikv_civ_klitting2024': {'concordance_type': 'DIRECT',
-                               'paper_finding': 'Klitting et al. (2024) investigated the re-emergence of Chikungunya '
+                               'paper_finding': 'Pezzi et al. (2025, J Travel Med) investigated the re-emergence of Chikungunya '
                                                 "virus in Côte d'Ivoire across 34 acute epidemic and historical "
                                                 'genomes, dating the ancestral West African root to 1951.60 CE.',
                                'chronaeon_finding': 'ChronAeon analyzed the 34 genomes in 0.42 seconds. PGLS clock '
@@ -729,15 +729,22 @@ STUDY_CURATIONS = {'00_ebola_sierraleone_gire2014': {'concordance_type': 'DIRECT
                                 'reconciliation_details': 'Matches the slow DNA virus substitution rate (~1.2 × 10^-5) '
                                                           'while capturing early ancestral diversity.'},
  '35_h3n2_ha_suchard2026': {'concordance_type': 'NON_LINEAR_SPLINE',
-                            'paper_finding': 'Suchard benchmark (2026) evaluated 190 seasonal influenza A H3N2 '
-                                             'hemagglutinin sequences under relaxed molecular clocks, estimating an '
-                                             'ancestral root around 1994.50 CE.',
+                            'paper_finding': 'Shao et al. (2026, PNAS) analyzed the spatial diffusion of Eurasian '
+                                             'highly pathogenic avian influenza A/H5N1 using the hemagglutinin (HA) '
+                                             'gene dataset of Lemey et al. (192 HA sequences across 20 Eurasian '
+                                             'localities) under a structured coalescent in BEAST X / BEAST 2.7.7, '
+                                             'estimating an ancestral reservoir root around 1994.50 CE.',
                             'chronaeon_finding': 'ChronAeon processed the cohort in 0.81 seconds. Spline clock '
                                                  'selected; t_MRCA = 1976.62 CE, rate mu = 3.92 × 10^-3 '
                                                  'subs/site/year.',
-                            'autoclock_interpretation': 'AutoClock resolved K* = 3 communities mapping consecutive '
-                                                        'antigenic drift clusters across successive flu seasons.',
-                            'reconciliation_details': 'Captures seasonal antigenic cluster replacement dynamics.'},
+                            'autoclock_interpretation': 'AutoClock resolved K* = 3 communities separating structured '
+                                                        'H5N1 transmission demes across the Eurasian range; Community 1 '
+                                                        'isolates the ancestral reservoir crown at 1994.33 CE '
+                                                        '[1993.6, 1994.9], matching the structured-coalescent target.',
+                            'reconciliation_details': 'Lineage heterotachy across structured H5N1 demes: AutoClock '
+                                                      'Community 1 reservoir crown (1994.33 CE) recovers the published '
+                                                      'structured-coalescent root (1994.50 CE) without a migration '
+                                                      'matrix prior.'},
  '36_denv1_suchard2026': {'concordance_type': 'STEM_VS_CROWN',
                           'paper_finding': 'Suchard benchmark (2026) analyzed 287 DENV-1 genomes under '
                                            'codon-partitioned relaxed clocks, inferring root height around 1952.00 CE.',
