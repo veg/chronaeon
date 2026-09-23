@@ -25,14 +25,23 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# ChronAeon and HyphAeon environment
-REPO_ROOT = Path("/Users/sergei/Projects/TOGA_MEME/dating_paper")
-CHRONAEON_SRC = Path("/Users/sergei/Projects/TOGA_MEME/axomeme_repo/chronaeon/src")
-AXOMEME_ROOT = Path("/Users/sergei/Projects/TOGA_MEME/axomeme_repo")
+# ChronAeon and HyphAeon dynamic environment discovery
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parents[2]
 
-for p in [str(CHRONAEON_SRC), str(AXOMEME_ROOT)]:
-    if p not in sys.path:
-        sys.path.insert(0, p)
+search_paths = []
+for env_var in ["HYPHAEON_PATH", "CHRONAEON_SRC"]:
+    if os.environ.get(env_var):
+        search_paths.append(os.environ[env_var])
+
+for rel in ["chronaeon/src", "../HyphAeon/chronaeon/src", "../HyphAeon/aeon-core/src", "../../HyphAeon/chronaeon/src", "../../HyphAeon/aeon-core/src"]:
+    p = (REPO_ROOT / rel).resolve()
+    if p.is_dir():
+        search_paths.append(str(p))
+
+for sp in search_paths:
+    if sp not in sys.path:
+        sys.path.insert(0, sp)
 
 def stream_live_bvbrc_records(taxon_id=11320, subtype="H3N2", limit=10, output_prefix=None):
     """
@@ -122,7 +131,7 @@ def run_challenge_pipeline(base_dir=None):
     3. Publication figure generation
     """
     if base_dir is None:
-        base_dir = Path("/Users/sergei/Projects/TOGA_MEME/dating_paper/bvbrc_h3n2_sieve_grand_challenge")
+        base_dir = SCRIPT_DIR.parent
     base_dir = Path(base_dir)
     data_dir = base_dir / "data"
     results_dir = base_dir / "results"
@@ -220,7 +229,7 @@ if __name__ == "__main__":
     parser.add_argument("--test-stream", action="store_true", help="Test live streaming ingestion from BV-BRC REST API")
     parser.add_argument("--limit", type=int, default=10, help="Number of records to stream for live test")
     parser.add_argument("--run-challenge", action="store_true", help="Run the full 10k Grand Challenge benchmark")
-    parser.add_argument("--base-dir", type=str, default="/Users/sergei/Projects/TOGA_MEME/dating_paper/bvbrc_h3n2_sieve_grand_challenge")
+    parser.add_argument("--base-dir", type=str, default=str(SCRIPT_DIR.parent), help="Base directory for BV-BRC data and results")
     
     args = parser.parse_args()
     

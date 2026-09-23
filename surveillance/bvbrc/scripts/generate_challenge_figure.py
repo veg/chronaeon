@@ -17,15 +17,26 @@ plt.rcParams["font.sans-serif"] = ["DejaVu Sans", "Arial", "Helvetica"]
 plt.rcParams["axes.edgecolor"] = "#2c3e50"
 plt.rcParams["axes.linewidth"] = 0.8
 
-BASE_DIR = Path("/Users/sergei/Projects/TOGA_MEME/dating_paper/bvbrc_h3n2_sieve_grand_challenge")
+SCRIPT_DIR = Path(__file__).resolve().parent
+BASE_DIR = SCRIPT_DIR.parent
+DATA_DIR = BASE_DIR / "data"
 RESULTS_DIR = BASE_DIR / "results"
-FIG_PNG = RESULTS_DIR / "fig_bvbrc_h3n2_grand_challenge.png"
-FIG_PDF = RESULTS_DIR / "fig_bvbrc_h3n2_grand_challenge.pdf"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+FIGURES_DIR = BASE_DIR / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+
+FIG_PNG = FIGURES_DIR / "fig_bvbrc_h3n2_grand_challenge.png"
+FIG_PDF = FIGURES_DIR / "fig_bvbrc_h3n2_grand_challenge.pdf"
+
+def find_input(filename):
+    if (RESULTS_DIR / filename).exists():
+        return RESULTS_DIR / filename
+    return DATA_DIR / filename
 
 # Load classified metadata and sieve report
-df_meta = pd.read_csv(RESULTS_DIR / "h3n2_10k_autoclock_classified.csv")
-df_sieve = pd.read_csv(RESULTS_DIR / "h3n2_10k_sieve_report.csv")
-with open(RESULTS_DIR / "h3n2_10k_autoclock_results.json") as f:
+df_meta = pd.read_csv(find_input("h3n2_10k_autoclock_classified.csv"))
+df_sieve = pd.read_csv(find_input("h3n2_10k_sieve_report.csv"))
+with open(find_input("h3n2_10k_autoclock_results.json")) as f:
     autoclock_summary = json.load(f)
 
 # Community details

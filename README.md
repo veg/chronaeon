@@ -183,10 +183,11 @@ If you use ChronAeon or the benchmark datasets in your research, please cite:
 
 ```bibtex
 @article{pond2026chronaeon,
-  author    = {Kosakovsky Pond, Sergei L. and colleagues},
-  title     = {Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning},
-  journal   = {Bioinformatics / Systematic Biology},
+  author    = {Kosakovsky Pond, Sergei L. and Martin, Darren P. and Rife Magalis, Brittany and Kumar, Sudhir},
+  title     = {No Chains Attached: Tree-Free Molecular Clock Dating via Distance Geometry and Evolutionary Foundation Models},
   year      = {2026},
+  doi       = {10.5281/zenodo.22908446},
+  url       = {https://zenodo.org/records/22908446},
   note      = {Empirical Benchmark Portal: https://veg.github.io/chronaeon/}
 }
 ```

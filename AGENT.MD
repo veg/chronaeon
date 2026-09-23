@@ -33,10 +33,20 @@ The execution environment requires Python $\ge 3.9$ (tested on Python 3.9, 3.10,
 pip install numpy scipy pandas matplotlib biopython torch
 ```
 
-### 2.3 Setting PYTHONPATH
-ChronAeon and its underlying geometry engines must be in the Python module search path:
+### 2.3 Installing the ChronAeon Engine
+The computational engine `chronaeon` and its underlying evolutionary foundation `aeon-core` are hosted in the [`veg/HyphAeon`](https://github.com/veg/HyphAeon) repository (and available via PyPI):
+
 ```bash
-pip install -e chronaeon/   # or: export PYTHONPATH="src:$PYTHONPATH" 
+# Option A: Standard PyPI installation
+pip install chronaeon
+
+# Option B: Clone HyphAeon repository (containing chronaeon and aeon-core)
+git clone https://github.com/veg/HyphAeon.git
+pip install -e HyphAeon/chronaeon
+pip install -e HyphAeon/aeon-core
+
+# Option C: Direct source execution via PYTHONPATH
+export PYTHONPATH="/path/to/HyphAeon/chronaeon/src:/path/to/HyphAeon/aeon-core/src:$PYTHONPATH"
 ```
 
 ### 2.4 Pre-Flight Environment Sanity Check
@@ -54,37 +64,31 @@ print(f'[OK] ChronAeon module imported successfully. Active acceleration device:
 ## 3. Directory Layout & Data Topology
 
 ```
-./
-├── benchmark-100/                          # 42 curated author-deposited empirical cohorts
-│   ├── 00_ebola_sierraleone_gire2014/
-│   │   ├── alignment.fasta                 # Exact author multi-sequence FASTA
-│   │   ├── dates.csv                       # Normalized decimal sampling dates (e.g. 2014.521)
-│   │   ├── DATA_PROVENANCE.json            # Literature DOI, PMID, PMCID, and BEAST configuration
-│   │   ├── beast.xml.gz                    # Exact compressed author BEAST XML (also beast_config.xml.gz)
-│   │   ├── chronaeon_dating.json           # [Generated] Single-clock calibration & LOOCV
-│   │   ├── chronaeon_dating.csv            # [Generated] Per-taxon residuals and studentized Z
-│   │   ├── autoclock_results.json          # [Generated] AutoClock spectral deconvolution
-│   │   └── STUDY_REPORT.md                 # Standalone study report
-│   ├── 01_ebola_makona_dudas2017/
-│   └── ... (00 through 41, 42 cohorts total)
-├── cronaeon_bench/                         # Static publication-grade web application
-│   ├── AGENT.MD                            # This autonomous execution protocol
-│   ├── README.md                           # Human-facing compendium documentation
-│   ├── index.html                          # Master interactive compendium portal
-│   ├── benchmarks_master.json              # Consolidated machine-readable dataset JSON
-│   ├── assets/
-│   │   ├── css/style.css                   # Responsive publication CSS styling
-│   │   ├── js/main.js                      # Search, filtering, lightbox, SVG plot
-│   │   └── figures/<study_id>/             # Standardized 4-panel diagnostic figures
-│   │       └── chronaeon_diagnostics.png   # Panels A, B, C (Alluvial), D (Streamgraph)
-│   ├── data/<study_id>/                    # Downloadable compressed BEAST XML archives
-│   │   └── beast.xml.gz                    # Shipped author BEAST XML (also beast_config.xml.gz)
-│   └── studies/<study_id>/                 # 42 individual publication study dossiers
-│       └── index.html                      # Comprehensive study evaluation dossier
-└── scratch/                                # Build engines and authoritative curation metadata
-    ├── study_curations.py                  # Curated biological narratives and entity-matched notes
-    └── build_entire_portal.py              # Master builder script for the entire web portal
+veg/chronaeon (Repository Root)
+├── AGENT.MD                            # This autonomous execution protocol
+├── README.md                           # Human-facing compendium documentation
+├── index.html                          # Master interactive compendium portal
+├── build_portal.py                     # Authoritative portal builder and HTML generator
+├── study_curations.py                  # Curated biological narratives and entity-matched notes
+├── benchmarks_master.json              # Consolidated machine-readable dataset JSON (42 cohorts)
+├── assets/
+│   ├── css/style.css                   # Responsive publication CSS styling
+│   ├── js/main.js                      # Search, filtering, lightbox, interactive SVG plot
+│   └── figures/<study_id>/             # Standardized 4-panel diagnostic figures
+│       └── chronaeon_diagnostics.png   # Panels A, B, C (Alluvial), D (Streamgraph)
+├── data/<study_id>/                    # Shipped author BEAST XML configurations (42 cohorts)
+│   └── beast.xml.gz                    # Exact compressed author BEAST XML for 1-line re-dating
+├── studies/<study_id>/                 # 42 individual publication study dossiers
+│   └── index.html                      # Comprehensive study evaluation dossier
+├── surveillance/                       # Planetary-scale real-time surveillance challenges
+│   ├── nextstrain/                     # 12-Year longitudinal NextStrain H3N2/H1N1pdm challenge
+│   └── bvbrc/                          # BV-BRC 10k–50k sieve & multi-clock challenge
+└── tutorials/                          # Interactive tutorials and user guides
 ```
+
+> **Data Provenance & Archival Datasets:**  
+> The complete uncompressed 5 GB forensic archive—containing raw multi-sequence FASTA alignments (`alignment.fasta`), decimal dates tables (`dates.csv`), cryptographic SHA-256 manifests (`DATA_PROVENANCE.json`), and primary author PDFs—is permanently preserved on Zenodo under DOI [`10.5281/zenodo.22908446`](https://doi.org/10.5281/zenodo.22908446).  
+> All 42 empirical benchmarks can be re-analyzed instantly from the committed `data/<study_id>/beast.xml.gz` files using ChronAeon's native XML ingestion mode without downloading external FASTA archives.
 
 ---
 
@@ -92,19 +96,17 @@ print(f'[OK] ChronAeon module imported successfully. Active acceleration device:
 
 ### Step 1: Single-Cohort ChronAeon Dating & LOOCV Evaluation
 
-For any target cohort `<study_dir>` in `benchmark-100/` or using shipped portal data:
+For any target cohort `<study_id>` in `data/`:
 ```bash
-cd ./benchmark-100/<study_dir>
-
 python3 -m chronaeon.cli date \
-  --beast beast.xml.gz \
+  --beast data/16_rabies_northamerica_biek2007/beast.xml.gz \
   --loocv \
   --nonlinear-clocks \
   -o chronaeon_dating.json \
   -c chronaeon_dating.csv \
   2>&1 | tee chronaeon_dating.log
 ```
-*(Note: `--beast beast.xml.gz` directly ingests sequence matrices and collection dates from the compressed XML archive. Alternatively, `-a alignment.fasta -d dates.csv` can be supplied if raw alignments and date files are used.)*
+*(Note: `--beast data/<study_id>/beast.xml.gz` directly ingests sequence matrices and collection dates on-the-fly from the shipped XML archive. Alternatively, `-a alignment.fasta -d dates.csv` can be supplied if raw alignments and date files are used.)*
 
 #### What This Evaluates:
 1. **Root-to-Tip Geometric Manifold Regression**:
@@ -125,12 +127,10 @@ python3 -m chronaeon.cli date \
 
 ### Step 2: AutoClock Unsupervised Multi-Rate Community Deconvolution
 
-For any target cohort `<study_dir>` in `benchmark-100/` or using shipped portal data:
+For any target cohort `<study_id>` in `data/`:
 ```bash
-cd ./benchmark-100/<study_dir>
-
 python3 -m chronaeon.cli autoclock \
-  --beast beast.xml.gz \
+  --beast data/16_rabies_northamerica_biek2007/beast.xml.gz \
   -o autoclock_results.json \
   2>&1 | tee chronaeon_autoclock.log
 ```
@@ -156,32 +156,36 @@ To execute the entire 42-cohort empirical benchmark suite autonomously from scra
 """
 batch_run_42_benchmarks.py
 Runs single-clock dating, LOOCV, non-linear clocks, and AutoClock deconvolution
-across all 42 empirical cohorts in benchmark-100.
+across all 42 empirical cohorts using shipped data/ archives or benchmark-100/.
 """
 
 import os
 import subprocess
 import time
 
-BENCHMARK_DIR = "./benchmark-100"
+DATA_DIR = "./data" if os.path.exists("./data") else "./benchmark-100"
 
 studies = sorted([
-    d for d in os.listdir(BENCHMARK_DIR)
-    if os.path.isdir(os.path.join(BENCHMARK_DIR, d)) and d[0].isdigit()
+    d for d in os.listdir(DATA_DIR)
+    if os.path.isdir(os.path.join(DATA_DIR, d)) and d[0].isdigit()
 ])
 
-print(f"Discovered {len(studies)} empirical benchmark studies.")
+print(f"Discovered {len(studies)} empirical benchmark studies in {DATA_DIR}.")
 
 env = os.environ.copy()
-env["PYTHONPATH"] = "" + env.get("PYTHONPATH", "")
 
 for idx, study in enumerate(studies, 1):
-    s_path = os.path.join(BENCHMARK_DIR, study)
+    s_path = os.path.join(DATA_DIR, study)
+    beast_xml = os.path.join(s_path, "beast.xml.gz")
     fasta = os.path.join(s_path, "alignment.fasta")
     dates = os.path.join(s_path, "dates.csv")
     
-    if not os.path.exists(fasta) or not os.path.exists(dates):
-        print(f"[{idx:02d}/42] Skipping {study} (missing alignment or dates)")
+    if os.path.exists(beast_xml):
+        input_args = ["--beast", beast_xml]
+    elif os.path.exists(fasta) and os.path.exists(dates):
+        input_args = ["-a", fasta, "-d", dates]
+    else:
+        print(f"[{idx:02d}/42] Skipping {study} (no beast.xml.gz or fasta/dates found)")
         continue
         
     print(f"\n==================================================")
@@ -191,24 +195,22 @@ for idx, study in enumerate(studies, 1):
     
     # 1. Single-clock dating + LOOCV + non-linear clocks
     cmd_date = [
-        "python3", "-m", "chronaeon.cli", "date",
-        "-a", "alignment.fasta",
-        "-d", "dates.csv",
+        "python3", "-m", "chronaeon.cli", "date"
+    ] + input_args + [
         "--loocv",
         "--nonlinear-clocks",
-        "-o", "chronaeon_dating.json",
-        "-c", "chronaeon_dating.csv"
+        "-o", os.path.join(s_path, "chronaeon_dating.json"),
+        "-c", os.path.join(s_path, "chronaeon_dating.csv")
     ]
-    subprocess.run(cmd_date, cwd=s_path, env=env, check=True)
+    subprocess.run(cmd_date, env=env, check=True)
     
     # 2. AutoClock community deconvolution
     cmd_ac = [
-        "python3", "-m", "chronaeon.cli", "autoclock",
-        "-a", "alignment.fasta",
-        "-d", "dates.csv",
-        "-o", "autoclock_results.json"
+        "python3", "-m", "chronaeon.cli", "autoclock"
+    ] + input_args + [
+        "-o", os.path.join(s_path, "autoclock_results.json")
     ]
-    subprocess.run(cmd_ac, cwd=s_path, env=env, check=True)
+    subprocess.run(cmd_ac, env=env, check=True)
     
     elapsed = time.time() - t0
     print(f"[{idx:02d}/42] Finished {study} in {elapsed:.2f}s")
@@ -248,7 +250,7 @@ Every study is equipped with an authoritative, publication-quality four-panel fi
 
 To regenerate any missing figures or regenerate all 42 figures:
 ```bash
-python3 cronaeon_bench/build_portal.py
+python3 build_portal.py
 ```
 *(The builder script automatically verifies and generates any missing figures in `assets/figures/<study_id>/chronaeon_diagnostics.png`).*
 
@@ -257,18 +259,18 @@ python3 cronaeon_bench/build_portal.py
 ### Step 5: Building the Static Publication-Grade Web Compendium
 
 The authoritative portal builder script:
-`cronaeon_bench/build_portal.py`
+`build_portal.py`
 
 #### To execute the portal build:
 ```bash
-python3 cronaeon_bench/build_portal.py
+python3 build_portal.py
 ```
 
 #### What the Builder Script Accomplishes:
 1. **Data Ingestion**:
-   Iterates through all 42 empirical cohorts in `benchmark-100/`, loading `chronaeon_dating.json`, `autoclock_results.json`, `dates.csv`, `alignment.fasta`, and `DATA_PROVENANCE.json`.
+   Iterates through all 42 empirical cohorts in `benchmarks_master.json` (with automatic fallback if raw files are absent), loading `chronaeon_dating.json`, `autoclock_results.json`, `dates.csv`, `alignment.fasta`, and `DATA_PROVENANCE.json`.
 2. **Biological Narrative Integration**:
-   Imports curated study narratives from `scratch/study_curations.py`:
+   Imports curated study narratives from `study_curations.py`:
    - *Part A: What did the original study find?* (Published BEAST baseline, root date, substitution rate, epidemiological context).
    - *Part B: What did ChronAeon find?* (Tree-free manifold model selection, root height, Fieller CI, wall-clock execution time, LOOCV tip MAE).
    - *Part C: AutoClock Community Deconvolution & Biological Interpretation* (Deconvolution into $K^*$ transmission communities, biological meaning of clades).
@@ -298,7 +300,7 @@ python3 cronaeon_bench/build_portal.py
    - Dimension 7: Compute Execution Time & Sampling Depth (10M–1,000M MCMC states vs seconds on Apple Silicon / CPU)
    - Dimension 8: Reproducibility & Artifact Access (Downloadable `.xml.gz` vs CLI one-liner)
 5. **BEAST XML Archive Provisioning**:
-   Copies compressed author BEAST XML files (`beast.xml.gz` and `beast_config.xml.gz`) into `cronaeon_bench/data/<study_id>/` and updates all download buttons.
+   Copies compressed author BEAST XML files (`beast.xml.gz` and `beast_config.xml.gz`) into `data/<study_id>/` and updates all download buttons.
 6. **Master Compendium Index (`index.html`)**:
    Builds the searchable, filterable master compendium table, taxonomy filter pills (Negative-Sense RNA, Positive-Sense RNA, Retroviruses, DNA Viruses, Bacteria & Ancient DNA), clock model pills (Linear OLS, Attention PGLS, Restricted Natural Spline), search bar, global scorecards, and interactive client-side SVG concordance scatter plot.
 
@@ -319,7 +321,7 @@ import os
 import glob
 import re
 
-PORTAL_DIR = "./cronaeon_bench"
+PORTAL_DIR = "."
 STUDIES_DIR = os.path.join(PORTAL_DIR, "studies")
 FIGURES_DIR = os.path.join(PORTAL_DIR, "assets", "figures")
 DATA_DIR = os.path.join(PORTAL_DIR, "data")
@@ -392,12 +394,11 @@ else:
 
 ---
 
-## 6. Live Portal Testing & Deployment
+### 6. Live Portal Testing & Deployment
 
 ### 6.1 Testing the Live Web Portal Locally
 To test the web application locally via standard HTTP server:
 ```bash
-cd ./cronaeon_bench
 python3 -m http.server 8000
 ```
 Open `http://localhost:8000` in any web browser to inspect:
@@ -419,11 +420,11 @@ The static portal is configured for continuous deployment on GitHub Pages:
 
 | Issue Observed | Root Cause | Autonomous Recovery Action |
 | :--- | :--- | :--- |
-| `ModuleNotFoundError: No module named 'chronaeon'` | `PYTHONPATH` does not include the engine source directories. | Prepend `chronaeon/src` and `aeon-core/src` to `PYTHONPATH`. |
+| `ModuleNotFoundError: No module named 'chronaeon'` | Python package not installed or path not configured. | Run `pip install chronaeon` or clone `veg/HyphAeon` and install in editable mode (`pip install -e HyphAeon/chronaeon -e HyphAeon/aeon-core`). |
 | `fieller_g >= 1.0` | Inconclusive temporal signal ($\hat{\mu} / \mathrm{SE}_{\mu} < 1.96$); sampling span is too narrow for accumulated divergence. | Do not report a single-point $t_{\mathrm{MRCA}}$. Flag the cohort as temporally uncalibrated or inspect multi-clock AutoClock partitions. |
 | Negative slope ($\mu < 0$) | Severe sampling artifacts, lab passaging, or misannotated collection dates. | Check root placement; run outgroup sensitivity audit; screen dates table for typographical errors. |
 | Large discrepancy between ChronAeon root and BEAST root ($>10$ years on small spans) | Stem-vs-crown divergence or non-linear rate deceleration. | Check whether the dataset includes external reference outgroups (stem divergence) or activates the Restricted Cubic Spline clock (`Delta-AIC < -2.0`). |
-| Unrendered `**` in HTML | Literal Markdown strings bypassed the `render_markdown` / `render_markdown_block` parser. | Wrap the corresponding string field in `render_markdown_block(...)` in `build_entire_portal.py` and re-run. |
+| Unrendered `**` in HTML | Literal Markdown strings bypassed the `render_markdown` / `render_markdown_block` parser. | Wrap the corresponding string field in `render_markdown_block(...)` in `build_portal.py` and re-run. |
 
 ---
 
@@ -438,17 +439,12 @@ Compare ChronAeon Date and AutoClock head-to-head against TreeTime (Sagulenko et
 
 #### Execution Commands
 ```bash
-# 1. Ensure Python environment and ChronAeon are configured
-pip install -e chronaeon/   # or: export PYTHONPATH="src:$PYTHONPATH" 
+# 1. Run the end-to-end NextStrain streaming ingestion & benchmark harness
+python3 surveillance/nextstrain/scripts/run_nextstrain_grand_challenge.py
 
-# 2. Run the end-to-end NextStrain streaming ingestion & benchmark harness
-cd ./nextstrain_grand_challenge
-python3 run_nextstrain_grand_challenge.py
-
-# 3. Generate the 4-panel publication figure and alluvial stream diagram
-cd .
-python3 scripts/generate_h3n2_multipanel_figure.py
-python3 scripts/generate_h3n2_horizons_alluvial_figure.py
+# 2. Generate the 4-panel publication figure and alluvial stream diagram
+python3 surveillance/nextstrain/scripts/generate_h3n2_multipanel_figure.py
+python3 surveillance/nextstrain/scripts/generate_h3n2_horizons_alluvial_figure.py
 ```
 
 #### Deterministic Acceptance Criteria
@@ -473,38 +469,40 @@ Overcome the 10,000-taxon scaling barrier of Bayesian phylogenetic software suit
 
 #### Execution Commands
 ```bash
-# 1. Verify live REST API streaming from BV-BRC
-cd ./bvbrc_h3n2_sieve_grand_challenge
-python3 stream_bvbrc_surveillance.py --test-stream --limit 10
+# 1. Verify live REST API streaming from BV-BRC (or test-stream 10 records)
+python3 surveillance/bvbrc/scripts/stream_bvbrc_surveillance.py --test-stream --limit 10
 
-# 2. Run High-Throughput Streaming Sieve Triage (chronaeon triage)
+# 2. If running offline on the challenge cohort, unpack the reproducibility archive:
+tar -xzf data/surveillance_bvbrc_reproducibility.tar.gz
+
+# 3. Run High-Throughput Streaming Sieve Triage (chronaeon triage)
 python3 -m chronaeon.cli triage \
-  -a data/h3n2_challenge_10k.fasta \
-  -d data/h3n2_challenge_10k_metadata.csv \
-  -s data/h3n2_challenge_10k.fasta \
-  --stream-dates data/h3n2_challenge_10k_metadata.csv \
+  -a surveillance/bvbrc/data/h3n2_challenge_10k.fasta \
+  -d surveillance/bvbrc/data/h3n2_challenge_10k_metadata.csv \
+  -s surveillance/bvbrc/data/h3n2_challenge_10k.fasta \
+  --stream-dates surveillance/bvbrc/data/h3n2_challenge_10k_metadata.csv \
   --date-col decimal_date \
   --strain-col genome_id \
   --n-anchor 220 \
   --n-bins 32 \
-  -o results/h3n2_10k_sieve_report.csv \
-  --clean-out results/h3n2_10k_sieved_clean.fasta \
-  --sus-out results/h3n2_10k_sieved_sus.fasta
+  -o surveillance/bvbrc/results/h3n2_10k_sieve_report.csv \
+  --clean-out surveillance/bvbrc/results/h3n2_10k_sieved_clean.fasta \
+  --sus-out surveillance/bvbrc/results/h3n2_10k_sieved_sus.fasta
 
-# 3. Run Unsupervised Multi-Clock AutoClock Deconvolution (chronaeon autoclock)
+# 4. Run Unsupervised Multi-Clock AutoClock Deconvolution (chronaeon autoclock)
 python3 -m chronaeon.cli autoclock \
-  -a results/h3n2_10k_sieved_clean.fasta \
-  -d results/h3n2_10k_sieved_clean_metadata.csv \
+  -a surveillance/bvbrc/results/h3n2_10k_sieved_clean.fasta \
+  -d surveillance/bvbrc/results/h3n2_10k_sieved_clean_metadata.csv \
   --date-col decimal_date \
   --strain-col genome_id \
   -k 8 \
-  --output-dir results/clock_communities \
-  -o results/h3n2_10k_autoclock_results.json \
-  -c results/h3n2_10k_autoclock_classified.csv
+  --output-dir surveillance/bvbrc/results/clock_communities \
+  -o surveillance/bvbrc/results/h3n2_10k_autoclock_results.json \
+  -c surveillance/bvbrc/results/h3n2_10k_autoclock_classified.csv
 
-# 4. Generate publication figures
-python3 generate_challenge_figure.py
-python3 ./scripts/generate_fig_bvbrc_50k.py
+# 5. Generate publication figures
+python3 surveillance/bvbrc/scripts/generate_challenge_figure.py
+python3 surveillance/bvbrc/scripts/generate_fig_bvbrc_50k.py
 ```
 
 #### Deterministic Acceptance Criteria

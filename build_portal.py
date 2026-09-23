@@ -23,9 +23,15 @@ import matplotlib.gridspec as gridspec
 import matplotlib.ticker as ticker
 from scipy.ndimage import gaussian_filter1d
 
-sys.path.insert(0, "chronaeon/src")
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../axomeme_repo/chronaeon/src")))
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../axomeme_repo/aeon-core/src")))
+# Dynamic search paths for chronaeon and aeon-core
+for env_var in ["HYPHAEON_PATH", "CHRONAEON_SRC"]:
+    if os.environ.get(env_var):
+        sys.path.insert(0, os.environ[env_var])
+
+for rel_path in ["chronaeon/src", "../HyphAeon/chronaeon/src", "../HyphAeon/aeon-core/src", "../../HyphAeon/chronaeon/src", "../../HyphAeon/aeon-core/src"]:
+    p = os.path.abspath(os.path.join(os.path.dirname(__file__), rel_path))
+    if os.path.isdir(p) and p not in sys.path:
+        sys.path.insert(0, p)
 
 try:
     from chronaeon.dating import compute_tn93_distance_matrix, parse_alignment_sequences
@@ -3095,10 +3101,11 @@ If you use ChronAeon or the benchmark datasets in your research, please cite:
 
 ```bibtex
 @article{{pond2026chronaeon,
-  author    = {{Kosakovsky Pond, Sergei L. and colleagues}},
-  title     = {{Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning}},
-  journal   = {{Bioinformatics / Systematic Biology}},
+  author    = {{Kosakovsky Pond, Sergei L. and Martin, Darren P. and Rife Magalis, Brittany and Kumar, Sudhir}},
+  title     = {{No Chains Attached: Tree-Free Molecular Clock Dating via Distance Geometry and Evolutionary Foundation Models}},
   year      = {{2026}},
+  doi       = {{10.5281/zenodo.22908446}},
+  url       = {{https://zenodo.org/records/22908446}},
   note      = {{Empirical Benchmark Portal: https://veg.github.io/chronaeon/}}
 }}
 ```
@@ -3117,7 +3124,17 @@ def main():
 
     master_json_path = os.path.join(PORTAL_DIR, "benchmarks_master.json")
 
-    if args.fast and os.path.exists(master_json_path):
+    # Autonomous Fallback: If benchmark-100 is absent (e.g. public standalone portal clone),
+    # automatically default to fast build from benchmarks_master.json rather than crashing.
+    use_fast = args.fast
+    if not use_fast and not os.path.exists(BENCHMARK_DIR):
+        if os.path.exists(master_json_path):
+            print(f"[NOTICE] Benchmark directory '{BENCHMARK_DIR}' not found. Automatically falling back to fast build from '{master_json_path}'.")
+            use_fast = True
+        else:
+            sys.exit(f"[ERROR] Neither benchmark directory '{BENCHMARK_DIR}' nor '{master_json_path}' was found.")
+
+    if use_fast and os.path.exists(master_json_path):
         print(f"Loading existing benchmark records from {master_json_path}...")
         with open(master_json_path, 'r') as f:
             records = json.load(f)

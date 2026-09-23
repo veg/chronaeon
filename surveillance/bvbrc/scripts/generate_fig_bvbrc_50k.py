@@ -33,12 +33,15 @@ plt.rcParams['xtick.direction'] = 'out'
 plt.rcParams['ytick.direction'] = 'out'
 plt.rcParams['mathtext.fontset'] = 'dejavusans'
 
-BASE_DIR = Path("/Users/sergei/Projects/TOGA_MEME/dating_paper")
-DATA_DIR = Path("/Users/sergei/Projects/TOGA_MEME/BV-BRC/results/hierarchical_screens/influenza_a_mega")
-RAW_META_PATH = Path("/Users/sergei/Projects/TOGA_MEME/BV-BRC/data/mega_screens/influenza_a_ha_mega/influenza_a_ha_metadata.csv")
+SCRIPT_DIR = Path(__file__).resolve().parent
+BASE_DIR = SCRIPT_DIR.parent
+DATA_DIR = Path(os.environ.get("BVBRC_MEGA_RESULTS", SCRIPT_DIR.parent / "data"))
+RAW_META_PATH = Path(os.environ.get("BVBRC_MEGA_META", SCRIPT_DIR.parent / "data" / "influenza_a_ha_metadata.csv"))
 
-OUT_PDF = BASE_DIR / "figures" / "fig_bvbrc_50k_grand_challenge.pdf"
-OUT_PNG = BASE_DIR / "figures" / "fig_bvbrc_50k_grand_challenge.png"
+OUT_DIR = BASE_DIR / "figures"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+OUT_PDF = OUT_DIR / "fig_bvbrc_50k_grand_challenge.pdf"
+OUT_PNG = OUT_DIR / "fig_bvbrc_50k_grand_challenge.png"
 
 # Colorblind-safe palette (Okabe-Ito / ColorBrewer)
 SUBTYPE_COLORS = {

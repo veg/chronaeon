@@ -101,9 +101,16 @@ def download_and_extract(build_id, cfg, base_dir):
         
     return build_dir, fasta_path, dates_path, meta_path, treetime_root
 
-def run_chronaeon(build_id, build_dir, fasta_path, dates_path, meta_path, treetime_root):
     env = os.environ.copy()
-    env["PYTHONPATH"] = "/Users/sergei/Projects/TOGA_MEME/axomeme_repo/chronaeon/src:" + env.get("PYTHONPATH", "")
+    search_paths = []
+    if os.environ.get("CHRONAEON_SRC"):
+        search_paths.append(os.environ["CHRONAEON_SRC"])
+    for rel in ["../HyphAeon/chronaeon/src", "../../HyphAeon/chronaeon/src", "../../../HyphAeon/chronaeon/src"]:
+        cand = os.path.abspath(os.path.join(os.path.dirname(__file__), rel))
+        if os.path.isdir(cand):
+            search_paths.append(cand)
+    if search_paths:
+        env["PYTHONPATH"] = ":".join(search_paths) + (":" + env["PYTHONPATH"] if "PYTHONPATH" in env else "")
     
     print(f"\n[+] Running ChronAeon Date on {build_id}...")
     t0 = time.time()
@@ -171,7 +178,12 @@ def run_chronaeon(build_id, build_dir, fasta_path, dates_path, meta_path, treeti
     print(ct.to_string())
 
 if __name__ == "__main__":
-    base_dir = "/Users/sergei/Projects/TOGA_MEME/dating_paper/nextstrain_grand_challenge"
+    import argparse
+    parser = argparse.ArgumentParser(description="NextStrain Grand Challenge Benchmark Harness")
+    default_base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data"))
+    parser.add_argument("--base-dir", type=str, default=default_base, help="Base directory for downloading/extracting data")
+    args = parser.parse_args()
+    base_dir = args.base_dir
     os.makedirs(base_dir, exist_ok=True)
     
     for build_id, cfg in NEXTSTRAIN_BUILDS.items():
