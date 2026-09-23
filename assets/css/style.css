@@ -1305,7 +1305,7 @@ html {
   padding: 1.15rem 1.4rem;
   margin-bottom: 2.25rem;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   gap: 1.5rem;
   align-items: center;
 }

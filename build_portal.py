@@ -1440,6 +1440,7 @@ def generate_index_html(records):
         <a href="#tutorials">Tutorials</a>
         <a href="#surveillance">Surveillance</a>
         <a href="#benchmarks">42 BEAST Benchmarks</a>
+        <a href="https://zenodo.org/records/22908446" target="_blank" rel="noopener" class="rams-nav-chip">Preprint &nearr;</a>
         <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener" class="rams-nav-chip">Web App &nearr;</a>
         <a href="https://brc-analytics.org" target="_blank" rel="noopener" class="rams-nav-chip">BRC-Analytics &nearr;</a>
         <a href="AGENT.MD">AGENT.md</a>
@@ -1488,6 +1489,17 @@ def generate_index_html(records):
             </a>
             <p class="rams-access-sub">
               Client-side WebAssembly/WebGPU &bull; Sequence data never leave local memory (<a href="http://primaeon.org/time/" target="_blank" rel="noopener">primaeon.org/time</a>)
+            </p>
+          </div>
+          <div class="rams-access-divider"></div>
+          <div class="rams-access-cell">
+            <div class="rams-access-label">Preprint &bull; Zenodo</div>
+            <a href="https://zenodo.org/records/22908446" target="_blank" rel="noopener" class="rams-access-btn" style="background: var(--palette-primary-main); color: #ffffff !important;">
+              <span>Read Preprint</span>
+              <span>&nearr;</span>
+            </a>
+            <p class="rams-access-sub">
+              Zenodo: <a href="https://zenodo.org/records/22908446" target="_blank" rel="noopener">10.5281/zenodo.22908446 &nearr;</a>
             </p>
           </div>
         </div>
@@ -1934,6 +1946,7 @@ def generate_index_html(records):
           </p>
         </div>
         <div class="rams-footer-links">
+          <a href="https://zenodo.org/records/22908446" target="_blank" rel="noopener">Preprint (Zenodo) &nearr;</a>
           <a href="https://veg.github.io/primaeon/time/" target="_blank" rel="noopener">PrimAeon Time (Web) &nearr;</a>
           <a href="https://github.com/veg/HyphAeon" target="_blank" rel="noopener">HyphAeon Ecosystem &nearr;</a>
           <a href="https://brc-analytics.org" target="_blank" rel="noopener">BRC-Analytics &nearr;</a>
@@ -2512,6 +2525,7 @@ def generate_study_page(rec, prev_rec, next_rec):
       </div>
       <nav class="nav-links">
         <a href="../../index.html">&larr; Master Compendium</a>
+        <a href="https://zenodo.org/records/22908446" target="_blank" rel="noopener">Preprint &nearr;</a>
         {header_paper_link}
         <a href="../../data/{rec['study_id']}/beast.xml.gz" download style="color: #059669; font-weight: 600;">BEAST XML (.gz) &darr;</a>
       </nav>
@@ -2939,10 +2953,11 @@ def update_readme(records):
 
     readme_content = f"""# ChronAeon Benchmark Compendium Portal
 
-This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** ({total_taxa:,} taxa, 1882–2026) evaluated in the **ChronAeon** manuscript:
+This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** ({total_taxa:,} taxa, 1882–2026) evaluated in the **ChronAeon** manuscript / preprint:
 
-> **"Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning"**  
-> *ChronAeon Research Consortium.*
+> **"No Chains Attached: Tree-Free Molecular Clock Dating via Distance Geometry and Evolutionary Foundation Models"**  
+> Sergei L. Kosakovsky Pond, Darren P. Martin, Brittany Rife Magalis, Sudhir Kumar.  
+> **Preprint:** [https://zenodo.org/records/22908446](https://zenodo.org/records/22908446) &bull; **DOI:** [10.5281/zenodo.22908446](https://doi.org/10.5281/zenodo.22908446)
 
 ---
 
@@ -2951,6 +2966,7 @@ This repository hosts the static, publication-grade web application documenting 
 Explore the full benchmark results, multi-panel diagnostic figures, interactive charts, and downloadable XML configs online:
 
 * **Master Portal:** [https://veg.github.io/chronaeon/](https://veg.github.io/chronaeon/) (and [https://veg.github.io/cronaeon_bench/](https://veg.github.io/cronaeon_bench/))
+* **Preprint (Zenodo):** [https://zenodo.org/records/22908446](https://zenodo.org/records/22908446) (DOI: `10.5281/zenodo.22908446`)
 * **NextStrain Grand Challenge Dossier:** [`surveillance/nextstrain/index.html`](https://veg.github.io/chronaeon/surveillance/nextstrain/index.html)
 * **BV-BRC 10k–50k Sieve Grand Challenge Dossier:** [`surveillance/bvbrc/index.html`](https://veg.github.io/chronaeon/surveillance/bvbrc/index.html)
 

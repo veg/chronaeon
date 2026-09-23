@@ -1,9 +1,10 @@
 # ChronAeon Benchmark Compendium Portal
 
-This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** (14,285 taxa, 1882–2026) evaluated in the **ChronAeon** manuscript:
+This repository hosts the static, publication-grade web application documenting the **42 curated empirical molecular clock benchmarks** (14,285 taxa, 1882–2026) evaluated in the **ChronAeon** manuscript / preprint:
 
-> **"Rethinking Molecular Clock Dating: Continuous Sequence Manifolds, Closed-Form Ancestral Calibration, and the Fragility of Discrete Tip Pinning"**  
-> *ChronAeon Research Consortium.*
+> **"No Chains Attached: Tree-Free Molecular Clock Dating via Distance Geometry and Evolutionary Foundation Models"**  
+> Sergei L. Kosakovsky Pond, Darren P. Martin, Brittany Rife Magalis, Sudhir Kumar.  
+> **Preprint:** [https://zenodo.org/records/22908446](https://zenodo.org/records/22908446) &bull; **DOI:** [10.5281/zenodo.22908446](https://doi.org/10.5281/zenodo.22908446)
 
 ---
 
@@ -12,6 +13,7 @@ This repository hosts the static, publication-grade web application documenting 
 Explore the full benchmark results, multi-panel diagnostic figures, interactive charts, and downloadable XML configs online:
 
 * **Master Portal:** [https://veg.github.io/chronaeon/](https://veg.github.io/chronaeon/) (and [https://veg.github.io/cronaeon_bench/](https://veg.github.io/cronaeon_bench/))
+* **Preprint (Zenodo):** [https://zenodo.org/records/22908446](https://zenodo.org/records/22908446) (DOI: `10.5281/zenodo.22908446`)
 * **NextStrain Grand Challenge Dossier:** [`surveillance/nextstrain/index.html`](https://veg.github.io/chronaeon/surveillance/nextstrain/index.html)
 * **BV-BRC 10k–50k Sieve Grand Challenge Dossier:** [`surveillance/bvbrc/index.html`](https://veg.github.io/chronaeon/surveillance/bvbrc/index.html)
 
